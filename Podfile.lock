@@ -1,0 +1,38 @@
+
+PODS:
+- AFNetworking (1.0.1)
+- EGOCache (2.0)
+- JSONKit (1.5pre)
+- MBProgressHUD (0.5)
+- MGImageUtilities (0.0.1)
+- MWPhotoBrowser (1.0.1):
+  - MBProgressHUD
+  - SDWebImage (< 3.0.0)
+- Objective-C-HMTL-Parser (0.0.1)
+- SDWebImage (2.7):
+  - SDWebImage/Main (= 2.7)
+- SDWebImage/Main (2.7)
+- SVProgressHUD (0.8)
+
+DEPENDENCIES:
+- AFNetworking
+- EGOCache (= 2.0)
+- JSONKit
+- MGImageUtilities
+- MWPhotoBrowser
+- Objective-C-HMTL-Parser
+- SVProgressHUD
+
+SPEC CHECKSUMS:
+  AFNetworking: 4c11f857c9a18d65f4257c90a1e74ac49f0ac422
+  EGOCache: c7116e8a6692eecb542f001a9c71f9b71ae9644b
+  JSONKit: a01a22c75f27eae76b4badd55a91c20fe6e86477
+  MBProgressHUD: b23ee11c42253d6d804e8e0bfabdc334e8b2571f
+  MGImageUtilities: ab3580f2161b10f8a41331baea87aaafbd688950
+  MWPhotoBrowser: e54233d4c88e951a3b6b8f136393614cf319ac47
+  Objective-C-HMTL-Parser: 4fca85e186a829cfe8db8e316e9688571ea4dfed
+  SDWebImage: c3306b8c68f3569f5c676d585ad77393255887dd
+  SDWebImage/Main: c3306b8c68f3569f5c676d585ad77393255887dd
+  SVProgressHUD: 51042a14e3a716efdbdd73cbb2181fb23ee94389
+
+COCOAPODS: 0.15.1
