@@ -7,6 +7,8 @@
 //
 
 #import "FLTasksController.h"
+#import "FLTaskController.h"
+#import "SVProgressHUD.h"
 
 @interface FLTasksController ()
 
@@ -103,8 +105,26 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 100;
 }
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
+    selectedTask = self.tasks[indexPath.row];
+    
+    [SVProgressHUD showWithStatus:@"Загрузка..." maskType:SVProgressHUDMaskTypeGradient];
+    [[FLHTTPClient sharedClient] loadTask:selectedTask withSuccess:^(FLTask *task, AFHTTPRequestOperation *operation, id responseObject) {
+        [SVProgressHUD dismiss];
+        selectedTask = task;
+        [self performSegueWithIdentifier:@"TaskSegue" sender:self];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        [SVProgressHUD dismiss];
+    }];
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"TaskSegue"]) {
+        FLTaskController *taskController = [segue destinationViewController];
+        taskController.task = selectedTask;
+    }
 }
 
 

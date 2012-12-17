@@ -46,6 +46,7 @@ Label {
 LargeLabel {
     font-size: 24;
 }
+
 SmallLabel {
     font-size: 15;
 }

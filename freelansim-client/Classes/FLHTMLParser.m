@@ -60,4 +60,8 @@
     
     return tasks;
 }
+
+-(FLTask *)parseToTask:(FLTask *)task {
+    return task;
+}
 @end

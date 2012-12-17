@@ -13,6 +13,7 @@
 @interface FLTasksController : FLBaseController <UITableViewDataSource, UITableViewDelegate> {
     int page;
     BOOL stopSearch;
+    FLTask *selectedTask;
 }
 
 @property (weak, nonatomic) IBOutlet UITableView *tasksTable;

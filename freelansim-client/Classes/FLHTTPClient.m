@@ -44,6 +44,7 @@
 	[super enqueueHTTPRequestOperation:operation];
 }
 
+
 -(void)getTasksWithCategories:(NSArray *)categories page:(int)page success:(FLHTTPClientSuccessWithArray)success failure:(FLHTTPClientFailure)failure {
     
     NSString *categoriesString = @"";
@@ -74,6 +75,24 @@
         }
     }];
     [self clearAuthorizationHeader];
+}
+
+-(void)loadTask:(FLTask *)task withSuccess:(FLHTTPClientSuccessWithTaskObject)success failure:(FLHTTPClientFailure)failure {
+    
+    [self getPath:task.link parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSData *html = (NSData *)responseObject;
+        if (html) {
+            NSError *error;
+            FLHTMLParser *parser = [[FLHTMLParser alloc] initWithData:html error:&error];
+            FLTask *t = [parser parseToTask:task];
+            success(t,operation,responseObject);
+        }
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        if (failure) {
+            failure(operation,error);
+        }
+    }];
 }
 
 @end

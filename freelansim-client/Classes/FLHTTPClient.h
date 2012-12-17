@@ -8,10 +8,12 @@
 
 #import <Foundation/Foundation.h>
 #import "AFNetworking.h"
+#import "FLTask.h"
 
 
 
 typedef void (^FLHTTPClientSuccess)(AFHTTPRequestOperation *operation, id responseObject);
+typedef void (^FLHTTPClientSuccessWithTaskObject)(FLTask *task, AFHTTPRequestOperation *operation, id responseObject);
 typedef void (^FLHTTPClientSuccessWithArray)(NSArray *objects, AFHTTPRequestOperation *operation, id responseObject, BOOL *stop);
 typedef void (^FLHTTPClientFailure)(AFHTTPRequestOperation *operation, NSError *error);
 
@@ -23,4 +25,5 @@ typedef void (^FLHTTPClientFailure)(AFHTTPRequestOperation *operation, NSError *
 
 -(void)getTasksWithCategories:(NSArray *)categories page:(int)page success:(FLHTTPClientSuccessWithArray)success failure:(FLHTTPClientFailure)failure;
 
+-(void)loadTask:(FLTask *)task withSuccess:(FLHTTPClientSuccessWithTaskObject)success failure:(FLHTTPClientFailure)failure;
 @end

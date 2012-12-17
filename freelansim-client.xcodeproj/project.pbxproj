@@ -72,6 +72,12 @@
 		6AED873A167D9B3B00EBC6CD /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AED8739167D9B3B00EBC6CD /* QuartzCore.framework */; };
 		6D1A659EDAF44F38BE9E013F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 41AF178834E54C6E9830FDCB /* libPods.a */; };
 		A415B449167EE914002FFC83 /* FLTaskController.m in Sources */ = {isa = PBXBuildFile; fileRef = A415B448167EE914002FFC83 /* FLTaskController.m */; };
+		A429B363167F3B0C00078D1E /* 0012.png in Resources */ = {isa = PBXBuildFile; fileRef = A429B35D167F3B0C00078D1E /* 0012.png */; };
+		A429B364167F3B0C00078D1E /* 0012@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A429B35E167F3B0C00078D1E /* 0012@2x.png */; };
+		A429B365167F3B0C00078D1E /* 0053.png in Resources */ = {isa = PBXBuildFile; fileRef = A429B35F167F3B0C00078D1E /* 0053.png */; };
+		A429B366167F3B0C00078D1E /* 0053@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A429B360167F3B0C00078D1E /* 0053@2x.png */; };
+		A429B367167F3B0C00078D1E /* 0220.png in Resources */ = {isa = PBXBuildFile; fileRef = A429B361167F3B0C00078D1E /* 0220.png */; };
+		A429B368167F3B0C00078D1E /* 0220@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A429B362167F3B0C00078D1E /* 0220@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -192,6 +198,12 @@
 		6AED8739167D9B3B00EBC6CD /* QuartzCore.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		A415B447167EE914002FFC83 /* FLTaskController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FLTaskController.h; path = Classes/Controllers/Tasks/FLTaskController.h; sourceTree = "<group>"; };
 		A415B448167EE914002FFC83 /* FLTaskController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FLTaskController.m; path = Classes/Controllers/Tasks/FLTaskController.m; sourceTree = "<group>"; };
+		A429B35D167F3B0C00078D1E /* 0012.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 0012.png; sourceTree = "<group>"; };
+		A429B35E167F3B0C00078D1E /* 0012@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "0012@2x.png"; sourceTree = "<group>"; };
+		A429B35F167F3B0C00078D1E /* 0053.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 0053.png; sourceTree = "<group>"; };
+		A429B360167F3B0C00078D1E /* 0053@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "0053@2x.png"; sourceTree = "<group>"; };
+		A429B361167F3B0C00078D1E /* 0220.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 0220.png; sourceTree = "<group>"; };
+		A429B362167F3B0C00078D1E /* 0220@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "0220@2x.png"; sourceTree = "<group>"; };
 		CB0AF9F7B17F4CB7B2ECC008 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -328,6 +340,7 @@
 		6A529AE8167A47AF009A1CCB /* freelansim-client */ = {
 			isa = PBXGroup;
 			children = (
+				A429B35A167F3AD400078D1E /* Resources */,
 				6A529B29167A47EC009A1CCB /* Vendor */,
 				6A1AE728167DB59B005DE0E5 /* Сlasses */,
 				6AED873F167D9F4300EBC6CD /* Application */,
@@ -520,6 +533,28 @@
 			name = Tasks;
 			sourceTree = "<group>";
 		};
+		A429B35A167F3AD400078D1E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A429B35C167F3B0C00078D1E /* Icons */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		A429B35C167F3B0C00078D1E /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+				A429B35D167F3B0C00078D1E /* 0012.png */,
+				A429B35E167F3B0C00078D1E /* 0012@2x.png */,
+				A429B35F167F3B0C00078D1E /* 0053.png */,
+				A429B360167F3B0C00078D1E /* 0053@2x.png */,
+				A429B361167F3B0C00078D1E /* 0220.png */,
+				A429B362167F3B0C00078D1E /* 0220@2x.png */,
+			);
+			name = Icons;
+			path = Resources/Icons;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -608,6 +643,12 @@
 				6A1AE752167E1335005DE0E5 /* FLTaskCell.xib in Resources */,
 				6A1AE75B167E18CD005DE0E5 /* LoadingCell.xib in Resources */,
 				6A1AE75D167E1908005DE0E5 /* FLEmptyCell.xib in Resources */,
+				A429B363167F3B0C00078D1E /* 0012.png in Resources */,
+				A429B364167F3B0C00078D1E /* 0012@2x.png in Resources */,
+				A429B365167F3B0C00078D1E /* 0053.png in Resources */,
+				A429B366167F3B0C00078D1E /* 0053@2x.png in Resources */,
+				A429B367167F3B0C00078D1E /* 0220.png in Resources */,
+				A429B368167F3B0C00078D1E /* 0220@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

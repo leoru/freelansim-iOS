@@ -14,6 +14,6 @@
 
 -(NSArray *)parseTasks;
 -(NSArray *)parseFreelancers;
--(FLTask *)parseTask;
+-(FLTask *)parseToTask:(FLTask *)task;
 
 @end

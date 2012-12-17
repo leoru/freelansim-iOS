@@ -8,8 +8,10 @@
 
 #import "FLBaseController.h"
 #import "FLTask.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface FLTaskController : FLBaseController
 
+@property (weak, nonatomic) IBOutlet UIView *statView;
 @property (nonatomic,retain) FLTask *task;
 @end
