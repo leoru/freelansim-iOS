@@ -10,4 +10,7 @@
 
 @implementation FLTask
 
+-(NSString *)description {
+    return [NSString stringWithFormat:@"job-title: %@ \r\n",self.title];
+}
 @end

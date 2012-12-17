@@ -14,7 +14,9 @@
     int page;
     BOOL stopSearch;
 }
+
 @property (weak, nonatomic) IBOutlet UITableView *tasksTable;
+
 @property (nonatomic,retain) NSMutableArray *tasks;
 
 @end

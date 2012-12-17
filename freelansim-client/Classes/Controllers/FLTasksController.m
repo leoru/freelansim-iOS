@@ -65,7 +65,6 @@
             [[FLHTTPClient sharedClient] getTasksWithCategories:nil page:page++ success:^(NSArray *objects, AFHTTPRequestOperation *operation, id responseObject, BOOL *stop) {
                 
                 stopSearch = *stop;
-                //stopSearch = YES;
                 [self.tasks addObjectsFromArray:objects];
                 [self.tasksTable reloadData];
                 

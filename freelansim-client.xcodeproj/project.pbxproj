@@ -71,6 +71,7 @@
 		6AED8737167D9B3500EBC6CD /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AED8736167D9B3500EBC6CD /* CoreImage.framework */; };
 		6AED873A167D9B3B00EBC6CD /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AED8739167D9B3B00EBC6CD /* QuartzCore.framework */; };
 		6D1A659EDAF44F38BE9E013F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 41AF178834E54C6E9830FDCB /* libPods.a */; };
+		A415B449167EE914002FFC83 /* FLTaskController.m in Sources */ = {isa = PBXBuildFile; fileRef = A415B448167EE914002FFC83 /* FLTaskController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -189,6 +190,8 @@
 		6A529B72167A47FC009A1CCB /* UIView+NUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+NUI.m"; sourceTree = "<group>"; };
 		6AED8736167D9B3500EBC6CD /* CoreImage.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 		6AED8739167D9B3B00EBC6CD /* QuartzCore.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		A415B447167EE914002FFC83 /* FLTaskController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FLTaskController.h; path = Classes/Controllers/Tasks/FLTaskController.h; sourceTree = "<group>"; };
+		A415B448167EE914002FFC83 /* FLTaskController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FLTaskController.m; path = Classes/Controllers/Tasks/FLTaskController.m; sourceTree = "<group>"; };
 		CB0AF9F7B17F4CB7B2ECC008 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -262,10 +265,9 @@
 		6A1AE749167E1298005DE0E5 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				A415B446167EE8F8002FFC83 /* Tasks */,
 				6A1AE74A167E12B6005DE0E5 /* FLBaseController.h */,
 				6A1AE74B167E12B6005DE0E5 /* FLBaseController.m */,
-				6A1AE74D167E12D1005DE0E5 /* FLTasksController.h */,
-				6A1AE74E167E12D1005DE0E5 /* FLTasksController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -326,10 +328,9 @@
 		6A529AE8167A47AF009A1CCB /* freelansim-client */ = {
 			isa = PBXGroup;
 			children = (
+				6A529B29167A47EC009A1CCB /* Vendor */,
 				6A1AE728167DB59B005DE0E5 /* Сlasses */,
 				6AED873F167D9F4300EBC6CD /* Application */,
-				6A529B29167A47EC009A1CCB /* Vendor */,
-				6A529B28167A47B7009A1CCB /* StoryBoard */,
 				6A529AE9167A47AF009A1CCB /* Supporting Files */,
 			);
 			path = "freelansim-client";
@@ -501,10 +502,22 @@
 		6AED873F167D9F4300EBC6CD /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				6A529B28167A47B7009A1CCB /* StoryBoard */,
 				6A529AF1167A47AF009A1CCB /* KKAppDelegate.h */,
 				6A529AF2167A47AF009A1CCB /* KKAppDelegate.m */,
 			);
 			name = Application;
+			sourceTree = "<group>";
+		};
+		A415B446167EE8F8002FFC83 /* Tasks */ = {
+			isa = PBXGroup;
+			children = (
+				6A1AE74D167E12D1005DE0E5 /* FLTasksController.h */,
+				6A1AE74E167E12D1005DE0E5 /* FLTasksController.m */,
+				A415B447167EE914002FFC83 /* FLTaskController.h */,
+				A415B448167EE914002FFC83 /* FLTaskController.m */,
+			);
+			name = Tasks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -681,6 +694,7 @@
 				6A1AE747167E11FF005DE0E5 /* FLDefines.m in Sources */,
 				6A1AE74C167E12B6005DE0E5 /* FLBaseController.m in Sources */,
 				6A1AE74F167E12D1005DE0E5 /* FLTasksController.m in Sources */,
+				A415B449167EE914002FFC83 /* FLTaskController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

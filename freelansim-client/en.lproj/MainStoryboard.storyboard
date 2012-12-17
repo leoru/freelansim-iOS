@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C3006" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2843" systemVersion="12B19" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="4">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1929"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller - Заказы-->
@@ -51,7 +51,7 @@
                                 </userDefinedRuntimeAttributes>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="v2X-HV-zfV" firstAttribute="top" secondItem="9Et-Yh-qdQ" secondAttribute="top" type="default" id="JEj-to-j09"/>
                             <constraint firstItem="v2X-HV-zfV" firstAttribute="trailing" secondItem="9Et-Yh-qdQ" secondAttribute="trailing" type="default" id="SN8-Le-zWj"/>
@@ -72,17 +72,17 @@
                     </navigationItem>
                     <connections>
                         <outlet property="tasksTable" destination="v2X-HV-zfV" id="Vsv-0p-Fxq"/>
-                        <segue destination="h9P-yI-dpN" kind="push" id="SXZ-wO-cMx"/>
+                        <segue destination="h9P-yI-dpN" kind="push" identifier="TaskSegue" id="SXZ-wO-cMx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cpz-xR-YoE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="754" y="-53"/>
         </scene>
-        <!--View Controller-->
+        <!--Task Controller-->
         <scene sceneID="f7T-Mr-WdS">
             <objects>
-                <viewController id="h9P-yI-dpN" sceneMemberID="viewController">
+                <viewController id="h9P-yI-dpN" customClass="FLTaskController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RMi-gE-3Zd">
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -167,6 +167,9 @@
     <classes>
         <class className="FLBaseController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/FLBaseController.h"/>
+        </class>
+        <class className="FLTaskController" superclassName="FLBaseController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FLTaskController.h"/>
         </class>
         <class className="FLTasksController" superclassName="FLBaseController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/FLTasksController.h"/>

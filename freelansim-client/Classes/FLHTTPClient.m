@@ -25,17 +25,24 @@
 -(id)init{
     NSURL *baseURL = [NSURL URLWithString:FLServerHostString];
     if (self =[super initWithBaseURL:baseURL]) {
+        [self registerHTTPOperationClass:[AFHTTPRequestOperation class]];
+        [self setDefaultHeader:@"Accept" value:@"text/html"];
         _callbackQueue = dispatch_queue_create("ru.kunst.freelansim.network-callback-queue", 0);
     }
     return self;
 }
 
+- (NSMutableURLRequest *)requestWithMethod:(NSString *)method path:(NSString *)path parameters:(NSDictionary *)parameters {
+	NSMutableURLRequest *request = [super requestWithMethod:method path:path parameters:parameters];
+    [request setCachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData];
+	return request;
+}
 
-//-(void)enqueueHTTPRequestOperation:(AFHTTPRequestOperation *)operation {
-//    operation.successCallbackQueue = _callbackQueue;
-//	operation.failureCallbackQueue = _callbackQueue;
-//	[super enqueueHTTPRequestOperation:operation];
-//}
+-(void)enqueueHTTPRequestOperation:(AFHTTPRequestOperation *)operation {
+    operation.successCallbackQueue = _callbackQueue;
+	operation.failureCallbackQueue = _callbackQueue;
+	[super enqueueHTTPRequestOperation:operation];
+}
 
 -(void)getTasksWithCategories:(NSArray *)categories page:(int)page success:(FLHTTPClientSuccessWithArray)success failure:(FLHTTPClientFailure)failure {
     
@@ -45,15 +52,14 @@
             categoriesString = [categoriesString stringByAppendingFormat:@"%@,",category];
         }
     }
-    
-    NSString *path = [NSString stringWithFormat:@"%@?categories=%@&page=%d",FLServerHostString,categoriesString,page];
-    [self getPath:path parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+
+    [self getPath:@"/tasks" parameters:@{@"categories":categoriesString,@"page":@(page)} success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSData *html = (NSData *)responseObject;
         if (html) {
             NSError *error;
             FLHTMLParser *parser = [[FLHTMLParser alloc] initWithData:html error:&error];
             NSArray *tasks = [parser parseTasks];
-            
+
             BOOL stop = NO;
             if (tasks.count == 0) {
                 stop = YES;
@@ -67,6 +73,7 @@
             failure(operation,error);
         }
     }];
+    [self clearAuthorizationHeader];
 }
 
 @end

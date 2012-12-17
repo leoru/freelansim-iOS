@@ -73,7 +73,8 @@ TabBar {
     text-offset: 0,-11;
 }
 TableCell {
-    background-color : clear;
+    background-color-top: @secondaryBackgroundColorTop;
+    background-color-bottom: @secondaryBackgroundColorBottom;
     font-color: @primaryFontColor;
     font-name: @secondaryFontNameBold;
     font-size: 17;
@@ -92,7 +93,10 @@ LargeTextField {
     height: 50;
     font-size: 28;
 }
-
+View {
+    background-color: @primaryBackgroundColor;
+    background-image: NUIViewBackground.png;
+}
 UIBarButtonItem {
     background-tint-color: @primaryBackgroundTintColor;
     font-name: @secondaryFontNameBold;
