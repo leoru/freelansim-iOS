@@ -11,7 +11,15 @@
 #import <QuartzCore/QuartzCore.h>
 
 @interface FLTaskController : FLBaseController
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UIWebView *descriptionWebView;
+@property (weak, nonatomic) IBOutlet UILabel *viewsLabel;
+@property (weak, nonatomic) IBOutlet UILabel *commentsLabel;
+@property (weak, nonatomic) IBOutlet UILabel *publishedLabel;
 
 @property (weak, nonatomic) IBOutlet UIView *statView;
 @property (nonatomic,retain) FLTask *task;
+
+
+
 @end

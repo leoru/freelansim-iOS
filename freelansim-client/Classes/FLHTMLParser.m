@@ -62,6 +62,28 @@
 }
 
 -(FLTask *)parseToTask:(FLTask *)task {
+    HTMLNode *body = [self body];
+    
+    HTMLNode *taskStat = [body findChildOfClass:@"task_stat"];
+    task.views = [[[taskStat findChildOfClass:@"views"] contents] intValue];
+    task.commentsCount = [[[taskStat findChildOfClass:@"comments"] contents] intValue];
+    
+    NSArray *infoBlocks = [[body findChildOfClass:@"more_information"] findChildrenOfClass:@"block"];
+    task.htmlDescription = [infoBlocks[0] rawContents];
+    
+    NSArray *skillsBlocks = [[body findChildOfClass:@"skills_column"] findChildrenOfClass:@"block"];
+    
+    NSArray *tags = [[skillsBlocks[0] findChildOfClass:@"tags"] findChildrenOfClass:@"professional"];
+    
+    for (HTMLNode *tag in tags) {
+        [task.tags arrayByAddingObject:tag.contents];
+    }
+    
+    NSArray *mentals = [[skillsBlocks[1] findChildOfClass:@"tags"] findChildrenOfClass:@"mental"];
+    for (HTMLNode *mental in mentals) {
+        [task.mental arrayByAddingObject:mental.contents];
+    }
+    
     return task;
 }
 @end

@@ -65,11 +65,11 @@
             }
             
             [[FLHTTPClient sharedClient] getTasksWithCategories:nil page:page++ success:^(NSArray *objects, AFHTTPRequestOperation *operation, id responseObject, BOOL *stop) {
-                
-                stopSearch = *stop;
-                [self.tasks addObjectsFromArray:objects];
-                [self.tasksTable reloadData];
-                
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    stopSearch = *stop;
+                    [self.tasks addObjectsFromArray:objects];
+                    [self.tasksTable reloadData];
+                });
             } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
                 
             }];
@@ -112,11 +112,17 @@
     
     [SVProgressHUD showWithStatus:@"Загрузка..." maskType:SVProgressHUDMaskTypeGradient];
     [[FLHTTPClient sharedClient] loadTask:selectedTask withSuccess:^(FLTask *task, AFHTTPRequestOperation *operation, id responseObject) {
-        [SVProgressHUD dismiss];
-        selectedTask = task;
-        [self performSegueWithIdentifier:@"TaskSegue" sender:self];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [SVProgressHUD dismiss];
+            selectedTask = task;
+            [self performSegueWithIdentifier:@"TaskSegue" sender:self];
+        });
+        
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        [SVProgressHUD dismiss];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [SVProgressHUD dismiss];
+        });
     }];
 }
 
