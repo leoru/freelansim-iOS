@@ -9,13 +9,17 @@
 #import "FLBaseController.h"
 #import "FLTask.h"
 #import <QuartzCore/QuartzCore.h>
+#import "DWTagList.h"
 
-@interface FLTaskController : FLBaseController
+@interface FLTaskController : FLBaseController <UIWebViewDelegate>
+
+@property (weak, nonatomic) IBOutlet UIScrollView *mainScrollView;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UIWebView *descriptionWebView;
 @property (weak, nonatomic) IBOutlet UILabel *viewsLabel;
 @property (weak, nonatomic) IBOutlet UILabel *commentsLabel;
 @property (weak, nonatomic) IBOutlet UILabel *publishedLabel;
+@property (weak, nonatomic) IBOutlet UIView *skillsView;
 
 @property (weak, nonatomic) IBOutlet UIView *statView;
 @property (nonatomic,retain) FLTask *task;

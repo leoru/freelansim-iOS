@@ -8,6 +8,7 @@
 
 #import "FLHTTPClient.h"
 #import "FLHTMLParser.h"
+#import "FLCategory.h"
 
 
 
@@ -49,12 +50,13 @@
     
     NSString *categoriesString = @"";
     if (categories) {
-        for (NSString *category in categories) {
-            categoriesString = [categoriesString stringByAppendingFormat:@"%@,",category];
+        for (FLCategory *category in categories) {
+            categoriesString = [categoriesString stringByAppendingFormat:@"%@,",category.subcategories];
         }
     }
 
     [self getPath:@"/tasks" parameters:@{@"categories":categoriesString,@"page":@(page)} success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
         NSData *html = (NSData *)responseObject;
         if (html) {
             NSError *error;

@@ -64,7 +64,7 @@
                 cell = [[NSBundle mainBundle] loadNibNamed:loadingCellIdentifier owner:nil options:nil][0];
             }
             
-            [[FLHTTPClient sharedClient] getTasksWithCategories:nil page:page++ success:^(NSArray *objects, AFHTTPRequestOperation *operation, id responseObject, BOOL *stop) {
+            [[FLHTTPClient sharedClient] getTasksWithCategories:self.selectedCategories page:page++ success:^(NSArray *objects, AFHTTPRequestOperation *operation, id responseObject, BOOL *stop) {
                 dispatch_async(dispatch_get_main_queue(), ^{
                     stopSearch = *stop;
                     [self.tasks addObjectsFromArray:objects];
@@ -89,21 +89,33 @@
         UILabel *taskTitle = (UILabel *)[cell viewWithTag:1];
         UILabel *taskCategory = (UILabel *)[cell viewWithTag:2];
         UILabel *taskShortDescription = (UILabel *)[cell viewWithTag:3];
+        UILabel *priceLabel = (UILabel *)[cell viewWithTag:4];
+        
+        priceLabel.layer.cornerRadius = 5.0f;
+        priceLabel.backgroundColor = [UIColor colorWithRed:0.33f green:0.71f blue:0.92f alpha:1.00f];
         
         FLTask *task = self.tasks[indexPath.row];
         taskTitle.text = task.title;
         taskCategory.text = task.category;
         taskShortDescription.text = task.shortDescription;
+        priceLabel.text = task.price;
+        [priceLabel sizeToFit];
+        
+        CGRect frame = priceLabel.frame;
+        frame.size.height += 5;
+        frame.size.width += 5;
+        priceLabel.textColor = [UIColor whiteColor];
+        priceLabel.frame = frame;
     }
     
     UIView *backgroundView = [[UIView alloc] initWithFrame:CGRectZero];
-    backgroundView.backgroundColor = [UIColor colorWithRed:0.97f green:0.67f blue:0.44f alpha:1.00f];
+    backgroundView.backgroundColor = [UIColor colorWithRed:0.33f green:0.71f blue:0.92f alpha:1.00f];
     cell.selectedBackgroundView = backgroundView;
     cell.backgroundColor = [UIColor greenColor];
     return cell;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 100;
+    return 135;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -130,10 +142,21 @@
     if ([segue.identifier isEqualToString:@"TaskSegue"]) {
         FLTaskController *taskController = [segue destinationViewController];
         taskController.task = selectedTask;
+    } else if ([segue.identifier isEqualToString:@"CategoriesSegue"]) {
+        FLCategoriesController *categoriesController = [segue destinationViewController];
+        categoriesController.delegate = self;
+        categoriesController.selectedCategories = self.selectedCategories;
     }
 }
 
 
+
+-(void)categoriesDidSelected:(NSArray *)categories {
+    self.selectedCategories = categories;
+    self.tasks = [NSMutableArray array];
+    stopSearch = NO;
+    [self.tasksTable reloadData];
+}
 
 
 

@@ -31,17 +31,19 @@
     
     HTMLNode *body = [self body];
     
-    HTMLNode *tasksNode = [body findChildOfClass:@"tasks"];
+    HTMLNode *tasksNode = [body findChildOfClass:@"tasks shortcuts_items"];
     
-    NSArray *tasksNodes = [tasksNode findChildrenOfClass:@"task"];
+    NSArray *tasksNodes = [tasksNode findChildrenOfClass:@"shortcuts_item task"];
     
     for (HTMLNode *taskNode in tasksNodes) {
         FLTask *task = [[FLTask alloc] init];
         
         HTMLNode *taskPriceNode = [taskNode findChildOfClass:@"price"];
         NSArray *priceNodes = [taskPriceNode findChildTags:@"span"];
+        task.price = @"";
         [priceNodes enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
             HTMLNode *node = (HTMLNode *)obj;
+            
             task.price = [task.price stringByAppendingFormat:@" %@",node.contents];
         }];
         
@@ -61,7 +63,9 @@
     return tasks;
 }
 
--(FLTask *)parseToTask:(FLTask *)task {
+-(FLTask *)parseToTask:(FLTask *)t {
+    
+    FLTask *task = t;
     HTMLNode *body = [self body];
     
     HTMLNode *taskStat = [body findChildOfClass:@"task_stat"];
@@ -75,10 +79,11 @@
     
     NSArray *tags = [[skillsBlocks[0] findChildOfClass:@"tags"] findChildrenOfClass:@"professional"];
     
+    NSMutableArray *tagsArray = [NSMutableArray array];
     for (HTMLNode *tag in tags) {
-        [task.tags arrayByAddingObject:tag.contents];
+        [tagsArray addObject:tag.contents];
     }
-    
+    task.tags = tagsArray;
     NSArray *mentals = [[skillsBlocks[1] findChildOfClass:@"tags"] findChildrenOfClass:@"mental"];
     for (HTMLNode *mental in mentals) {
         [task.mental arrayByAddingObject:mental.contents];

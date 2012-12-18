@@ -9,8 +9,9 @@
 #import "FLBaseController.h"
 #import "FLHTTPClient.h"
 #import "FLTask.h"
+#import "FLCategoriesController.h"
 
-@interface FLTasksController : FLBaseController <UITableViewDataSource, UITableViewDelegate> {
+@interface FLTasksController : FLBaseController <UITableViewDataSource, UITableViewDelegate, FLCategoriesDelegate> {
     int page;
     BOOL stopSearch;
     FLTask *selectedTask;
@@ -19,5 +20,5 @@
 @property (weak, nonatomic) IBOutlet UITableView *tasksTable;
 
 @property (nonatomic,retain) NSMutableArray *tasks;
-
+@property (nonatomic,retain) NSArray *selectedCategories;
 @end

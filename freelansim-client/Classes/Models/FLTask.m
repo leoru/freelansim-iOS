@@ -10,6 +10,9 @@
 
 @implementation FLTask
 
+@synthesize tags = _tags;
+@synthesize mental = _mental;
+
 -(NSArray *)mental {
     if (!_mental) {
         _mental = [NSArray array];

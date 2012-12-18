@@ -99,9 +99,14 @@ View {
     background-image: NUIViewBackground.png;
 }
 UIBarButtonItem {
-    background-tint-color: @primaryBackgroundTintColor;
+    background-tint-color: #54B4EB;
     font-name: @secondaryFontNameBold;
-    font-color: @primaryFontColor;
+    font-color: #FFFFFF;
     text-shadow-color: clear;
     font-size: 13;
 }
+
+UIBarButtonItemDone {
+    background-tint-color: #54B4EB;
+}
+

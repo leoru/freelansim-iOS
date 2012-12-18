@@ -16,6 +16,11 @@
 		6A1AE752167E1335005DE0E5 /* FLTaskCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A1AE751167E1335005DE0E5 /* FLTaskCell.xib */; };
 		6A1AE75B167E18CD005DE0E5 /* LoadingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A1AE75A167E18CD005DE0E5 /* LoadingCell.xib */; };
 		6A1AE75D167E1908005DE0E5 /* FLEmptyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A1AE75C167E1908005DE0E5 /* FLEmptyCell.xib */; };
+		6A2677841680877800F178E7 /* FLHTMLUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A2677831680877800F178E7 /* FLHTMLUtils.m */; };
+		6A26778F16809CCB00F178E7 /* DWTagList.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A26778E16809CCB00F178E7 /* DWTagList.m */; };
+		6A26779B1680A1AF00F178E7 /* FLCategoriesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A26779A1680A1AF00F178E7 /* FLCategoriesController.m */; };
+		6A26779E1680A32300F178E7 /* FLCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A26779D1680A32300F178E7 /* FLCategory.m */; };
+		6A2677A01680AAE800F178E7 /* CategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A26779F1680AAE800F178E7 /* CategoryCell.xib */; };
 		6A529AE3167A47AF009A1CCB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A529AE2167A47AF009A1CCB /* UIKit.framework */; };
 		6A529AE5167A47AF009A1CCB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A529AE4167A47AF009A1CCB /* Foundation.framework */; };
 		6A529AE7167A47AF009A1CCB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A529AE6167A47AF009A1CCB /* CoreGraphics.framework */; };
@@ -107,6 +112,15 @@
 		6A1AE751167E1335005DE0E5 /* FLTaskCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FLTaskCell.xib; sourceTree = "<group>"; };
 		6A1AE75A167E18CD005DE0E5 /* LoadingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoadingCell.xib; sourceTree = "<group>"; };
 		6A1AE75C167E1908005DE0E5 /* FLEmptyCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FLEmptyCell.xib; sourceTree = "<group>"; };
+		6A2677821680877800F178E7 /* FLHTMLUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FLHTMLUtils.h; path = Classes/Utils/FLHTMLUtils.h; sourceTree = "<group>"; };
+		6A2677831680877800F178E7 /* FLHTMLUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FLHTMLUtils.m; path = Classes/Utils/FLHTMLUtils.m; sourceTree = "<group>"; };
+		6A26778D16809CCB00F178E7 /* DWTagList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWTagList.h; sourceTree = "<group>"; };
+		6A26778E16809CCB00F178E7 /* DWTagList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWTagList.m; sourceTree = "<group>"; };
+		6A2677991680A1AF00F178E7 /* FLCategoriesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FLCategoriesController.h; path = Classes/Controllers/FLCategoriesController.h; sourceTree = "<group>"; };
+		6A26779A1680A1AF00F178E7 /* FLCategoriesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FLCategoriesController.m; path = Classes/Controllers/FLCategoriesController.m; sourceTree = "<group>"; };
+		6A26779C1680A32300F178E7 /* FLCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FLCategory.h; path = Classes/Models/FLCategory.h; sourceTree = "<group>"; };
+		6A26779D1680A32300F178E7 /* FLCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FLCategory.m; path = Classes/Models/FLCategory.m; sourceTree = "<group>"; };
+		6A26779F1680AAE800F178E7 /* CategoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoryCell.xib; sourceTree = "<group>"; };
 		6A529ADE167A47AF009A1CCB /* freelansim-client.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "freelansim-client.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A529AE2167A47AF009A1CCB /* UIKit.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		6A529AE4167A47AF009A1CCB /* Foundation.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -237,6 +251,7 @@
 		6A1AE728167DB59B005DE0E5 /* Сlasses */ = {
 			isa = PBXGroup;
 			children = (
+				6A2677801680875600F178E7 /* Utils */,
 				6A1AE762167E1F9D005DE0E5 /* Defines */,
 				6A1AE750167E131F005DE0E5 /* VIews */,
 				6A1AE749167E1298005DE0E5 /* Controllers */,
@@ -252,6 +267,8 @@
 			children = (
 				6A1AE735167DCB6A005DE0E5 /* FLTask.h */,
 				6A1AE736167DCB6A005DE0E5 /* FLTask.m */,
+				6A26779C1680A32300F178E7 /* FLCategory.h */,
+				6A26779D1680A32300F178E7 /* FLCategory.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -277,9 +294,9 @@
 		6A1AE749167E1298005DE0E5 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				6A2677981680A19000F178E7 /* Categories */,
+				6A26779016809EF400F178E7 /* Base */,
 				A415B446167EE8F8002FFC83 /* Tasks */,
-				6A1AE74A167E12B6005DE0E5 /* FLBaseController.h */,
-				6A1AE74B167E12B6005DE0E5 /* FLBaseController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -290,6 +307,7 @@
 				6A1AE751167E1335005DE0E5 /* FLTaskCell.xib */,
 				6A1AE75A167E18CD005DE0E5 /* LoadingCell.xib */,
 				6A1AE75C167E1908005DE0E5 /* FLEmptyCell.xib */,
+				6A26779F1680AAE800F178E7 /* CategoryCell.xib */,
 			);
 			name = VIews;
 			sourceTree = "<group>";
@@ -301,6 +319,43 @@
 				6A1AE746167E11FF005DE0E5 /* FLDefines.m */,
 			);
 			name = Defines;
+			sourceTree = "<group>";
+		};
+		6A2677801680875600F178E7 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				6A2677821680877800F178E7 /* FLHTMLUtils.h */,
+				6A2677831680877800F178E7 /* FLHTMLUtils.m */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
+		6A26778C16809CCB00F178E7 /* TagList */ = {
+			isa = PBXGroup;
+			children = (
+				6A26778D16809CCB00F178E7 /* DWTagList.h */,
+				6A26778E16809CCB00F178E7 /* DWTagList.m */,
+			);
+			name = TagList;
+			path = Vendor/TagList;
+			sourceTree = "<group>";
+		};
+		6A26779016809EF400F178E7 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				6A1AE74A167E12B6005DE0E5 /* FLBaseController.h */,
+				6A1AE74B167E12B6005DE0E5 /* FLBaseController.m */,
+			);
+			name = Base;
+			sourceTree = "<group>";
+		};
+		6A2677981680A19000F178E7 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				6A2677991680A1AF00F178E7 /* FLCategoriesController.h */,
+				6A26779A1680A1AF00F178E7 /* FLCategoriesController.m */,
+			);
+			name = Categories;
 			sourceTree = "<group>";
 		};
 		6A529AD3167A47AF009A1CCB = {
@@ -393,6 +448,7 @@
 		6A529B29167A47EC009A1CCB /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				6A26778C16809CCB00F178E7 /* TagList */,
 				6A529B2A167A47FC009A1CCB /* NUI */,
 			);
 			name = Vendor;
@@ -649,6 +705,7 @@
 				A429B366167F3B0C00078D1E /* 0053@2x.png in Resources */,
 				A429B367167F3B0C00078D1E /* 0220.png in Resources */,
 				A429B368167F3B0C00078D1E /* 0220@2x.png in Resources */,
+				6A2677A01680AAE800F178E7 /* CategoryCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -736,6 +793,10 @@
 				6A1AE74C167E12B6005DE0E5 /* FLBaseController.m in Sources */,
 				6A1AE74F167E12D1005DE0E5 /* FLTasksController.m in Sources */,
 				A415B449167EE914002FFC83 /* FLTaskController.m in Sources */,
+				6A2677841680877800F178E7 /* FLHTMLUtils.m in Sources */,
+				6A26778F16809CCB00F178E7 /* DWTagList.m in Sources */,
+				6A26779B1680A1AF00F178E7 /* FLCategoriesController.m in Sources */,
+				6A26779E1680A32300F178E7 /* FLCategory.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
