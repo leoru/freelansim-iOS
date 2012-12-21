@@ -73,6 +73,7 @@
 		6A529B95167A47FC009A1CCB /* UITableViewCell+NUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A529B6E167A47FC009A1CCB /* UITableViewCell+NUI.m */; };
 		6A529B96167A47FC009A1CCB /* UITextField+NUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A529B70167A47FC009A1CCB /* UITextField+NUI.m */; };
 		6A529B97167A47FC009A1CCB /* UIView+NUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A529B72167A47FC009A1CCB /* UIView+NUI.m */; };
+		6A8F515B1684EDF200AD0CC2 /* FLFreelancer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A8F515A1684EDF200AD0CC2 /* FLFreelancer.m */; };
 		6AED8737167D9B3500EBC6CD /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AED8736167D9B3500EBC6CD /* CoreImage.framework */; };
 		6AED873A167D9B3B00EBC6CD /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AED8739167D9B3B00EBC6CD /* QuartzCore.framework */; };
 		6D1A659EDAF44F38BE9E013F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 41AF178834E54C6E9830FDCB /* libPods.a */; };
@@ -208,6 +209,8 @@
 		6A529B70167A47FC009A1CCB /* UITextField+NUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+NUI.m"; sourceTree = "<group>"; };
 		6A529B71167A47FC009A1CCB /* UIView+NUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+NUI.h"; sourceTree = "<group>"; };
 		6A529B72167A47FC009A1CCB /* UIView+NUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+NUI.m"; sourceTree = "<group>"; };
+		6A8F51591684EDF200AD0CC2 /* FLFreelancer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FLFreelancer.h; path = Classes/Models/FLFreelancer.h; sourceTree = "<group>"; };
+		6A8F515A1684EDF200AD0CC2 /* FLFreelancer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FLFreelancer.m; path = Classes/Models/FLFreelancer.m; sourceTree = "<group>"; };
 		6AED8736167D9B3500EBC6CD /* CoreImage.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 		6AED8739167D9B3B00EBC6CD /* QuartzCore.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		A415B447167EE914002FFC83 /* FLTaskController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FLTaskController.h; path = Classes/Controllers/Tasks/FLTaskController.h; sourceTree = "<group>"; };
@@ -269,6 +272,8 @@
 				6A1AE736167DCB6A005DE0E5 /* FLTask.m */,
 				6A26779C1680A32300F178E7 /* FLCategory.h */,
 				6A26779D1680A32300F178E7 /* FLCategory.m */,
+				6A8F51591684EDF200AD0CC2 /* FLFreelancer.h */,
+				6A8F515A1684EDF200AD0CC2 /* FLFreelancer.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -797,6 +802,7 @@
 				6A26778F16809CCB00F178E7 /* DWTagList.m in Sources */,
 				6A26779B1680A1AF00F178E7 /* FLCategoriesController.m in Sources */,
 				6A26779E1680A32300F178E7 /* FLCategory.m in Sources */,
+				6A8F515B1684EDF200AD0CC2 /* FLFreelancer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

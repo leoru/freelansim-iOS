@@ -8,6 +8,8 @@
 
 #import "FLTaskController.h"
 #import "FLHTMLUtils.h"
+#import "SVProgressHUD.h"
+#import "FLHTTPClient.h"
 
 @interface FLTaskController ()
 {
@@ -29,7 +31,21 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	[self initUI];
+    [[FLHTTPClient sharedClient] loadTask:self.task withSuccess:^(FLTask *task, AFHTTPRequestOperation *operation, id responseObject) {
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.task = task;
+            [self initUI];
+            [SVProgressHUD dismiss];
+        });
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [SVProgressHUD dismiss];
+        });
+    }];
+    
+	
     
 }
 
@@ -56,6 +72,7 @@
     [self loadHTMLContent];
     [self generateSkillTags];
     self.mainScrollView.contentSize = CGSizeMake(320,scrollViewHeight);
+
     
 }
 

@@ -91,4 +91,39 @@
     
     return task;
 }
+
+
+-(NSArray *)parseFreelancers {
+    NSMutableArray *freelancers = [NSMutableArray array];
+    
+    HTMLNode *body = [self body];
+    
+    HTMLNode *freelancersNode = [body findChildOfClass:@"freelancers shortcuts_items"];
+    
+    NSArray *freelancersNodes = [freelancersNode findChildrenOfClass:@"shortcuts_item"];
+    
+    for (HTMLNode *freelancerNode in freelancersNodes) {
+        FLFreelancer *freelancer = [[FLFreelancer alloc] init];
+        
+        HTMLNode *freelancerPriceNode = [freelancerNode findChildOfClass:@"price"];
+        NSArray *priceNodes = [freelancerPriceNode findChildTags:@"span"];
+        freelancer.price = @"";
+        [priceNodes enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+            HTMLNode *node = (HTMLNode *)obj;
+            
+            freelancer.price = [freelancer.price stringByAppendingFormat:@" %@",node.contents];
+        }];
+        
+        freelancer.name = [ [[freelancerNode findChildOfClass:@"name"] findChildTag:@"a"]  contents];
+        freelancer.speciality = [[freelancerNode findChildOfClass:@"description"] contents];
+        freelancer.description = [[freelancerNode findChildOfClass:@"text"] contents];
+        NSString *thumbPath = [[[[freelancerNode findChildOfClass:@"avatar"] findChildTag:@"a"] findChildTag:@"img"] getAttributeNamed:@"src"];
+
+        freelancer.thumbPath = [FLServerHostString stringByAppendingPathComponent:thumbPath];
+        
+        [freelancers addObject:freelancer];
+    }
+    
+    return freelancers;
+}
 @end

@@ -99,7 +99,7 @@ View {
     background-image: NUIViewBackground.png;
 }
 UIBarButtonItem {
-    background-tint-color: #54B4EB;
+    background-tint-color: #F4955A;
     font-name: @secondaryFontNameBold;
     font-color: #FFFFFF;
     text-shadow-color: clear;

@@ -75,31 +75,43 @@
     
     categoryTitle.text = category.title;
     UIView *backgroundView = [[UIView alloc] initWithFrame:CGRectZero];
-    backgroundView.backgroundColor = [UIColor colorWithRed:0.33f green:0.71f blue:0.92f alpha:1.00f];
+    backgroundView.backgroundColor = [UIColor colorWithRed:0.96f green:0.58f blue:0.35f alpha:1.00f];
     cell.selectedBackgroundView = backgroundView;
+    
+    for (FLCategory *cat in self.selectedCategories) {
+        if ([cat.title isEqualToString:category.title]) {
+            [self.categoriesTable selectRowAtIndexPath:indexPath animated:YES scrollPosition:UITableViewRowAnimationNone];
+            cell.accessoryType = UITableViewCellAccessoryCheckmark;
+        }
+    }
     return cell;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 44;
 }
 
+-(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [self.categoriesTable cellForRowAtIndexPath:indexPath];
+    [self.categoriesTable deselectRowAtIndexPath:indexPath animated:YES];
+    cell.accessoryType = UITableViewCellAccessoryNone;
+    FLCategory *category = categories[indexPath.row];
+    
+    for (FLCategory *cat in [self.selectedCategories copy]) {
+        if ([cat.title isEqualToString:category.title]) {
+            [self.selectedCategories removeObject:cat];
+        }
+    }
+}
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [self.categoriesTable cellForRowAtIndexPath:indexPath];
     
-    if (cell.accessoryType == UITableViewCellAccessoryNone) {
-        [self.categoriesTable selectRowAtIndexPath:indexPath animated:YES scrollPosition:UITableViewScrollPositionNone];
-        cell.accessoryType = UITableViewCellAccessoryCheckmark;
-    } else {
-        [self.categoriesTable deselectRowAtIndexPath:indexPath animated:YES];
-        cell.accessoryType = UITableViewCellAccessoryNone;
-    }
+    [self.categoriesTable selectRowAtIndexPath:indexPath animated:YES scrollPosition:UITableViewScrollPositionNone];
+    cell.accessoryType = UITableViewCellAccessoryCheckmark;
     
     FLCategory *category = categories[indexPath.row];
-    if ([self.selectedCategories containsObject:category]) {
-        [self.selectedCategories removeObject:category];
-    } else {
-        [self.selectedCategories addObject:category];
-    }
+    
+    [self.selectedCategories addObject:category];
     
     
 }
