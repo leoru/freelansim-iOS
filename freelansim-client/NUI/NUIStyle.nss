@@ -1,4 +1,4 @@
-@primaryFontName: AppleGothic;
+@primaryFontName: HelveticaNeue;
 @secondaryFontName: HelveticaNeue-Light;
 @secondaryFontNameBold: HelveticaNeue;
 @secondaryFontNameStrong: HelveticaNeue-Medium;
@@ -99,7 +99,7 @@ View {
     background-image: NUIViewBackground.png;
 }
 UIBarButtonItem {
-    background-tint-color: #F4955A;
+    background-tint-color: #F7AB6F;
     font-name: @secondaryFontNameBold;
     font-color: #FFFFFF;
     text-shadow-color: clear;

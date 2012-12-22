@@ -20,7 +20,7 @@
 @property (nonatomic,retain) NSString *email;
 @property (nonatomic,retain) NSString *phone;
 @property (nonatomic,retain) NSString *htmlDescription;
-@property (nonatomic,retain) NSString *description;
+@property (nonatomic,retain) NSString *desc;
 @property (nonatomic,retain) NSArray *tags;
 
 @end

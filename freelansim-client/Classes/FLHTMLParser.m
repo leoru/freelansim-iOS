@@ -116,7 +116,7 @@
         
         freelancer.name = [ [[freelancerNode findChildOfClass:@"name"] findChildTag:@"a"]  contents];
         freelancer.speciality = [[freelancerNode findChildOfClass:@"description"] contents];
-        freelancer.description = [[freelancerNode findChildOfClass:@"text"] contents];
+        freelancer.desc = [[freelancerNode findChildOfClass:@"text"] contents];
         NSString *thumbPath = [[[[freelancerNode findChildOfClass:@"avatar"] findChildTag:@"a"] findChildTag:@"img"] getAttributeNamed:@"src"];
 
         freelancer.thumbPath = [FLServerHostString stringByAppendingPathComponent:thumbPath];

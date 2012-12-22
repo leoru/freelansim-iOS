@@ -76,8 +76,9 @@
             failure(operation,error);
         }
     }];
-    [self clearAuthorizationHeader];
 }
+
+
 
 -(void)loadTask:(FLTask *)task withSuccess:(FLHTTPClientSuccessWithTaskObject)success failure:(FLHTTPClientFailure)failure {
     
@@ -95,6 +96,39 @@
             failure(operation,error);
         }
     }];
+}
+
+-(void)getFreelancersWithCategories:(NSArray *)categories page:(int)page success:(FLHTTPClientSuccessWithArray)success failure:(FLHTTPClientFailure)failure {
+    
+    NSString *categoriesString = @"";
+    if (categories) {
+        for (FLCategory *category in categories) {
+            categoriesString = [categoriesString stringByAppendingFormat:@"%@,",category.subcategories];
+        }
+    }
+    
+    [self getPath:@"/freelancers" parameters:@{@"categories":categoriesString,@"page":@(page)} success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        NSData *html = (NSData *)responseObject;
+        if (html) {
+            NSError *error;
+            FLHTMLParser *parser = [[FLHTMLParser alloc] initWithData:html error:&error];
+            NSArray *freelancers = [parser parseFreelancers];
+            
+            BOOL stop = NO;
+            if (freelancers.count == 0) {
+                stop = YES;
+            }
+            
+            success(freelancers,operation,responseObject, &stop);
+        }
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        if (failure) {
+            failure(operation,error);
+        }
+    }];
+    
 }
 
 @end

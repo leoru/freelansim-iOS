@@ -1,20 +1,19 @@
 //
-//  FLTasksController.m
+//  FLFreelancersController.m
 //  freelansim-client
 //
-//  Created by Кирилл on 16.12.12.
+//  Created by Кирилл on 22.12.12.
 //  Copyright (c) 2012 Kirill Kunst. All rights reserved.
 //
 
-#import "FLTasksController.h"
-#import "FLTaskController.h"
-#import "SVProgressHUD.h"
+#import "FLFreelancersController.h"
+#import "UIImageView+WebCache.h"
 
-@interface FLTasksController ()
+@interface FLFreelancersController ()
 
 @end
 
-@implementation FLTasksController
+@implementation FLFreelancersController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -28,11 +27,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.tasks = [NSMutableArray array];
+    self.freelancers = [NSMutableArray array];
     stopSearch = NO;
     page = 1;
-    self.tasksTable.delegate = self;
-    self.tasksTable.dataSource = self;
+    self.freelancersTable.delegate = self;
+    self.freelancersTable.dataSource = self;
     
 }
 
@@ -48,27 +47,27 @@
     return 1;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.tasks.count + 1;
+    return self.freelancers.count + 1;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *cellIdentifier = @"FLTaskCell";
+    static NSString *cellIdentifier = @"FLFreelancerCell";
     static NSString *loadingCellIdentifier = @"LoadingCell";
     static NSString *emptyCellIdentifier = @"FLEmptyCell";
     UITableViewCell *cell;
     
     
-    if (indexPath.row == self.tasks.count) {
+    if (indexPath.row == self.freelancers.count) {
         if (!stopSearch) {
             cell = [tableView dequeueReusableCellWithIdentifier:loadingCellIdentifier];
             if (!cell) {
                 cell = [[NSBundle mainBundle] loadNibNamed:loadingCellIdentifier owner:nil options:nil][0];
             }
             
-            [[FLHTTPClient sharedClient] getTasksWithCategories:self.selectedCategories page:page++ success:^(NSArray *objects, AFHTTPRequestOperation *operation, id responseObject, BOOL *stop) {
+            [[FLHTTPClient sharedClient] getFreelancersWithCategories:self.selectedCategories page:page++ success:^(NSArray *objects, AFHTTPRequestOperation *operation, id responseObject, BOOL *stop) {
                 dispatch_async(dispatch_get_main_queue(), ^{
                     stopSearch = *stop;
-                    [self.tasks addObjectsFromArray:objects];
-                    [self.tasksTable reloadData];
+                    [self.freelancers addObjectsFromArray:objects];
+                    [self.freelancersTable reloadData];
                 });
             } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
                 
@@ -86,27 +85,31 @@
             cell = [[NSBundle mainBundle] loadNibNamed:cellIdentifier owner:nil options:nil][0];
         }
         
-        UILabel *taskTitle = (UILabel *)[cell viewWithTag:1];
-        UILabel *taskCategory = (UILabel *)[cell viewWithTag:2];
-        UILabel *taskShortDescription = (UILabel *)[cell viewWithTag:3];
+        UILabel *freelancerName = (UILabel *)[cell viewWithTag:1];
+        UILabel *freelancerCategory = (UILabel *)[cell viewWithTag:2];
+        UILabel *freelancerShortDescription = (UILabel *)[cell viewWithTag:3];
         UILabel *priceLabel = (UILabel *)[cell viewWithTag:4];
         
-        priceLabel.layer.cornerRadius = 5.0f;
-        priceLabel.backgroundColor = [UIColor colorWithRed:0.96f green:0.87f blue:0.66f alpha:1.00f];
-        priceLabel.layer.borderColor = [UIColor colorWithRed:0.66f green:0.44f blue:0.09f alpha:1.00f].CGColor;
-        priceLabel.textColor = [UIColor colorWithRed:0.26f green:0.29f blue:0.32f alpha:1.00f];
-        priceLabel.layer.borderWidth = 1.0f;
-        FLTask *task = self.tasks[indexPath.row];
-        taskTitle.text = task.title;
-        taskCategory.text = task.category;
-        taskShortDescription.text = task.shortDescription;
-        priceLabel.text = task.price;
-        [priceLabel sizeToFit];
+        UIActivityIndicatorView *loader = (UIActivityIndicatorView *)[cell viewWithTag:10];
+        UIImageView *thumb = (UIImageView *)[cell viewWithTag:5];
+        thumb.hidden = YES;
         
-        CGRect frame = priceLabel.frame;
-        frame.size.height += 5;
-        frame.size.width += 5;
-        priceLabel.frame = frame;
+//        priceLabel.layer.cornerRadius = 5.0f;
+//        priceLabel.backgroundColor = [UIColor colorWithRed:0.96f green:0.87f blue:0.66f alpha:1.00f];
+//        priceLabel.layer.borderColor = [UIColor colorWithRed:0.66f green:0.44f blue:0.09f alpha:1.00f].CGColor;
+//        priceLabel.textColor = [UIColor colorWithRed:0.26f green:0.29f blue:0.32f alpha:1.00f];
+//        priceLabel.layer.borderWidth = 1.0f;
+        FLFreelancer *freelancer = self.freelancers[indexPath.row];
+        [thumb setImageWithURL:[NSURL URLWithString:freelancer.thumbPath]  placeholderImage:nil success:^(UIImage *image, BOOL cached) {
+            loader.hidden = YES;
+            thumb.hidden = NO;
+        } failure:^(NSError *error) {
+            
+        }];
+        freelancerName.text = freelancer.name;
+        freelancerCategory.text = freelancer.speciality;
+        freelancerShortDescription.text = freelancer.desc;
+        priceLabel.text = freelancer.price;
     }
     
     UIView *backgroundView = [[UIView alloc] initWithFrame:CGRectZero];
@@ -116,22 +119,22 @@
     return cell;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 135;
+    return 100;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    selectedTask = self.tasks[indexPath.row];
-    [self performSegueWithIdentifier:@"TaskSegue" sender:self];
-    [SVProgressHUD showWithStatus:@"Загрузка..." maskType:SVProgressHUDMaskTypeGradient];
+//    
+//    selectedTask = self.tasks[indexPath.row];
+//    [self performSegueWithIdentifier:@"FreelancerSegue" sender:self];
+//    [SVProgressHUD showWithStatus:@"Загрузка..." maskType:SVProgressHUDMaskTypeGradient];
     
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"TaskSegue"]) {
-        FLTaskController *taskController = [segue destinationViewController];
-        taskController.task = selectedTask;
-    } else if ([segue.identifier isEqualToString:@"CategoriesSegue"]) {
+//        FLTaskController *taskController = [segue destinationViewController];
+//        taskController.task = selectedTask;
+    } else if ([segue.identifier isEqualToString:@"FreelancersCategoriesSegue"]) {
         FLCategoriesController *categoriesController = [segue destinationViewController];
         categoriesController.delegate = self;
         categoriesController.selectedCategories = self.selectedCategories;
@@ -142,12 +145,9 @@
 
 -(void)categoriesDidSelected:(NSArray *)categories {
     self.selectedCategories = categories;
-    self.tasks = [NSMutableArray array];
+    self.freelancers = [NSMutableArray array];
     stopSearch = NO;
     page = 1;
-    [self.tasksTable reloadData];
+    [self.freelancersTable reloadData];
 }
-
-
-
 @end

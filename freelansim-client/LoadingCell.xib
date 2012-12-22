@@ -42,8 +42,8 @@
 						<array class="NSMutableArray" key="NSSubviews">
 							<object class="IBUIActivityIndicatorView" id="385793210">
 								<reference key="NSNextResponder" ref="771706434"/>
-								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{91, 41}, {37, 37}}</string>
+								<int key="NSvFlags">301</int>
+								<string key="NSFrame">{{91, 48}, {37, 37}}</string>
 								<reference key="NSSuperview" ref="771706434"/>
 								<reference key="NSNextKeyView" ref="728731394"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
@@ -59,10 +59,9 @@
 							</object>
 							<object class="IBUILabel" id="728731394">
 								<reference key="NSNextResponder" ref="771706434"/>
-								<int key="NSvFlags">288</int>
-								<string key="NSFrame">{{136, 49}, {93, 21}}</string>
+								<int key="NSvFlags">301</int>
+								<string key="NSFrame">{{136, 56}, {93, 21}}</string>
 								<reference key="NSSuperview" ref="771706434"/>
-								<reference key="NSNextKeyView"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
@@ -80,20 +79,20 @@
 								</object>
 								<int key="IBUIBaselineAdjustment">0</int>
 								<object class="IBUIFontDescription" key="IBUIFontDescription">
-									<string key="name">AppleSDGothicNeo-Medium</string>
-									<string key="family">Apple SD Gothic Neo</string>
+									<string key="name">HelveticaNeue</string>
+									<string key="family">Helvetica Neue</string>
 									<int key="traits">0</int>
 									<double key="pointSize">17</double>
 								</object>
 								<object class="NSFont" key="IBUIFont">
-									<string key="NSName">AppleSDGothicNeo-Medium</string>
+									<string key="NSName">HelveticaNeue-Medium</string>
 									<double key="NSSize">17</double>
 									<int key="NSfFlags">16</int>
 								</object>
 								<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
 							</object>
 						</array>
-						<string key="NSFrameSize">{320, 119}</string>
+						<string key="NSFrameSize">{320, 134}</string>
 						<reference key="NSSuperview" ref="878129042"/>
 						<reference key="NSNextKeyView" ref="385793210"/>
 						<string key="NSReuseIdentifierKey">_NS:11</string>
@@ -108,7 +107,7 @@
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 					</object>
 				</array>
-				<string key="NSFrameSize">{320, 120}</string>
+				<string key="NSFrameSize">{320, 135}</string>
 				<reference key="NSSuperview"/>
 				<reference key="NSNextKeyView" ref="771706434"/>
 				<string key="NSReuseIdentifierKey">_NS:9</string>

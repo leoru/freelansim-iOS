@@ -73,7 +73,9 @@
 		6A529B95167A47FC009A1CCB /* UITableViewCell+NUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A529B6E167A47FC009A1CCB /* UITableViewCell+NUI.m */; };
 		6A529B96167A47FC009A1CCB /* UITextField+NUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A529B70167A47FC009A1CCB /* UITextField+NUI.m */; };
 		6A529B97167A47FC009A1CCB /* UIView+NUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A529B72167A47FC009A1CCB /* UIView+NUI.m */; };
+		6A8A96F516861B9C00C285BE /* FLFreelancersController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A8A96F416861B9C00C285BE /* FLFreelancersController.m */; };
 		6A8F515B1684EDF200AD0CC2 /* FLFreelancer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A8F515A1684EDF200AD0CC2 /* FLFreelancer.m */; };
+		6A8F515E168572F100AD0CC2 /* FLFreelancerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A8F515D168572F100AD0CC2 /* FLFreelancerCell.xib */; };
 		6AED8737167D9B3500EBC6CD /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AED8736167D9B3500EBC6CD /* CoreImage.framework */; };
 		6AED873A167D9B3B00EBC6CD /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AED8739167D9B3B00EBC6CD /* QuartzCore.framework */; };
 		6D1A659EDAF44F38BE9E013F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 41AF178834E54C6E9830FDCB /* libPods.a */; };
@@ -209,8 +211,13 @@
 		6A529B70167A47FC009A1CCB /* UITextField+NUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+NUI.m"; sourceTree = "<group>"; };
 		6A529B71167A47FC009A1CCB /* UIView+NUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+NUI.h"; sourceTree = "<group>"; };
 		6A529B72167A47FC009A1CCB /* UIView+NUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+NUI.m"; sourceTree = "<group>"; };
+		6A8A96F316861B9C00C285BE /* FLFreelancersController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FLFreelancersController.h; path = Classes/Controllers/Freelancers/FLFreelancersController.h; sourceTree = "<group>"; };
+		6A8A96F416861B9C00C285BE /* FLFreelancersController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FLFreelancersController.m; path = Classes/Controllers/Freelancers/FLFreelancersController.m; sourceTree = "<group>"; };
 		6A8F51591684EDF200AD0CC2 /* FLFreelancer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FLFreelancer.h; path = Classes/Models/FLFreelancer.h; sourceTree = "<group>"; };
 		6A8F515A1684EDF200AD0CC2 /* FLFreelancer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FLFreelancer.m; path = Classes/Models/FLFreelancer.m; sourceTree = "<group>"; };
+		6A8F515D168572F100AD0CC2 /* FLFreelancerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FLFreelancerCell.xib; sourceTree = "<group>"; };
+		6A8F515F1685762C00AD0CC2 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		6A8F51601685762C00AD0CC2 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6AED8736167D9B3500EBC6CD /* CoreImage.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 		6AED8739167D9B3B00EBC6CD /* QuartzCore.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		A415B447167EE914002FFC83 /* FLTaskController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FLTaskController.h; path = Classes/Controllers/Tasks/FLTaskController.h; sourceTree = "<group>"; };
@@ -299,6 +306,7 @@
 		6A1AE749167E1298005DE0E5 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				6A8A96F116861B6F00C285BE /* Freelancers */,
 				6A2677981680A19000F178E7 /* Categories */,
 				6A26779016809EF400F178E7 /* Base */,
 				A415B446167EE8F8002FFC83 /* Tasks */,
@@ -313,6 +321,7 @@
 				6A1AE75A167E18CD005DE0E5 /* LoadingCell.xib */,
 				6A1AE75C167E1908005DE0E5 /* FLEmptyCell.xib */,
 				6A26779F1680AAE800F178E7 /* CategoryCell.xib */,
+				6A8F515D168572F100AD0CC2 /* FLFreelancerCell.xib */,
 			);
 			name = VIews;
 			sourceTree = "<group>";
@@ -573,6 +582,15 @@
 			path = UI;
 			sourceTree = "<group>";
 		};
+		6A8A96F116861B6F00C285BE /* Freelancers */ = {
+			isa = PBXGroup;
+			children = (
+				6A8A96F316861B9C00C285BE /* FLFreelancersController.h */,
+				6A8A96F416861B9C00C285BE /* FLFreelancersController.m */,
+			);
+			name = Freelancers;
+			sourceTree = "<group>";
+		};
 		6AED873F167D9F4300EBC6CD /* Application */ = {
 			isa = PBXGroup;
 			children = (
@@ -672,6 +690,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				ru,
 			);
 			mainGroup = 6A529AD3167A47AF009A1CCB;
 			productRefGroup = 6A529ADF167A47AF009A1CCB /* Products */;
@@ -711,6 +730,7 @@
 				A429B367167F3B0C00078D1E /* 0220.png in Resources */,
 				A429B368167F3B0C00078D1E /* 0220@2x.png in Resources */,
 				6A2677A01680AAE800F178E7 /* CategoryCell.xib in Resources */,
+				6A8F515E168572F100AD0CC2 /* FLFreelancerCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -803,6 +823,7 @@
 				6A26779B1680A1AF00F178E7 /* FLCategoriesController.m in Sources */,
 				6A26779E1680A32300F178E7 /* FLCategory.m in Sources */,
 				6A8F515B1684EDF200AD0CC2 /* FLFreelancer.m in Sources */,
+				6A8A96F516861B9C00C285BE /* FLFreelancersController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -829,6 +850,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				6A529AEC167A47AF009A1CCB /* en */,
+				6A8F515F1685762C00AD0CC2 /* ru */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -845,6 +867,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				6A529B1B167A47AF009A1CCB /* en */,
+				6A8F51601685762C00AD0CC2 /* ru */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
