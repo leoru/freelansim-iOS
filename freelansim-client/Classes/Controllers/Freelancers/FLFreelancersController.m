@@ -8,6 +8,8 @@
 
 #import "FLFreelancersController.h"
 #import "UIImageView+WebCache.h"
+#import "SVProgressHUD.h"
+#import "FLFreelancerController.h"
 
 @interface FLFreelancersController ()
 
@@ -94,11 +96,6 @@
         UIImageView *thumb = (UIImageView *)[cell viewWithTag:5];
         thumb.hidden = YES;
         
-//        priceLabel.layer.cornerRadius = 5.0f;
-//        priceLabel.backgroundColor = [UIColor colorWithRed:0.96f green:0.87f blue:0.66f alpha:1.00f];
-//        priceLabel.layer.borderColor = [UIColor colorWithRed:0.66f green:0.44f blue:0.09f alpha:1.00f].CGColor;
-//        priceLabel.textColor = [UIColor colorWithRed:0.26f green:0.29f blue:0.32f alpha:1.00f];
-//        priceLabel.layer.borderWidth = 1.0f;
         FLFreelancer *freelancer = self.freelancers[indexPath.row];
         [thumb setImageWithURL:[NSURL URLWithString:freelancer.thumbPath]  placeholderImage:nil success:^(UIImage *image, BOOL cached) {
             loader.hidden = YES;
@@ -123,17 +120,17 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-//    
-//    selectedTask = self.tasks[indexPath.row];
-//    [self performSegueWithIdentifier:@"FreelancerSegue" sender:self];
-//    [SVProgressHUD showWithStatus:@"Загрузка..." maskType:SVProgressHUDMaskTypeGradient];
+    
+    selectedFreelancer = self.freelancers[indexPath.row];
+    [self performSegueWithIdentifier:@"FreelancerSegue" sender:self];
+    [SVProgressHUD showWithStatus:@"Загрузка..." maskType:SVProgressHUDMaskTypeGradient];
     
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([segue.identifier isEqualToString:@"TaskSegue"]) {
-//        FLTaskController *taskController = [segue destinationViewController];
-//        taskController.task = selectedTask;
+    if ([segue.identifier isEqualToString:@"FreelancerSegue"]) {
+        FLFreelancerController *freelancerController = [segue destinationViewController];
+        freelancerController.freelancer = selectedFreelancer;
     } else if ([segue.identifier isEqualToString:@"FreelancersCategoriesSegue"]) {
         FLCategoriesController *categoriesController = [segue destinationViewController];
         categoriesController.delegate = self;

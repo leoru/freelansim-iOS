@@ -131,4 +131,21 @@
     
 }
 
+-(void)loadFreelancer:(FLFreelancer *)freelancer withSuccess:(FLHTTPClientSuccessWithFreelancerObject)success failure:(FLHTTPClientFailure)failure {
+    [self getPath:freelancer.link parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSData *html = (NSData *)responseObject;
+        if (html) {
+            NSError *error;
+            FLHTMLParser *parser = [[FLHTMLParser alloc] initWithData:html error:&error];
+            FLFreelancer *fl = [parser parseToFreelancer:freelancer];
+            success(fl,operation,responseObject);
+        }
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        if (failure) {
+            failure(operation,error);
+        }
+    }];
+}
+
 @end

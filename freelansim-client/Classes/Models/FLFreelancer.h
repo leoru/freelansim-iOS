@@ -11,6 +11,7 @@
 @interface FLFreelancer : NSObject
 
 @property (nonatomic,retain) NSString *name;
+@property (nonatomic,retain) NSString *link;
 @property (nonatomic,retain) NSString *price;
 @property (nonatomic,retain) NSString *speciality;
 @property (nonatomic,retain) NSString *avatarPath;
@@ -22,5 +23,4 @@
 @property (nonatomic,retain) NSString *htmlDescription;
 @property (nonatomic,retain) NSString *desc;
 @property (nonatomic,retain) NSArray *tags;
-
 @end

@@ -93,6 +93,44 @@
 }
 
 
+
+-(FLFreelancer *)parseToFreelancer:(FLFreelancer *)fl {
+    FLFreelancer *freelancer = fl;
+    HTMLNode *freelancerCard = [[self body] findChildOfClass:@"freelancer_card"];
+    
+    // image
+    NSString *imagePath = [[[freelancerCard findChildOfClass:@"avatar"] findChildTag:@"img"] getAttributeNamed:@"src"];
+    freelancer.avatarPath = [FLServerHostString stringByAppendingPathComponent:imagePath];
+    
+    //contacts
+    
+    HTMLNode *contactsNode = [freelancerCard findChildOfClass:@"contacts"];
+    
+    freelancer.email = [[contactsNode findChildOfClass:@"mail"] contents];
+    freelancer.phone = [[contactsNode findChildOfClass:@"phone"] contents];
+    freelancer.site = [[contactsNode findChildOfClass:@"site"] contents];
+    
+    //location
+    freelancer.location = [[[freelancerCard findChildOfClass:@"short_info"] findChildOfClass:@"location"] contents];
+    
+    // about content
+    HTMLNode *about = [freelancerCard findChildOfClass:@"about"];
+    NSArray *infoBlocks = [[about findChildOfClass:@"more_information"] findChildrenOfClass:@"block"];
+    freelancer.htmlDescription = [infoBlocks[0] rawContents];
+    
+    // skills
+    NSArray *skillsBlocks = [[about findChildOfClass:@"skills_column"] findChildrenOfClass:@"block"];
+    NSArray *tags = [[skillsBlocks[0] findChildOfClass:@"tags"] findChildrenOfClass:@"professional"];
+    NSMutableArray *tagsArray = [NSMutableArray array];
+    for (HTMLNode *tag in tags) {
+        [tagsArray addObject:tag.contents];
+    }
+    freelancer.tags = tagsArray;
+    
+    return freelancer;
+}
+
+
 -(NSArray *)parseFreelancers {
     NSMutableArray *freelancers = [NSMutableArray array];
     
@@ -105,6 +143,7 @@
     for (HTMLNode *freelancerNode in freelancersNodes) {
         FLFreelancer *freelancer = [[FLFreelancer alloc] init];
         
+        // price
         HTMLNode *freelancerPriceNode = [freelancerNode findChildOfClass:@"price"];
         NSArray *priceNodes = [freelancerPriceNode findChildTags:@"span"];
         freelancer.price = @"";
@@ -114,12 +153,23 @@
             freelancer.price = [freelancer.price stringByAppendingFormat:@" %@",node.contents];
         }];
         
-        freelancer.name = [ [[freelancerNode findChildOfClass:@"name"] findChildTag:@"a"]  contents];
+        //name
+        freelancer.name = [[[freelancerNode findChildOfClass:@"name"] findChildTag:@"a"]  contents];
+        
+        // link
+        NSString *relativePath = [[[freelancerNode findChildOfClass:@"name"] findChildTag:@"a"] getAttributeNamed:@"href"];
+        freelancer.link = [FLServerHostString stringByAppendingString:relativePath];
+        
+        //speciality
         freelancer.speciality = [[freelancerNode findChildOfClass:@"description"] contents];
+        
+        // desc
         freelancer.desc = [[freelancerNode findChildOfClass:@"text"] contents];
+        
+        // thumb
         NSString *thumbPath = [[[[freelancerNode findChildOfClass:@"avatar"] findChildTag:@"a"] findChildTag:@"img"] getAttributeNamed:@"src"];
-
         freelancer.thumbPath = [FLServerHostString stringByAppendingPathComponent:thumbPath];
+        
         
         [freelancers addObject:freelancer];
     }

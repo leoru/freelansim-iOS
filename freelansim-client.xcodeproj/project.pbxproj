@@ -74,6 +74,7 @@
 		6A529B96167A47FC009A1CCB /* UITextField+NUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A529B70167A47FC009A1CCB /* UITextField+NUI.m */; };
 		6A529B97167A47FC009A1CCB /* UIView+NUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A529B72167A47FC009A1CCB /* UIView+NUI.m */; };
 		6A8A96F516861B9C00C285BE /* FLFreelancersController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A8A96F416861B9C00C285BE /* FLFreelancersController.m */; };
+		6A8A96F816863A7900C285BE /* FLFreelancerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A8A96F716863A7800C285BE /* FLFreelancerController.m */; };
 		6A8F515B1684EDF200AD0CC2 /* FLFreelancer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A8F515A1684EDF200AD0CC2 /* FLFreelancer.m */; };
 		6A8F515E168572F100AD0CC2 /* FLFreelancerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A8F515D168572F100AD0CC2 /* FLFreelancerCell.xib */; };
 		6AED8737167D9B3500EBC6CD /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AED8736167D9B3500EBC6CD /* CoreImage.framework */; };
@@ -213,6 +214,8 @@
 		6A529B72167A47FC009A1CCB /* UIView+NUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+NUI.m"; sourceTree = "<group>"; };
 		6A8A96F316861B9C00C285BE /* FLFreelancersController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FLFreelancersController.h; path = Classes/Controllers/Freelancers/FLFreelancersController.h; sourceTree = "<group>"; };
 		6A8A96F416861B9C00C285BE /* FLFreelancersController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FLFreelancersController.m; path = Classes/Controllers/Freelancers/FLFreelancersController.m; sourceTree = "<group>"; };
+		6A8A96F616863A7800C285BE /* FLFreelancerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FLFreelancerController.h; path = Classes/Controllers/Freelancers/FLFreelancerController.h; sourceTree = "<group>"; };
+		6A8A96F716863A7800C285BE /* FLFreelancerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FLFreelancerController.m; path = Classes/Controllers/Freelancers/FLFreelancerController.m; sourceTree = "<group>"; };
 		6A8F51591684EDF200AD0CC2 /* FLFreelancer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FLFreelancer.h; path = Classes/Models/FLFreelancer.h; sourceTree = "<group>"; };
 		6A8F515A1684EDF200AD0CC2 /* FLFreelancer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FLFreelancer.m; path = Classes/Models/FLFreelancer.m; sourceTree = "<group>"; };
 		6A8F515D168572F100AD0CC2 /* FLFreelancerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FLFreelancerCell.xib; sourceTree = "<group>"; };
@@ -587,6 +590,8 @@
 			children = (
 				6A8A96F316861B9C00C285BE /* FLFreelancersController.h */,
 				6A8A96F416861B9C00C285BE /* FLFreelancersController.m */,
+				6A8A96F616863A7800C285BE /* FLFreelancerController.h */,
+				6A8A96F716863A7800C285BE /* FLFreelancerController.m */,
 			);
 			name = Freelancers;
 			sourceTree = "<group>";
@@ -824,6 +829,7 @@
 				6A26779E1680A32300F178E7 /* FLCategory.m in Sources */,
 				6A8F515B1684EDF200AD0CC2 /* FLFreelancer.m in Sources */,
 				6A8A96F516861B9C00C285BE /* FLFreelancersController.m in Sources */,
+				6A8A96F816863A7900C285BE /* FLFreelancerController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

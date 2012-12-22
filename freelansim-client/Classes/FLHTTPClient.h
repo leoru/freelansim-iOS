@@ -30,5 +30,5 @@ typedef void (^FLHTTPClientFailure)(AFHTTPRequestOperation *operation, NSError *
 
 -(void)loadTask:(FLTask *)task withSuccess:(FLHTTPClientSuccessWithTaskObject)success failure:(FLHTTPClientFailure)failure;
 
--(void)loadFreelancer:(FLFreelancer *)freelancer withSuccess:(FLHTTPClientSuccessWithTaskObject)success failure:(FLHTTPClientFailure)failure;
+-(void)loadFreelancer:(FLFreelancer *)freelancer withSuccess:(FLHTTPClientSuccessWithFreelancerObject)success failure:(FLHTTPClientFailure)failure;
 @end
