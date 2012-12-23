@@ -18,4 +18,5 @@ install_resource()
   esac
 }
 install_resource 'MWPhotoBrowser/MWPhotoBrowser/MWPhotoBrowser.bundle'
+install_resource 'SSToolkit/Assets'
 install_resource 'SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle'

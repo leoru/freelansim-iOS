@@ -23,4 +23,5 @@
 @property (nonatomic,retain) NSString *htmlDescription;
 @property (nonatomic,retain) NSString *desc;
 @property (nonatomic,retain) NSArray *tags;
+@property (nonatomic,retain) NSArray *contacts;
 @end

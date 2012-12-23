@@ -7,6 +7,7 @@
 //
 
 #import "FLHTMLParser.h"
+#import "FLContact.h"
 
 @implementation FLHTMLParser
 -(id)initWithData:(NSData *)data error:(NSError *__autoreleasing *)error {
@@ -105,10 +106,34 @@
     //contacts
     
     HTMLNode *contactsNode = [freelancerCard findChildOfClass:@"contacts"];
+    NSMutableArray *contacts = [NSMutableArray array];
+
+    NSString *email;
+    HTMLNode *emailNode = [contactsNode findChildOfClass:@"mail"];
+    if (emailNode) {
+        email = [NSString stringWithFormat:@"%@@%@",[emailNode getAttributeNamed:@"data-mail-name"],[emailNode getAttributeNamed:@"data-mail-host"]];
+    }
     
-    freelancer.email = [[contactsNode findChildOfClass:@"mail"] contents];
+    freelancer.email = email;
+    FLContact *contact;
+    if (freelancer.email) {
+        contact = [[FLContact alloc] initWithText:freelancer.email type:@"mail"];
+        [contacts addObject:contact];
+    }
+    
     freelancer.phone = [[contactsNode findChildOfClass:@"phone"] contents];
+    if (freelancer.phone) {
+        contact = [[FLContact alloc] initWithText:freelancer.phone type:@"phone"];
+        [contacts addObject:contact];
+    }
+
     freelancer.site = [[contactsNode findChildOfClass:@"site"] contents];
+    if (freelancer.site) {
+        contact = [[FLContact alloc] initWithText:freelancer.site type:@"site"];
+        [contacts addObject:contact];
+    }
+    
+    freelancer.contacts = contacts;
     
     //location
     freelancer.location = [[[freelancerCard findChildOfClass:@"short_info"] findChildOfClass:@"location"] contents];

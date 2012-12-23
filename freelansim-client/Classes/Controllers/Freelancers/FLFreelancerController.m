@@ -10,6 +10,8 @@
 #import "UIImageView+WebCache.h"
 #import "FLHTTPClient.h"
 #import "SVProgressHUD.h"
+#import "FLContact.h"
+#import "NUIRenderer.h"
 
 @interface FLFreelancerController ()
 
@@ -43,7 +45,6 @@
             [SVProgressHUD dismiss];
         });
     }];
-	[self initUI];
 }
 
 - (void)didReceiveMemoryWarning
@@ -57,15 +58,54 @@
     [self setNameLabel:nil];
     [self setSpecialityLabel:nil];
     [self setPriceLabel:nil];
-    [self setViewsLabel:nil];
+    [self setLocationLabel:nil];
+    [self setScrollView:nil];
     [super viewDidUnload];
 }
 
 
 -(void)initUI {
-    [self.avatarView setImageWithURL:[NSURL URLWithString:self.freelancer.link]];
+    self.navigationItem.title = self.freelancer.name;
+    CGRect avatarFrame = self.avatarView.frame;
+    avatarFrame.size.width = 100;
+    avatarFrame.size.height = 100;
+    self.avatarView.frame = avatarFrame;
+    self.avatarView.contentMode = UIViewContentModeScaleAspectFit;
+    [self.avatarView setImageWithURL:[NSURL URLWithString:self.freelancer.avatarPath]];
     self.priceLabel.text = self.freelancer.price;
     self.nameLabel.text = self.freelancer.name;
     self.specialityLabel.text = self.freelancer.speciality;
+    self.locationLabel.text = self.freelancer.location;
+    self.line = [[SSLineView alloc] initWithFrame:CGRectMake(20.0f, 160.0f, 280.0f, 2.0f)];
+    self.line.lineColor = [UIColor colorWithRed:0.26f green:0.29f blue:0.32f alpha:1.00f];
+	[self.scrollView addSubview:self.line];
+    [self drawContactsForm];
+}
+
+-(void)drawContactsForm {
+    UIView *contactsView = [[UIView alloc] init];
+    contactsView.frame = CGRectMake(10.0f, self.line.frame.origin.y + 10, 300.0f, 200.0f);
+    
+    UILabel *titleLabel = [[UILabel alloc] initWithFrame:contactsView.frame];
+    titleLabel.frame = CGRectMake(0.0f,5.0f,300.0f,40.0f);
+    titleLabel.text = @"Контакты";
+    [titleLabel sizeToFit];
+    
+    int i = 0;
+    for (FLContact *contact in self.freelancer.contacts) {
+        UIButton *btn = [[UIButton alloc] init];
+        btn.frame = CGRectMake(0,(i*45) + titleLabel.frame.origin.y + titleLabel.frame.size.height,200.0f,40.0f);
+        
+        [btn setTitle:contact.text forState:UIControlStateNormal];
+        [NUIRenderer renderButton:btn withClass:@"Button"];
+        [btn sizeToFit];
+        btn.frame = CGRectMake(btn.frame.origin.x,btn.frame.origin.y,btn.frame.size.width + 5, btn.frame.size.height + 5);
+        [contactsView addSubview:btn];
+        i++;
+    }
+    
+    [contactsView addSubview:titleLabel];
+    [self.scrollView addSubview:contactsView];
+    
 }
 @end

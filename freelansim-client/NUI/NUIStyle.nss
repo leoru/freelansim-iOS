@@ -36,6 +36,7 @@ SmallButton {
     height: 24;
     font-size: 14;
     corner-radius: 5;
+    padding: 5;
 }
 Label {
     font-name: @secondaryFontName;
