@@ -515,11 +515,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "freelansim-client/Classes/Controllers/Freelancers/FLFreelancerController.m"
-         timestampString = "377943883.811661"
+         timestampString = "378146258.646992"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "78"
-         endingLineNumber = "78"
+         startingLineNumber = "87"
+         endingLineNumber = "87"
          landmarkName = "-initUI"
          landmarkType = "5">
       </FileBreakpoint>
@@ -541,51 +541,12 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "freelansim-client/Classes/Controllers/Freelancers/FLFreelancerController.m"
-         timestampString = "377943883.811661"
+         timestampString = "378146258.646992"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "77"
-         endingLineNumber = "77"
+         startingLineNumber = "86"
+         endingLineNumber = "86"
          landmarkName = "-initUI"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "freelansim-client/Classes/Controllers/Freelancers/FLFreelancerController.m"
-         timestampString = "377943893.34558"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "95"
-         endingLineNumber = "95"
-         landmarkName = "-drawContactsForm"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "freelansim-client/Classes/Controllers/Freelancers/FLFreelancerController.m"
-         timestampString = "377944083.777316"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "97"
-         endingLineNumber = "97"
-         landmarkName = "-drawContactsForm"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "freelansim-client/Classes/Controllers/Freelancers/FLFreelancerController.m"
-         timestampString = "377944168.623434"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "96"
-         endingLineNumber = "96"
-         landmarkName = "-drawContactsForm"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
