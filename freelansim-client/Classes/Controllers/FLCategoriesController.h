@@ -24,6 +24,7 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *categoriesTable;
 @property (weak, nonatomic) IBOutlet UINavigationItem *navItem;
+@property (weak, nonatomic) IBOutlet UINavigationBar *navBar;
 
 @property (nonatomic,retain) id<FLCategoriesDelegate> delegate;
 @property (nonatomic,retain) NSMutableArray *selectedCategories;

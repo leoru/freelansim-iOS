@@ -25,7 +25,7 @@ Button {
     font-name: @secondaryFontName;
     font-size: 18;
     height: 37;
-    corner-radius: 7;
+    corner-radius: 5;
 }
 LargeButton {
     height: 50;
@@ -53,7 +53,7 @@ SmallLabel {
 }
 NavigationBar {
     font-name: @secondaryFontName;
-    font-size: 20;
+    font-size: 15;
     font-color: @primaryFontColor;
     text-shadow-color: clear;
     background-color-top: @primaryBackgroundColorTop;

@@ -35,6 +35,8 @@
 - (void)viewDidLoad
 {
     self.navItem.title = @"Разделы";
+    
+    self.navBar.tintColor = [UIColor colorWithRed:0.97f green:0.67f blue:0.44f alpha:1.00f];
     categories = [FLCategory categories];
     
     self.categoriesTable.delegate = self;
@@ -50,6 +52,7 @@
 - (void)viewDidUnload {
     [self setNavItem:nil];
     [self setCategoriesTable:nil];
+    [self setNavBar:nil];
     [super viewDidUnload];
 }
 

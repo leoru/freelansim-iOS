@@ -101,6 +101,7 @@
 -(void)drawContactsForm {
     if (self.freelancer.contacts.count > 0) {
         UIView *contactsView = [[UIView alloc] init];
+        contactsView.backgroundColor = [UIColor clearColor];
         contactsView.frame = CGRectMake(10.0f, self.line.frame.origin.y + 10, 300.0f, 200.0f);
         
         UILabel *titleLabel = [[UILabel alloc] initWithFrame:contactsView.frame];
@@ -113,11 +114,11 @@
         for (FLContact *contact in self.freelancer.contacts) {
             UIButton *btn = [[UIButton alloc] init];
             btn.frame = CGRectMake(0,(i*38) + titleLabel.frame.origin.y + titleLabel.frame.size.height + 10,200.0f,40.0f);
-            
+        
             [btn setTitle:contact.text forState:UIControlStateNormal];
-            [NUIRenderer renderButton:btn withClass:@"Button"];
+            //[NUIRenderer renderButton:btn withClass:@"Button"];
             [btn sizeToFit];
-            btn.frame = CGRectMake(btn.frame.origin.x,btn.frame.origin.y,btn.frame.size.width + 5, btn.frame.size.height + 5);
+            btn.frame = CGRectMake(btn.frame.origin.x,btn.frame.origin.y,btn.frame.size.width + 10, btn.frame.size.height + 10);
             [contactsView addSubview:btn];
             i++;
         }

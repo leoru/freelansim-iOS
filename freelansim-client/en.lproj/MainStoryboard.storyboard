@@ -56,6 +56,7 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="categoriesTable" destination="0HH-Bd-EEz" id="eld-Tt-y7e"/>
+                        <outlet property="navBar" destination="d5D-SJ-7r1" id="Tz8-C7-Nxe"/>
                         <outlet property="navItem" destination="HnL-v8-pVj" id="xsw-US-mJz"/>
                     </connections>
                 </viewController>
@@ -81,7 +82,7 @@
                                 </userDefinedRuntimeAttributes>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="string" keyPath="nuiClass" value="View"/>
                         </userDefinedRuntimeAttributes>
@@ -271,6 +272,48 @@
             </objects>
             <point key="canvasLocation" x="778" y="707"/>
         </scene>
+        <!--Table View Controller - Избранное-->
+        <scene sceneID="k7x-up-LGU">
+            <objects>
+                <tableViewController title="Избранное" id="09X-e2-HdT" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="rbd-th-f7B">
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="emT-dL-lLU">
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </tableViewCell>
+                        </prototypes>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Избранное" id="93B-tS-4mP"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aoq-El-b5x" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="803" y="1433"/>
+        </scene>
+        <!--Navigation Controller - Избранное-->
+        <scene sceneID="Kci-nh-Zp7">
+            <objects>
+                <navigationController title="Избранное" definesPresentationContext="YES" id="0Ej-Xz-B6Z" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Избранное" id="jUX-9k-kNg"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="oJq-A4-NBZ">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="09X-e2-HdT" kind="relationship" relationship="rootViewController" id="bCX-4M-oux"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gpm-Bd-cx5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="267" y="1433"/>
+        </scene>
         <!--Freelancer Controller-->
         <scene sceneID="TiP-8W-Hu4">
             <objects>
@@ -374,6 +417,7 @@
                     <connections>
                         <segue destination="Nkf-Ws-XBL" kind="relationship" relationship="viewControllers" id="j9e-xB-6m4"/>
                         <segue destination="Krs-YF-5sG" kind="relationship" relationship="viewControllers" id="Qwj-AC-Yeh"/>
+                        <segue destination="0Ej-Xz-B6Z" kind="relationship" relationship="viewControllers" id="7J5-ek-bM2"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="14" sceneMemberID="firstResponder"/>
@@ -392,6 +436,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="Ywv-uo-V9T"/>
+        <segue reference="cyE-FZ-hGI"/>
     </inferredMetricsTieBreakers>
 </document>
