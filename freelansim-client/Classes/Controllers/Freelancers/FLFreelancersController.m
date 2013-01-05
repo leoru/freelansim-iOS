@@ -25,18 +25,19 @@
     }
     return self;
 }
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    searchQuery = @"";
     self.freelancers = [NSMutableArray array];
     stopSearch = NO;
     page = 1;
     self.freelancersTable.delegate = self;
     self.freelancersTable.dataSource = self;
     
+    self.searchBar.delegate = self;
+    
 }
-
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -44,7 +45,6 @@
 }
 
 #pragma mark - UITableView Datasource
-
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
 }
@@ -65,7 +65,7 @@
                 cell = [[NSBundle mainBundle] loadNibNamed:loadingCellIdentifier owner:nil options:nil][0];
             }
             
-            [[FLHTTPClient sharedClient] getFreelancersWithCategories:self.selectedCategories page:page++ success:^(NSArray *objects, AFHTTPRequestOperation *operation, id responseObject, BOOL *stop) {
+            [[FLHTTPClient sharedClient] getFreelancersWithCategories:self.selectedCategories query:searchQuery page:page++ success:^(NSArray *objects, AFHTTPRequestOperation *operation, id responseObject, BOOL *stop) {
                 dispatch_async(dispatch_get_main_queue(), ^{
                     stopSearch = *stop;
                     [self.freelancers addObjectsFromArray:objects];
@@ -118,7 +118,6 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 100;
 }
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     selectedFreelancer = self.freelancers[indexPath.row];
@@ -127,6 +126,7 @@
     
 }
 
+#pragma mark - Prepare for segue
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"FreelancerSegue"]) {
         FLFreelancerController *freelancerController = [segue destinationViewController];
@@ -138,13 +138,38 @@
     }
 }
 
-
-
+#pragma mark - Select Category Delegate
 -(void)categoriesDidSelected:(NSArray *)categories {
     self.selectedCategories = categories;
     self.freelancers = [NSMutableArray array];
     stopSearch = NO;
     page = 1;
     [self.freelancersTable reloadData];
+}
+
+
+#pragma mark - SearchBar Delegate methods
+-(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
+    [self search];
+    [self.searchBar resignFirstResponder];
+}
+
+-(void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText{
+    if ([searchText isEqualToString:@""]) {
+        [self search];
+        [self.searchBar resignFirstResponder];
+    }
+}
+
+-(void)search{
+    searchQuery = self.searchBar.text;
+    stopSearch = NO;
+    page = 1;
+    self.freelancers = [NSMutableArray array];
+    [self.freelancersTable reloadData];
+}
+- (void)viewDidUnload {
+    [self setSearchBar:nil];
+    [super viewDidUnload];
 }
 @end

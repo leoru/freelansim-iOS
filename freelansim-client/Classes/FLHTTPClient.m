@@ -98,7 +98,7 @@
     }];
 }
 
--(void)getFreelancersWithCategories:(NSArray *)categories page:(int)page success:(FLHTTPClientSuccessWithArray)success failure:(FLHTTPClientFailure)failure {
+-(void)getFreelancersWithCategories:(NSArray *)categories query:(NSString *)query page:(int)page success:(FLHTTPClientSuccessWithArray)success failure:(FLHTTPClientFailure)failure {
     
     NSString *categoriesString = @"";
     if (categories) {
@@ -107,8 +107,8 @@
         }
     }
     
-    [self getPath:@"/freelancers" parameters:@{@"categories":categoriesString,@"page":@(page)} success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        
+    [self getPath:@"/freelancers" parameters:@{@"q":query, @"categories":categoriesString,@"page":@(page)} success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(operation.request.description);
         NSData *html = (NSData *)responseObject;
         if (html) {
             NSError *error;

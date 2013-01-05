@@ -8,8 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
+/**
+ Format HTML utils
+ */
 @interface FLHTMLUtils : NSObject
 
-+(NSString *)taskCSS;
-+(NSString *)formattedTaskDescription:(NSString *)taskHTML;
++(NSString *)CSS;
++(NSString *)formattedDescription:(NSString *)HTML;
 @end

@@ -10,7 +10,7 @@
 
 @implementation FLHTMLUtils
 
-+(NSString *)taskCSS {
++(NSString *)CSS {
     NSString *css = [NSString stringWithFormat:@"\n"
                      "body {font-family: AppleGothic; background-color:transparent; font-size:14px;}"
                      "\n"];
@@ -18,7 +18,7 @@
 }
 
 
-+(NSString *)formattedTaskDescription:(NSString *)taskHTML {
++(NSString *)formattedDescription:(NSString *)HTML {
     NSString *htmlCode = [NSString stringWithFormat:@" \n"
                           "<html> \n"
                           "     <head> \n"
@@ -27,7 +27,7 @@
                           "     <body> \n"
                           "         %@   "
                           "     </body> \n"
-                          "</html>  \n",[self taskCSS], taskHTML];
+                          "</html>  \n",[self CSS], HTML];
     return htmlCode;
 }
 

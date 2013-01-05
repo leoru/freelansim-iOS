@@ -14,4 +14,6 @@
 
 @property (nonatomic,retain) NSString *type;
 @property (nonatomic,retain) NSString *text;
+
+-(NSURL *)openURL;
 @end

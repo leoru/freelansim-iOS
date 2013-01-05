@@ -43,7 +43,6 @@
 }
 
 #pragma mark - UITableView Datasource
-
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
 }
@@ -92,9 +91,10 @@
         UILabel *priceLabel = (UILabel *)[cell viewWithTag:4];
         
         priceLabel.layer.cornerRadius = 5.0f;
-        priceLabel.backgroundColor = [UIColor colorWithRed:0.96f green:0.87f blue:0.66f alpha:1.00f];
-        priceLabel.layer.borderColor = [UIColor colorWithRed:0.66f green:0.44f blue:0.09f alpha:1.00f].CGColor;
-        priceLabel.textColor = [UIColor colorWithRed:0.26f green:0.29f blue:0.32f alpha:1.00f];
+        priceLabel.backgroundColor = PriceLabelBackgroundColor;
+        priceLabel.layer.borderColor = PriceLabelBorderColor;
+        priceLabel.textColor = PriceLabelTextColor;
+        
         priceLabel.layer.borderWidth = 1.0f;
         FLTask *task = self.tasks[indexPath.row];
         taskTitle.text = task.title;
@@ -118,7 +118,6 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 135;
 }
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     selectedTask = self.tasks[indexPath.row];
@@ -127,6 +126,7 @@
     
 }
 
+#pragma mark - Prepare for segue
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"TaskSegue"]) {
         FLTaskController *taskController = [segue destinationViewController];
@@ -138,8 +138,7 @@
     }
 }
 
-
-
+#pragma mark - Select Category Delegate
 -(void)categoriesDidSelected:(NSArray *)categories {
     self.selectedCategories = categories;
     self.tasks = [NSMutableArray array];

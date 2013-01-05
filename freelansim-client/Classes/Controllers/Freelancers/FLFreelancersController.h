@@ -11,11 +11,13 @@
 #import "FLHTTPClient.h"
 #import "FLCategoriesController.h"
 
-@interface FLFreelancersController : FLBaseController <UITableViewDataSource, UITableViewDelegate,FLCategoriesDelegate> {
+@interface FLFreelancersController : FLBaseController <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, FLCategoriesDelegate> {
     int page;
     BOOL stopSearch;
     FLFreelancer *selectedFreelancer;
+    NSString *searchQuery;
 }
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (weak, nonatomic) IBOutlet UITableView *freelancersTable;
 @property (nonatomic,retain) NSMutableArray *freelancers;
 @property (nonatomic,retain) NSArray *selectedCategories;

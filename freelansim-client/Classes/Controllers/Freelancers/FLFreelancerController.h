@@ -10,8 +10,9 @@
 #import "FLFreelancer.h"
 #import "SSToolkit.h"
 
-@interface FLFreelancerController : FLBaseController <UIWebViewDelegate>
+@interface FLFreelancerController : FLBaseController <UIWebViewDelegate, UIActionSheetDelegate>
 
+@property (weak, nonatomic) IBOutlet UIView *loadingView;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UIImageView *avatarView;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
@@ -22,5 +23,9 @@
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *loader;
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 @property (weak, nonatomic) IBOutlet UIView *skillsView;
+
+@property (nonatomic,retain) UIActionSheet *actionSheet;
+@property (nonatomic,retain) UIView *contactsView;
 @property (nonatomic,retain) FLFreelancer *freelancer;
+
 @end

@@ -26,7 +26,7 @@ typedef void (^FLHTTPClientFailure)(AFHTTPRequestOperation *operation, NSError *
 
 -(void)getTasksWithCategories:(NSArray *)categories page:(int)page success:(FLHTTPClientSuccessWithArray)success failure:(FLHTTPClientFailure)failure;
 
--(void)getFreelancersWithCategories:(NSArray *)categories page:(int)page success:(FLHTTPClientSuccessWithArray)success failure:(FLHTTPClientFailure)failure;
+-(void)getFreelancersWithCategories:(NSArray *)categories query:(NSString *)query page:(int)page success:(FLHTTPClientSuccessWithArray)success failure:(FLHTTPClientFailure)failure;
 
 -(void)loadTask:(FLTask *)task withSuccess:(FLHTTPClientSuccessWithTaskObject)success failure:(FLHTTPClientFailure)failure;
 

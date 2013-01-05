@@ -13,8 +13,8 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "46"
          endingLineNumber = "46"
-         landmarkName = "@implementation FLTasksController"
-         landmarkType = "3">
+         landmarkName = "-numberOfSectionsInTableView:"
+         landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
@@ -125,11 +125,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "freelansim-client/Classes/Controllers/Tasks/FLTaskController.m"
-         timestampString = "377619349.659502"
+         timestampString = "379064041.2505"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "69"
-         endingLineNumber = "69"
+         startingLineNumber = "72"
+         endingLineNumber = "72"
          landmarkName = "-initUI"
          landmarkType = "5">
       </FileBreakpoint>
@@ -372,11 +372,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "freelansim-client/Classes/Controllers/Freelancers/FLFreelancersController.m"
-         timestampString = "377895575.018939"
+         timestampString = "379060603.147883"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "135"
-         endingLineNumber = "135"
+         startingLineNumber = "138"
+         endingLineNumber = "138"
          landmarkName = "-prepareForSegue:sender:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -385,11 +385,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "freelansim-client/Classes/Controllers/Freelancers/FLFreelancersController.m"
-         timestampString = "377895575.018939"
+         timestampString = "379060603.147883"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "144"
-         endingLineNumber = "144"
+         startingLineNumber = "147"
+         endingLineNumber = "147"
          landmarkName = "-categoriesDidSelected:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -398,11 +398,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "freelansim-client/Classes/Controllers/Freelancers/FLFreelancersController.m"
-         timestampString = "377895575.018939"
+         timestampString = "379060603.147883"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "131"
-         endingLineNumber = "131"
+         startingLineNumber = "134"
+         endingLineNumber = "134"
          landmarkName = "-prepareForSegue:sender:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -411,11 +411,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "freelansim-client/Classes/Controllers/Freelancers/FLFreelancersController.m"
-         timestampString = "377895575.018939"
+         timestampString = "379060603.147883"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "68"
-         endingLineNumber = "68"
+         startingLineNumber = "71"
+         endingLineNumber = "71"
          landmarkName = "-tableView:cellForRowAtIndexPath:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -429,7 +429,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "110"
          endingLineNumber = "110"
-         landmarkName = "-getFreelancersWithCategories:page:success:failure:"
+         landmarkName = "-getFreelancersWithCategories:query:page:success:failure:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -437,11 +437,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "freelansim-client/Classes/Controllers/Freelancers/FLFreelancersController.m"
-         timestampString = "377895915.105798"
+         timestampString = "379060603.147883"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "124"
-         endingLineNumber = "124"
+         startingLineNumber = "127"
+         endingLineNumber = "127"
          landmarkName = "-tableView:didSelectRowAtIndexPath:"
          landmarkType = "5">
       </FileBreakpoint>

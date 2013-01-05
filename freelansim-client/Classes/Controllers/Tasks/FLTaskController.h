@@ -13,6 +13,7 @@
 
 @interface FLTaskController : FLBaseController <UIWebViewDelegate>
 
+@property (weak, nonatomic) IBOutlet UIView *loadingView;
 @property (weak, nonatomic) IBOutlet UIScrollView *mainScrollView;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UIWebView *descriptionWebView;

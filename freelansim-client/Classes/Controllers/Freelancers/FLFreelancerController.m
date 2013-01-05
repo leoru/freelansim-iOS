@@ -13,6 +13,8 @@
 #import "FLContact.h"
 #import "NUIRenderer.h"
 #import "FLHTMLUtils.h"
+#import "DWTagList.h"
+#import "FLContactButton.h"
 
 @interface FLFreelancerController ()
 {
@@ -30,7 +32,6 @@
     }
     return self;
 }
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -49,13 +50,11 @@
         });
     }];
 }
-
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
 - (void)viewDidUnload {
     [self setAvatarView:nil];
     [self setNameLabel:nil];
@@ -66,18 +65,20 @@
     [self setLoader:nil];
     [self setWebView:nil];
     [self setSkillsView:nil];
+    [self setLoadingView:nil];
     [super viewDidUnload];
 }
 
-
+#pragma mark - init Content
 -(void)initUI {
+    self.loadingView.hidden = YES;
     
     scrollViewHeight = 159;
-    
-    
+
     UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithImage:nil style:UIBarButtonSystemItemOrganize target:self action:@selector(toBookMarks)];
     self.navigationItem.rightBarButtonItem = item;
     self.navigationItem.title = self.freelancer.name;
+    
     CGRect avatarFrame = self.avatarView.frame;
     avatarFrame.size.width = 100;
     avatarFrame.size.height = 100;
@@ -88,6 +89,7 @@
     } failure:^(NSError *error) {
         self.loader.hidden = YES;
     }];
+    
     self.priceLabel.text = self.freelancer.price;
     self.nameLabel.text = self.freelancer.name;
     self.specialityLabel.text = self.freelancer.speciality;
@@ -95,55 +97,153 @@
     self.line = [[SSLineView alloc] initWithFrame:CGRectMake(20.0f, 160.0f, 280.0f, 2.0f)];
     self.line.lineColor = [UIColor colorWithRed:0.26f green:0.29f blue:0.32f alpha:1.00f];
 	[self.scrollView addSubview:self.line];
-    [self drawContactsForm];
+    
+    self.webView.scrollView.bounces = NO;
+    self.webView.delegate = self;
+    self.webView.opaque = NO;
+    self.webView.backgroundColor = [UIColor clearColor];
+    
+    [self initTopBar];
+    [self initActionSheet];
+    [self loadHTMLContent];
+    [self generateSkillTags];
+    
+    //[KGNoise drawNoiseWithOpacity:1.0];
 }
-
+-(void)initTopBar {
+    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(showActionSheet:)];
+    self.navigationItem.rightBarButtonItem = item;
+}
+-(void)initActionSheet {
+    NSMutableArray *actions = [NSMutableArray array];
+    [actions addObject:@"Добавить в избранное"];
+    [actions addObject:@"Скопировать ссылку"];
+    [actions addObject:@"Перейти в Safari"];
+    
+    for (FLContact *contact in self.freelancer.contacts) {
+        NSString *action = @"";
+        if ([contact.type isEqualToString:@"mail"])
+            action = @"Написать письмо";
+        else if ([contact.type isEqualToString:@"phone"])
+            action = @"Позвонить";
+        else if ([contact.type isEqualToString:@"site"])
+            action = @"Перейти на сайт";
+        
+        [actions addObject:action];
+    }
+    self.actionSheet = [[UIActionSheet alloc] initWithTitle:@"Выберите действие" delegate:self cancelButtonTitle:@"Отменить" destructiveButtonTitle:nil otherButtonTitles: nil];
+    
+    for (NSString *action in actions) {
+        [self.actionSheet addButtonWithTitle:action];
+    }
+}
 -(void)drawContactsForm {
     if (self.freelancer.contacts.count > 0) {
-        UIView *contactsView = [[UIView alloc] init];
-        contactsView.backgroundColor = [UIColor clearColor];
-        contactsView.frame = CGRectMake(10.0f, self.line.frame.origin.y + 10, 300.0f, 200.0f);
+        int contactsHeight = 0;
+        self.contactsView = [[UIView alloc] init];
+        self.contactsView.backgroundColor = [UIColor clearColor];
+        self.contactsView.frame = CGRectMake(10.0f, self.line.frame.origin.y + 10, 300.0f, contactsHeight);
         
-        UILabel *titleLabel = [[UILabel alloc] initWithFrame:contactsView.frame];
+        UILabel *titleLabel = [[UILabel alloc] initWithFrame:self.contactsView.frame];
         titleLabel.backgroundColor = [UIColor clearColor];
         titleLabel.frame = CGRectMake(0.0f,5.0f,300.0f,40.0f);
         titleLabel.text = @"Контакты";
         [titleLabel sizeToFit];
+        contactsHeight += titleLabel.frame.size.height;
         
         int i = 0;
         for (FLContact *contact in self.freelancer.contacts) {
-            UIButton *btn = [[UIButton alloc] init];
-            btn.frame = CGRectMake(0,(i*38) + titleLabel.frame.origin.y + titleLabel.frame.size.height + 10,200.0f,40.0f);
-        
+            FLContactButton *btn = [[FLContactButton alloc] init];
+            btn.contact = contact;
+            
+            btn.frame = CGRectMake(0,(i*40) + titleLabel.frame.origin.y + titleLabel.frame.size.height + 10,200.0f,20.0f);
             [btn setTitle:contact.text forState:UIControlStateNormal];
-            //[NUIRenderer renderButton:btn withClass:@"Button"];
+            [UIRender renderContactsButton:btn];
+            
             [btn sizeToFit];
-            btn.frame = CGRectMake(btn.frame.origin.x,btn.frame.origin.y,btn.frame.size.width + 10, btn.frame.size.height + 10);
-            [contactsView addSubview:btn];
+            btn.frame = CGRectMake(btn.frame.origin.x,btn.frame.origin.y,btn.frame.size.width + 10, btn.frame.size.height);
+            [self.contactsView addSubview:btn];
+            
+            [btn addTarget:self action:@selector(contactClick:) forControlEvents:UIControlEventTouchUpInside];
+            contactsHeight += btn.frame.size.height + 10;
+            
             i++;
+            
         }
         
-        [contactsView addSubview:titleLabel];
-        [self.scrollView addSubview:contactsView];
-    } 
+        [self.contactsView addSubview:titleLabel];
+        CGRect frame = self.contactsView.frame;
+        frame.size.height = contactsHeight;
+        [self.contactsView setFrame:frame];
+        [self.scrollView addSubview:self.contactsView];
+        
+    } else {
+        self.contactsView = [[UIView alloc] init];
+        self.contactsView.backgroundColor = [UIColor clearColor];
+        self.contactsView.frame = CGRectMake(10.0f, self.line.frame.origin.y + 10, 300.0f, 0.0f);
+    }
 }
-
 -(void)loadHTMLContent {
     NSString *path = [[NSBundle mainBundle] bundlePath];
     NSURL *baseURL = [NSURL fileURLWithPath:path];
-    
-    NSString *html = [FLHTMLUtils formattedTaskDescription:self.freelancer.htmlDescription];
+    NSString *html = [FLHTMLUtils formattedDescription:self.freelancer.htmlDescription];
     [self.webView loadHTMLString:html baseURL:baseURL];
 }
+-(void)generateSkillTags {
+    DWTagList *tagList = [[DWTagList alloc] initWithFrame:self.skillsView.frame];
+    
+    CGRect frame = tagList.frame;
+    frame.origin.y = 30;
+    [tagList setFrame:frame];
+    
+    [tagList setTags:self.freelancer.tags];
+    
+    [self.skillsView addSubview:tagList];
+    
+    [self.skillsView sizeToFit];
+}
 
+-(void)showActionSheet:(id)sender{
+    [self.actionSheet showFromTabBar:self.tabBarController.tabBar];
+}
+
+#pragma mark - Contact Button Click
+-(void)contactClick:(id)sender {
+    FLContactButton *btn = (FLContactButton *)sender;
+    NSURL *url = [btn.contact openURL];
+    [[UIApplication sharedApplication] openURL:url];
+}
+
+#pragma mark - WebView Delegate
 -(void)webViewDidFinishLoad:(UIWebView *)webView {
+    [self drawContactsForm];
     [self.webView sizeToFit];
-    scrollViewHeight += self.webView.frame.size.height + 20;
+    scrollViewHeight += self.contactsView.frame.size.height;
+    scrollViewHeight += self.webView.frame.size.height;
     
-    CGRect skillViewFrame = self.skillsView.frame;
-    skillViewFrame.origin.y = self.webView.frame.origin.y + self.webView.frame.size.height + 10;
+    CGRect frame = self.webView.frame;
+    frame.origin.y = self.contactsView.frame.origin.y + self.contactsView.frame.size.height + 5;
+    self.webView.frame = frame;
     
-    self.skillsView.frame = skillViewFrame;
-    self.scrollView.contentSize = CGSizeMake(320,scrollViewHeight + self.skillsView.frame.size.height);
+    if (self.freelancer.tags.count > 0) {
+        [self.skillsView sizeToFit];
+        CGRect skillViewFrame = self.skillsView.frame;
+        skillViewFrame.origin.y = self.webView.frame.origin.y + self.webView.frame.size.height + 10;
+        skillViewFrame.size.height += 50;
+        self.skillsView.frame = skillViewFrame;
+        
+    } else {
+        [self.skillsView removeFromSuperview];
+    }
+    self.scrollView.contentSize = CGSizeMake(320,scrollViewHeight + self.skillsView.frame.size.height + 100);
+    
+}
+-(BOOL) webView:(UIWebView *)inWeb shouldStartLoadWithRequest:(NSURLRequest *)inRequest navigationType:(UIWebViewNavigationType)inType {
+    if ( inType == UIWebViewNavigationTypeLinkClicked ) {
+        [[UIApplication sharedApplication] openURL:[inRequest URL]];
+        return NO;
+    }
+    
+    return YES;
 }
 @end

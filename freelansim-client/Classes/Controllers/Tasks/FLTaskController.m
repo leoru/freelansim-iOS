@@ -48,8 +48,27 @@
 	
     
 }
+- (void)viewDidUnload {
+    [self setTitleLabel:nil];
+    [self setDescriptionWebView:nil];
+    [self setViewsLabel:nil];
+    [self setCommentsLabel:nil];
+    [self setPublishedLabel:nil];
+    [self setSkillsView:nil];
+    [self setMainScrollView:nil];
+    [self setLoadingView:nil];
+    [super viewDidUnload];
+}
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
 
+#pragma mark - init Content
 -(void)initUI {
+    self.loadingView.hidden = YES;
+    
     scrollViewHeight = 159;
     
     self.statView.layer.borderWidth = 1.0f;
@@ -75,47 +94,24 @@
 
     
 }
-
 -(void)loadHTMLContent {
     NSString *path = [[NSBundle mainBundle] bundlePath];
     NSURL *baseURL = [NSURL fileURLWithPath:path];
     
-    NSString *html = [FLHTMLUtils formattedTaskDescription:self.task.htmlDescription];
+    NSString *html = [FLHTMLUtils formattedDescription:self.task.htmlDescription];
     [self.descriptionWebView loadHTMLString:html baseURL:baseURL];
 }
-
 -(void)generateSkillTags {
     DWTagList *tagList = [[DWTagList alloc] initWithFrame:self.skillsView.frame];
-    
     CGRect frame = tagList.frame;
     frame.origin.y = 30;
     [tagList setFrame:frame];
-    
     [tagList setTags:self.task.tags];
-    
     [self.skillsView addSubview:tagList];
-    
     [self.skillsView sizeToFit];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-- (void)viewDidUnload {
-    [self setTitleLabel:nil];
-    [self setDescriptionWebView:nil];
-    [self setViewsLabel:nil];
-    [self setCommentsLabel:nil];
-    [self setPublishedLabel:nil];
-    [self setSkillsView:nil];
-    [self setMainScrollView:nil];
-    [super viewDidUnload];
-}
-
-
+#pragma mark - WebView Delegate
 -(void)webViewDidFinishLoad:(UIWebView *)webView {
     [self.descriptionWebView sizeToFit];
     scrollViewHeight += self.descriptionWebView.frame.size.height + 20;
@@ -126,4 +122,5 @@
     self.skillsView.frame = skillViewFrame;
     self.mainScrollView.contentSize = CGSizeMake(320,scrollViewHeight + self.skillsView.frame.size.height);
 }
+
 @end
