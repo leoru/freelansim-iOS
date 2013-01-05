@@ -121,7 +121,12 @@
         [contacts addObject:contact];
     }
     
-    freelancer.phone = [[contactsNode findChildOfClass:@"phone"] contents];
+    HTMLNode *phoneNode = [contactsNode findChildOfClass:@"phone"];
+    NSString *phone;
+    if (phoneNode){
+        phone = [phoneNode getAttributeNamed:@"data-phone"];
+    }
+    freelancer.phone = phone;
     if (freelancer.phone) {
         contact = [[FLContact alloc] initWithText:freelancer.phone type:@"phone"];
         [contacts addObject:contact];

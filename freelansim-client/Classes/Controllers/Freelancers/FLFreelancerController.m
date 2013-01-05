@@ -107,8 +107,6 @@
     [self initActionSheet];
     [self loadHTMLContent];
     [self generateSkillTags];
-    
-    //[KGNoise drawNoiseWithOpacity:1.0];
 }
 -(void)initTopBar {
     UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(showActionSheet:)];
@@ -136,6 +134,7 @@
     for (NSString *action in actions) {
         [self.actionSheet addButtonWithTitle:action];
     }
+    
 }
 -(void)drawContactsForm {
     if (self.freelancer.contacts.count > 0) {
@@ -166,11 +165,8 @@
             
             [btn addTarget:self action:@selector(contactClick:) forControlEvents:UIControlEventTouchUpInside];
             contactsHeight += btn.frame.size.height + 10;
-            
             i++;
-            
         }
-        
         [self.contactsView addSubview:titleLabel];
         CGRect frame = self.contactsView.frame;
         frame.size.height = contactsHeight;
@@ -182,7 +178,17 @@
         self.contactsView.backgroundColor = [UIColor clearColor];
         self.contactsView.frame = CGRectMake(10.0f, self.line.frame.origin.y + 10, 300.0f, 0.0f);
     }
+
+    scrollViewHeight = self.contactsView.frame.size.height + self.contactsView.frame.origin.y;
+
 }
+
+-(void) drawSkillsView{
+    CGRect frame = self.skillsView.frame;
+    frame.origin.y = scrollViewHeight;
+    [self.skillsView setFrame:frame];
+}
+
 -(void)loadHTMLContent {
     NSString *path = [[NSBundle mainBundle] bundlePath];
     NSURL *baseURL = [NSURL fileURLWithPath:path];
