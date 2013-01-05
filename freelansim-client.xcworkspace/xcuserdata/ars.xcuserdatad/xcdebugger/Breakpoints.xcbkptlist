@@ -450,11 +450,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "freelansim-client/Classes/Controllers/Freelancers/FLFreelancerController.m"
-         timestampString = "377943883.811661"
+         timestampString = "379075549.285566"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "35"
-         endingLineNumber = "35"
+         startingLineNumber = "34"
+         endingLineNumber = "34"
          landmarkName = "-viewDidLoad"
          landmarkType = "5">
       </FileBreakpoint>
@@ -515,11 +515,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "freelansim-client/Classes/Controllers/Freelancers/FLFreelancerController.m"
-         timestampString = "378146258.646992"
+         timestampString = "379075549.285566"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "87"
-         endingLineNumber = "87"
+         startingLineNumber = "86"
+         endingLineNumber = "86"
          landmarkName = "-initUI"
          landmarkType = "5">
       </FileBreakpoint>
@@ -528,11 +528,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "freelansim-client/Classes/Controllers/Freelancers/FLFreelancerController.m"
-         timestampString = "377943883.811661"
+         timestampString = "379075549.285566"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "38"
-         endingLineNumber = "38"
+         startingLineNumber = "37"
+         endingLineNumber = "37"
          landmarkName = "-viewDidLoad"
          landmarkType = "5">
       </FileBreakpoint>
@@ -541,11 +541,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "freelansim-client/Classes/Controllers/Freelancers/FLFreelancerController.m"
-         timestampString = "378146258.646992"
+         timestampString = "379075549.285566"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "86"
-         endingLineNumber = "86"
+         startingLineNumber = "85"
+         endingLineNumber = "85"
          landmarkName = "-initUI"
          landmarkType = "5">
       </FileBreakpoint>
@@ -587,6 +587,19 @@
          endingLineNumber = "112"
          landmarkName = "-parseToFreelancer:"
          landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "freelansim-client/Classes/UI/UIRender.h"
+         timestampString = "379075422.877609"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "16"
+         endingLineNumber = "16"
+         landmarkName = "+renderContactsButton:"
+         landmarkType = "4">
       </FileBreakpoint>
    </FileBreakpoints>
 </Bucket>

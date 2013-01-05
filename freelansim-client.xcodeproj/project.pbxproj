@@ -36,43 +36,6 @@
 		6A529B14167A47AF009A1CCB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A529AE4167A47AF009A1CCB /* Foundation.framework */; };
 		6A529B1C167A47AF009A1CCB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6A529B1A167A47AF009A1CCB /* InfoPlist.strings */; };
 		6A529B1F167A47AF009A1CCB /* freelansim_clientTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A529B1E167A47AF009A1CCB /* freelansim_clientTests.m */; };
-		6A529B73167A47FC009A1CCB /* NUIAppearance.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A529B2D167A47FC009A1CCB /* NUIAppearance.m */; };
-		6A529B74167A47FC009A1CCB /* NUIConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A529B2F167A47FC009A1CCB /* NUIConverter.m */; };
-		6A529B75167A47FC009A1CCB /* NUIGraphics.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A529B31167A47FC009A1CCB /* NUIGraphics.m */; };
-		6A529B76167A47FC009A1CCB /* NUIRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A529B33167A47FC009A1CCB /* NUIRenderer.m */; };
-		6A529B77167A47FC009A1CCB /* NUISettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A529B35167A47FC009A1CCB /* NUISettings.m */; };
-		6A529B78167A47FC009A1CCB /* NUIStyleParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A529B37167A47FC009A1CCB /* NUIStyleParser.m */; };
-		6A529B79167A47FC009A1CCB /* NUISwizzler.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A529B39167A47FC009A1CCB /* NUISwizzler.m */; };
-		6A529B7A167A47FC009A1CCB /* NUIUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A529B3B167A47FC009A1CCB /* NUIUtilities.m */; };
-		6A529B7B167A47FC009A1CCB /* NUIBarButtonItemRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A529B3E167A47FC009A1CCB /* NUIBarButtonItemRenderer.m */; };
-		6A529B7C167A47FC009A1CCB /* NUIButtonRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A529B40167A47FC009A1CCB /* NUIButtonRenderer.m */; };
-		6A529B7D167A47FC009A1CCB /* NUILabelRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A529B42167A47FC009A1CCB /* NUILabelRenderer.m */; };
-		6A529B7E167A47FC009A1CCB /* NUINavigationBarRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A529B44167A47FC009A1CCB /* NUINavigationBarRenderer.m */; };
-		6A529B7F167A47FC009A1CCB /* NUINavigationItemRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A529B46167A47FC009A1CCB /* NUINavigationItemRenderer.m */; };
-		6A529B80167A47FC009A1CCB /* NUISegmentedControlRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A529B48167A47FC009A1CCB /* NUISegmentedControlRenderer.m */; };
-		6A529B81167A47FC009A1CCB /* NUITabBarItemRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A529B4A167A47FC009A1CCB /* NUITabBarItemRenderer.m */; };
-		6A529B82167A47FC009A1CCB /* NUITabBarRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A529B4C167A47FC009A1CCB /* NUITabBarRenderer.m */; };
-		6A529B83167A47FC009A1CCB /* NUITableViewCellRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A529B4E167A47FC009A1CCB /* NUITableViewCellRenderer.m */; };
-		6A529B84167A47FC009A1CCB /* NUITextFieldRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A529B50167A47FC009A1CCB /* NUITextFieldRenderer.m */; };
-		6A529B85167A47FC009A1CCB /* NUIViewRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A529B52167A47FC009A1CCB /* NUIViewRenderer.m */; };
-		6A529B86167A47FC009A1CCB /* NUIStyle.nss in Resources */ = {isa = PBXBuildFile; fileRef = 6A529B53167A47FC009A1CCB /* NUIStyle.nss */; };
-		6A529B87167A47FC009A1CCB /* NUIBackButtonTemplate.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A529B55167A47FC009A1CCB /* NUIBackButtonTemplate.png */; };
-		6A529B88167A47FC009A1CCB /* NUIBarButtonTemplate.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A529B56167A47FC009A1CCB /* NUIBarButtonTemplate.png */; };
-		6A529B89167A47FC009A1CCB /* NUIViewBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A529B57167A47FC009A1CCB /* NUIViewBackground.png */; };
-		6A529B8A167A47FC009A1CCB /* Blue.NUIStyle.nss in Resources */ = {isa = PBXBuildFile; fileRef = 6A529B59167A47FC009A1CCB /* Blue.NUIStyle.nss */; };
-		6A529B8B167A47FC009A1CCB /* Default.NUIStyle.nss in Resources */ = {isa = PBXBuildFile; fileRef = 6A529B5A167A47FC009A1CCB /* Default.NUIStyle.nss */; };
-		6A529B8C167A47FC009A1CCB /* Round.NUIStyle.nss in Resources */ = {isa = PBXBuildFile; fileRef = 6A529B5B167A47FC009A1CCB /* Round.NUIStyle.nss */; };
-		6A529B8D167A47FC009A1CCB /* UIBarButtonItem+NUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A529B5E167A47FC009A1CCB /* UIBarButtonItem+NUI.m */; };
-		6A529B8E167A47FC009A1CCB /* UIButton+NUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A529B60167A47FC009A1CCB /* UIButton+NUI.m */; };
-		6A529B8F167A47FC009A1CCB /* UILabel+NUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A529B62167A47FC009A1CCB /* UILabel+NUI.m */; };
-		6A529B90167A47FC009A1CCB /* UINavigationBar+NUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A529B64167A47FC009A1CCB /* UINavigationBar+NUI.m */; };
-		6A529B91167A47FC009A1CCB /* UINavigationItem+NUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A529B66167A47FC009A1CCB /* UINavigationItem+NUI.m */; };
-		6A529B92167A47FC009A1CCB /* UISegmentedControl+NUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A529B68167A47FC009A1CCB /* UISegmentedControl+NUI.m */; };
-		6A529B93167A47FC009A1CCB /* UITabBar+NUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A529B6A167A47FC009A1CCB /* UITabBar+NUI.m */; };
-		6A529B94167A47FC009A1CCB /* UITabBarItem+NUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A529B6C167A47FC009A1CCB /* UITabBarItem+NUI.m */; };
-		6A529B95167A47FC009A1CCB /* UITableViewCell+NUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A529B6E167A47FC009A1CCB /* UITableViewCell+NUI.m */; };
-		6A529B96167A47FC009A1CCB /* UITextField+NUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A529B70167A47FC009A1CCB /* UITextField+NUI.m */; };
-		6A529B97167A47FC009A1CCB /* UIView+NUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A529B72167A47FC009A1CCB /* UIView+NUI.m */; };
 		6A8A96F516861B9C00C285BE /* FLFreelancersController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A8A96F416861B9C00C285BE /* FLFreelancersController.m */; };
 		6A8A96F816863A7900C285BE /* FLFreelancerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A8A96F716863A7800C285BE /* FLFreelancerController.m */; };
 		6A8A97101686F36100C285BE /* FLContact.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A8A970F1686F36100C285BE /* FLContact.m */; };
@@ -166,7 +129,7 @@
 		6A26779C1680A32300F178E7 /* FLCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FLCategory.h; path = Classes/Models/FLCategory.h; sourceTree = "<group>"; };
 		6A26779D1680A32300F178E7 /* FLCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FLCategory.m; path = Classes/Models/FLCategory.m; sourceTree = "<group>"; };
 		6A26779F1680AAE800F178E7 /* CategoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoryCell.xib; sourceTree = "<group>"; };
-		6A529ADE167A47AF009A1CCB /* freelansim-client.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "freelansim-client.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A529ADE167A47AF009A1CCB /* freelansim-client.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = "freelansim-client.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A529AE2167A47AF009A1CCB /* UIKit.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		6A529AE4167A47AF009A1CCB /* Foundation.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6A529AE6167A47AF009A1CCB /* CoreGraphics.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -186,73 +149,6 @@
 		6A529B1B167A47AF009A1CCB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6A529B1D167A47AF009A1CCB /* freelansim_clientTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = freelansim_clientTests.h; sourceTree = "<group>"; };
 		6A529B1E167A47AF009A1CCB /* freelansim_clientTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = freelansim_clientTests.m; sourceTree = "<group>"; };
-		6A529B2C167A47FC009A1CCB /* NUIAppearance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUIAppearance.h; sourceTree = "<group>"; };
-		6A529B2D167A47FC009A1CCB /* NUIAppearance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUIAppearance.m; sourceTree = "<group>"; };
-		6A529B2E167A47FC009A1CCB /* NUIConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUIConverter.h; sourceTree = "<group>"; };
-		6A529B2F167A47FC009A1CCB /* NUIConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUIConverter.m; sourceTree = "<group>"; };
-		6A529B30167A47FC009A1CCB /* NUIGraphics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUIGraphics.h; sourceTree = "<group>"; };
-		6A529B31167A47FC009A1CCB /* NUIGraphics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUIGraphics.m; sourceTree = "<group>"; };
-		6A529B32167A47FC009A1CCB /* NUIRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUIRenderer.h; sourceTree = "<group>"; };
-		6A529B33167A47FC009A1CCB /* NUIRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUIRenderer.m; sourceTree = "<group>"; };
-		6A529B34167A47FC009A1CCB /* NUISettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUISettings.h; sourceTree = "<group>"; };
-		6A529B35167A47FC009A1CCB /* NUISettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUISettings.m; sourceTree = "<group>"; };
-		6A529B36167A47FC009A1CCB /* NUIStyleParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUIStyleParser.h; sourceTree = "<group>"; };
-		6A529B37167A47FC009A1CCB /* NUIStyleParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUIStyleParser.m; sourceTree = "<group>"; };
-		6A529B38167A47FC009A1CCB /* NUISwizzler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUISwizzler.h; sourceTree = "<group>"; };
-		6A529B39167A47FC009A1CCB /* NUISwizzler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUISwizzler.m; sourceTree = "<group>"; };
-		6A529B3A167A47FC009A1CCB /* NUIUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUIUtilities.h; sourceTree = "<group>"; };
-		6A529B3B167A47FC009A1CCB /* NUIUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUIUtilities.m; sourceTree = "<group>"; };
-		6A529B3D167A47FC009A1CCB /* NUIBarButtonItemRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUIBarButtonItemRenderer.h; sourceTree = "<group>"; };
-		6A529B3E167A47FC009A1CCB /* NUIBarButtonItemRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUIBarButtonItemRenderer.m; sourceTree = "<group>"; };
-		6A529B3F167A47FC009A1CCB /* NUIButtonRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUIButtonRenderer.h; sourceTree = "<group>"; };
-		6A529B40167A47FC009A1CCB /* NUIButtonRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUIButtonRenderer.m; sourceTree = "<group>"; };
-		6A529B41167A47FC009A1CCB /* NUILabelRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUILabelRenderer.h; sourceTree = "<group>"; };
-		6A529B42167A47FC009A1CCB /* NUILabelRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUILabelRenderer.m; sourceTree = "<group>"; };
-		6A529B43167A47FC009A1CCB /* NUINavigationBarRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUINavigationBarRenderer.h; sourceTree = "<group>"; };
-		6A529B44167A47FC009A1CCB /* NUINavigationBarRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUINavigationBarRenderer.m; sourceTree = "<group>"; };
-		6A529B45167A47FC009A1CCB /* NUINavigationItemRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUINavigationItemRenderer.h; sourceTree = "<group>"; };
-		6A529B46167A47FC009A1CCB /* NUINavigationItemRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUINavigationItemRenderer.m; sourceTree = "<group>"; };
-		6A529B47167A47FC009A1CCB /* NUISegmentedControlRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUISegmentedControlRenderer.h; sourceTree = "<group>"; };
-		6A529B48167A47FC009A1CCB /* NUISegmentedControlRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUISegmentedControlRenderer.m; sourceTree = "<group>"; };
-		6A529B49167A47FC009A1CCB /* NUITabBarItemRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUITabBarItemRenderer.h; sourceTree = "<group>"; };
-		6A529B4A167A47FC009A1CCB /* NUITabBarItemRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUITabBarItemRenderer.m; sourceTree = "<group>"; };
-		6A529B4B167A47FC009A1CCB /* NUITabBarRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUITabBarRenderer.h; sourceTree = "<group>"; };
-		6A529B4C167A47FC009A1CCB /* NUITabBarRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUITabBarRenderer.m; sourceTree = "<group>"; };
-		6A529B4D167A47FC009A1CCB /* NUITableViewCellRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUITableViewCellRenderer.h; sourceTree = "<group>"; };
-		6A529B4E167A47FC009A1CCB /* NUITableViewCellRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUITableViewCellRenderer.m; sourceTree = "<group>"; };
-		6A529B4F167A47FC009A1CCB /* NUITextFieldRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUITextFieldRenderer.h; sourceTree = "<group>"; };
-		6A529B50167A47FC009A1CCB /* NUITextFieldRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUITextFieldRenderer.m; sourceTree = "<group>"; };
-		6A529B51167A47FC009A1CCB /* NUIViewRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUIViewRenderer.h; sourceTree = "<group>"; };
-		6A529B52167A47FC009A1CCB /* NUIViewRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUIViewRenderer.m; sourceTree = "<group>"; };
-		6A529B53167A47FC009A1CCB /* NUIStyle.nss */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NUIStyle.nss; sourceTree = "<group>"; };
-		6A529B55167A47FC009A1CCB /* NUIBackButtonTemplate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NUIBackButtonTemplate.png; sourceTree = "<group>"; };
-		6A529B56167A47FC009A1CCB /* NUIBarButtonTemplate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NUIBarButtonTemplate.png; sourceTree = "<group>"; };
-		6A529B57167A47FC009A1CCB /* NUIViewBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NUIViewBackground.png; sourceTree = "<group>"; };
-		6A529B59167A47FC009A1CCB /* Blue.NUIStyle.nss */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Blue.NUIStyle.nss; sourceTree = "<group>"; };
-		6A529B5A167A47FC009A1CCB /* Default.NUIStyle.nss */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Default.NUIStyle.nss; sourceTree = "<group>"; };
-		6A529B5B167A47FC009A1CCB /* Round.NUIStyle.nss */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Round.NUIStyle.nss; sourceTree = "<group>"; };
-		6A529B5D167A47FC009A1CCB /* UIBarButtonItem+NUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+NUI.h"; sourceTree = "<group>"; };
-		6A529B5E167A47FC009A1CCB /* UIBarButtonItem+NUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+NUI.m"; sourceTree = "<group>"; };
-		6A529B5F167A47FC009A1CCB /* UIButton+NUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+NUI.h"; sourceTree = "<group>"; };
-		6A529B60167A47FC009A1CCB /* UIButton+NUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+NUI.m"; sourceTree = "<group>"; };
-		6A529B61167A47FC009A1CCB /* UILabel+NUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+NUI.h"; sourceTree = "<group>"; };
-		6A529B62167A47FC009A1CCB /* UILabel+NUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+NUI.m"; sourceTree = "<group>"; };
-		6A529B63167A47FC009A1CCB /* UINavigationBar+NUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+NUI.h"; sourceTree = "<group>"; };
-		6A529B64167A47FC009A1CCB /* UINavigationBar+NUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+NUI.m"; sourceTree = "<group>"; };
-		6A529B65167A47FC009A1CCB /* UINavigationItem+NUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationItem+NUI.h"; sourceTree = "<group>"; };
-		6A529B66167A47FC009A1CCB /* UINavigationItem+NUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationItem+NUI.m"; sourceTree = "<group>"; };
-		6A529B67167A47FC009A1CCB /* UISegmentedControl+NUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UISegmentedControl+NUI.h"; sourceTree = "<group>"; };
-		6A529B68167A47FC009A1CCB /* UISegmentedControl+NUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UISegmentedControl+NUI.m"; sourceTree = "<group>"; };
-		6A529B69167A47FC009A1CCB /* UITabBar+NUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITabBar+NUI.h"; sourceTree = "<group>"; };
-		6A529B6A167A47FC009A1CCB /* UITabBar+NUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITabBar+NUI.m"; sourceTree = "<group>"; };
-		6A529B6B167A47FC009A1CCB /* UITabBarItem+NUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITabBarItem+NUI.h"; sourceTree = "<group>"; };
-		6A529B6C167A47FC009A1CCB /* UITabBarItem+NUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITabBarItem+NUI.m"; sourceTree = "<group>"; };
-		6A529B6D167A47FC009A1CCB /* UITableViewCell+NUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+NUI.h"; sourceTree = "<group>"; };
-		6A529B6E167A47FC009A1CCB /* UITableViewCell+NUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+NUI.m"; sourceTree = "<group>"; };
-		6A529B6F167A47FC009A1CCB /* UITextField+NUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+NUI.h"; sourceTree = "<group>"; };
-		6A529B70167A47FC009A1CCB /* UITextField+NUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+NUI.m"; sourceTree = "<group>"; };
-		6A529B71167A47FC009A1CCB /* UIView+NUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+NUI.h"; sourceTree = "<group>"; };
-		6A529B72167A47FC009A1CCB /* UIView+NUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+NUI.m"; sourceTree = "<group>"; };
 		6A8A96F316861B9C00C285BE /* FLFreelancersController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FLFreelancersController.h; path = Classes/Controllers/Freelancers/FLFreelancersController.h; sourceTree = "<group>"; };
 		6A8A96F416861B9C00C285BE /* FLFreelancersController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FLFreelancersController.m; path = Classes/Controllers/Freelancers/FLFreelancersController.m; sourceTree = "<group>"; };
 		6A8A96F616863A7800C285BE /* FLFreelancerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FLFreelancerController.h; path = Classes/Controllers/Freelancers/FLFreelancerController.h; sourceTree = "<group>"; };
@@ -467,8 +363,6 @@
 		6A529AD3167A47AF009A1CCB = {
 			isa = PBXGroup;
 			children = (
-				6AED8739167D9B3B00EBC6CD /* QuartzCore.framework */,
-				6AED8736167D9B3500EBC6CD /* CoreImage.framework */,
 				6A529AE8167A47AF009A1CCB /* freelansim-client */,
 				6A529B17167A47AF009A1CCB /* freelansim-clientTests */,
 				6A529AE1167A47AF009A1CCB /* Frameworks */,
@@ -489,6 +383,8 @@
 		6A529AE1167A47AF009A1CCB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6AED8739167D9B3B00EBC6CD /* QuartzCore.framework */,
+				6AED8736167D9B3500EBC6CD /* CoreImage.framework */,
 				6A529AE2167A47AF009A1CCB /* UIKit.framework */,
 				6A529AE4167A47AF009A1CCB /* Foundation.framework */,
 				6A529AE6167A47AF009A1CCB /* CoreGraphics.framework */,
@@ -555,123 +451,8 @@
 			isa = PBXGroup;
 			children = (
 				6A26778C16809CCB00F178E7 /* TagList */,
-				6A529B2A167A47FC009A1CCB /* NUI */,
 			);
 			name = Vendor;
-			sourceTree = "<group>";
-		};
-		6A529B2A167A47FC009A1CCB /* NUI */ = {
-			isa = PBXGroup;
-			children = (
-				6A529B2B167A47FC009A1CCB /* Core */,
-				6A529B53167A47FC009A1CCB /* NUIStyle.nss */,
-				6A529B54167A47FC009A1CCB /* Resources */,
-				6A529B58167A47FC009A1CCB /* Styles */,
-				6A529B5C167A47FC009A1CCB /* UI */,
-			);
-			path = NUI;
-			sourceTree = "<group>";
-		};
-		6A529B2B167A47FC009A1CCB /* Core */ = {
-			isa = PBXGroup;
-			children = (
-				6A529B2C167A47FC009A1CCB /* NUIAppearance.h */,
-				6A529B2D167A47FC009A1CCB /* NUIAppearance.m */,
-				6A529B2E167A47FC009A1CCB /* NUIConverter.h */,
-				6A529B2F167A47FC009A1CCB /* NUIConverter.m */,
-				6A529B30167A47FC009A1CCB /* NUIGraphics.h */,
-				6A529B31167A47FC009A1CCB /* NUIGraphics.m */,
-				6A529B32167A47FC009A1CCB /* NUIRenderer.h */,
-				6A529B33167A47FC009A1CCB /* NUIRenderer.m */,
-				6A529B34167A47FC009A1CCB /* NUISettings.h */,
-				6A529B35167A47FC009A1CCB /* NUISettings.m */,
-				6A529B36167A47FC009A1CCB /* NUIStyleParser.h */,
-				6A529B37167A47FC009A1CCB /* NUIStyleParser.m */,
-				6A529B38167A47FC009A1CCB /* NUISwizzler.h */,
-				6A529B39167A47FC009A1CCB /* NUISwizzler.m */,
-				6A529B3A167A47FC009A1CCB /* NUIUtilities.h */,
-				6A529B3B167A47FC009A1CCB /* NUIUtilities.m */,
-				6A529B3C167A47FC009A1CCB /* Renderers */,
-			);
-			path = Core;
-			sourceTree = "<group>";
-		};
-		6A529B3C167A47FC009A1CCB /* Renderers */ = {
-			isa = PBXGroup;
-			children = (
-				6A529B3D167A47FC009A1CCB /* NUIBarButtonItemRenderer.h */,
-				6A529B3E167A47FC009A1CCB /* NUIBarButtonItemRenderer.m */,
-				6A529B3F167A47FC009A1CCB /* NUIButtonRenderer.h */,
-				6A529B40167A47FC009A1CCB /* NUIButtonRenderer.m */,
-				6A529B41167A47FC009A1CCB /* NUILabelRenderer.h */,
-				6A529B42167A47FC009A1CCB /* NUILabelRenderer.m */,
-				6A529B43167A47FC009A1CCB /* NUINavigationBarRenderer.h */,
-				6A529B44167A47FC009A1CCB /* NUINavigationBarRenderer.m */,
-				6A529B45167A47FC009A1CCB /* NUINavigationItemRenderer.h */,
-				6A529B46167A47FC009A1CCB /* NUINavigationItemRenderer.m */,
-				6A529B47167A47FC009A1CCB /* NUISegmentedControlRenderer.h */,
-				6A529B48167A47FC009A1CCB /* NUISegmentedControlRenderer.m */,
-				6A529B49167A47FC009A1CCB /* NUITabBarItemRenderer.h */,
-				6A529B4A167A47FC009A1CCB /* NUITabBarItemRenderer.m */,
-				6A529B4B167A47FC009A1CCB /* NUITabBarRenderer.h */,
-				6A529B4C167A47FC009A1CCB /* NUITabBarRenderer.m */,
-				6A529B4D167A47FC009A1CCB /* NUITableViewCellRenderer.h */,
-				6A529B4E167A47FC009A1CCB /* NUITableViewCellRenderer.m */,
-				6A529B4F167A47FC009A1CCB /* NUITextFieldRenderer.h */,
-				6A529B50167A47FC009A1CCB /* NUITextFieldRenderer.m */,
-				6A529B51167A47FC009A1CCB /* NUIViewRenderer.h */,
-				6A529B52167A47FC009A1CCB /* NUIViewRenderer.m */,
-			);
-			path = Renderers;
-			sourceTree = "<group>";
-		};
-		6A529B54167A47FC009A1CCB /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				6A529B55167A47FC009A1CCB /* NUIBackButtonTemplate.png */,
-				6A529B56167A47FC009A1CCB /* NUIBarButtonTemplate.png */,
-				6A529B57167A47FC009A1CCB /* NUIViewBackground.png */,
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		6A529B58167A47FC009A1CCB /* Styles */ = {
-			isa = PBXGroup;
-			children = (
-				6A529B59167A47FC009A1CCB /* Blue.NUIStyle.nss */,
-				6A529B5A167A47FC009A1CCB /* Default.NUIStyle.nss */,
-				6A529B5B167A47FC009A1CCB /* Round.NUIStyle.nss */,
-			);
-			path = Styles;
-			sourceTree = "<group>";
-		};
-		6A529B5C167A47FC009A1CCB /* UI */ = {
-			isa = PBXGroup;
-			children = (
-				6A529B5D167A47FC009A1CCB /* UIBarButtonItem+NUI.h */,
-				6A529B5E167A47FC009A1CCB /* UIBarButtonItem+NUI.m */,
-				6A529B5F167A47FC009A1CCB /* UIButton+NUI.h */,
-				6A529B60167A47FC009A1CCB /* UIButton+NUI.m */,
-				6A529B61167A47FC009A1CCB /* UILabel+NUI.h */,
-				6A529B62167A47FC009A1CCB /* UILabel+NUI.m */,
-				6A529B63167A47FC009A1CCB /* UINavigationBar+NUI.h */,
-				6A529B64167A47FC009A1CCB /* UINavigationBar+NUI.m */,
-				6A529B65167A47FC009A1CCB /* UINavigationItem+NUI.h */,
-				6A529B66167A47FC009A1CCB /* UINavigationItem+NUI.m */,
-				6A529B67167A47FC009A1CCB /* UISegmentedControl+NUI.h */,
-				6A529B68167A47FC009A1CCB /* UISegmentedControl+NUI.m */,
-				6A529B69167A47FC009A1CCB /* UITabBar+NUI.h */,
-				6A529B6A167A47FC009A1CCB /* UITabBar+NUI.m */,
-				6A529B6B167A47FC009A1CCB /* UITabBarItem+NUI.h */,
-				6A529B6C167A47FC009A1CCB /* UITabBarItem+NUI.m */,
-				6A529B6D167A47FC009A1CCB /* UITableViewCell+NUI.h */,
-				6A529B6E167A47FC009A1CCB /* UITableViewCell+NUI.m */,
-				6A529B6F167A47FC009A1CCB /* UITextField+NUI.h */,
-				6A529B70167A47FC009A1CCB /* UITextField+NUI.m */,
-				6A529B71167A47FC009A1CCB /* UIView+NUI.h */,
-				6A529B72167A47FC009A1CCB /* UIView+NUI.m */,
-			);
-			path = UI;
 			sourceTree = "<group>";
 		};
 		6A8A96F116861B6F00C285BE /* Freelancers */ = {
@@ -867,13 +648,6 @@
 				6A529AF7167A47AF009A1CCB /* Default@2x.png in Resources */,
 				6A529AF9167A47AF009A1CCB /* Default-568h@2x.png in Resources */,
 				6A529AFC167A47AF009A1CCB /* MainStoryboard.storyboard in Resources */,
-				6A529B86167A47FC009A1CCB /* NUIStyle.nss in Resources */,
-				6A529B87167A47FC009A1CCB /* NUIBackButtonTemplate.png in Resources */,
-				6A529B88167A47FC009A1CCB /* NUIBarButtonTemplate.png in Resources */,
-				6A529B89167A47FC009A1CCB /* NUIViewBackground.png in Resources */,
-				6A529B8A167A47FC009A1CCB /* Blue.NUIStyle.nss in Resources */,
-				6A529B8B167A47FC009A1CCB /* Default.NUIStyle.nss in Resources */,
-				6A529B8C167A47FC009A1CCB /* Round.NUIStyle.nss in Resources */,
 				6A1AE752167E1335005DE0E5 /* FLTaskCell.xib in Resources */,
 				6A1AE75B167E18CD005DE0E5 /* LoadingCell.xib in Resources */,
 				6A1AE75D167E1908005DE0E5 /* FLEmptyCell.xib in Resources */,
@@ -972,36 +746,6 @@
 			files = (
 				6A529AEF167A47AF009A1CCB /* main.m in Sources */,
 				6A529AF3167A47AF009A1CCB /* KKAppDelegate.m in Sources */,
-				6A529B73167A47FC009A1CCB /* NUIAppearance.m in Sources */,
-				6A529B74167A47FC009A1CCB /* NUIConverter.m in Sources */,
-				6A529B75167A47FC009A1CCB /* NUIGraphics.m in Sources */,
-				6A529B76167A47FC009A1CCB /* NUIRenderer.m in Sources */,
-				6A529B77167A47FC009A1CCB /* NUISettings.m in Sources */,
-				6A529B78167A47FC009A1CCB /* NUIStyleParser.m in Sources */,
-				6A529B79167A47FC009A1CCB /* NUISwizzler.m in Sources */,
-				6A529B7A167A47FC009A1CCB /* NUIUtilities.m in Sources */,
-				6A529B7B167A47FC009A1CCB /* NUIBarButtonItemRenderer.m in Sources */,
-				6A529B7C167A47FC009A1CCB /* NUIButtonRenderer.m in Sources */,
-				6A529B7D167A47FC009A1CCB /* NUILabelRenderer.m in Sources */,
-				6A529B7E167A47FC009A1CCB /* NUINavigationBarRenderer.m in Sources */,
-				6A529B7F167A47FC009A1CCB /* NUINavigationItemRenderer.m in Sources */,
-				6A529B80167A47FC009A1CCB /* NUISegmentedControlRenderer.m in Sources */,
-				6A529B81167A47FC009A1CCB /* NUITabBarItemRenderer.m in Sources */,
-				6A529B82167A47FC009A1CCB /* NUITabBarRenderer.m in Sources */,
-				6A529B83167A47FC009A1CCB /* NUITableViewCellRenderer.m in Sources */,
-				6A529B84167A47FC009A1CCB /* NUITextFieldRenderer.m in Sources */,
-				6A529B85167A47FC009A1CCB /* NUIViewRenderer.m in Sources */,
-				6A529B8D167A47FC009A1CCB /* UIBarButtonItem+NUI.m in Sources */,
-				6A529B8E167A47FC009A1CCB /* UIButton+NUI.m in Sources */,
-				6A529B8F167A47FC009A1CCB /* UILabel+NUI.m in Sources */,
-				6A529B90167A47FC009A1CCB /* UINavigationBar+NUI.m in Sources */,
-				6A529B91167A47FC009A1CCB /* UINavigationItem+NUI.m in Sources */,
-				6A529B92167A47FC009A1CCB /* UISegmentedControl+NUI.m in Sources */,
-				6A529B93167A47FC009A1CCB /* UITabBar+NUI.m in Sources */,
-				6A529B94167A47FC009A1CCB /* UITabBarItem+NUI.m in Sources */,
-				6A529B95167A47FC009A1CCB /* UITableViewCell+NUI.m in Sources */,
-				6A529B96167A47FC009A1CCB /* UITextField+NUI.m in Sources */,
-				6A529B97167A47FC009A1CCB /* UIView+NUI.m in Sources */,
 				6A1AE72C167DB5C8005DE0E5 /* FLHTTPClient.m in Sources */,
 				6A1AE737167DCB6A005DE0E5 /* FLTask.m in Sources */,
 				6A1AE744167DD022005DE0E5 /* FLHTMLParser.m in Sources */,

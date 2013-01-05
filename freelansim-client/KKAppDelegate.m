@@ -12,7 +12,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    //[NUIAppearance init];
     // Override point for customization after application launch.
     return YES;
 }

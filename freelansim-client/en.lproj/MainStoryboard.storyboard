@@ -77,15 +77,9 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <sections/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="nuiClass" value="View"/>
-                                </userDefinedRuntimeAttributes>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="string" keyPath="nuiClass" value="View"/>
-                        </userDefinedRuntimeAttributes>
                     </view>
                     <tabBarItem key="tabBarItem" title="Заказы" id="xRj-ep-hcm"/>
                     <navigationItem key="navigationItem" title="Заказы" id="UsE-Wm-09E">
@@ -145,9 +139,6 @@
                                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="15"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="nuiClass" value="Label:SmallLabel"/>
-                                                </userDefinedRuntimeAttributes>
                                             </label>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="10" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2Y4-Do-am6">
                                                 <rect key="frame" x="106" y="0.0" width="37" height="38"/>
@@ -155,9 +146,6 @@
                                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="16"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="nuiClass" value="Label:SmallLabel"/>
-                                                </userDefinedRuntimeAttributes>
                                             </label>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="10 минут назад" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" id="wih-t4-SN7">
                                                 <rect key="frame" x="159" y="0.0" width="134" height="38"/>
@@ -165,9 +153,6 @@
                                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="15"/>
                                                 <color key="textColor" red="0.13264266299999999" green="0.13264266299999999" blue="0.13264266299999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="nuiClass" value="Label:SmallLabel"/>
-                                                </userDefinedRuntimeAttributes>
                                             </label>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -446,6 +431,62 @@
         <image name="0220.png" width="35" height="35"/>
         <image name="0260.png" width="35" height="35"/>
     </resources>
+    <classes>
+        <class className="FLBaseController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FLBaseController.h"/>
+        </class>
+        <class className="FLCategoriesController" superclassName="FLBaseController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FLCategoriesController.h"/>
+            <relationships>
+                <relationship kind="action" name="checkCategoriesClick:"/>
+                <relationship kind="outlet" name="categoriesTable" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="navBar" candidateClass="UINavigationBar"/>
+                <relationship kind="outlet" name="navItem" candidateClass="UINavigationItem"/>
+            </relationships>
+        </class>
+        <class className="FLFreelancerController" superclassName="FLBaseController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FLFreelancerController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="avatarView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="loader" candidateClass="UIActivityIndicatorView"/>
+                <relationship kind="outlet" name="loadingView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="locationLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="nameLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="priceLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="skillsView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="specialityLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+        <class className="FLFreelancersController" superclassName="FLBaseController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FLFreelancersController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="freelancersTable" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="searchBar" candidateClass="UISearchBar"/>
+            </relationships>
+        </class>
+        <class className="FLTaskController" superclassName="FLBaseController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FLTaskController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="commentsLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="descriptionWebView" candidateClass="UIWebView"/>
+                <relationship kind="outlet" name="loadingView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="mainScrollView" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="publishedLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="skillsView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="statView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="titleLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="viewsLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="FLTasksController" superclassName="FLBaseController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FLTasksController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="tasksTable" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
