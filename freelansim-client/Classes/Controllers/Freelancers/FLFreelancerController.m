@@ -96,6 +96,11 @@
     self.line.lineColor = [UIColor colorWithRed:0.26f green:0.29f blue:0.32f alpha:1.00f];
 	[self.scrollView addSubview:self.line];
     [self drawContactsForm];
+    [self drawSkillsView];
+    CGSize size = self.scrollView.contentSize;
+    size.height = scrollViewHeight;
+    [self.scrollView setContentSize:size];
+    NSLog(@"%f - %d", self.view.frame.size.height, scrollViewHeight);
 }
 
 -(void)drawContactsForm {
@@ -109,23 +114,33 @@
         titleLabel.frame = CGRectMake(0.0f,5.0f,300.0f,40.0f);
         titleLabel.text = @"Контакты";
         [titleLabel sizeToFit];
-        
+        float height = 0.0f;
         int i = 0;
         for (FLContact *contact in self.freelancer.contacts) {
-            UIButton *btn = [[UIButton alloc] init];
-            btn.frame = CGRectMake(0,(i*38) + titleLabel.frame.origin.y + titleLabel.frame.size.height + 10,200.0f,40.0f);
-        
+            UIButton *btn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+            btn.frame = CGRectMake(0,(i*38) + titleLabel.frame.origin.y + titleLabel.frame.size.height + 10 + 10*i,300.0f,40.0f);
+
             [btn setTitle:contact.text forState:UIControlStateNormal];
             //[NUIRenderer renderButton:btn withClass:@"Button"];
-            [btn sizeToFit];
-            btn.frame = CGRectMake(btn.frame.origin.x,btn.frame.origin.y,btn.frame.size.width + 10, btn.frame.size.height + 10);
+            //[btn sizeToFit];
+            //btn.frame = CGRectMake(btn.frame.origin.x,btn.frame.origin.y,btn.frame.size.width + 10, btn.frame.size.height + 10);
             [contactsView addSubview:btn];
+            height = btn.frame.origin.y + btn.frame.size.height;
             i++;
         }
-        
+        CGRect frame = contactsView.frame;
+        frame.size.height = height + 10;
+        [contactsView setFrame:frame];
         [contactsView addSubview:titleLabel];
         [self.scrollView addSubview:contactsView];
-    } 
+        scrollViewHeight = contactsView.frame.size.height + contactsView.frame.origin.y;
+    }
+}
+
+-(void) drawSkillsView{
+    CGRect frame = self.skillsView.frame;
+    frame.origin.y = scrollViewHeight;
+    [self.skillsView setFrame:frame];
 }
 
 -(void)loadHTMLContent {
