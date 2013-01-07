@@ -39,9 +39,6 @@
                                 <items>
                                     <navigationItem title="Title" id="HnL-v8-pVj">
                                         <barButtonItem key="rightBarButtonItem" title="Выбрать" style="done" id="W2M-Hr-Ap3">
-                                            <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="string" keyPath="nuiClass" value="UIBarButtonItem:UIBarButtonItemDone"/>
-                                            </userDefinedRuntimeAttributes>
                                             <connections>
                                                 <action selector="checkCategoriesClick:" destination="UJw-tk-e7F" id="2pJ-7e-iva"/>
                                             </connections>
