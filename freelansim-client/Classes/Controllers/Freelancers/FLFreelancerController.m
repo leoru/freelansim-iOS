@@ -72,8 +72,6 @@
 -(void)initUI {
     self.loadingView.hidden = YES;
     
-    scrollViewHeight = 159;
-
     UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithImage:nil style:UIBarButtonSystemItemOrganize target:self action:@selector(toBookMarks)];
     self.navigationItem.rightBarButtonItem = item;
     self.navigationItem.title = self.freelancer.name;
@@ -101,6 +99,8 @@
     self.webView.delegate = self;
     self.webView.opaque = NO;
     self.webView.backgroundColor = [UIColor clearColor];
+    
+    scrollViewHeight = self.line.frame.origin.y + self.line.frame.size.height + 15;
     
     [self initTopBar];
     [self initActionSheet];
@@ -140,8 +140,7 @@
         int contactsHeight = 0;
         self.contactsView = [[UIView alloc] init];
         self.contactsView.backgroundColor = [UIColor clearColor];
-        self.contactsView.frame = CGRectMake(10.0f, self.line.frame.origin.y + 10, 300.0f, contactsHeight);
-        
+        self.contactsView.frame = CGRectMake(10.0f, scrollViewHeight, 300.0f, contactsHeight);
         UILabel *titleLabel = [[UILabel alloc] initWithFrame:self.contactsView.frame];
         titleLabel.backgroundColor = [UIColor clearColor];
         titleLabel.frame = CGRectMake(0.0f,5.0f,300.0f,40.0f);
@@ -178,7 +177,7 @@
         self.contactsView.frame = CGRectMake(10.0f, self.line.frame.origin.y + 10, 300.0f, 0.0f);
     }
 
-    scrollViewHeight = self.contactsView.frame.size.height + self.contactsView.frame.origin.y;
+    scrollViewHeight += self.contactsView.frame.size.height + 10;
 
 }
 
@@ -199,13 +198,15 @@
     
     CGRect frame = tagList.frame;
     frame.origin.y = 30;
+    frame.size.height = self.freelancer.tags.count * 20;
     [tagList setFrame:frame];
     
     [tagList setTags:self.freelancer.tags];
-    
+    [tagList sizeToFit];
     [self.skillsView addSubview:tagList];
-    
-    [self.skillsView sizeToFit];
+    frame = self.skillsView.frame;
+    frame.size.height = 30 + tagList.frame.size.height;
+    [self.skillsView setFrame:frame];
 }
 
 -(void)showActionSheet:(id)sender{
@@ -221,26 +222,24 @@
 
 #pragma mark - WebView Delegate
 -(void)webViewDidFinishLoad:(UIWebView *)webView {
-    [self drawContactsForm];
     [self.webView sizeToFit];
-    scrollViewHeight += self.contactsView.frame.size.height;
-    scrollViewHeight += self.webView.frame.size.height;
     
     CGRect frame = self.webView.frame;
-    frame.origin.y = self.contactsView.frame.origin.y + self.contactsView.frame.size.height + 5;
+    frame.origin.y = scrollViewHeight;
     self.webView.frame = frame;
-    
+    scrollViewHeight += self.webView.frame.size.height + 10;
+    [self drawContactsForm];
     if (self.freelancer.tags.count > 0) {
-        [self.skillsView sizeToFit];
         CGRect skillViewFrame = self.skillsView.frame;
-        skillViewFrame.origin.y = self.webView.frame.origin.y + self.webView.frame.size.height + 10;
+        skillViewFrame.origin.y = scrollViewHeight;
         skillViewFrame.size.height += 50;
         self.skillsView.frame = skillViewFrame;
         
     } else {
         [self.skillsView removeFromSuperview];
     }
-    self.scrollView.contentSize = CGSizeMake(320,scrollViewHeight + self.skillsView.frame.size.height + 100);
+    scrollViewHeight += self.skillsView.frame.size.height;
+    self.scrollView.contentSize = CGSizeMake(320,scrollViewHeight);
     
 }
 -(BOOL) webView:(UIWebView *)inWeb shouldStartLoadWithRequest:(NSURLRequest *)inRequest navigationType:(UIWebViewNavigationType)inType {
