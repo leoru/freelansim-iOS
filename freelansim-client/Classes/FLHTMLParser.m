@@ -131,8 +131,13 @@
         contact = [[FLContact alloc] initWithText:freelancer.phone type:@"phone"];
         [contacts addObject:contact];
     }
-
-    freelancer.site = [[contactsNode findChildOfClass:@"site"] contents];
+    
+    HTMLNode *siteNode = [contactsNode findChildOfClass:@"site"];
+    NSString *site;
+    if(siteNode){
+        site = [siteNode getAttributeNamed:@"href"];
+    }
+    freelancer.site = site;
     if (freelancer.site) {
         contact = [[FLContact alloc] initWithText:freelancer.site type:@"site"];
         [contacts addObject:contact];

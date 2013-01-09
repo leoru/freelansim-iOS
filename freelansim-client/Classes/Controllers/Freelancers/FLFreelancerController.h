@@ -10,7 +10,9 @@
 #import "FLFreelancer.h"
 #import "SSToolkit.h"
 
-@interface FLFreelancerController : FLBaseController <UIWebViewDelegate, UIActionSheetDelegate>
+@interface FLFreelancerController : FLBaseController <UIWebViewDelegate, UIActionSheetDelegate>{
+    NSMutableArray *actionSheetTasks;
+}
 
 @property (weak, nonatomic) IBOutlet UIView *loadingView;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;

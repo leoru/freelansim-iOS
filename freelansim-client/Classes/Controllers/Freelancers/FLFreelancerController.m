@@ -48,6 +48,7 @@
             [SVProgressHUD dismiss];
         });
     }];
+    actionSheetTasks = [[NSMutableArray alloc] init];
 }
 - (void)didReceiveMemoryWarning
 {
@@ -65,6 +66,7 @@
     [self setWebView:nil];
     [self setSkillsView:nil];
     [self setLoadingView:nil];
+    actionSheetTasks = nil;
     [super viewDidUnload];
 }
 
@@ -133,8 +135,35 @@
     for (NSString *action in actions) {
         [self.actionSheet addButtonWithTitle:action];
     }
+    actionSheetTasks = actions;
     
 }
+
+#pragma mark - UIActionSheet delegate methods
+-(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
+    NSURL *url;
+    UIPasteboard *pasteboard;
+    switch (buttonIndex) {
+        case 1:
+            //добавление в избранное
+            break;
+        case 2:
+            pasteboard = [UIPasteboard generalPasteboard];
+            pasteboard.string = self.freelancer.link;
+            break;
+        case 3:
+            url = [NSURL URLWithString:self.freelancer.link];
+            [[UIApplication sharedApplication] openURL:url];
+            break;
+        case 4:
+        case 5:
+        case 6:
+            url = [((FLContact *)[self.freelancer.contacts objectAtIndex:buttonIndex - 4]) openURL];
+            [[UIApplication sharedApplication] openURL:url];
+            break;
+    }
+}
+
 -(void)drawContactsForm {
     if (self.freelancer.contacts.count > 0) {
         int contactsHeight = 0;
