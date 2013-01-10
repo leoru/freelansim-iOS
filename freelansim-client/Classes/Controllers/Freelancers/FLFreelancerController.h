@@ -8,7 +8,6 @@
 
 #import "FLBaseController.h"
 #import "FLFreelancer.h"
-#import "SSToolkit.h"
 
 @interface FLFreelancerController : FLBaseController <UIWebViewDelegate, UIActionSheetDelegate>{
     NSMutableArray *actionSheetTasks;
@@ -21,7 +20,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *specialityLabel;
 @property (weak, nonatomic) IBOutlet UILabel *priceLabel;
 @property (weak, nonatomic) IBOutlet UILabel *locationLabel;
-@property (nonatomic,retain) SSLineView *line;
+@property (nonatomic,retain) UIView *line;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *loader;
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 @property (weak, nonatomic) IBOutlet UIView *skillsView;

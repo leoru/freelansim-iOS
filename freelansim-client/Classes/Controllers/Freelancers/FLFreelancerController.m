@@ -14,6 +14,9 @@
 #import "FLHTMLUtils.h"
 #import "DWTagList.h"
 #import "FLContactButton.h"
+#import "FLManagedFreelancer.h"
+#import "FLManagedTag.h"
+#import "FLValueTransformer.h"
 
 @interface FLFreelancerController ()
 {
@@ -93,8 +96,8 @@
     self.nameLabel.text = self.freelancer.name;
     self.specialityLabel.text = self.freelancer.speciality;
     self.locationLabel.text = self.freelancer.location;
-    self.line = [[SSLineView alloc] initWithFrame:CGRectMake(20.0f, 160.0f, 280.0f, 2.0f)];
-    self.line.lineColor = [UIColor colorWithRed:0.26f green:0.29f blue:0.32f alpha:1.00f];
+    self.line = [[UIView alloc] initWithFrame:CGRectMake(20.0f, 160.0f, 280.0f, 1.0f)];
+    self.line.backgroundColor = [UIColor colorWithRed:0.26f green:0.29f blue:0.32f alpha:1.00f];
 	[self.scrollView addSubview:self.line];
     
     self.webView.scrollView.bounces = NO;
@@ -115,7 +118,10 @@
 }
 -(void)initActionSheet {
     NSMutableArray *actions = [NSMutableArray array];
-    [actions addObject:@"Добавить в избранное"];
+    if([self isInFavourites])
+        [actions addObject:@"Удалить из избранного"];
+    else
+        [actions addObject:@"Добавить в избранное"];
     [actions addObject:@"Скопировать ссылку"];
     [actions addObject:@"Перейти в Safari"];
     
@@ -139,6 +145,31 @@
     
 }
 
+-(void)addToFavourites{
+    
+    NSManagedObjectContext *localContext = [NSManagedObjectContext MR_defaultContext];
+    FLManagedFreelancer *freelancer = [FLManagedFreelancer MR_createInContext:localContext];
+    [freelancer mappingFromFreelancer:self.freelancer andImage:self.avatarView.image];
+
+    [localContext MR_saveWithOptions:MRSaveSynchronously completion:^(BOOL success, NSError *error) {
+        
+    }];
+}
+
+-(void)removeFromFavourites{
+    NSArray *results = [FLManagedFreelancer MR_findByAttribute:@"link" withValue:self.freelancer.link];
+    for(FLManagedFreelancer *freelancer in results){
+        [freelancer MR_deleteEntity];
+    }
+}
+
+-(BOOL)isInFavourites{
+    NSArray *results = [FLManagedFreelancer MR_findByAttribute:@"link" withValue:self.freelancer.link];
+    if([results count]>0)
+        return YES;
+    return NO;
+}
+
 #pragma mark - UIActionSheet delegate methods
 -(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
     NSURL *url;
@@ -146,6 +177,11 @@
     switch (buttonIndex) {
         case 1:
             //добавление в избранное
+            if([self isInFavourites])
+                [self removeFromFavourites];
+            else
+                [self addToFavourites];
+            [self initActionSheet];
             break;
         case 2:
             pasteboard = [UIPasteboard generalPasteboard];

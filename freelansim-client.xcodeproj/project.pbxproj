@@ -84,6 +84,15 @@
 		6AED8737167D9B3500EBC6CD /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AED8736167D9B3500EBC6CD /* CoreImage.framework */; };
 		6AED873A167D9B3B00EBC6CD /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AED8739167D9B3B00EBC6CD /* QuartzCore.framework */; };
 		6D1A659EDAF44F38BE9E013F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 41AF178834E54C6E9830FDCB /* libPods.a */; };
+		8B147301169E967B00AD7027 /* FLManagedFreelancer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B147300169E967B00AD7027 /* FLManagedFreelancer.m */; };
+		8B147308169EBA6300AD7027 /* FLManagedTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B147307169EBA6300AD7027 /* FLManagedTask.m */; };
+		8B14730B169EBC3C00AD7027 /* FLManagedTag.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B14730A169EBC3C00AD7027 /* FLManagedTag.m */; };
+		8B14730E169EBE5300AD7027 /* FLFavouriteDeleteButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B14730D169EBE5300AD7027 /* FLFavouriteDeleteButton.m */; };
+		8B68D639169E7DE2009FE17A /* FavouriteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B68D638169E7DE2009FE17A /* FavouriteCell.xib */; };
+		8B68D63D169E8272009FE17A /* FLFavouritesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B68D63C169E8272009FE17A /* FLFavouritesController.m */; };
+		8B9CEE9B169D85C400620749 /* DataStore.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8B9CEE99169D85C400620749 /* DataStore.xcdatamodeld */; };
+		8B9CEEA3169E688000620749 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B9CEEA2169E688000620749 /* CoreData.framework */; };
+		8B9CEEB2169E6C6100620749 /* FLValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B9CEEB1169E6C6100620749 /* FLValueTransformer.m */; };
 		A415B449167EE914002FFC83 /* FLTaskController.m in Sources */ = {isa = PBXBuildFile; fileRef = A415B448167EE914002FFC83 /* FLTaskController.m */; };
 		A429B363167F3B0C00078D1E /* 0012.png in Resources */ = {isa = PBXBuildFile; fileRef = A429B35D167F3B0C00078D1E /* 0012.png */; };
 		A429B364167F3B0C00078D1E /* 0012@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A429B35E167F3B0C00078D1E /* 0012@2x.png */; };
@@ -129,7 +138,7 @@
 		6A26779C1680A32300F178E7 /* FLCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FLCategory.h; path = Classes/Models/FLCategory.h; sourceTree = "<group>"; };
 		6A26779D1680A32300F178E7 /* FLCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FLCategory.m; path = Classes/Models/FLCategory.m; sourceTree = "<group>"; };
 		6A26779F1680AAE800F178E7 /* CategoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoryCell.xib; sourceTree = "<group>"; };
-		6A529ADE167A47AF009A1CCB /* freelansim-client.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = "freelansim-client.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A529ADE167A47AF009A1CCB /* freelansim-client.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "freelansim-client.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A529AE2167A47AF009A1CCB /* UIKit.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		6A529AE4167A47AF009A1CCB /* Foundation.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6A529AE6167A47AF009A1CCB /* CoreGraphics.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -205,6 +214,21 @@
 		6AA0AA5F1697FF6800FE28E3 /* 0011@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "0011@2x.png"; sourceTree = "<group>"; };
 		6AED8736167D9B3500EBC6CD /* CoreImage.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 		6AED8739167D9B3B00EBC6CD /* QuartzCore.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		8B1472FF169E967B00AD7027 /* FLManagedFreelancer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FLManagedFreelancer.h; path = Classes/Models/FLManagedFreelancer.h; sourceTree = "<group>"; };
+		8B147300169E967B00AD7027 /* FLManagedFreelancer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FLManagedFreelancer.m; path = Classes/Models/FLManagedFreelancer.m; sourceTree = "<group>"; };
+		8B147306169EBA6300AD7027 /* FLManagedTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FLManagedTask.h; path = Classes/Models/FLManagedTask.h; sourceTree = "<group>"; };
+		8B147307169EBA6300AD7027 /* FLManagedTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FLManagedTask.m; path = Classes/Models/FLManagedTask.m; sourceTree = "<group>"; };
+		8B147309169EBC3B00AD7027 /* FLManagedTag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FLManagedTag.h; path = Classes/Models/FLManagedTag.h; sourceTree = "<group>"; };
+		8B14730A169EBC3C00AD7027 /* FLManagedTag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FLManagedTag.m; path = Classes/Models/FLManagedTag.m; sourceTree = "<group>"; };
+		8B14730C169EBE5300AD7027 /* FLFavouriteDeleteButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLFavouriteDeleteButton.h; sourceTree = "<group>"; };
+		8B14730D169EBE5300AD7027 /* FLFavouriteDeleteButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLFavouriteDeleteButton.m; sourceTree = "<group>"; };
+		8B14730F169EC01000AD7027 /* FLFavouritesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FLFavouritesController.h; path = Classes/Controllers/FLFavouritesController.h; sourceTree = "<group>"; };
+		8B68D638169E7DE2009FE17A /* FavouriteCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FavouriteCell.xib; sourceTree = "<group>"; };
+		8B68D63C169E8272009FE17A /* FLFavouritesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FLFavouritesController.m; path = Classes/Controllers/FLFavouritesController.m; sourceTree = "<group>"; };
+		8B9CEE9A169D85C400620749 /* DataStore.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataStore.xcdatamodel; sourceTree = "<group>"; };
+		8B9CEEA2169E688000620749 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		8B9CEEB0169E6C6100620749 /* FLValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FLValueTransformer.h; path = Classes/Utils/FLValueTransformer.h; sourceTree = "<group>"; };
+		8B9CEEB1169E6C6100620749 /* FLValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FLValueTransformer.m; path = Classes/Utils/FLValueTransformer.m; sourceTree = "<group>"; };
 		A415B447167EE914002FFC83 /* FLTaskController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FLTaskController.h; path = Classes/Controllers/Tasks/FLTaskController.h; sourceTree = "<group>"; };
 		A415B448167EE914002FFC83 /* FLTaskController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FLTaskController.m; path = Classes/Controllers/Tasks/FLTaskController.m; sourceTree = "<group>"; };
 		A429B35D167F3B0C00078D1E /* 0012.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 0012.png; sourceTree = "<group>"; };
@@ -221,6 +245,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B9CEEA3169E688000620749 /* CoreData.framework in Frameworks */,
 				6AED873A167D9B3B00EBC6CD /* QuartzCore.framework in Frameworks */,
 				6AED8737167D9B3500EBC6CD /* CoreImage.framework in Frameworks */,
 				6A529AE3167A47AF009A1CCB /* UIKit.framework in Frameworks */,
@@ -261,6 +286,8 @@
 		6A1AE734167DCADB005DE0E5 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				8B147305169E99FE00AD7027 /* Categories */,
+				8B9CEE97169D845800620749 /* Data model */,
 				6A1AE735167DCB6A005DE0E5 /* FLTask.h */,
 				6A1AE736167DCB6A005DE0E5 /* FLTask.m */,
 				6A26779C1680A32300F178E7 /* FLCategory.h */,
@@ -294,6 +321,7 @@
 		6A1AE749167E1298005DE0E5 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				8B68D63A169E823A009FE17A /* Favourites */,
 				6A8A96F116861B6F00C285BE /* Freelancers */,
 				6A2677981680A19000F178E7 /* Categories */,
 				6A26779016809EF400F178E7 /* Base */,
@@ -310,6 +338,7 @@
 				6A1AE75C167E1908005DE0E5 /* FLEmptyCell.xib */,
 				6A26779F1680AAE800F178E7 /* CategoryCell.xib */,
 				6A8F515D168572F100AD0CC2 /* FLFreelancerCell.xib */,
+				8B68D638169E7DE2009FE17A /* FavouriteCell.xib */,
 			);
 			name = VIews;
 			sourceTree = "<group>";
@@ -328,6 +357,8 @@
 			children = (
 				6A2677821680877800F178E7 /* FLHTMLUtils.h */,
 				6A2677831680877800F178E7 /* FLHTMLUtils.m */,
+				8B9CEEB0169E6C6100620749 /* FLValueTransformer.h */,
+				8B9CEEB1169E6C6100620749 /* FLValueTransformer.m */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -363,6 +394,7 @@
 		6A529AD3167A47AF009A1CCB = {
 			isa = PBXGroup;
 			children = (
+				8B9CEEA2169E688000620749 /* CoreData.framework */,
 				6A529AE8167A47AF009A1CCB /* freelansim-client */,
 				6A529B17167A47AF009A1CCB /* freelansim-clientTests */,
 				6A529AE1167A47AF009A1CCB /* Frameworks */,
@@ -475,6 +507,8 @@
 				6AA0AA161697F8DE00FE28E3 /* UIRender.m */,
 				6AA0AA171697F8DE00FE28E3 /* UIStyle.h */,
 				6AA0AA181697F8DE00FE28E3 /* UIStyle.m */,
+				8B14730C169EBE5300AD7027 /* FLFavouriteDeleteButton.h */,
+				8B14730D169EBE5300AD7027 /* FLFavouriteDeleteButton.m */,
 			);
 			name = UI;
 			path = Classes/UI;
@@ -525,6 +559,36 @@
 				6A529AF2167A47AF009A1CCB /* KKAppDelegate.m */,
 			);
 			name = Application;
+			sourceTree = "<group>";
+		};
+		8B147305169E99FE00AD7027 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
+		8B68D63A169E823A009FE17A /* Favourites */ = {
+			isa = PBXGroup;
+			children = (
+				8B14730F169EC01000AD7027 /* FLFavouritesController.h */,
+				8B68D63C169E8272009FE17A /* FLFavouritesController.m */,
+			);
+			name = Favourites;
+			sourceTree = "<group>";
+		};
+		8B9CEE97169D845800620749 /* Data model */ = {
+			isa = PBXGroup;
+			children = (
+				8B9CEE99169D85C400620749 /* DataStore.xcdatamodeld */,
+				8B1472FF169E967B00AD7027 /* FLManagedFreelancer.h */,
+				8B147300169E967B00AD7027 /* FLManagedFreelancer.m */,
+				8B147306169EBA6300AD7027 /* FLManagedTask.h */,
+				8B147307169EBA6300AD7027 /* FLManagedTask.m */,
+				8B147309169EBC3B00AD7027 /* FLManagedTag.h */,
+				8B14730A169EBC3C00AD7027 /* FLManagedTag.m */,
+			);
+			name = "Data model";
 			sourceTree = "<group>";
 		};
 		A415B446167EE8F8002FFC83 /* Tasks */ = {
@@ -696,6 +760,7 @@
 				6AA0AA651697FF6800FE28E3 /* 0260@2x.png in Resources */,
 				6AA0AA661697FF6800FE28E3 /* 0089@2x.png in Resources */,
 				6AA0AA671697FF6800FE28E3 /* 0011@2x.png in Resources */,
+				8B68D639169E7DE2009FE17A /* FavouriteCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -764,6 +829,13 @@
 				6AA0AA191697F8DE00FE28E3 /* FLContactButton.m in Sources */,
 				6AA0AA1A1697F8DE00FE28E3 /* UIRender.m in Sources */,
 				6AA0AA1B1697F8DE00FE28E3 /* UIStyle.m in Sources */,
+				8B9CEE9B169D85C400620749 /* DataStore.xcdatamodeld in Sources */,
+				8B9CEEB2169E6C6100620749 /* FLValueTransformer.m in Sources */,
+				8B68D63D169E8272009FE17A /* FLFavouritesController.m in Sources */,
+				8B147301169E967B00AD7027 /* FLManagedFreelancer.m in Sources */,
+				8B147308169EBA6300AD7027 /* FLManagedTask.m in Sources */,
+				8B14730B169EBC3C00AD7027 /* FLManagedTag.m in Sources */,
+				8B14730E169EBE5300AD7027 /* FLFavouriteDeleteButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -960,6 +1032,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		8B9CEE99169D85C400620749 /* DataStore.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				8B9CEE9A169D85C400620749 /* DataStore.xcdatamodel */,
+			);
+			currentVersion = 8B9CEE9A169D85C400620749 /* DataStore.xcdatamodel */;
+			path = DataStore.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 6A529AD5167A47AF009A1CCB /* Project object */;
 }

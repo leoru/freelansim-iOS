@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C3006" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="11G56" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="4">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
     </dependencies>
@@ -261,10 +261,10 @@
             </objects>
             <point key="canvasLocation" x="778" y="707"/>
         </scene>
-        <!--Table View Controller - Избранное-->
+        <!--Favourites Controller - Избранное-->
         <scene sceneID="k7x-up-LGU">
             <objects>
-                <tableViewController title="Избранное" id="09X-e2-HdT" sceneMemberID="viewController">
+                <tableViewController title="Избранное" id="09X-e2-HdT" customClass="FLFavouritesController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="rbd-th-f7B">
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -280,8 +280,15 @@
                                 </view>
                             </tableViewCell>
                         </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="09X-e2-HdT" id="uka-3q-Cie"/>
+                            <outlet property="delegate" destination="09X-e2-HdT" id="Kib-iA-Ohr"/>
+                        </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Избранное" id="93B-tS-4mP"/>
+                    <connections>
+                        <outlet property="favouritesTable" destination="rbd-th-f7B" id="RhY-tK-rgu"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aoq-El-b5x" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -439,6 +446,12 @@
                 <relationship kind="outlet" name="categoriesTable" candidateClass="UITableView"/>
                 <relationship kind="outlet" name="navBar" candidateClass="UINavigationBar"/>
                 <relationship kind="outlet" name="navItem" candidateClass="UINavigationItem"/>
+            </relationships>
+        </class>
+        <class className="FLFavouritesController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FLFavouritesController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="favouritesTable" candidateClass="UITableView"/>
             </relationships>
         </class>
         <class className="FLFreelancerController" superclassName="FLBaseController">

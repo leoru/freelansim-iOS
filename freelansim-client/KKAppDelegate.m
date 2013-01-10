@@ -12,6 +12,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [MagicalRecord setupCoreDataStackWithStoreNamed:@"DataStore.sqlite"];
     // Override point for customization after application launch.
     return YES;
 }
@@ -40,6 +41,7 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application
 {
+    [MagicalRecord cleanUp];
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
