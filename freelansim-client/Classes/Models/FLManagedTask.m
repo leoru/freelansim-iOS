@@ -2,7 +2,7 @@
 //  FLManagedTask.m
 //  freelansim-client
 //
-//  Created by Developer on 10.01.13.
+//  Created by Daniyar Salahutdinov on 10.01.13.
 //  Copyright (c) 2013 Kirill Kunst. All rights reserved.
 //
 

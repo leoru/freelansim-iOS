@@ -7,6 +7,7 @@
 //
 
 #import "FLTask.h"
+#import "FLManagedTag.h"
 
 @implementation FLTask
 
@@ -30,4 +31,24 @@
 -(NSString *)description {
     return [NSString stringWithFormat:@"job-title: %@ \r\n",self.title];
 }
+
+-(void)mapFromManagedTask:(FLManagedTask *)task{
+    self.title = task.title;
+    self.published = task.published;
+    self.price = task.price;
+    self.category = task.category;
+    self.shortDescription = task.shortDesc;
+    self.link = task.link;
+    self.views = task.views.intValue;
+    self.commentsCount = task.commentsCount.intValue;
+    self.htmlDescription = task.htmlDescription;
+    
+    NSMutableArray *tags = [NSMutableArray array];
+    for(FLManagedTag *tag in task.tags){
+        NSString *newTag = tag.name;
+        [tags addObject:newTag];
+    }
+    self.tags = tags;
+}
+
 @end

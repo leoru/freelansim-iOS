@@ -7,6 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "FLManagedTask.h"
+
+@class FLManagedTask;
 
 @interface FLTask : NSObject
 
@@ -23,5 +26,7 @@
 @property (nonatomic,retain) NSArray *mental;
 
 @property (nonatomic,retain) NSArray *tags;
+
+-(void)mapFromManagedTask:(FLManagedTask *)task;
 
 @end

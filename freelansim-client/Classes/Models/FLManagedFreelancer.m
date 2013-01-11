@@ -2,7 +2,7 @@
 //  FLManagedFreelancer.m
 //  freelansim-client
 //
-//  Created by Developer on 10.01.13.
+//  Created by Daniyar Salahutdinov on 10.01.13.
 //  Copyright (c) 2013 Kirill Kunst. All rights reserved.
 //
 
@@ -31,7 +31,7 @@
 
 @end
 
-@implementation FLManagedFreelancer (Mapping)
+@implementation FLManagedFreelancer (Map)
 
 -(void)mappingFromFreelancer:(FLFreelancer *)freelancer andImage:(UIImage *)image{
     NSManagedObjectContext *localContext = [NSManagedObjectContext MR_defaultContext];

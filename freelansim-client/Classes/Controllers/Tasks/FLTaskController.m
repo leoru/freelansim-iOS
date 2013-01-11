@@ -10,6 +10,7 @@
 #import "FLHTMLUtils.h"
 #import "SVProgressHUD.h"
 #import "FLHTTPClient.h"
+#import "FLManagedTask.h"
 
 @interface FLTaskController ()
 {
@@ -44,10 +45,21 @@
             [SVProgressHUD dismiss];
         });
     }];
-    
-	
-    
 }
+
+-(void)initActionSheet{
+    NSString *favouritesButtonTitle = @"Добавить в избранное";
+    if([self isInFavourites])
+        favouritesButtonTitle = @"Удалить из избранного";
+    self.actionSheet = [[UIActionSheet alloc] initWithTitle:@"Выберите действие" delegate:self cancelButtonTitle:@"Отменить" destructiveButtonTitle:nil otherButtonTitles:nil];
+    [self.actionSheet addButtonWithTitle:favouritesButtonTitle];
+}
+
+-(void)initTopBar {
+    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(showActionSheet:)];
+    self.navigationItem.rightBarButtonItem = item;
+}
+
 - (void)viewDidUnload {
     [self setTitleLabel:nil];
     [self setDescriptionWebView:nil];
@@ -91,7 +103,8 @@
     [self loadHTMLContent];
     [self generateSkillTags];
     self.mainScrollView.contentSize = CGSizeMake(320,scrollViewHeight);
-
+    [self initTopBar];
+    [self initActionSheet];
     
 }
 -(void)loadHTMLContent {
@@ -111,6 +124,38 @@
     [self.skillsView sizeToFit];
 }
 
+-(void)showActionSheet:(id)sender{
+    [self.actionSheet showFromTabBar:self.tabBarController.tabBar];
+}
+
+-(BOOL)isInFavourites{
+    NSArray *results = [FLManagedTask MR_findByAttribute:@"link" withValue:self.task.link];
+    if([results count] > 0)
+        return YES;
+    return NO;
+}
+
+-(void)addToFavourites{
+    NSManagedObjectContext *localContext = [NSManagedObjectContext MR_defaultContext];
+    FLManagedTask *managedTask = [FLManagedTask MR_createInContext:localContext];
+    managedTask.date_create = [NSDate date];
+    [managedTask mapWithTask:self.task];
+    [localContext MR_saveWithOptions:MRSaveSynchronously completion:^(BOOL success, NSError *error) {
+        
+    }];
+    NSArray *results = [FLManagedTask MR_findAll];
+    for(FLManagedTask *task in results){
+        NSLog(@"%@", task.title);
+    }
+}
+
+-(void)removeFromFavourites{
+     NSArray *results = [FLManagedTask MR_findByAttribute:@"link" withValue:self.task.link];
+    for(FLManagedTask *task in results){
+        [task MR_deleteEntity];
+    }
+}
+
 #pragma mark - WebView Delegate
 -(void)webViewDidFinishLoad:(UIWebView *)webView {
     [self.descriptionWebView sizeToFit];
@@ -121,6 +166,17 @@
     
     self.skillsView.frame = skillViewFrame;
     self.mainScrollView.contentSize = CGSizeMake(320,scrollViewHeight + self.skillsView.frame.size.height);
+}
+
+#pragma mark - UIActionSheet delegate methods
+-(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if(buttonIndex == 1){
+        if([self isInFavourites]){
+            [self removeFromFavourites];
+        }else{
+            [self addToFavourites];
+        }
+    }
 }
 
 @end

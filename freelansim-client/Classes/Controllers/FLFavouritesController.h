@@ -7,9 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FLManagedFreelancer.h"
+#import "FLManagedTask.h"
 
 @interface FLFavouritesController : UITableViewController{
     NSMutableArray *favourites;
+    FLManagedFreelancer *selectedFreelancer;
+    FLManagedTask *selectedTask;
 }
 
 @property (weak, nonatomic) IBOutlet UITableView *favouritesTable;

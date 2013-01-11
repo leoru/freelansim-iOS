@@ -88,6 +88,7 @@
 		8B147308169EBA6300AD7027 /* FLManagedTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B147307169EBA6300AD7027 /* FLManagedTask.m */; };
 		8B14730B169EBC3C00AD7027 /* FLManagedTag.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B14730A169EBC3C00AD7027 /* FLManagedTag.m */; };
 		8B14730E169EBE5300AD7027 /* FLFavouriteDeleteButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B14730D169EBE5300AD7027 /* FLFavouriteDeleteButton.m */; };
+		8B147311169EDA5B00AD7027 /* task.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B147310169EDA5B00AD7027 /* task.png */; };
 		8B68D639169E7DE2009FE17A /* FavouriteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B68D638169E7DE2009FE17A /* FavouriteCell.xib */; };
 		8B68D63D169E8272009FE17A /* FLFavouritesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B68D63C169E8272009FE17A /* FLFavouritesController.m */; };
 		8B9CEE9B169D85C400620749 /* DataStore.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8B9CEE99169D85C400620749 /* DataStore.xcdatamodeld */; };
@@ -223,6 +224,7 @@
 		8B14730C169EBE5300AD7027 /* FLFavouriteDeleteButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLFavouriteDeleteButton.h; sourceTree = "<group>"; };
 		8B14730D169EBE5300AD7027 /* FLFavouriteDeleteButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLFavouriteDeleteButton.m; sourceTree = "<group>"; };
 		8B14730F169EC01000AD7027 /* FLFavouritesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FLFavouritesController.h; path = Classes/Controllers/FLFavouritesController.h; sourceTree = "<group>"; };
+		8B147310169EDA5B00AD7027 /* task.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = task.png; sourceTree = "<group>"; };
 		8B68D638169E7DE2009FE17A /* FavouriteCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FavouriteCell.xib; sourceTree = "<group>"; };
 		8B68D63C169E8272009FE17A /* FLFavouritesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FLFavouritesController.m; path = Classes/Controllers/FLFavouritesController.m; sourceTree = "<group>"; };
 		8B9CEE9A169D85C400620749 /* DataStore.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataStore.xcdatamodel; sourceTree = "<group>"; };
@@ -614,6 +616,7 @@
 		A429B35C167F3B0C00078D1E /* Icons */ = {
 			isa = PBXGroup;
 			children = (
+				8B147310169EDA5B00AD7027 /* task.png */,
 				6AA0AA581697FF6800FE28E3 /* 0299.png */,
 				6AA0AA591697FF6800FE28E3 /* 0260.png */,
 				6AA0AA5A1697FF6800FE28E3 /* 0089.png */,
@@ -761,6 +764,7 @@
 				6AA0AA661697FF6800FE28E3 /* 0089@2x.png in Resources */,
 				6AA0AA671697FF6800FE28E3 /* 0011@2x.png in Resources */,
 				8B68D639169E7DE2009FE17A /* FavouriteCell.xib in Resources */,
+				8B147311169EDA5B00AD7027 /* task.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

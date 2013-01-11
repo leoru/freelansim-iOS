@@ -7,6 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "FLManagedFreelancer.h"
+
+@class FLManagedFreelancer;
 
 @interface FLFreelancer : NSObject
 
@@ -24,4 +27,6 @@
 @property (nonatomic,retain) NSString *desc;
 @property (nonatomic,retain) NSArray *tags;
 @property (nonatomic,retain) NSArray *contacts;
+
+-(void)mappingWithManagedFreelancer:(FLManagedFreelancer *)freelancer;
 @end

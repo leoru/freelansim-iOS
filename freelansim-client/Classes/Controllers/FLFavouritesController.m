@@ -7,8 +7,11 @@
 //
 
 #import "FLFavouritesController.h"
-#import "FLManagedFreelancer.h"
 #import "FLValueTransformer.h"
+#import "FLTaskController.h"
+#import "FLManagedTask.h"
+#import "FLFreelancerController.h"
+#import "SVProgressHUD.h"
 
 @interface FLFavouritesController ()
 
@@ -32,10 +35,13 @@
 
 -(void)prepareObjects{
     NSArray *freelancers = [FLManagedFreelancer MR_findAll];
-    //and for tasks
+    NSArray *tasks = [FLManagedTask MR_findAll];
+    
+    NSArray *both = [freelancers arrayByAddingObjectsFromArray:tasks];
+    
     NSSortDescriptor *descriptor = [[NSSortDescriptor alloc] initWithKey:@"date_create" ascending:YES];
     NSArray *sortingDescriptors = [NSArray arrayWithObject:descriptor];
-    favourites =[NSMutableArray arrayWithArray:[freelancers sortedArrayUsingDescriptors:sortingDescriptors]];
+    favourites =[NSMutableArray arrayWithArray:[both sortedArrayUsingDescriptors:sortingDescriptors]];
     [self.favouritesTable reloadData];
 }
 
@@ -89,19 +95,33 @@
     if (!cell) {
         cell = [[NSBundle mainBundle] loadNibNamed:cellIdentifier owner:nil options:nil][0];
     }
-    FLManagedFreelancer *freelancer = [favourites objectAtIndex:indexPath.row];
-    // Configure the cell...
-    UIImageView *imageView = (UIImageView *)[cell viewWithTag:1];
-    imageView.image = (UIImage *)[transformer reverseTransformedValue:freelancer.avatar];
-    
-    UILabel *name = (UILabel *)[cell viewWithTag:2];
-    name.text = freelancer.name;
-    
-    UILabel *speciality = (UILabel *)[cell viewWithTag:3];
-    speciality.text = freelancer.speciality;
-    
-    UILabel *desc = (UILabel *)[cell viewWithTag:4];
-    desc.text = freelancer.desc;
+    id obj = [favourites objectAtIndex:indexPath.row];
+    if([obj isKindOfClass:[FLManagedFreelancer class]]){
+        FLManagedFreelancer *freelancer = (FLManagedFreelancer *)obj;
+        
+        // Configure the cell...
+        UIImageView *imageView = (UIImageView *)[cell viewWithTag:1];
+        imageView.image = (UIImage *)[transformer reverseTransformedValue:freelancer.avatar];
+        
+        UILabel *name = (UILabel *)[cell viewWithTag:2];
+        name.text = freelancer.name;
+        
+        UILabel *speciality = (UILabel *)[cell viewWithTag:3];
+        speciality.text = freelancer.speciality;
+        
+        UILabel *desc = (UILabel *)[cell viewWithTag:4];
+        desc.text = freelancer.desc;
+    }else if([obj isKindOfClass:[FLManagedTask class]]){
+        FLManagedTask *task = (FLManagedTask *)obj;
+        UILabel *name = (UILabel *)[cell viewWithTag:2];
+        name.text = task.title;
+        
+        UILabel *speciality = (UILabel *)[cell viewWithTag:3];
+        speciality.text = task.category;
+        
+        UILabel *desc = (UILabel *)[cell viewWithTag:4];
+        desc.text = task.price;
+    }
     
     return cell;
 }
@@ -129,33 +149,34 @@
 }
 */
 
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
 #pragma mark - Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
+    id obj = favourites[indexPath.row];
+    if([obj isKindOfClass:[FLManagedFreelancer class]]){
+        selectedFreelancer = (FLManagedFreelancer *)obj;
+        [self performSegueWithIdentifier:@"FreelancerSegue" sender:self];
+    }else if([obj isKindOfClass:[FLManagedTask class]]){
+        selectedTask = (FLManagedTask *)obj;
+        [self performSegueWithIdentifier:@"TaskSegue" sender:self];
+    }
+    [SVProgressHUD showWithStatus:@"Загрузка..." maskType:SVProgressHUDMaskTypeGradient];
+}
+
+#pragma mark - Prepare for segue
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"FreelancerSegue"]) {
+        FLFreelancerController *freelancerController = [segue destinationViewController];
+        FLFreelancer *freelancer = [[FLFreelancer alloc] init];
+        [freelancer mappingWithManagedFreelancer:selectedFreelancer];
+        freelancerController.freelancer = freelancer;
+    } else if ([segue.identifier isEqualToString:@"TaskSegue"]) {
+        FLTaskController *taskController = [segue destinationViewController];
+        FLTask *task = [[FLTask alloc] init];
+        [task mapFromManagedTask:selectedTask];
+        taskController.task = task;
+    }
 }
 
 @end

@@ -30,14 +30,13 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+
     }
     return self;
 }
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
     [[FLHTTPClient sharedClient] loadFreelancer:self.freelancer withSuccess:^(FLFreelancer *fl, AFHTTPRequestOperation *operation, id responseObject) {
         
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -51,6 +50,9 @@
             [SVProgressHUD dismiss];
         });
     }];
+    
+    [SVProgressHUD dismiss];
+    
     actionSheetTasks = [[NSMutableArray alloc] init];
 }
 - (void)didReceiveMemoryWarning
