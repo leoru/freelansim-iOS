@@ -20,6 +20,7 @@
     return YES;
 }
 
+//перевод UIIamge в NSData
 - (id)transformedValue:(id)value
 {
     if (value == nil)
@@ -31,6 +32,7 @@
     return UIImagePNGRepresentation((UIImage *)value);
 }
 
+//перевод NSData в UIImage
 - (id)reverseTransformedValue:(id)value
 {
     return [UIImage imageWithData:(NSData *)value];
