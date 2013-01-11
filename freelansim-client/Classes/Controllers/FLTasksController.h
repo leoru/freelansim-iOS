@@ -10,13 +10,15 @@
 #import "FLHTTPClient.h"
 #import "FLTask.h"
 #import "FLCategoriesController.h"
+#import "ISRefreshControl.h"
 
 @interface FLTasksController : FLBaseController <UITableViewDataSource, UITableViewDelegate, FLCategoriesDelegate> {
     int page;
     BOOL stopSearch;
     FLTask *selectedTask;
+    ISRefreshControl *refreshControl;
+    
 }
-
 @property (weak, nonatomic) IBOutlet UITableView *tasksTable;
 
 @property (nonatomic,retain) NSMutableArray *tasks;

@@ -28,6 +28,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    refreshControl = [[ISRefreshControl alloc] init];
+    [self.tasksTable addSubview:refreshControl];
+    [refreshControl addTarget:self
+                       action:@selector(refresh)
+             forControlEvents:UIControlEventValueChanged];
     
     self.tasks = [NSMutableArray array];
     stopSearch = NO;
@@ -146,6 +151,12 @@
     [self.tasksTable reloadData];
 }
 
-
+-(void)refresh {
+    self.tasks = [NSMutableArray array];
+    stopSearch = NO;
+    page = 1;
+    [self.tasksTable reloadData];
+    [refreshControl endRefreshing];
+}
 
 @end
