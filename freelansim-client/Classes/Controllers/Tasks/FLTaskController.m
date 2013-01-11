@@ -32,19 +32,22 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [[FLHTTPClient sharedClient] loadTask:self.task withSuccess:^(FLTask *task, AFHTTPRequestOperation *operation, id responseObject) {
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         
-        dispatch_async(dispatch_get_main_queue(), ^{
-            self.task = task;
-            [self initUI];
-            [SVProgressHUD dismiss];
-        });
-        
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [SVProgressHUD dismiss];
-        });
-    }];
+        [[FLHTTPClient sharedClient] loadTask:self.task withSuccess:^(FLTask *task, AFHTTPRequestOperation *operation, id responseObject) {
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                self.task = task;
+                [self initUI];
+                [SVProgressHUD dismiss];
+            });
+            
+        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [SVProgressHUD dismiss];
+            });
+        }];
+    });
 }
 - (void)viewDidUnload {
     [self setTitleLabel:nil];
@@ -138,7 +141,7 @@
     }
 }
 -(void)removeFromFavourites{
-     NSArray *results = [FLManagedTask MR_findByAttribute:@"link" withValue:self.task.link];
+    NSArray *results = [FLManagedTask MR_findByAttribute:@"link" withValue:self.task.link];
     for(FLManagedTask *task in results){
         [task MR_deleteEntity];
     }

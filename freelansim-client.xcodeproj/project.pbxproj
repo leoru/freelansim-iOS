@@ -433,7 +433,6 @@
 		6A529AD3167A47AF009A1CCB = {
 			isa = PBXGroup;
 			children = (
-				8B9CEEA2169E688000620749 /* CoreData.framework */,
 				6A529AE8167A47AF009A1CCB /* freelansim-client */,
 				6A529B17167A47AF009A1CCB /* freelansim-clientTests */,
 				6A529AE1167A47AF009A1CCB /* Frameworks */,
@@ -454,6 +453,7 @@
 		6A529AE1167A47AF009A1CCB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8B9CEEA2169E688000620749 /* CoreData.framework */,
 				6AED8739167D9B3B00EBC6CD /* QuartzCore.framework */,
 				6AED8736167D9B3500EBC6CD /* CoreImage.framework */,
 				6A529AE2167A47AF009A1CCB /* UIKit.framework */,
