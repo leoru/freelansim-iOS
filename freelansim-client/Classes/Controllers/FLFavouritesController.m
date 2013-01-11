@@ -33,12 +33,18 @@
         [self.favouritesTable setEditing:NO animated:NO];
         editingMode = NO;
     }
-    [self initUI];
     [self prepareObjects];
+    [self initUI];
     [super viewWillAppear:animated];
 }
 
 -(void)initUI{
+    if([favourites count] == 0){
+        editingMode = NO;
+        [self.favouritesTable setEditing:NO animated:NO];
+        self.navigationItem.rightBarButtonItem = nil;
+        return;
+    }
     UIBarButtonItem *item;
     if(!editingMode)
         item = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(performRightItem:)];
@@ -64,7 +70,7 @@
     
     NSArray *both = [freelancers arrayByAddingObjectsFromArray:tasks];
     
-    NSSortDescriptor *descriptor = [[NSSortDescriptor alloc] initWithKey:@"date_create" ascending:YES];
+    NSSortDescriptor *descriptor = [[NSSortDescriptor alloc] initWithKey:@"date_create" ascending:NO];
     NSArray *sortingDescriptors = [NSArray arrayWithObject:descriptor];
     favourites =[NSMutableArray arrayWithArray:[both sortedArrayUsingDescriptors:sortingDescriptors]];
     [self.favouritesTable reloadData];
@@ -190,6 +196,7 @@
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
     }
     [tableView endUpdates];
+    [self initUI];
 }
 
 

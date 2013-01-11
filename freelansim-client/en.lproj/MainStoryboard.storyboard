@@ -296,6 +296,38 @@
             </objects>
             <point key="canvasLocation" x="803" y="1433"/>
         </scene>
+        <!--Navigation Controller - Инфо-->
+        <scene sceneID="vnx-fQ-yiE">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="lUt-L8-xmZ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Инфо" image="0017.png" id="gLS-sh-DcL"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="9Ny-pC-sHL">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="EF8-17-RdQ" kind="relationship" relationship="rootViewController" id="o8M-Te-fYV"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fGQ-r8-IlQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="267" y="2138"/>
+        </scene>
+        <!--About Controller - О программе-->
+        <scene sceneID="Jiv-wQ-9TN">
+            <objects>
+                <viewController id="EF8-17-RdQ" customClass="FLAboutController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="EE7-fD-bnw">
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="О программе" id="kPK-57-JVa"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iFr-do-tde" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="809" y="2138"/>
+        </scene>
         <!--Navigation Controller - Избранное-->
         <scene sceneID="Kci-nh-Zp7">
             <objects>
@@ -422,6 +454,7 @@
                         <segue destination="Nkf-Ws-XBL" kind="relationship" relationship="viewControllers" id="j9e-xB-6m4"/>
                         <segue destination="Krs-YF-5sG" kind="relationship" relationship="viewControllers" id="Qwj-AC-Yeh"/>
                         <segue destination="0Ej-Xz-B6Z" kind="relationship" relationship="viewControllers" id="7J5-ek-bM2"/>
+                        <segue destination="lUt-L8-xmZ" kind="relationship" relationship="viewControllers" id="eCl-tH-JqA"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="14" sceneMemberID="firstResponder"/>
@@ -432,11 +465,77 @@
     <resources>
         <image name="0011.png" width="35" height="35"/>
         <image name="0012.png" width="35" height="35"/>
+        <image name="0017.png" width="35" height="35"/>
         <image name="0053.png" width="35" height="35"/>
         <image name="0089.png" width="35" height="35"/>
         <image name="0220.png" width="35" height="35"/>
         <image name="0260.png" width="35" height="35"/>
     </resources>
+    <classes>
+        <class className="FLAboutController" superclassName="FLBaseController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FLAboutController.h"/>
+        </class>
+        <class className="FLBaseController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FLBaseController.h"/>
+        </class>
+        <class className="FLCategoriesController" superclassName="FLBaseController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FLCategoriesController.h"/>
+            <relationships>
+                <relationship kind="action" name="checkCategoriesClick:"/>
+                <relationship kind="outlet" name="categoriesTable" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="navBar" candidateClass="UINavigationBar"/>
+                <relationship kind="outlet" name="navItem" candidateClass="UINavigationItem"/>
+            </relationships>
+        </class>
+        <class className="FLFavouritesController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FLFavouritesController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="favouritesTable" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="FLFreelancerController" superclassName="FLBaseController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FLFreelancerController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="avatarView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="loader" candidateClass="UIActivityIndicatorView"/>
+                <relationship kind="outlet" name="loadingView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="locationLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="nameLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="priceLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="skillsView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="specialityLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+        <class className="FLFreelancersController" superclassName="FLBaseController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FLFreelancersController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="freelancersTable" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="searchBar" candidateClass="UISearchBar"/>
+            </relationships>
+        </class>
+        <class className="FLTaskController" superclassName="FLBaseController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FLTaskController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="commentsLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="descriptionWebView" candidateClass="UIWebView"/>
+                <relationship kind="outlet" name="loadingView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="mainScrollView" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="publishedLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="skillsView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="statView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="titleLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="viewsLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="FLTasksController" superclassName="FLBaseController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FLTasksController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="tasksTable" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
