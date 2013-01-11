@@ -110,7 +110,6 @@
     scrollViewHeight = self.line.frame.origin.y + self.line.frame.size.height + 15;
     
     [self initTopBar];
-    [self initActionSheet];
     [self loadHTMLContent];
     [self generateSkillTags];
 }
@@ -163,6 +162,9 @@
     for(FLManagedFreelancer *freelancer in results){
         [freelancer MR_deleteEntity];
     }
+    [[NSManagedObjectContext MR_defaultContext] MR_saveWithOptions:MRSaveSynchronously completion:^(BOOL success, NSError *error) {
+        
+    }];
 }
 
 -(BOOL)isInFavourites{
@@ -277,6 +279,7 @@
 }
 
 -(void)showActionSheet:(id)sender{
+    [self initActionSheet];
     [self.actionSheet showFromTabBar:self.tabBarController.tabBar];
 }
 

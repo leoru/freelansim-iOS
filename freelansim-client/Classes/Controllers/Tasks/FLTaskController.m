@@ -104,7 +104,6 @@
     [self generateSkillTags];
     self.mainScrollView.contentSize = CGSizeMake(320,scrollViewHeight);
     [self initTopBar];
-    [self initActionSheet];
     
 }
 -(void)loadHTMLContent {
@@ -125,6 +124,7 @@
 }
 
 -(void)showActionSheet:(id)sender{
+    [self initActionSheet];
     [self.actionSheet showFromTabBar:self.tabBarController.tabBar];
 }
 
@@ -154,6 +154,9 @@
     for(FLManagedTask *task in results){
         [task MR_deleteEntity];
     }
+    [[NSManagedObjectContext MR_defaultContext] MR_saveWithOptions:MRSaveSynchronously completion:^(BOOL success, NSError *error) {
+        
+    }];
 }
 
 #pragma mark - WebView Delegate

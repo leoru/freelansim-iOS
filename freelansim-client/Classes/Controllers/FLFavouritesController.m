@@ -29,6 +29,10 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated{
+    if(editingMode){
+        [self.favouritesTable setEditing:NO animated:NO];
+        editingMode = NO;
+    }
     [self initUI];
     [self prepareObjects];
     [super viewWillAppear:animated];
@@ -143,7 +147,9 @@
         UILabel *desc = (UILabel *)[cell viewWithTag:4];
         desc.text = task.price;
     }
-    
+    UIView *backgroundView = [[UIView alloc] initWithFrame:CGRectZero];
+    backgroundView.backgroundColor = [UIColor colorWithRed:0.96f green:0.58f blue:0.35f alpha:1.00f];
+    cell.selectedBackgroundView = backgroundView;
     return cell;
 }
 
@@ -156,19 +162,36 @@
 }
 */
 
-/*
+
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    [tableView beginUpdates];
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
+        id obj = favourites[indexPath.row];
+        if ([obj isKindOfClass:[FLManagedFreelancer class]]) {
+            FLManagedFreelancer *freelancer = (FLManagedFreelancer *)obj;
+            [freelancer MR_deleteEntity];
+            
+        }else{
+            if([obj isKindOfClass:[FLManagedTask class]]){
+                FLManagedTask *task = (FLManagedTask *)obj;
+                [task MR_deleteEntity];
+            }else return;
+        }
+        [[NSManagedObjectContext MR_defaultContext] MR_saveWithOptions:MRSaveSynchronously completion:^(BOOL success, NSError *error) {
+            
+        }];
+        [favourites removeObjectAtIndex:indexPath.row];
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     }   
     else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+    }
+    [tableView endUpdates];
 }
-*/
+
 
 - (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath
 {
