@@ -28,18 +28,17 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
     self.tasks = [NSMutableArray array];
     stopSearch = NO;
     page = 1;
     self.tasksTable.delegate = self;
     self.tasksTable.dataSource = self;
-    
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - UITableView Datasource

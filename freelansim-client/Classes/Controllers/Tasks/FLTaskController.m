@@ -46,18 +46,6 @@
         });
     }];
 }
-
--(void)initTopBar {
-    NSString *star;
-    if([self isInFavourites]){
-        star = @"star_on.png";
-    }else{
-        star = @"star_off.png";
-    }
-    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:star] style:UIBarButtonItemStyleBordered target:self action:@selector(favoritesClicked)];
-    self.navigationItem.rightBarButtonItem = item;
-}
-
 - (void)viewDidUnload {
     [self setTitleLabel:nil];
     [self setDescriptionWebView:nil];
@@ -104,6 +92,16 @@
     [self initTopBar];
     
 }
+-(void)initTopBar {
+    NSString *star;
+    if([self isInFavourites]){
+        star = @"star_on.png";
+    }else{
+        star = @"star_off.png";
+    }
+    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:star] style:UIBarButtonItemStyleBordered target:self action:@selector(favoritesClicked)];
+    self.navigationItem.rightBarButtonItem = item;
+}
 -(void)loadHTMLContent {
     NSString *path = [[NSBundle mainBundle] bundlePath];
     NSURL *baseURL = [NSURL fileURLWithPath:path];
@@ -120,14 +118,12 @@
     [self.skillsView addSubview:tagList];
     [self.skillsView sizeToFit];
 }
-
 -(BOOL)isInFavourites{
     NSArray *results = [FLManagedTask MR_findByAttribute:@"link" withValue:self.task.link];
     if([results count] > 0)
         return YES;
     return NO;
 }
-
 -(void)addToFavourites{
     NSManagedObjectContext *localContext = [NSManagedObjectContext MR_defaultContext];
     FLManagedTask *managedTask = [FLManagedTask MR_createInContext:localContext];
@@ -141,7 +137,6 @@
         NSLog(@"%@", task.title);
     }
 }
-
 -(void)removeFromFavourites{
      NSArray *results = [FLManagedTask MR_findByAttribute:@"link" withValue:self.task.link];
     for(FLManagedTask *task in results){
@@ -163,6 +158,7 @@
     self.skillsView.frame = skillViewFrame;
     self.mainScrollView.contentSize = CGSizeMake(320,scrollViewHeight + self.skillsView.frame.size.height);
 }
+
 
 -(void)favoritesClicked{
     if([self isInFavourites]){

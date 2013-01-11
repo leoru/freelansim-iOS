@@ -16,11 +16,9 @@
 @interface FLCategoriesController : FLBaseController<UITableViewDataSource, UITableViewDelegate>
 {
     NSArray *categories;
-
-    
 }
-- (IBAction)checkCategoriesClick:(id)sender;
 
+- (IBAction)checkCategoriesClick:(id)sender;
 
 @property (weak, nonatomic) IBOutlet UITableView *categoriesTable;
 @property (weak, nonatomic) IBOutlet UINavigationItem *navItem;
@@ -28,4 +26,5 @@
 
 @property (nonatomic,retain) id<FLCategoriesDelegate> delegate;
 @property (nonatomic,retain) NSMutableArray *selectedCategories;
+
 @end

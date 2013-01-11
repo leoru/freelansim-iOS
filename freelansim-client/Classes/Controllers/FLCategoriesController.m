@@ -31,7 +31,6 @@
     }
     return self;
 }
-
 - (void)viewDidLoad
 {
     self.navItem.title = @"Разделы";
@@ -42,13 +41,11 @@
     self.categoriesTable.delegate = self;
     self.categoriesTable.dataSource = self;
 }
-
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
 - (void)viewDidUnload {
     [self setNavItem:nil];
     [self setCategoriesTable:nil];
@@ -57,7 +54,6 @@
 }
 
 #pragma mark - UITableView Datasource
-
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
 }
@@ -92,7 +88,6 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 44;
 }
-
 -(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [self.categoriesTable cellForRowAtIndexPath:indexPath];
     [self.categoriesTable deselectRowAtIndexPath:indexPath animated:YES];
@@ -105,7 +100,6 @@
         }
     }
 }
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [self.categoriesTable cellForRowAtIndexPath:indexPath];
     
@@ -119,11 +113,10 @@
     
 }
 
+#pragma mark - Clickers
 - (IBAction)checkCategoriesClick:(id)sender {
     [self.delegate categoriesDidSelected:self.selectedCategories];
     [self dismissModalViewControllerAnimated:YES];
 }
-
-
 
 @end
