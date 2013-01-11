@@ -146,64 +146,7 @@
     
 }
 
--(void)addToFavourites{
-    
-    NSManagedObjectContext *localContext = [NSManagedObjectContext MR_defaultContext];
-    FLManagedFreelancer *freelancer = [FLManagedFreelancer MR_createInContext:localContext];
-    [freelancer mappingFromFreelancer:self.freelancer andImage:self.avatarView.image];
-
-    [localContext MR_saveWithOptions:MRSaveSynchronously completion:^(BOOL success, NSError *error) {
-        
-    }];
-}
-
--(void)removeFromFavourites{
-    NSArray *results = [FLManagedFreelancer MR_findByAttribute:@"link" withValue:self.freelancer.link];
-    for(FLManagedFreelancer *freelancer in results){
-        [freelancer MR_deleteEntity];
-    }
-    [[NSManagedObjectContext MR_defaultContext] MR_saveWithOptions:MRSaveSynchronously completion:^(BOOL success, NSError *error) {
-        
-    }];
-}
-
--(BOOL)isInFavourites{
-    NSArray *results = [FLManagedFreelancer MR_findByAttribute:@"link" withValue:self.freelancer.link];
-    if([results count]>0)
-        return YES;
-    return NO;
-}
-
-#pragma mark - UIActionSheet delegate methods
--(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
-    NSURL *url;
-    UIPasteboard *pasteboard;
-    switch (buttonIndex) {
-        case 1:
-            //добавление в избранное
-            if([self isInFavourites])
-                [self removeFromFavourites];
-            else
-                [self addToFavourites];
-            [self initActionSheet];
-            break;
-        case 2:
-            pasteboard = [UIPasteboard generalPasteboard];
-            pasteboard.string = self.freelancer.link;
-            break;
-        case 3:
-            url = [NSURL URLWithString:self.freelancer.link];
-            [[UIApplication sharedApplication] openURL:url];
-            break;
-        case 4:
-        case 5:
-        case 6:
-            url = [((FLContact *)[self.freelancer.contacts objectAtIndex:buttonIndex - 4]) openURL];
-            [[UIApplication sharedApplication] openURL:url];
-            break;
-    }
-}
-
+#pragma mark - Draw content
 -(void)drawContactsForm {
     if (self.freelancer.contacts.count > 0) {
         int contactsHeight = 0;
@@ -245,17 +188,15 @@
         self.contactsView.backgroundColor = [UIColor clearColor];
         self.contactsView.frame = CGRectMake(10.0f, self.line.frame.origin.y + 10, 300.0f, 0.0f);
     }
-
+    
     scrollViewHeight += self.contactsView.frame.size.height + 10;
-
+    
 }
-
--(void) drawSkillsView{
+-(void)drawSkillsView{
     CGRect frame = self.skillsView.frame;
     frame.origin.y = scrollViewHeight;
     [self.skillsView setFrame:frame];
 }
-
 -(void)loadHTMLContent {
     NSString *path = [[NSBundle mainBundle] bundlePath];
     NSURL *baseURL = [NSURL fileURLWithPath:path];
@@ -278,6 +219,63 @@
     [self.skillsView setFrame:frame];
 }
 
+#pragma mark - Favourites
+-(void)addToFavourites{
+    
+    NSManagedObjectContext *localContext = [NSManagedObjectContext MR_defaultContext];
+    FLManagedFreelancer *freelancer = [FLManagedFreelancer MR_createInContext:localContext];
+    [freelancer mappingFromFreelancer:self.freelancer andImage:self.avatarView.image];
+
+    [localContext MR_saveWithOptions:MRSaveSynchronously completion:^(BOOL success, NSError *error) {
+        
+    }];
+}
+-(void)removeFromFavourites{
+    NSArray *results = [FLManagedFreelancer MR_findByAttribute:@"link" withValue:self.freelancer.link];
+    for(FLManagedFreelancer *freelancer in results){
+        [freelancer MR_deleteEntity];
+    }
+    [[NSManagedObjectContext MR_defaultContext] MR_saveWithOptions:MRSaveSynchronously completion:^(BOOL success, NSError *error) {
+        
+    }];
+}
+-(BOOL)isInFavourites{
+    NSArray *results = [FLManagedFreelancer MR_findByAttribute:@"link" withValue:self.freelancer.link];
+    if([results count]>0)
+        return YES;
+    return NO;
+}
+
+
+#pragma mark - UIActionSheet delegate methods
+-(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
+    NSURL *url;
+    UIPasteboard *pasteboard;
+    switch (buttonIndex) {
+        case 1:
+            //добавление в избранное
+            if([self isInFavourites])
+                [self removeFromFavourites];
+            else
+                [self addToFavourites];
+            [self initActionSheet];
+            break;
+        case 2:
+            pasteboard = [UIPasteboard generalPasteboard];
+            pasteboard.string = self.freelancer.link;
+            break;
+        case 3:
+            url = [NSURL URLWithString:self.freelancer.link];
+            [[UIApplication sharedApplication] openURL:url];
+            break;
+        case 4:
+        case 5:
+        case 6:
+            url = [((FLContact *)[self.freelancer.contacts objectAtIndex:buttonIndex - 4]) openURL];
+            [[UIApplication sharedApplication] openURL:url];
+            break;
+    }
+}
 -(void)showActionSheet:(id)sender{
     [self initActionSheet];
     [self.actionSheet showFromTabBar:self.tabBarController.tabBar];

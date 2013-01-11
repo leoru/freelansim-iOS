@@ -8,4 +8,5 @@
 
 #import <Foundation/Foundation.h>
 
+// Server host string
 extern NSString * const FLServerHostString;

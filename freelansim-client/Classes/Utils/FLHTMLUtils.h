@@ -13,6 +13,13 @@
  */
 @interface FLHTMLUtils : NSObject
 
+/**
+ CSS for html web view
+ */
 +(NSString *)CSS;
+
+/**
+ Formatted description with css
+ */
 +(NSString *)formattedDescription:(NSString *)HTML;
 @end
