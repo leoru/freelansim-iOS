@@ -11,7 +11,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import "DWTagList.h"
 
-@interface FLTaskController : FLBaseController <UIWebViewDelegate, UIActionSheetDelegate>
+@interface FLTaskController : FLBaseController <UIWebViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView *loadingView;
 @property (weak, nonatomic) IBOutlet UIScrollView *mainScrollView;
@@ -24,7 +24,5 @@
 
 @property (weak, nonatomic) IBOutlet UIView *statView;
 @property (nonatomic,retain) FLTask *task;
-@property (nonatomic,retain) UIActionSheet *actionSheet;
-
 
 @end

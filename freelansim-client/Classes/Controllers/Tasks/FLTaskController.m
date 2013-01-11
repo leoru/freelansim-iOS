@@ -47,16 +47,14 @@
     }];
 }
 
--(void)initActionSheet{
-    NSString *favouritesButtonTitle = @"Добавить в избранное";
-    if([self isInFavourites])
-        favouritesButtonTitle = @"Удалить из избранного";
-    self.actionSheet = [[UIActionSheet alloc] initWithTitle:@"Выберите действие" delegate:self cancelButtonTitle:@"Отменить" destructiveButtonTitle:nil otherButtonTitles:nil];
-    [self.actionSheet addButtonWithTitle:favouritesButtonTitle];
-}
-
 -(void)initTopBar {
-    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(showActionSheet:)];
+    NSString *star;
+    if([self isInFavourites]){
+        star = @"star_on.png";
+    }else{
+        star = @"star_off.png";
+    }
+    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:star] style:UIBarButtonItemStyleBordered target:self action:@selector(favoritesClicked)];
     self.navigationItem.rightBarButtonItem = item;
 }
 
@@ -123,11 +121,6 @@
     [self.skillsView sizeToFit];
 }
 
--(void)showActionSheet:(id)sender{
-    [self initActionSheet];
-    [self.actionSheet showFromTabBar:self.tabBarController.tabBar];
-}
-
 -(BOOL)isInFavourites{
     NSArray *results = [FLManagedTask MR_findByAttribute:@"link" withValue:self.task.link];
     if([results count] > 0)
@@ -171,15 +164,13 @@
     self.mainScrollView.contentSize = CGSizeMake(320,scrollViewHeight + self.skillsView.frame.size.height);
 }
 
-#pragma mark - UIActionSheet delegate methods
--(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
-    if(buttonIndex == 1){
-        if([self isInFavourites]){
-            [self removeFromFavourites];
-        }else{
-            [self addToFavourites];
-        }
+-(void)favoritesClicked{
+    if([self isInFavourites]){
+        [self removeFromFavourites];
+    }else{
+        [self addToFavourites];
     }
+    [self initTopBar];
 }
 
 @end

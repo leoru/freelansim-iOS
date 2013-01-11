@@ -94,6 +94,10 @@
 		8B9CEE9B169D85C400620749 /* DataStore.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8B9CEE99169D85C400620749 /* DataStore.xcdatamodeld */; };
 		8B9CEEA3169E688000620749 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B9CEEA2169E688000620749 /* CoreData.framework */; };
 		8B9CEEB2169E6C6100620749 /* FLValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B9CEEB1169E6C6100620749 /* FLValueTransformer.m */; };
+		8BA6342D16A0074100BF14F2 /* star_off.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BA6342916A0074100BF14F2 /* star_off.png */; };
+		8BA6342E16A0074100BF14F2 /* star_off@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BA6342A16A0074100BF14F2 /* star_off@2x.png */; };
+		8BA6342F16A0074100BF14F2 /* star_on.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BA6342B16A0074100BF14F2 /* star_on.png */; };
+		8BA6343016A0074100BF14F2 /* star_on@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BA6342C16A0074100BF14F2 /* star_on@2x.png */; };
 		A415B449167EE914002FFC83 /* FLTaskController.m in Sources */ = {isa = PBXBuildFile; fileRef = A415B448167EE914002FFC83 /* FLTaskController.m */; };
 		A429B363167F3B0C00078D1E /* 0012.png in Resources */ = {isa = PBXBuildFile; fileRef = A429B35D167F3B0C00078D1E /* 0012.png */; };
 		A429B364167F3B0C00078D1E /* 0012@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A429B35E167F3B0C00078D1E /* 0012@2x.png */; };
@@ -231,6 +235,10 @@
 		8B9CEEA2169E688000620749 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		8B9CEEB0169E6C6100620749 /* FLValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FLValueTransformer.h; path = Classes/Utils/FLValueTransformer.h; sourceTree = "<group>"; };
 		8B9CEEB1169E6C6100620749 /* FLValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FLValueTransformer.m; path = Classes/Utils/FLValueTransformer.m; sourceTree = "<group>"; };
+		8BA6342916A0074100BF14F2 /* star_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star_off.png; sourceTree = "<group>"; };
+		8BA6342A16A0074100BF14F2 /* star_off@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star_off@2x.png"; sourceTree = "<group>"; };
+		8BA6342B16A0074100BF14F2 /* star_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star_on.png; sourceTree = "<group>"; };
+		8BA6342C16A0074100BF14F2 /* star_on@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star_on@2x.png"; sourceTree = "<group>"; };
 		A415B447167EE914002FFC83 /* FLTaskController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FLTaskController.h; path = Classes/Controllers/Tasks/FLTaskController.h; sourceTree = "<group>"; };
 		A415B448167EE914002FFC83 /* FLTaskController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FLTaskController.m; path = Classes/Controllers/Tasks/FLTaskController.m; sourceTree = "<group>"; };
 		A429B35D167F3B0C00078D1E /* 0012.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 0012.png; sourceTree = "<group>"; };
@@ -616,6 +624,10 @@
 		A429B35C167F3B0C00078D1E /* Icons */ = {
 			isa = PBXGroup;
 			children = (
+				8BA6342916A0074100BF14F2 /* star_off.png */,
+				8BA6342A16A0074100BF14F2 /* star_off@2x.png */,
+				8BA6342B16A0074100BF14F2 /* star_on.png */,
+				8BA6342C16A0074100BF14F2 /* star_on@2x.png */,
 				8B147310169EDA5B00AD7027 /* task.png */,
 				6AA0AA581697FF6800FE28E3 /* 0299.png */,
 				6AA0AA591697FF6800FE28E3 /* 0260.png */,
@@ -765,6 +777,10 @@
 				6AA0AA671697FF6800FE28E3 /* 0011@2x.png in Resources */,
 				8B68D639169E7DE2009FE17A /* FavouriteCell.xib in Resources */,
 				8B147311169EDA5B00AD7027 /* task.png in Resources */,
+				8BA6342D16A0074100BF14F2 /* star_off.png in Resources */,
+				8BA6342E16A0074100BF14F2 /* star_off@2x.png in Resources */,
+				8BA6342F16A0074100BF14F2 /* star_on.png in Resources */,
+				8BA6343016A0074100BF14F2 /* star_on@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
