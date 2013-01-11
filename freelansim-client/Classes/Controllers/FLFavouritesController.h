@@ -14,6 +14,7 @@
     NSMutableArray *favourites;
     FLManagedFreelancer *selectedFreelancer;
     FLManagedTask *selectedTask;
+    BOOL editingMode;
 }
 
 @property (weak, nonatomic) IBOutlet UITableView *favouritesTable;

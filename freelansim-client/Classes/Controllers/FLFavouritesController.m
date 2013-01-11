@@ -29,8 +29,29 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated{
+    [self initUI];
     [self prepareObjects];
     [super viewWillAppear:animated];
+}
+
+-(void)initUI{
+    UIBarButtonItem *item;
+    if(!editingMode)
+        item = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(performRightItem:)];
+    else
+        item = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(performRightItem:)];
+    self.navigationItem.rightBarButtonItem = item;
+}
+
+-(void)performRightItem:(id)sender{
+    if(!editingMode){
+        [self.favouritesTable setEditing:YES animated:YES];
+    }
+    else{
+        [self.favouritesTable setEditing:NO animated:YES];
+    }
+    editingMode = !editingMode;
+    [self initUI];
 }
 
 -(void)prepareObjects{
@@ -148,6 +169,11 @@
     }   
 }
 */
+
+- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return UITableViewCellEditingStyleDelete;
+}
 
 #pragma mark - Table view delegate
 
