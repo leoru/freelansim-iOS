@@ -98,6 +98,10 @@
 		8BA6342E16A0074100BF14F2 /* star_off@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BA6342A16A0074100BF14F2 /* star_off@2x.png */; };
 		8BA6342F16A0074100BF14F2 /* star_on.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BA6342B16A0074100BF14F2 /* star_on.png */; };
 		8BA6343016A0074100BF14F2 /* star_on@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BA6342C16A0074100BF14F2 /* star_on@2x.png */; };
+		8BA6343416A00FF400BF14F2 /* FLFirstFavoritesCreator.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BA6343316A00FF400BF14F2 /* FLFirstFavoritesCreator.m */; };
+		8BA6343716A01B9300BF14F2 /* 0017.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BA6343516A01B9300BF14F2 /* 0017.png */; };
+		8BA6343816A01B9300BF14F2 /* 0017@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BA6343616A01B9300BF14F2 /* 0017@2x.png */; };
+		8BA6343C16A01CF100BF14F2 /* FLAboutController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BA6343B16A01CF100BF14F2 /* FLAboutController.m */; };
 		A415B449167EE914002FFC83 /* FLTaskController.m in Sources */ = {isa = PBXBuildFile; fileRef = A415B448167EE914002FFC83 /* FLTaskController.m */; };
 		A429B363167F3B0C00078D1E /* 0012.png in Resources */ = {isa = PBXBuildFile; fileRef = A429B35D167F3B0C00078D1E /* 0012.png */; };
 		A429B364167F3B0C00078D1E /* 0012@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A429B35E167F3B0C00078D1E /* 0012@2x.png */; };
@@ -245,6 +249,12 @@
 		8BA6342A16A0074100BF14F2 /* star_off@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star_off@2x.png"; sourceTree = "<group>"; };
 		8BA6342B16A0074100BF14F2 /* star_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star_on.png; sourceTree = "<group>"; };
 		8BA6342C16A0074100BF14F2 /* star_on@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star_on@2x.png"; sourceTree = "<group>"; };
+		8BA6343216A00FF400BF14F2 /* FLFirstFavoritesCreator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FLFirstFavoritesCreator.h; path = Classes/Utils/FLFirstFavoritesCreator.h; sourceTree = "<group>"; };
+		8BA6343316A00FF400BF14F2 /* FLFirstFavoritesCreator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FLFirstFavoritesCreator.m; path = Classes/Utils/FLFirstFavoritesCreator.m; sourceTree = "<group>"; };
+		8BA6343516A01B9300BF14F2 /* 0017.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 0017.png; sourceTree = "<group>"; };
+		8BA6343616A01B9300BF14F2 /* 0017@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "0017@2x.png"; sourceTree = "<group>"; };
+		8BA6343A16A01CF100BF14F2 /* FLAboutController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FLAboutController.h; path = Classes/Controllers/About/FLAboutController.h; sourceTree = "<group>"; };
+		8BA6343B16A01CF100BF14F2 /* FLAboutController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FLAboutController.m; path = Classes/Controllers/About/FLAboutController.m; sourceTree = "<group>"; };
 		A415B447167EE914002FFC83 /* FLTaskController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FLTaskController.h; path = Classes/Controllers/Tasks/FLTaskController.h; sourceTree = "<group>"; };
 		A415B448167EE914002FFC83 /* FLTaskController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FLTaskController.m; path = Classes/Controllers/Tasks/FLTaskController.m; sourceTree = "<group>"; };
 		A429B35D167F3B0C00078D1E /* 0012.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 0012.png; sourceTree = "<group>"; };
@@ -347,6 +357,7 @@
 		6A1AE749167E1298005DE0E5 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				8BA6343916A01CB000BF14F2 /* About */,
 				8B68D63A169E823A009FE17A /* Favourites */,
 				6A8A96F116861B6F00C285BE /* Freelancers */,
 				6A2677981680A19000F178E7 /* Categories */,
@@ -385,6 +396,8 @@
 				6A2677831680877800F178E7 /* FLHTMLUtils.m */,
 				8B9CEEB0169E6C6100620749 /* FLValueTransformer.h */,
 				8B9CEEB1169E6C6100620749 /* FLValueTransformer.m */,
+				8BA6343216A00FF400BF14F2 /* FLFirstFavoritesCreator.h */,
+				8BA6343316A00FF400BF14F2 /* FLFirstFavoritesCreator.m */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -618,6 +631,15 @@
 			name = "Data model";
 			sourceTree = "<group>";
 		};
+		8BA6343916A01CB000BF14F2 /* About */ = {
+			isa = PBXGroup;
+			children = (
+				8BA6343A16A01CF100BF14F2 /* FLAboutController.h */,
+				8BA6343B16A01CF100BF14F2 /* FLAboutController.m */,
+			);
+			name = About;
+			sourceTree = "<group>";
+		};
 		A415B446167EE8F8002FFC83 /* Tasks */ = {
 			isa = PBXGroup;
 			children = (
@@ -641,6 +663,8 @@
 		A429B35C167F3B0C00078D1E /* Icons */ = {
 			isa = PBXGroup;
 			children = (
+				8BA6343516A01B9300BF14F2 /* 0017.png */,
+				8BA6343616A01B9300BF14F2 /* 0017@2x.png */,
 				8BA6342916A0074100BF14F2 /* star_off.png */,
 				8BA6342A16A0074100BF14F2 /* star_off@2x.png */,
 				8BA6342B16A0074100BF14F2 /* star_on.png */,
@@ -826,6 +850,8 @@
 				8BA6343016A0074100BF14F2 /* star_on@2x.png in Resources */,
 				A46E89BA16A0245B00FD0048 /* ISRefresgControlIcon.png in Resources */,
 				A46E89BB16A0245B00FD0048 /* ISRefresgControlIcon@2x.png in Resources */,
+				8BA6343716A01B9300BF14F2 /* 0017.png in Resources */,
+				8BA6343816A01B9300BF14F2 /* 0017@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -905,6 +931,8 @@
 				A46E89BD16A0245B00FD0048 /* ISRefreshControl.m in Sources */,
 				A46E89BE16A0245B00FD0048 /* ISUtility.m in Sources */,
 				A46E89BF16A0245B00FD0048 /* UITableViewController+RefreshControl.m in Sources */,
+				8BA6343416A00FF400BF14F2 /* FLFirstFavoritesCreator.m in Sources */,
+				8BA6343C16A01CF100BF14F2 /* FLAboutController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

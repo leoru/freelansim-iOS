@@ -145,10 +145,7 @@
 #pragma mark - Select Category Delegate
 -(void)categoriesDidSelected:(NSArray *)categories {
     self.selectedCategories = categories;
-    self.tasks = [NSMutableArray array];
-    stopSearch = NO;
-    page = 1;
-    [self.tasksTable reloadData];
+    [self refresh];
 }
 
 -(void)refresh {
