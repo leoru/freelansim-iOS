@@ -208,14 +208,15 @@
     
     CGRect frame = tagList.frame;
     frame.origin.y = 30;
-    frame.size.height = self.freelancer.tags.count * 20;
+    //frame.size.height = self.freelancer.tags.count * 20;
     [tagList setFrame:frame];
     
     [tagList setTags:self.freelancer.tags];
     [tagList sizeToFit];
+    CGSize size = tagList.frame.size;
     [self.skillsView addSubview:tagList];
     frame = self.skillsView.frame;
-    frame.size.height = 30 + tagList.frame.size.height;
+    frame.size.height = size.height;
     [self.skillsView setFrame:frame];
 }
 

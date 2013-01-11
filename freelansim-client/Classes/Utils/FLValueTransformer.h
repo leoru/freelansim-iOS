@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
+//трансформация UIImage в NSData и обратно (для хранения в CoreData)
 @interface FLValueTransformer : NSValueTransformer
 
 + (Class)transformedValueClass;
