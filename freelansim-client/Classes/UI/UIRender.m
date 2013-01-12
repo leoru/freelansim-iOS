@@ -11,9 +11,9 @@
 @implementation UIRender
 
 +(void)renderContactsButton:(UIButton *)button {
-    UIImage *buttonImage = [[UIImage imageNamed:@"blueButton.png"]
+    UIImage *buttonImage = [[UIImage imageNamed:@"orangeButton.png"]
                             resizableImageWithCapInsets:UIEdgeInsetsMake(18, 18, 18, 18)];
-    UIImage *buttonImageHighlight = [[UIImage imageNamed:@"blueButtonHighlight.png"]
+    UIImage *buttonImageHighlight = [[UIImage imageNamed:@"orangeButtonHighlight.png"]
                                      resizableImageWithCapInsets:UIEdgeInsetsMake(18, 18, 18, 18)];
     
     // Set the background for any states you plan to use
@@ -79,6 +79,8 @@
 	// Toolbar mini
 	[toolbar setBackgroundImage:[UIImage imageNamed:@"navigation-background-mini"] forToolbarPosition:UIToolbarPositionTop barMetrics:UIBarMetricsLandscapePhone];
 	[toolbar setBackgroundImage:[UIImage imageNamed:@"toolbar-background-mini"] forToolbarPosition:UIToolbarPositionBottom barMetrics:UIBarMetricsLandscapePhone];
+    
+    [[UITabBar appearance] setSelectedImageTintColor:[UIColor colorWithRed:0.99f green:0.51f blue:0.33f alpha:1.00f]];
 }
 
 @end

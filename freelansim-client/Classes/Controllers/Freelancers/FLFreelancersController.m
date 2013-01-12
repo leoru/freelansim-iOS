@@ -119,7 +119,7 @@
     return 100;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+    [self.freelancersTable deselectRowAtIndexPath:indexPath animated:NO];
     selectedFreelancer = self.freelancers[indexPath.row];
     [self performSegueWithIdentifier:@"FreelancerSegue" sender:self];
     [SVProgressHUD showWithStatus:@"Загрузка..." maskType:SVProgressHUDMaskTypeGradient];

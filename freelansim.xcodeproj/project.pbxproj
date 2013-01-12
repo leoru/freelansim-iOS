@@ -19,8 +19,12 @@
 		6A1F1B6C16A1489E00712924 /* UIColor+FreelansimAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A1F1B6B16A1489E00712924 /* UIColor+FreelansimAdditions.m */; };
 		6A1F1B7716A151FB00712924 /* grey@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A1F1B7516A151FB00712924 /* grey@2x.png */; };
 		6A1F1B7816A151FB00712924 /* grey.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A1F1B7616A151FB00712924 /* grey.png */; };
-		6A1F1B7A16A1557C00712924 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A1F1B7916A1557C00712924 /* Icon.png */; };
-		6A1F1B7C16A1558100712924 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A1F1B7B16A1558100712924 /* Icon@2x.png */; };
+		6A1F1B7E16A156A300712924 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A1F1B7D16A156A300712924 /* Icon.png */; };
+		6A1F1B8016A156A500712924 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A1F1B7F16A156A500712924 /* Icon@2x.png */; };
+		6A1F1B8516A1C60100712924 /* cell-checkmark-highlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A1F1B8116A1C60100712924 /* cell-checkmark-highlighted.png */; };
+		6A1F1B8616A1C60100712924 /* cell-checkmark-highlighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A1F1B8216A1C60100712924 /* cell-checkmark-highlighted@2x.png */; };
+		6A1F1B8716A1C60100712924 /* cell-checkmark.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A1F1B8316A1C60100712924 /* cell-checkmark.png */; };
+		6A1F1B8816A1C60100712924 /* cell-checkmark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A1F1B8416A1C60100712924 /* cell-checkmark@2x.png */; };
 		6A2677841680877800F178E7 /* FLHTMLUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A2677831680877800F178E7 /* FLHTMLUtils.m */; };
 		6A26778F16809CCB00F178E7 /* DWTagList.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A26778E16809CCB00F178E7 /* DWTagList.m */; };
 		6A26779B1680A1AF00F178E7 /* FLCategoriesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A26779A1680A1AF00F178E7 /* FLCategoriesController.m */; };
@@ -173,8 +177,12 @@
 		6A1F1B6B16A1489E00712924 /* UIColor+FreelansimAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+FreelansimAdditions.m"; sourceTree = "<group>"; };
 		6A1F1B7516A151FB00712924 /* grey@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "grey@2x.png"; path = "Resources/grey@2x.png"; sourceTree = "<group>"; };
 		6A1F1B7616A151FB00712924 /* grey.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = grey.png; path = Resources/grey.png; sourceTree = "<group>"; };
-		6A1F1B7916A1557C00712924 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
-		6A1F1B7B16A1558100712924 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
+		6A1F1B7D16A156A300712924 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		6A1F1B7F16A156A500712924 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
+		6A1F1B8116A1C60100712924 /* cell-checkmark-highlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "cell-checkmark-highlighted.png"; path = "Resources/cell-checkmark-highlighted.png"; sourceTree = "<group>"; };
+		6A1F1B8216A1C60100712924 /* cell-checkmark-highlighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "cell-checkmark-highlighted@2x.png"; path = "Resources/cell-checkmark-highlighted@2x.png"; sourceTree = "<group>"; };
+		6A1F1B8316A1C60100712924 /* cell-checkmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "cell-checkmark.png"; path = "Resources/cell-checkmark.png"; sourceTree = "<group>"; };
+		6A1F1B8416A1C60100712924 /* cell-checkmark@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "cell-checkmark@2x.png"; path = "Resources/cell-checkmark@2x.png"; sourceTree = "<group>"; };
 		6A2677821680877800F178E7 /* FLHTMLUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FLHTMLUtils.h; path = Classes/Utils/FLHTMLUtils.h; sourceTree = "<group>"; };
 		6A2677831680877800F178E7 /* FLHTMLUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FLHTMLUtils.m; path = Classes/Utils/FLHTMLUtils.m; sourceTree = "<group>"; };
 		6A26778D16809CCB00F178E7 /* DWTagList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWTagList.h; sourceTree = "<group>"; };
@@ -184,23 +192,23 @@
 		6A26779C1680A32300F178E7 /* FLCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FLCategory.h; path = Classes/Models/FLCategory.h; sourceTree = "<group>"; };
 		6A26779D1680A32300F178E7 /* FLCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FLCategory.m; path = Classes/Models/FLCategory.m; sourceTree = "<group>"; };
 		6A26779F1680AAE800F178E7 /* CategoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoryCell.xib; sourceTree = "<group>"; };
-		6A529ADE167A47AF009A1CCB /* freelansim-client.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "freelansim-client.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A529ADE167A47AF009A1CCB /* freelansim.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = freelansim.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A529AE2167A47AF009A1CCB /* UIKit.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		6A529AE4167A47AF009A1CCB /* Foundation.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6A529AE6167A47AF009A1CCB /* CoreGraphics.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		6A529AEA167A47AF009A1CCB /* freelansim-client-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "freelansim-client-Info.plist"; sourceTree = "<group>"; };
+		6A529AEA167A47AF009A1CCB /* freelansim-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "freelansim-Info.plist"; sourceTree = "<group>"; };
 		6A529AEC167A47AF009A1CCB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6A529AEE167A47AF009A1CCB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		6A529AF0167A47AF009A1CCB /* freelansim-client-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "freelansim-client-Prefix.pch"; sourceTree = "<group>"; };
+		6A529AF0167A47AF009A1CCB /* freelansim-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "freelansim-Prefix.pch"; sourceTree = "<group>"; };
 		6A529AF1167A47AF009A1CCB /* KKAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKAppDelegate.h; sourceTree = "<group>"; };
 		6A529AF2167A47AF009A1CCB /* KKAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKAppDelegate.m; sourceTree = "<group>"; };
 		6A529AF4167A47AF009A1CCB /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		6A529AF6167A47AF009A1CCB /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		6A529AF8167A47AF009A1CCB /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		6A529AFB167A47AF009A1CCB /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		6A529B10167A47AF009A1CCB /* freelansim-clientTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "freelansim-clientTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A529B10167A47AF009A1CCB /* freelansimTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = freelansimTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A529B11167A47AF009A1CCB /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		6A529B19167A47AF009A1CCB /* freelansim-clientTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "freelansim-clientTests-Info.plist"; sourceTree = "<group>"; };
+		6A529B19167A47AF009A1CCB /* freelansimTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "freelansimTests-Info.plist"; sourceTree = "<group>"; };
 		6A529B1B167A47AF009A1CCB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6A529B1D167A47AF009A1CCB /* freelansim_clientTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = freelansim_clientTests.h; sourceTree = "<group>"; };
 		6A529B1E167A47AF009A1CCB /* freelansim_clientTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = freelansim_clientTests.m; sourceTree = "<group>"; };
@@ -361,7 +369,6 @@
 				6AA0AA121697F8DE00FE28E3 /* UI */,
 				6A2677801680875600F178E7 /* Utils */,
 				6A1AE762167E1F9D005DE0E5 /* Defines */,
-				6A1AE750167E131F005DE0E5 /* VIews */,
 				6A1AE749167E1298005DE0E5 /* Controllers */,
 				6A1AE748167E127E005DE0E5 /* Parser */,
 				6A1AE73F167DCE38005DE0E5 /* Client */,
@@ -484,8 +491,8 @@
 		6A529AD3167A47AF009A1CCB = {
 			isa = PBXGroup;
 			children = (
-				6A1F1B7B16A1558100712924 /* Icon@2x.png */,
-				6A1F1B7916A1557C00712924 /* Icon.png */,
+				6A1F1B7F16A156A500712924 /* Icon@2x.png */,
+				6A1F1B7D16A156A300712924 /* Icon.png */,
 				6A529AE8167A47AF009A1CCB /* freelansim-client */,
 				6A529B17167A47AF009A1CCB /* freelansim-clientTests */,
 				6A529AE1167A47AF009A1CCB /* Frameworks */,
@@ -497,8 +504,8 @@
 		6A529ADF167A47AF009A1CCB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6A529ADE167A47AF009A1CCB /* freelansim-client.app */,
-				6A529B10167A47AF009A1CCB /* freelansim-clientTests.octest */,
+				6A529ADE167A47AF009A1CCB /* freelansim.app */,
+				6A529B10167A47AF009A1CCB /* freelansimTests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -521,6 +528,7 @@
 		6A529AE8167A47AF009A1CCB /* freelansim-client */ = {
 			isa = PBXGroup;
 			children = (
+				6A1AE750167E131F005DE0E5 /* VIews */,
 				A429B35A167F3AD400078D1E /* Resources */,
 				6A529B29167A47EC009A1CCB /* Vendor */,
 				6A1AE728167DB59B005DE0E5 /* Сlasses */,
@@ -533,10 +541,10 @@
 		6A529AE9167A47AF009A1CCB /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				6A529AEA167A47AF009A1CCB /* freelansim-client-Info.plist */,
+				6A529AEA167A47AF009A1CCB /* freelansim-Info.plist */,
 				6A529AEB167A47AF009A1CCB /* InfoPlist.strings */,
 				6A529AEE167A47AF009A1CCB /* main.m */,
-				6A529AF0167A47AF009A1CCB /* freelansim-client-Prefix.pch */,
+				6A529AF0167A47AF009A1CCB /* freelansim-Prefix.pch */,
 				6A529AF4167A47AF009A1CCB /* Default.png */,
 				6A529AF6167A47AF009A1CCB /* Default@2x.png */,
 				6A529AF8167A47AF009A1CCB /* Default-568h@2x.png */,
@@ -557,7 +565,7 @@
 		6A529B18167A47AF009A1CCB /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				6A529B19167A47AF009A1CCB /* freelansim-clientTests-Info.plist */,
+				6A529B19167A47AF009A1CCB /* freelansimTests-Info.plist */,
 				6A529B1A167A47AF009A1CCB /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
@@ -737,6 +745,10 @@
 		A429B35A167F3AD400078D1E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				6A1F1B8116A1C60100712924 /* cell-checkmark-highlighted.png */,
+				6A1F1B8216A1C60100712924 /* cell-checkmark-highlighted@2x.png */,
+				6A1F1B8316A1C60100712924 /* cell-checkmark.png */,
+				6A1F1B8416A1C60100712924 /* cell-checkmark@2x.png */,
 				6A1F1B7516A151FB00712924 /* grey@2x.png */,
 				6A1F1B7616A151FB00712924 /* grey.png */,
 				6A5C5F1816A133760032D7FD /* nav_button */,
@@ -804,9 +816,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		6A529ADD167A47AF009A1CCB /* freelansim-client */ = {
+		6A529ADD167A47AF009A1CCB /* freelansim */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6A529B22167A47AF009A1CCB /* Build configuration list for PBXNativeTarget "freelansim-client" */;
+			buildConfigurationList = 6A529B22167A47AF009A1CCB /* Build configuration list for PBXNativeTarget "freelansim" */;
 			buildPhases = (
 				6A529ADA167A47AF009A1CCB /* Sources */,
 				6A529ADB167A47AF009A1CCB /* Frameworks */,
@@ -817,14 +829,14 @@
 			);
 			dependencies = (
 			);
-			name = "freelansim-client";
+			name = freelansim;
 			productName = "freelansim-client";
-			productReference = 6A529ADE167A47AF009A1CCB /* freelansim-client.app */;
+			productReference = 6A529ADE167A47AF009A1CCB /* freelansim.app */;
 			productType = "com.apple.product-type.application";
 		};
-		6A529B0F167A47AF009A1CCB /* freelansim-clientTests */ = {
+		6A529B0F167A47AF009A1CCB /* freelansimTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6A529B25167A47AF009A1CCB /* Build configuration list for PBXNativeTarget "freelansim-clientTests" */;
+			buildConfigurationList = 6A529B25167A47AF009A1CCB /* Build configuration list for PBXNativeTarget "freelansimTests" */;
 			buildPhases = (
 				6A529B0B167A47AF009A1CCB /* Sources */,
 				6A529B0C167A47AF009A1CCB /* Frameworks */,
@@ -836,9 +848,9 @@
 			dependencies = (
 				6A529B16167A47AF009A1CCB /* PBXTargetDependency */,
 			);
-			name = "freelansim-clientTests";
+			name = freelansimTests;
 			productName = "freelansim-clientTests";
-			productReference = 6A529B10167A47AF009A1CCB /* freelansim-clientTests.octest */;
+			productReference = 6A529B10167A47AF009A1CCB /* freelansimTests.octest */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
@@ -851,7 +863,7 @@
 				LastUpgradeCheck = 0450;
 				ORGANIZATIONNAME = "Kirill Kunst";
 			};
-			buildConfigurationList = 6A529AD8167A47AF009A1CCB /* Build configuration list for PBXProject "freelansim-client" */;
+			buildConfigurationList = 6A529AD8167A47AF009A1CCB /* Build configuration list for PBXProject "freelansim" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -864,8 +876,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				6A529ADD167A47AF009A1CCB /* freelansim-client */,
-				6A529B0F167A47AF009A1CCB /* freelansim-clientTests */,
+				6A529ADD167A47AF009A1CCB /* freelansim */,
+				6A529B0F167A47AF009A1CCB /* freelansimTests */,
 			);
 		};
 /* End PBXProject section */
@@ -960,8 +972,12 @@
 				6A5C5F4016A133760032D7FD /* nav-button@2x.png in Resources */,
 				6A1F1B7716A151FB00712924 /* grey@2x.png in Resources */,
 				6A1F1B7816A151FB00712924 /* grey.png in Resources */,
-				6A1F1B7A16A1557C00712924 /* Icon.png in Resources */,
-				6A1F1B7C16A1558100712924 /* Icon@2x.png in Resources */,
+				6A1F1B7E16A156A300712924 /* Icon.png in Resources */,
+				6A1F1B8016A156A500712924 /* Icon@2x.png in Resources */,
+				6A1F1B8516A1C60100712924 /* cell-checkmark-highlighted.png in Resources */,
+				6A1F1B8616A1C60100712924 /* cell-checkmark-highlighted@2x.png in Resources */,
+				6A1F1B8716A1C60100712924 /* cell-checkmark.png in Resources */,
+				6A1F1B8816A1C60100712924 /* cell-checkmark@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1060,7 +1076,7 @@
 /* Begin PBXTargetDependency section */
 		6A529B16167A47AF009A1CCB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 6A529ADD167A47AF009A1CCB /* freelansim-client */;
+			target = 6A529ADD167A47AF009A1CCB /* freelansim */;
 			targetProxy = 6A529B15167A47AF009A1CCB /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -1152,10 +1168,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer: Кирилл Кунст (7J3RNQ6456)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Кирилл Кунст (7J3RNQ6456)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "freelansim-client/freelansim-client-Prefix.pch";
-				INFOPLIST_FILE = "freelansim-client/freelansim-client-Info.plist";
+				GCC_PREFIX_HEADER = "freelansim-client/freelansim-Prefix.pch";
+				INFOPLIST_FILE = "freelansim-client/freelansim-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = freelansim;
 				PROVISIONING_PROFILE = "1DDA8214-3AD1-43BB-887D-EC9A901F01D2";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "1DDA8214-3AD1-43BB-887D-EC9A901F01D2";
 				WRAPPER_EXTENSION = app;
@@ -1167,10 +1183,10 @@
 			baseConfigurationReference = CB0AF9F7B17F4CB7B2ECC008 /* Pods.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "freelansim-client/freelansim-client-Prefix.pch";
-				INFOPLIST_FILE = "freelansim-client/freelansim-client-Info.plist";
+				GCC_PREFIX_HEADER = "freelansim-client/freelansim-Prefix.pch";
+				INFOPLIST_FILE = "freelansim-client/freelansim-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = freelansim;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -1185,8 +1201,8 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "freelansim-client/freelansim-client-Prefix.pch";
-				INFOPLIST_FILE = "freelansim-clientTests/freelansim-clientTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "freelansim-clientTests/freelansimTests-Info.plist";
+				PRODUCT_NAME = freelansimTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
 			};
@@ -1202,8 +1218,8 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "freelansim-client/freelansim-client-Prefix.pch";
-				INFOPLIST_FILE = "freelansim-clientTests/freelansim-clientTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "freelansim-clientTests/freelansimTests-Info.plist";
+				PRODUCT_NAME = freelansimTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
 			};
@@ -1212,7 +1228,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		6A529AD8167A47AF009A1CCB /* Build configuration list for PBXProject "freelansim-client" */ = {
+		6A529AD8167A47AF009A1CCB /* Build configuration list for PBXProject "freelansim" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6A529B20167A47AF009A1CCB /* Debug */,
@@ -1221,7 +1237,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6A529B22167A47AF009A1CCB /* Build configuration list for PBXNativeTarget "freelansim-client" */ = {
+		6A529B22167A47AF009A1CCB /* Build configuration list for PBXNativeTarget "freelansim" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6A529B23167A47AF009A1CCB /* Debug */,
@@ -1230,7 +1246,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6A529B25167A47AF009A1CCB /* Build configuration list for PBXNativeTarget "freelansim-clientTests" */ = {
+		6A529B25167A47AF009A1CCB /* Build configuration list for PBXNativeTarget "freelansimTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6A529B26167A47AF009A1CCB /* Debug */,

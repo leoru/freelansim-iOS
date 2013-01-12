@@ -16,8 +16,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "6A529ADD167A47AF009A1CCB"
                BuildableName = "freelansim-client.app"
-               BlueprintName = "freelansim-client"
-               ReferencedContainer = "container:freelansim-client.xcodeproj">
+               BlueprintName = "freelansim"
+               ReferencedContainer = "container:freelansim.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -34,8 +34,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "6A529B0F167A47AF009A1CCB"
                BuildableName = "freelansim-clientTests.octest"
-               BlueprintName = "freelansim-clientTests"
-               ReferencedContainer = "container:freelansim-client.xcodeproj">
+               BlueprintName = "freelansimTests"
+               ReferencedContainer = "container:freelansim.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -44,8 +44,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6A529ADD167A47AF009A1CCB"
             BuildableName = "freelansim-client.app"
-            BlueprintName = "freelansim-client"
-            ReferencedContainer = "container:freelansim-client.xcodeproj">
+            BlueprintName = "freelansim"
+            ReferencedContainer = "container:freelansim.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -63,8 +63,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6A529ADD167A47AF009A1CCB"
             BuildableName = "freelansim-client.app"
-            BlueprintName = "freelansim-client"
-            ReferencedContainer = "container:freelansim-client.xcodeproj">
+            BlueprintName = "freelansim"
+            ReferencedContainer = "container:freelansim.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -81,8 +81,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6A529ADD167A47AF009A1CCB"
             BuildableName = "freelansim-client.app"
-            BlueprintName = "freelansim-client"
-            ReferencedContainer = "container:freelansim-client.xcodeproj">
+            BlueprintName = "freelansim"
+            ReferencedContainer = "container:freelansim.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

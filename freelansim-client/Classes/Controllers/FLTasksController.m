@@ -96,6 +96,7 @@
         UILabel *taskCategory = (UILabel *)[cell viewWithTag:2];
         UILabel *taskShortDescription = (UILabel *)[cell viewWithTag:3];
         UILabel *priceLabel = (UILabel *)[cell viewWithTag:4];
+         UILabel *publishedLabel = (UILabel *)[cell viewWithTag:7];
         
         priceLabel.layer.cornerRadius = 5.0f;
         priceLabel.backgroundColor = PriceLabelBackgroundColor;
@@ -114,6 +115,8 @@
         frame.size.height += 5;
         frame.size.width += 5;
         priceLabel.frame = frame;
+        
+        publishedLabel.text = task.published;
     }
     
     UIView *backgroundView = [[UIView alloc] initWithFrame:CGRectZero];
@@ -126,7 +129,7 @@
     return 135;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+    [self.tasksTable deselectRowAtIndexPath:indexPath animated:NO];
     selectedTask = self.tasks[indexPath.row];
     [self performSegueWithIdentifier:@"TaskSegue" sender:self];
     [SVProgressHUD showWithStatus:@"Загрузка..." maskType:SVProgressHUDMaskTypeGradient];
