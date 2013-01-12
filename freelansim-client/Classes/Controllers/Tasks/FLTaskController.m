@@ -31,6 +31,8 @@
 
 - (void)viewDidLoad
 {
+    self.loadingView.backgroundColor = [UIColor patternBackgroundColor];
+    self.view.backgroundColor = [UIColor patternBackgroundColor];
     [super viewDidLoad];
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         
@@ -120,6 +122,7 @@
     [tagList setTags:self.task.tags];
     [self.skillsView addSubview:tagList];
     [self.skillsView sizeToFit];
+    self.skillsView.backgroundColor = [UIColor clearColor];
 }
 -(BOOL)isInFavourites{
     NSArray *results = [FLManagedTask MR_findByAttribute:@"link" withValue:self.task.link];

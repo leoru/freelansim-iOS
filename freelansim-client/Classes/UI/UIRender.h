@@ -15,5 +15,5 @@
 
 +(void)renderContactsButton:(UIButton *)button;
 +(void)renderNavigationBar:(UINavigationBar *)navigationBar;
-
++(void)applyStylesheet;
 @end

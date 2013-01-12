@@ -36,6 +36,8 @@
 }
 - (void)viewDidLoad
 {
+    self.view.backgroundColor = [UIColor patternBackgroundColor];
+    self.loadingView.backgroundColor = [UIColor patternBackgroundColor];
     [super viewDidLoad];
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         [[FLHTTPClient sharedClient] loadFreelancer:self.freelancer withSuccess:^(FLFreelancer *fl, AFHTTPRequestOperation *operation, id responseObject) {
@@ -194,6 +196,7 @@
     
 }
 -(void)drawSkillsView{
+    self.skillsView.backgroundColor = [UIColor clearColor];
     CGRect frame = self.skillsView.frame;
     frame.origin.y = scrollViewHeight;
     [self.skillsView setFrame:frame];
@@ -219,6 +222,7 @@
     frame = self.skillsView.frame;
     frame.size.height = size.height;
     [self.skillsView setFrame:frame];
+    self.skillsView.backgroundColor = [UIColor clearColor];
 }
 
 #pragma mark - Favourites

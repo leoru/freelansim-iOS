@@ -34,9 +34,9 @@
     page = 1;
     self.freelancersTable.delegate = self;
     self.freelancersTable.dataSource = self;
-    
     self.searchBar.delegate = self;
-    
+    self.view.backgroundColor = [UIColor patternBackgroundColor];
+    self.freelancersTable.backgroundColor = [UIColor clearColor];
 }
 - (void)didReceiveMemoryWarning
 {
@@ -110,7 +110,7 @@
     }
     
     UIView *backgroundView = [[UIView alloc] initWithFrame:CGRectZero];
-    backgroundView.backgroundColor = [UIColor colorWithRed:0.96f green:0.58f blue:0.35f alpha:1.00f];
+    backgroundView.backgroundColor = [UIColor colorWithRed:0.99f green:0.51f blue:0.33f alpha:1.00f];
     cell.selectedBackgroundView = backgroundView;
     cell.backgroundColor = [UIColor greenColor];
     return cell;

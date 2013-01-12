@@ -39,6 +39,9 @@
 }
 
 -(void)initUI{
+    self.view.backgroundColor = [UIColor patternBackgroundColor];
+    //self.tableView.backgroundColor = [UIColor clearColor];
+    
     if([favourites count] == 0){
         editingMode = NO;
         [self.favouritesTable setEditing:NO animated:NO];
