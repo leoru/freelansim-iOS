@@ -8,8 +8,9 @@ PODS:
 - MWPhotoBrowser (1.0.1):
   - MBProgressHUD
   - SDWebImage (< 3.0.0)
-- MagicalRecord (2.1.beta.1)
+- MagicalRecord (2.1)
 - Objective-C-HMTL-Parser (0.0.1)
+- Reachability (3.1.0)
 - SDWebImage (2.7):
   - SDWebImage/Main (= 2.7)
 - SDWebImage/Main (2.7)
@@ -21,8 +22,9 @@ DEPENDENCIES:
 - JSONKit
 - MGImageUtilities
 - MWPhotoBrowser
-- MagicalRecord
+- MagicalRecord (= 2.1)
 - Objective-C-HMTL-Parser
+- Reachability
 - SVProgressHUD
 
 SPEC CHECKSUMS:
@@ -32,8 +34,9 @@ SPEC CHECKSUMS:
   MBProgressHUD: b23ee11c42253d6d804e8e0bfabdc334e8b2571f
   MGImageUtilities: ab3580f2161b10f8a41331baea87aaafbd688950
   MWPhotoBrowser: e54233d4c88e951a3b6b8f136393614cf319ac47
-  MagicalRecord: 586523b576a7b8e7d5a5de301f7ea3186f9d1101
+  MagicalRecord: aedbebe987d02d1215718a904c93d7965e48e398
   Objective-C-HMTL-Parser: 4fca85e186a829cfe8db8e316e9688571ea4dfed
+  Reachability: 1c8584c5f26fa776695efef95caaa50402c94cfb
   SDWebImage: c3306b8c68f3569f5c676d585ad77393255887dd
   SDWebImage/Main: c3306b8c68f3569f5c676d585ad77393255887dd
   SVProgressHUD: 51042a14e3a716efdbdd73cbb2181fb23ee94389

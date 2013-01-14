@@ -17,7 +17,6 @@
     BOOL stopSearch;
     FLTask *selectedTask;
     ISRefreshControl *refreshControl;
-    
 }
 @property (weak, nonatomic) IBOutlet UIView *clearView;
 @property (weak, nonatomic) IBOutlet UITableView *tasksTable;

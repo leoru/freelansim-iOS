@@ -130,6 +130,7 @@
 		8BA6343C16A01CF100BF14F2 /* FLAboutController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BA6343B16A01CF100BF14F2 /* FLAboutController.m */; };
 		8BA6345C16A3B97400BF14F2 /* DannyImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BA6345A16A3B97400BF14F2 /* DannyImage.png */; };
 		8BA6345D16A3B97400BF14F2 /* KunstImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BA6345B16A3B97400BF14F2 /* KunstImage.png */; };
+		8BA6347916A3D68B00BF14F2 /* FLInternetConnectionUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BA6347816A3D68B00BF14F2 /* FLInternetConnectionUtils.m */; };
 		A415B449167EE914002FFC83 /* FLTaskController.m in Sources */ = {isa = PBXBuildFile; fileRef = A415B448167EE914002FFC83 /* FLTaskController.m */; };
 		A429B363167F3B0C00078D1E /* 0012.png in Resources */ = {isa = PBXBuildFile; fileRef = A429B35D167F3B0C00078D1E /* 0012.png */; };
 		A429B364167F3B0C00078D1E /* 0012@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A429B35E167F3B0C00078D1E /* 0012@2x.png */; };
@@ -321,6 +322,8 @@
 		8BA6343B16A01CF100BF14F2 /* FLAboutController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FLAboutController.m; path = Classes/Controllers/About/FLAboutController.m; sourceTree = "<group>"; };
 		8BA6345A16A3B97400BF14F2 /* DannyImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DannyImage.png; sourceTree = "<group>"; };
 		8BA6345B16A3B97400BF14F2 /* KunstImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = KunstImage.png; sourceTree = "<group>"; };
+		8BA6347716A3D68B00BF14F2 /* FLInternetConnectionUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FLInternetConnectionUtils.h; path = Classes/Utils/FLInternetConnectionUtils.h; sourceTree = "<group>"; };
+		8BA6347816A3D68B00BF14F2 /* FLInternetConnectionUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FLInternetConnectionUtils.m; path = Classes/Utils/FLInternetConnectionUtils.m; sourceTree = "<group>"; };
 		A415B447167EE914002FFC83 /* FLTaskController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FLTaskController.h; path = Classes/Controllers/Tasks/FLTaskController.h; sourceTree = "<group>"; };
 		A415B448167EE914002FFC83 /* FLTaskController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FLTaskController.m; path = Classes/Controllers/Tasks/FLTaskController.m; sourceTree = "<group>"; };
 		A429B35D167F3B0C00078D1E /* 0012.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 0012.png; sourceTree = "<group>"; };
@@ -472,6 +475,8 @@
 				8B9CEEB1169E6C6100620749 /* FLValueTransformer.m */,
 				8BA6343216A00FF400BF14F2 /* FLFirstFavoritesCreator.h */,
 				8BA6343316A00FF400BF14F2 /* FLFirstFavoritesCreator.m */,
+				8BA6347716A3D68B00BF14F2 /* FLInternetConnectionUtils.h */,
+				8BA6347816A3D68B00BF14F2 /* FLInternetConnectionUtils.m */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -1092,6 +1097,7 @@
 				8BA6343416A00FF400BF14F2 /* FLFirstFavoritesCreator.m in Sources */,
 				8BA6343C16A01CF100BF14F2 /* FLAboutController.m in Sources */,
 				6A1F1B6C16A1489E00712924 /* UIColor+FreelansimAdditions.m in Sources */,
+				8BA6347916A3D68B00BF14F2 /* FLInternetConnectionUtils.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
