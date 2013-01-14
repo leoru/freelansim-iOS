@@ -89,7 +89,8 @@
                 if (!cell) {
                     cell = [[NSBundle mainBundle] loadNibNamed:loadingCellIdentifier owner:nil options:nil][0];
                 }
-                
+                cell.userInteractionEnabled = NO;
+                cell.selectionStyle = UITableViewCellSelectionStyleNone;
                 [[FLHTTPClient sharedClient] getFreelancersWithCategories:self.selectedCategories query:searchQuery page:page++ success:^(NSArray *objects, AFHTTPRequestOperation *operation, id responseObject, BOOL *stop) {
                     dispatch_async(dispatch_get_main_queue(), ^{
                         stopSearch = *stop;
@@ -105,6 +106,8 @@
             if (!cell) {
                 cell = [[NSBundle mainBundle] loadNibNamed:emptyCellIdentifier owner:nil options:nil][0];
             }
+            cell.userInteractionEnabled = NO;
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
         }
     } else {
         

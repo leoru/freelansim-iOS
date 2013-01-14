@@ -205,6 +205,12 @@
     NSString *path = [[NSBundle mainBundle] bundlePath];
     NSURL *baseURL = [NSURL fileURLWithPath:path];
     NSString *html = [FLHTMLUtils formattedDescription:self.freelancer.htmlDescription];
+    NSString *filtered = [[html stringByReplacingOccurrencesOfString:@" " withString:@""] stringByReplacingOccurrencesOfString:@"\n" withString:@""];
+    NSLog(@"%@", filtered);
+    NSRange range = [filtered rangeOfString:@"<body>(null)</body>"];
+    if(range.length > 0){
+        html = [FLHTMLUtils descriptionForbidden:html];
+    }
     [self.webView loadHTMLString:html baseURL:baseURL];
 }
 -(void)generateSkillTags {

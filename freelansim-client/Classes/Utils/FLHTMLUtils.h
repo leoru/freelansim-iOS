@@ -22,4 +22,5 @@
  Formatted description with css
  */
 +(NSString *)formattedDescription:(NSString *)HTML;
++(NSString *)descriptionForbidden:(NSString *)HTML;
 @end

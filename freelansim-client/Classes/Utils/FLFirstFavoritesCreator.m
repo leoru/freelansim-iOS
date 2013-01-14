@@ -2,7 +2,7 @@
 //  FLFirstFavoritesCreator.m
 //  freelansim-client
 //
-//  Created by Developer on 11.01.13.
+//  Created by Daniyar Slahutdinov on 11.01.13.
 //  Copyright (c) 2013 Kirill Kunst. All rights reserved.
 //
 
