@@ -14,6 +14,6 @@
 FOUNDATION_EXPORT NSString *const FLDannyFreelansimLink;
 FOUNDATION_EXPORT NSString *const FLKunstFreelansimLink;
 
-+(void)createFavorites;
++(void)createFavorites:(BOOL)kunst;
 
 @end

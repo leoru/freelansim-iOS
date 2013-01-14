@@ -10,6 +10,7 @@
 #import "UIImageView+WebCache.h"
 #import "SVProgressHUD.h"
 #import "FLFreelancerController.h"
+#import "FLInternetConnectionUtils.h"
 
 @interface FLFreelancersController ()
 
@@ -28,6 +29,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    refreshControl = [[ISRefreshControl alloc] init];
+    [self.freelancersTable addSubview:refreshControl];
+    [refreshControl addTarget:self
+                       action:@selector(refresh)
+             forControlEvents:UIControlEventValueChanged];
     searchQuery = @"";
     self.freelancers = [NSMutableArray array];
     stopSearch = NO;
@@ -60,20 +66,40 @@
     
     if (indexPath.row == self.freelancers.count) {
         if (!stopSearch) {
-            cell = [tableView dequeueReusableCellWithIdentifier:loadingCellIdentifier];
-            if (!cell) {
-                cell = [[NSBundle mainBundle] loadNibNamed:loadingCellIdentifier owner:nil options:nil][0];
-            }
-            
-            [[FLHTTPClient sharedClient] getFreelancersWithCategories:self.selectedCategories query:searchQuery page:page++ success:^(NSArray *objects, AFHTTPRequestOperation *operation, id responseObject, BOOL *stop) {
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    stopSearch = *stop;
-                    [self.freelancers addObjectsFromArray:objects];
-                    [self.freelancersTable reloadData];
-                });
-            } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            if(![FLInternetConnectionUtils isConnectedToInternet]){
+                cell = [tableView dequeueReusableCellWithIdentifier:emptyCellIdentifier];
+                if (!cell) {
+                    cell = [[NSBundle mainBundle] loadNibNamed:emptyCellIdentifier owner:nil options:nil][0];
+                }
+                cell.userInteractionEnabled = NO;
+                cell.selectionStyle = UITableViewCellSelectionStyleNone;
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Сеть не доступна" message:@"Проверьте настройки интернет" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+                [alert show];
+            }else if (![FLInternetConnectionUtils isWebSiteUp]){
+                cell = [tableView dequeueReusableCellWithIdentifier:emptyCellIdentifier];
+                if (!cell) {
+                    cell = [[NSBundle mainBundle] loadNibNamed:emptyCellIdentifier owner:nil options:nil][0];
+                }
+                cell.userInteractionEnabled = NO;
+                cell.selectionStyle = UITableViewCellSelectionStyleNone;
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Сайт не доступен" message:@"Ошибка на сервере. Попробуйте повторить позднее" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+                [alert show];
+            }else{
+                cell = [tableView dequeueReusableCellWithIdentifier:loadingCellIdentifier];
+                if (!cell) {
+                    cell = [[NSBundle mainBundle] loadNibNamed:loadingCellIdentifier owner:nil options:nil][0];
+                }
                 
-            }];
+                [[FLHTTPClient sharedClient] getFreelancersWithCategories:self.selectedCategories query:searchQuery page:page++ success:^(NSArray *objects, AFHTTPRequestOperation *operation, id responseObject, BOOL *stop) {
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        stopSearch = *stop;
+                        [self.freelancers addObjectsFromArray:objects];
+                        [self.freelancersTable reloadData];
+                    });
+                } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                    
+                }];
+            }
         } else {
             cell = [tableView dequeueReusableCellWithIdentifier:emptyCellIdentifier];
             if (!cell) {
@@ -159,6 +185,14 @@
         [self search];
         [self.searchBar resignFirstResponder];
     }
+}
+
+-(void)refresh {
+    self.freelancers = [NSMutableArray array];
+    stopSearch = NO;
+    page = 1;
+    [self.freelancersTable reloadData];
+    [refreshControl endRefreshing];
 }
 
 -(void)search{

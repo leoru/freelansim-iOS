@@ -11,7 +11,6 @@
 #import "FLCategory.h"
 
 
-
 @implementation FLHTTPClient
 
 +(FLHTTPClient *)sharedClient {
@@ -55,7 +54,6 @@
             categoriesString = [categoriesString stringByAppendingFormat:@"%@,",category.subcategories];
         }
     }
-
     [self getPath:@"/tasks" parameters:@{@"categories":categoriesString,@"page":@(page)} success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
         NSData *html = (NSData *)responseObject;
@@ -78,8 +76,6 @@
         }
     }];
 }
-
-
 
 -(void)loadTask:(FLTask *)task withSuccess:(FLHTTPClientSuccessWithTaskObject)success failure:(FLHTTPClientFailure)failure {
     

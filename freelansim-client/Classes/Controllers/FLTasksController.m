@@ -9,6 +9,7 @@
 #import "FLTasksController.h"
 #import "FLTaskController.h"
 #import "SVProgressHUD.h"
+#import "FLInternetConnectionUtils.h"
 
 
 @interface FLTasksController ()
@@ -66,20 +67,41 @@
     
     if (indexPath.row == self.tasks.count) {
         if (!stopSearch) {
-            cell = [tableView dequeueReusableCellWithIdentifier:loadingCellIdentifier];
-            if (!cell) {
-                cell = [[NSBundle mainBundle] loadNibNamed:loadingCellIdentifier owner:nil options:nil][0];
-            }
-            
-            [[FLHTTPClient sharedClient] getTasksWithCategories:self.selectedCategories page:page++ success:^(NSArray *objects, AFHTTPRequestOperation *operation, id responseObject, BOOL *stop) {
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    stopSearch = *stop;
-                    [self.tasks addObjectsFromArray:objects];
-                    [self.tasksTable reloadData];
-                });
-            } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            if(![FLInternetConnectionUtils isConnectedToInternet]){
+                cell = [tableView dequeueReusableCellWithIdentifier:emptyCellIdentifier];
+                if (!cell) {
+                    cell = [[NSBundle mainBundle] loadNibNamed:emptyCellIdentifier owner:nil options:nil][0];
+                }
+                cell.userInteractionEnabled = NO;
+                cell.selectionStyle = UITableViewCellSelectionStyleNone;
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Сеть не доступна" message:@"Проверьте настройки интернет" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+                [alert show];
+            }else if (![FLInternetConnectionUtils isWebSiteUp]){
+                cell = [tableView dequeueReusableCellWithIdentifier:emptyCellIdentifier];
+                if (!cell) {
+                    cell = [[NSBundle mainBundle] loadNibNamed:emptyCellIdentifier owner:nil options:nil][0];
+                }
+                cell.userInteractionEnabled = NO;
+                cell.selectionStyle = UITableViewCellSelectionStyleNone;
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Сайт не доступен" message:@"Ошибка на сервере. Попробуйте повторить позднее" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+                [alert show];
+            }else{
+                cell = [tableView dequeueReusableCellWithIdentifier:loadingCellIdentifier];
+                if (!cell) {
+                    cell = [[NSBundle mainBundle] loadNibNamed:loadingCellIdentifier owner:nil options:nil][0];
+                }
                 
-            }];
+                [[FLHTTPClient sharedClient] getTasksWithCategories:self.selectedCategories page:page++ success:^(NSArray *objects, AFHTTPRequestOperation *operation, id responseObject, BOOL *stop) {
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        stopSearch = *stop;
+                        [self.tasks addObjectsFromArray:objects];
+                        [self.tasksTable reloadData];
+                    });
+                } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Сеть не доступна" message:@"Проверьте настройки интернет" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+                    [alert show];
+                }];
+            }
         } else {
             cell = [tableView dequeueReusableCellWithIdentifier:emptyCellIdentifier];
             if (!cell) {
