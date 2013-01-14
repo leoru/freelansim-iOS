@@ -41,6 +41,7 @@
     self.tasksTable.delegate = self;
     self.tasksTable.dataSource = self;
     self.tasksTable.backgroundColor = [UIColor clearColor];
+    self.clearView.backgroundColor = [UIColor patternBackgroundColor];
     self.view.backgroundColor = [UIColor patternBackgroundColor];
 }
 
@@ -162,4 +163,8 @@
     [refreshControl endRefreshing];
 }
 
+- (void)viewDidUnload {
+    [self setClearView:nil];
+    [super viewDidUnload];
+}
 @end

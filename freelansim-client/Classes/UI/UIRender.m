@@ -23,6 +23,14 @@
     button.titleLabel.font = [UIFont systemFontOfSize:14];
 }
 
++(void)renderMailButton:(UIButton *)button {
+    UIImage *buttonImage = [[UIImage imageNamed:@"big-orange-button"] stretchableImageWithLeftCapWidth:6 topCapHeight:0];
+    UIImage *buttonImageHighlighted = [[UIImage imageNamed:@"big-orange-button-highlighted"] stretchableImageWithLeftCapWidth:6 topCapHeight:0];
+    
+    [button setBackgroundImage:buttonImage forState:UIControlStateNormal];
+    [button setBackgroundImage:buttonImageHighlighted forState:UIControlStateHighlighted];
+}
+
 +(void)renderNavigationBar:(UINavigationBar *)navigationBar {
     navigationBar.tintColor = PrimaryNavBarColor;
 }

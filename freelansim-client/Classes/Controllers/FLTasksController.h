@@ -19,6 +19,7 @@
     ISRefreshControl *refreshControl;
     
 }
+@property (weak, nonatomic) IBOutlet UIView *clearView;
 @property (weak, nonatomic) IBOutlet UITableView *tasksTable;
 
 @property (nonatomic,retain) NSMutableArray *tasks;
