@@ -31,5 +31,19 @@
     return htmlCode;
 }
 
++(NSString *)descriptionForbidden:(NSString *)HTML{
+    NSString *htmlCode = @" \n <html> \n"
+                          "     <head> \n"
+                          "     <title></title> \n"
+                          "     <style>\n"
+                          "body {font-family: AppleGothic; color:DimGray; background-color:transparent; font-size:18px;}"
+                          "\n</style></head> \n"
+                          "     <body> \n <div align =\"center\"> "
+                          "         Данные пользователя скрыты  "
+                          "     </div></body> \n"
+                          "</html>  \n";
+    return htmlCode;
+}
+
 
 @end

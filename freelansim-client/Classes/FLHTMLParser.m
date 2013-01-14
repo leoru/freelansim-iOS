@@ -152,7 +152,9 @@
     HTMLNode *about = [freelancerCard findChildOfClass:@"about"];
     NSArray *infoBlocks = [[about findChildOfClass:@"more_information"] findChildrenOfClass:@"block"];
     freelancer.htmlDescription = [infoBlocks[0] rawContents];
-    
+    if(!freelancer.htmlDescription){
+        
+    }
     // skills
     NSArray *skillsBlocks = [[about findChildOfClass:@"skills_column"] findChildrenOfClass:@"block"];
     NSArray *tags = [[skillsBlocks[0] findChildOfClass:@"tags"] findChildrenOfClass:@"professional"];
