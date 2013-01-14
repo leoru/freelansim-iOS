@@ -28,6 +28,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    refreshControl = [[ISRefreshControl alloc] init];
+    [self.freelancersTable addSubview:refreshControl];
+    [refreshControl addTarget:self
+                       action:@selector(refresh)
+             forControlEvents:UIControlEventValueChanged];
     searchQuery = @"";
     self.freelancers = [NSMutableArray array];
     stopSearch = NO;
@@ -159,6 +164,14 @@
         [self search];
         [self.searchBar resignFirstResponder];
     }
+}
+
+-(void)refresh {
+    self.freelancers = [NSMutableArray array];
+    stopSearch = NO;
+    page = 1;
+    [self.freelancersTable reloadData];
+    [refreshControl endRefreshing];
 }
 
 -(void)search{

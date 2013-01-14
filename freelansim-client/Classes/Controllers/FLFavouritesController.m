@@ -157,10 +157,10 @@
         speciality.text = task.category;
         
         UILabel *desc = (UILabel *)[cell viewWithTag:4];
-        desc.text = task.price;
+        desc.text = task.shortDesc;
         
         UILabel *price = (UILabel *)[cell viewWithTag:5];
-        price.text = @"";
+        price.text = task.price;
     }
     UIView *backgroundView = [[UIView alloc] initWithFrame:CGRectZero];
     backgroundView.backgroundColor = [UIColor colorWithRed:0.99f green:0.51f blue:0.33f alpha:1.00f];
