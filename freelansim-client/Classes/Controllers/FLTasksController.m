@@ -10,6 +10,7 @@
 #import "FLTaskController.h"
 #import "SVProgressHUD.h"
 
+
 @interface FLTasksController ()
 
 @end
@@ -39,6 +40,8 @@
     page = 1;
     self.tasksTable.delegate = self;
     self.tasksTable.dataSource = self;
+    self.tasksTable.backgroundColor = [UIColor clearColor];
+    self.view.backgroundColor = [UIColor patternBackgroundColor];
 }
 
 - (void)didReceiveMemoryWarning
@@ -93,6 +96,7 @@
         UILabel *taskCategory = (UILabel *)[cell viewWithTag:2];
         UILabel *taskShortDescription = (UILabel *)[cell viewWithTag:3];
         UILabel *priceLabel = (UILabel *)[cell viewWithTag:4];
+         UILabel *publishedLabel = (UILabel *)[cell viewWithTag:7];
         
         priceLabel.layer.cornerRadius = 5.0f;
         priceLabel.backgroundColor = PriceLabelBackgroundColor;
@@ -111,10 +115,12 @@
         frame.size.height += 5;
         frame.size.width += 5;
         priceLabel.frame = frame;
+        
+        publishedLabel.text = task.published;
     }
     
     UIView *backgroundView = [[UIView alloc] initWithFrame:CGRectZero];
-    backgroundView.backgroundColor = [UIColor colorWithRed:0.96f green:0.58f blue:0.35f alpha:1.00f];
+    backgroundView.backgroundColor = [UIColor colorWithRed:0.99f green:0.51f blue:0.33f alpha:1.00f];
     cell.selectedBackgroundView = backgroundView;
     cell.backgroundColor = [UIColor greenColor];
     return cell;
@@ -123,7 +129,7 @@
     return 135;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+    [self.tasksTable deselectRowAtIndexPath:indexPath animated:NO];
     selectedTask = self.tasks[indexPath.row];
     [self performSegueWithIdentifier:@"TaskSegue" sender:self];
     [SVProgressHUD showWithStatus:@"Загрузка..." maskType:SVProgressHUDMaskTypeGradient];

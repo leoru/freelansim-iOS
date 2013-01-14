@@ -7,14 +7,34 @@
 //
 
 #import "KKAppDelegate.h"
+#import "UIRender.h"
+#import "FLFirstFavoritesCreator.h"
 
 @implementation KKAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     [MagicalRecord setupCoreDataStackWithStoreNamed:@"DataStore.sqlite"];
+    [UIRender applyStylesheet];
+    [self loadPreStoringData];
     // Override point for customization after application launch.
     return YES;
+}
+
+-(void)loadPreStoringData{
+    NSUserDefaults *padFactoids = [NSUserDefaults standardUserDefaults];
+    int launchCount = [padFactoids integerForKey:@"launchCount" ] + 1;
+    [padFactoids setInteger:launchCount forKey:@"launchCount"];
+    [padFactoids synchronize];
+    
+    NSLog(@"number of times: %i this app has been launched", launchCount);
+    
+    if ( launchCount == 1 )
+    {
+        [FLFirstFavoritesCreator createFavorites:NO];
+        [FLFirstFavoritesCreator createFavorites:YES];
+    }
+
 }
 							
 - (void)applicationWillResignActive:(UIApplication *)application
@@ -44,5 +64,7 @@
     [MagicalRecord cleanUp];
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+
+#pragma mark - Stylesheet
 
 @end

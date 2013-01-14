@@ -30,27 +30,30 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-
+        
     }
     return self;
 }
 - (void)viewDidLoad
 {
+    self.view.backgroundColor = [UIColor patternBackgroundColor];
+    self.loadingView.backgroundColor = [UIColor patternBackgroundColor];
     [super viewDidLoad];
-    [[FLHTTPClient sharedClient] loadFreelancer:self.freelancer withSuccess:^(FLFreelancer *fl, AFHTTPRequestOperation *operation, id responseObject) {
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            self.freelancer = fl;
-            [self initUI];
-            [SVProgressHUD dismiss];
-        });
-        
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [SVProgressHUD dismiss];
-        });
-    }];
-    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        [[FLHTTPClient sharedClient] loadFreelancer:self.freelancer withSuccess:^(FLFreelancer *fl, AFHTTPRequestOperation *operation, id responseObject) {
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                self.freelancer = fl;
+                [self initUI];
+                [SVProgressHUD dismiss];
+            });
+            
+        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [SVProgressHUD dismiss];
+            });
+        }];
+    });
     [SVProgressHUD dismiss];
     
     actionSheetTasks = [[NSMutableArray alloc] init];
@@ -193,6 +196,7 @@
     
 }
 -(void)drawSkillsView{
+    self.skillsView.backgroundColor = [UIColor clearColor];
     CGRect frame = self.skillsView.frame;
     frame.origin.y = scrollViewHeight;
     [self.skillsView setFrame:frame];
@@ -218,6 +222,7 @@
     frame = self.skillsView.frame;
     frame.size.height = size.height;
     [self.skillsView setFrame:frame];
+    self.skillsView.backgroundColor = [UIColor clearColor];
 }
 
 #pragma mark - Favourites
@@ -226,7 +231,7 @@
     NSManagedObjectContext *localContext = [NSManagedObjectContext MR_defaultContext];
     FLManagedFreelancer *freelancer = [FLManagedFreelancer MR_createInContext:localContext];
     [freelancer mappingFromFreelancer:self.freelancer andImage:self.avatarView.image];
-
+    
     [localContext MR_saveWithOptions:MRSaveSynchronously completion:^(BOOL success, NSError *error) {
         
     }];

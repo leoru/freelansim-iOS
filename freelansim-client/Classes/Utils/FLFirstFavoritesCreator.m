@@ -16,14 +16,52 @@
 NSString * const FLKunstFreelansimLink = @"http://freelansim.ru/freelancers/leoru";
 NSString * const FLDannyFreelansimLink = @"http://freelansim.ru/freelancers/Razrab";
 
-+(void)createFavorites{
++(void)createFavorites:(BOOL) kunst{
     
     __block FLFreelancer *freelancer = [[FLFreelancer alloc] init];
-    freelancer.link = FLDannyFreelansimLink;
-    [self loadFreelancer:freelancer completion:^(FLFreelancer *fr) {
-        if(fr)
-            freelancer = fr;
-    }];
+    if(kunst)
+        freelancer.link = FLKunstFreelansimLink;
+    else
+        freelancer.link = FLDannyFreelansimLink;
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        
+        [self loadFreelancer:freelancer completion:^(FLFreelancer *fr) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                if(fr){
+                    NSArray *results = [FLManagedFreelancer MR_findByAttribute:@"link" withValue:freelancer.link];
+                    if([results count] == 0){
+                        NSManagedObjectContext *localContext = [NSManagedObjectContext MR_defaultContext];
+                        freelancer = fr;
+                        if(kunst){
+                            freelancer.name = @"Кирилл Кунст";
+                            freelancer.price = @"от 500 руб. в час";
+                            freelancer.desc = @"Разработка мобильных приложения iOS, Android.\r\nРазработка веб-приложений Ruby on Rails, Sinatra, PHP (Kohana, FuelPHP, Yii, Laravel, Fat-Free Framework).\r\nВы можете посмотреть реализованные мной проекты на linkedin в режиме view full profile.";
+                            freelancer.speciality = @"Мобильные приложения";
+                        }else{
+                            freelancer.name = @"Данияр Салахутдинов";
+                            freelancer.price = @"от 400 руб. в час";
+                            freelancer.desc = @"Разработка мобильных приложения iOS.\r\nРазработка приложений .net (Entity Framework, LinQ, модульное тестирование и прочее)";
+                            freelancer.speciality = @"Разработчик iOS";
+                        }
+                        FLManagedFreelancer *managedOne = [FLManagedFreelancer MR_createInContext:localContext];
+
+                        UIImage *img;
+                        if(kunst)
+                            img = [UIImage imageNamed:@"KunstImage.png"];
+                        else
+                            img = [UIImage imageNamed:@"DannyImage.png"];
+                        
+                        [managedOne mappingFromFreelancer:freelancer andImage:img];
+                        
+                        [localContext MR_saveWithOptions:MRSaveSynchronously completion:^(BOOL success, NSError *error) {
+                            
+                        }];
+                    }
+                }
+            });
+        }];
+    });
+
     
 }
 
