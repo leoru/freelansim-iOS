@@ -7,6 +7,7 @@
 //
 
 #import "FLAboutController.h"
+#import "UIRender.h"
 
 @interface FLAboutController ()
 
@@ -25,8 +26,10 @@
 
 - (void)viewDidLoad
 {
+    self.view.backgroundColor = [UIColor patternBackgroundColor];
+    [UIRender renderMailButton:self.mailButton];
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+	
 }
 
 - (void)didReceiveMemoryWarning
@@ -35,4 +38,12 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)viewDidUnload {
+    [self setMailButton:nil];
+    [super viewDidUnload];
+}
+- (IBAction)sendMail:(id)sender {
+    NSURL *url = [NSURL URLWithString:crtwebMailString];
+    [[UIApplication sharedApplication] openURL:url];
+}
 @end

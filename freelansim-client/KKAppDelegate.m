@@ -7,12 +7,14 @@
 //
 
 #import "KKAppDelegate.h"
+#import "UIRender.h"
 
 @implementation KKAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     [MagicalRecord setupCoreDataStackWithStoreNamed:@"DataStore.sqlite"];
+    [UIRender applyStylesheet];
     // Override point for customization after application launch.
     return YES;
 }
@@ -44,5 +46,7 @@
     [MagicalRecord cleanUp];
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+
+#pragma mark - Stylesheet
 
 @end

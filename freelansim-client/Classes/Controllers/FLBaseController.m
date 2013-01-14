@@ -26,7 +26,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [UIRender renderNavigationBar:self.navigationController.navigationBar];
+   // [UIRender renderNavigationBar:self.navigationController.navigationBar];
 }
 
 - (void)didReceiveMemoryWarning

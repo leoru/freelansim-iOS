@@ -9,5 +9,7 @@
 #import "FLBaseController.h"
 
 @interface FLAboutController : FLBaseController
+@property (weak, nonatomic) IBOutlet UIButton *mailButton;
+- (IBAction)sendMail:(id)sender;
 
 @end

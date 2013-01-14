@@ -34,7 +34,8 @@
 - (void)viewDidLoad
 {
     self.navItem.title = @"Разделы";
-    
+    self.view.backgroundColor = [UIColor patternBackgroundColor];
+    self.categoriesTable.backgroundColor = [UIColor clearColor];
     self.navBar.tintColor = [UIColor colorWithRed:0.97f green:0.67f blue:0.44f alpha:1.00f];
     categories = [FLCategory categories];
     
@@ -74,7 +75,7 @@
     
     categoryTitle.text = category.title;
     UIView *backgroundView = [[UIView alloc] initWithFrame:CGRectZero];
-    backgroundView.backgroundColor = [UIColor colorWithRed:0.96f green:0.58f blue:0.35f alpha:1.00f];
+    backgroundView.backgroundColor = [UIColor colorWithRed:0.99f green:0.51f blue:0.33f alpha:1.00f];
     cell.selectedBackgroundView = backgroundView;
     
     for (FLCategory *cat in self.selectedCategories) {

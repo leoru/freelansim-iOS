@@ -39,6 +39,9 @@
 }
 
 -(void)initUI{
+    self.view.backgroundColor = [UIColor patternBackgroundColor];
+    //self.tableView.backgroundColor = [UIColor clearColor];
+    
     if([favourites count] == 0){
         editingMode = NO;
         [self.favouritesTable setEditing:NO animated:NO];
@@ -154,7 +157,7 @@
         desc.text = task.price;
     }
     UIView *backgroundView = [[UIView alloc] initWithFrame:CGRectZero];
-    backgroundView.backgroundColor = [UIColor colorWithRed:0.96f green:0.58f blue:0.35f alpha:1.00f];
+    backgroundView.backgroundColor = [UIColor colorWithRed:0.99f green:0.51f blue:0.33f alpha:1.00f];
     cell.selectedBackgroundView = backgroundView;
     return cell;
 }

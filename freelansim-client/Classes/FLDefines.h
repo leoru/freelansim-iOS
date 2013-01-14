@@ -10,3 +10,4 @@
 
 // Server host string
 extern NSString * const FLServerHostString;
+extern NSString * const crtwebMailString;

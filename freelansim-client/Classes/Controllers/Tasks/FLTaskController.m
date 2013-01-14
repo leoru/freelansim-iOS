@@ -31,6 +31,8 @@
 
 - (void)viewDidLoad
 {
+    self.loadingView.backgroundColor = [UIColor patternBackgroundColor];
+    self.view.backgroundColor = [UIColor patternBackgroundColor];
     [super viewDidLoad];
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         
@@ -74,7 +76,7 @@
     
     self.statView.layer.borderWidth = 1.0f;
     self.statView.layer.borderColor = [UIColor colorWithRed:0.18f green:0.18f blue:0.18f alpha:1.00f].CGColor;
-    self.statView.backgroundColor = [UIColor colorWithRed:0.88f green:0.87f blue:0.88f alpha:1.00f];
+    self.statView.backgroundColor = [UIColor clearColor];
     self.statView.layer.cornerRadius = 5.0f;
     
     
@@ -98,9 +100,9 @@
 -(void)initTopBar {
     NSString *star;
     if([self isInFavourites]){
-        star = @"star_on.png";
+        star = @"cell-checkmark.png";
     }else{
-        star = @"star_off.png";
+        star = @"cell-checkmark-highlighted.png";
     }
     UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:star] style:UIBarButtonItemStyleBordered target:self action:@selector(favoritesClicked)];
     self.navigationItem.rightBarButtonItem = item;
@@ -120,6 +122,7 @@
     [tagList setTags:self.task.tags];
     [self.skillsView addSubview:tagList];
     [self.skillsView sizeToFit];
+    self.skillsView.backgroundColor = [UIColor clearColor];
 }
 -(BOOL)isInFavourites{
     NSArray *results = [FLManagedTask MR_findByAttribute:@"link" withValue:self.task.link];
@@ -160,6 +163,15 @@
     
     self.skillsView.frame = skillViewFrame;
     self.mainScrollView.contentSize = CGSizeMake(320,scrollViewHeight + self.skillsView.frame.size.height);
+}
+
+-(BOOL) webView:(UIWebView *)inWeb shouldStartLoadWithRequest:(NSURLRequest *)inRequest navigationType:(UIWebViewNavigationType)inType {
+    if ( inType == UIWebViewNavigationTypeLinkClicked ) {
+        [[UIApplication sharedApplication] openURL:[inRequest URL]];
+        return NO;
+    }
+    
+    return YES;
 }
 
 

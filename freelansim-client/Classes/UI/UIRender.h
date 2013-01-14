@@ -14,6 +14,7 @@
 @interface UIRender : NSObject
 
 +(void)renderContactsButton:(UIButton *)button;
++(void)renderMailButton:(UIButton *)button;
 +(void)renderNavigationBar:(UINavigationBar *)navigationBar;
-
++(void)applyStylesheet;
 @end

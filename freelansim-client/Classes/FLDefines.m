@@ -9,3 +9,4 @@
 #import "FLDefines.h"
 
 NSString * const FLServerHostString = @"http://freelansim.ru/";
+NSString * const crtwebMailString = @"mailto:kk@crtweb.ru?subject=Freelansim%20Reader:%20feedback";

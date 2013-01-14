@@ -36,6 +36,7 @@
 - (NSMutableURLRequest *)requestWithMethod:(NSString *)method path:(NSString *)path parameters:(NSDictionary *)parameters {
 	NSMutableURLRequest *request = [super requestWithMethod:method path:path parameters:parameters];
     [request setCachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData];
+    [request setTimeoutInterval:90.0f];
 	return request;
 }
 

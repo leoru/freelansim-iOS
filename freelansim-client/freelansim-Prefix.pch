@@ -6,6 +6,7 @@
 #import "FLDefines.h"
 #import "UIStyle.h"
 #import "UIRender.h"
+#import "UIColor+FreelansimAdditions.h"
 
 #ifndef __IPHONE_5_0
 #warning "This project uses features only available in iOS SDK 5.0 and later."
