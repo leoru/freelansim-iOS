@@ -35,12 +35,12 @@ NSString * const FLDannyFreelansimLink = @"http://freelansim.ru/freelancers/Razr
                         if(kunst){
                             freelancer.name = @"Кирилл Кунст";
                             freelancer.price = @"от 500 руб. в час";
-                            freelancer.desc = @"Разработка мобильных приложения iOS, Android.\r\nРазработка веб-приложений Ruby on Rails, Sinatra, PHP (Kohana, FuelPHP, Yii, Laravel, Fat-Free Framework).\r\nВы можете посмотреть реализованные мной проекты на linkedin в режиме view full profile.";
+                            freelancer.desc = @"Разработка мобильных приложений iOS, Android.\r\nРазработка веб-приложений Ruby on Rails, Sinatra, PHP (Kohana, FuelPHP, Yii, Laravel, Fat-Free Framework).\r\nВы можете посмотреть реализованные мной проекты на linkedin в режиме view full profile.";
                             freelancer.speciality = @"Мобильные приложения";
                         }else{
                             freelancer.name = @"Данияр Салахутдинов";
                             freelancer.price = @"от 400 руб. в час";
-                            freelancer.desc = @"Разработка мобильных приложения iOS.\r\nРазработка приложений .net (Entity Framework, LinQ, модульное тестирование и прочее)";
+                            freelancer.desc = @"Разработка мобильных приложений iOS.\r\nРазработка приложений .net (Entity Framework, LinQ, модульное тестирование и прочее)";
                             freelancer.speciality = @"Разработчик iOS";
                         }
                         FLManagedFreelancer *managedOne = [FLManagedFreelancer MR_createInContext:localContext];

@@ -31,8 +31,8 @@
     
     if ( launchCount == 1 )
     {
-        [FLFirstFavoritesCreator createFavorites:NO];
         [FLFirstFavoritesCreator createFavorites:YES];
+        [FLFirstFavoritesCreator createFavorites:NO];
     }
 
 }
