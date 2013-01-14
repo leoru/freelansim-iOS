@@ -17,23 +17,23 @@ NSString * const FLKunstFreelansimLink = @"http://freelansim.ru/freelancers/leor
 NSString * const FLDannyFreelansimLink = @"http://freelansim.ru/freelancers/Razrab";
 
 +(void)createFavorites{
-    FLFreelancer *freelancer = [[FLFreelancer alloc] init];
+    
+    __block FLFreelancer *freelancer = [[FLFreelancer alloc] init];
     freelancer.link = FLDannyFreelansimLink;
-    freelancer = [self loadFreelancer:freelancer];
+    [self loadFreelancer:freelancer completion:^(FLFreelancer *fr) {
+        if(fr)
+            freelancer = fr;
+    }];
     
 }
 
-+(FLFreelancer *)loadFreelancer:(FLFreelancer *)freelancer{
-//    [[FLHTTPClient sharedClient] loadFreelancer:freelancer withSuccess:^(FLFreelancer *fl, AFHTTPRequestOperation *operation, id responseObject) {
-//        dispatch_async(dispatch_get_main_queue(), ^{
-//            return fl;
-//        });
-//        
-//    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-//        dispatch_async(dispatch_get_main_queue(), ^{
-//            return nil;
-//        });
-//    }];
++(void)loadFreelancer:(FLFreelancer *)freelancer completion:(void(^)(FLFreelancer *fr))completion{
+    
+    [[FLHTTPClient sharedClient] loadFreelancer:freelancer withSuccess:^(FLFreelancer *fl, AFHTTPRequestOperation *operation, id responseObject) {
+        completion(fl);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        completion(nil);
+    }];
 }
 
 
