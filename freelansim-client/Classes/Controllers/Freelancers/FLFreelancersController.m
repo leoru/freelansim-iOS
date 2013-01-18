@@ -44,10 +44,14 @@
     self.view.backgroundColor = [UIColor patternBackgroundColor];
     self.freelancersTable.backgroundColor = [UIColor clearColor];
 }
+- (void)viewDidUnload {
+    [self setSearchBar:nil];
+    [self setFreelancers:nil];
+    [super viewDidUnload];
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - UITableView Datasource
@@ -73,8 +77,7 @@
                 }
                 cell.userInteractionEnabled = NO;
                 cell.selectionStyle = UITableViewCellSelectionStyleNone;
-                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Сеть не доступна" message:@"Проверьте настройки интернет" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
-                [alert show];
+                [self showErrorNetworkDisabled];
             }else if (![FLInternetConnectionUtils isWebSiteUp]){
                 cell = [tableView dequeueReusableCellWithIdentifier:emptyCellIdentifier];
                 if (!cell) {
@@ -82,8 +85,7 @@
                 }
                 cell.userInteractionEnabled = NO;
                 cell.selectionStyle = UITableViewCellSelectionStyleNone;
-                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Сайт не доступен" message:@"Ошибка на сервере. Попробуйте повторить позднее" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
-                [alert show];
+                [self showErrorServerDontRespond];
             }else{
                 cell = [tableView dequeueReusableCellWithIdentifier:loadingCellIdentifier];
                 if (!cell) {
@@ -205,8 +207,5 @@
     self.freelancers = [NSMutableArray array];
     [self.freelancersTable reloadData];
 }
-- (void)viewDidUnload {
-    [self setSearchBar:nil];
-    [super viewDidUnload];
-}
+
 @end

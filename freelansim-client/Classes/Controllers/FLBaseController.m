@@ -26,13 +26,25 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-   // [UIRender renderNavigationBar:self.navigationController.navigationBar];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
+
+-(void)showAlertWithTitle:(NSString *)title message:(NSString *)message {
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:message delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+    [alert show];
+}
+
+-(void)showErrorNetworkDisabled {
+    [self showAlertWithTitle:errorTitleNetworkDisable message:errorMessageNetworkDisable];
+}
+
+-(void)showErrorServerDontRespond {
+    [self showAlertWithTitle:errorTitleServerDontRespond message:errorMessageServertDontRespond];
+}
+
 
 @end

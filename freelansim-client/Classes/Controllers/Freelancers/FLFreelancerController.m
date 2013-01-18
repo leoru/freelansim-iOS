@@ -75,6 +75,7 @@
     [self setSkillsView:nil];
     [self setLoadingView:nil];
     actionSheetTasks = nil;
+    [self setFreelancer:nil];
     [super viewDidUnload];
 }
 

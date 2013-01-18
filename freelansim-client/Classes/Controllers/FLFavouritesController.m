@@ -37,10 +37,22 @@
     [self initUI];
     [super viewWillAppear:animated];
 }
+- (void)viewDidLoad{
+    favourites = [[NSMutableArray alloc] init];
+    [UIRender renderNavigationBar:self.navigationController.navigationBar];
+    [super viewDidLoad];
+}
+- (void) viewDidUnload{
+    favourites = nil;
+    [super viewDidUnload];
+}
+- (void)didReceiveMemoryWarning{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
 
 -(void)initUI{
     self.view.backgroundColor = [UIColor patternBackgroundColor];
-    //self.tableView.backgroundColor = [UIColor clearColor];
     
     if([favourites count] == 0){
         editingMode = NO;
@@ -48,6 +60,7 @@
         self.navigationItem.rightBarButtonItem = nil;
         return;
     }
+    
     UIBarButtonItem *item;
     if(!editingMode)
         item = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(performRightItem:)];
@@ -79,35 +92,10 @@
     [self.favouritesTable reloadData];
 }
 
-- (void)viewDidLoad
-{
-    favourites = [[NSMutableArray alloc] init];
-    [UIRender renderNavigationBar:self.navigationController.navigationBar];
-    [super viewDidLoad];
-
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-}
-
-- (void) viewDidUnload{
-    favourites = nil;
-    [super viewDidUnload];
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    // Return the number of sections.
     return 1;
 }
 
@@ -117,7 +105,6 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    // Return the number of rows in the section.
     return [favourites count];
 }
 
@@ -168,17 +155,6 @@
     return cell;
 }
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-
-// Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView beginUpdates];
@@ -202,7 +178,6 @@
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     }   
     else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
     }
     [tableView endUpdates];
     [self initUI];

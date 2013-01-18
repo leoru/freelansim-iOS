@@ -74,8 +74,7 @@
                 }
                 cell.userInteractionEnabled = NO;
                 cell.selectionStyle = UITableViewCellSelectionStyleNone;
-                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Сеть не доступна" message:@"Проверьте настройки интернет" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
-                [alert show];
+                [self showErrorNetworkDisabled];
             }else if (![FLInternetConnectionUtils isWebSiteUp]){
                 cell = [tableView dequeueReusableCellWithIdentifier:emptyCellIdentifier];
                 if (!cell) {
@@ -83,8 +82,7 @@
                 }
                 cell.userInteractionEnabled = NO;
                 cell.selectionStyle = UITableViewCellSelectionStyleNone;
-                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Сайт не доступен" message:@"Ошибка на сервере. Попробуйте повторить позднее" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
-                [alert show];
+                [self showErrorServerDontRespond];
             }else{
                 cell = [tableView dequeueReusableCellWithIdentifier:loadingCellIdentifier];
                 if (!cell) {
@@ -98,8 +96,7 @@
                         [self.tasksTable reloadData];
                     });
                 } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Сеть не доступна" message:@"Проверьте настройки интернет" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
-                    [alert show];
+                    [self showErrorNetworkDisabled];
                 }];
             }
         } else {

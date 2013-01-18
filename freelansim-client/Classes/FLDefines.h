@@ -11,3 +11,9 @@
 // Server host string
 extern NSString * const FLServerHostString;
 extern NSString * const crtwebMailString;
+
+extern NSString * const errorTitleServerDontRespond;
+extern NSString * const errorTitleNetworkDisable;
+
+extern NSString * const errorMessageNetworkDisable;
+extern NSString * const errorMessageServertDontRespond;
