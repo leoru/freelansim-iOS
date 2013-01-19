@@ -68,11 +68,9 @@
     if (!cell) {
         cell = [[NSBundle mainBundle] loadNibNamed:cellIdentifier owner:nil options:nil][0];
     }
-    
     UILabel *categoryTitle = (UILabel *)[cell viewWithTag:1];
     
     FLCategory *category = categories[indexPath.row];
-    
     categoryTitle.text = category.title;
     UIView *backgroundView = [[UIView alloc] initWithFrame:CGRectZero];
     backgroundView.backgroundColor = [UIColor colorWithRed:0.99f green:0.51f blue:0.33f alpha:1.00f];
@@ -103,10 +101,8 @@
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [self.categoriesTable cellForRowAtIndexPath:indexPath];
-    
     [self.categoriesTable selectRowAtIndexPath:indexPath animated:YES scrollPosition:UITableViewScrollPositionNone];
     cell.accessoryType = UITableViewCellAccessoryCheckmark;
-    
     FLCategory *category = categories[indexPath.row];
     
     [self.selectedCategories addObject:category];

@@ -29,15 +29,18 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
     refreshControl = [[ISRefreshControl alloc] init];
     [self.freelancersTable addSubview:refreshControl];
     [refreshControl addTarget:self
                        action:@selector(refresh)
              forControlEvents:UIControlEventValueChanged];
+    
     searchQuery = @"";
     self.freelancers = [NSMutableArray array];
     stopSearch = NO;
     page = 1;
+    
     self.freelancersTable.delegate = self;
     self.freelancersTable.dataSource = self;
     self.searchBar.delegate = self;
@@ -93,15 +96,17 @@
                 }
                 cell.userInteractionEnabled = NO;
                 cell.selectionStyle = UITableViewCellSelectionStyleNone;
-                [[FLHTTPClient sharedClient] getFreelancersWithCategories:self.selectedCategories query:searchQuery page:page++ success:^(NSArray *objects, AFHTTPRequestOperation *operation, id responseObject, BOOL *stop) {
-                    dispatch_async(dispatch_get_main_queue(), ^{
-                        stopSearch = *stop;
-                        [self.freelancers addObjectsFromArray:objects];
-                        [self.freelancersTable reloadData];
-                    });
-                } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                    
-                }];
+                dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+                    [[FLHTTPClient sharedClient] getFreelancersWithCategories:self.selectedCategories query:searchQuery page:page++ success:^(NSArray *objects, AFHTTPRequestOperation *operation, id responseObject, BOOL *stop) {
+                        dispatch_async(dispatch_get_main_queue(), ^{
+                            stopSearch = *stop;
+                            [self.freelancers addObjectsFromArray:objects];
+                            [self.freelancersTable reloadData];
+                        });
+                    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                        
+                    }];
+                });
             }
         } else {
             cell = [tableView dequeueReusableCellWithIdentifier:emptyCellIdentifier];

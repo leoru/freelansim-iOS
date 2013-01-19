@@ -89,15 +89,18 @@
                     cell = [[NSBundle mainBundle] loadNibNamed:loadingCellIdentifier owner:nil options:nil][0];
                 }
                 
-                [[FLHTTPClient sharedClient] getTasksWithCategories:self.selectedCategories page:page++ success:^(NSArray *objects, AFHTTPRequestOperation *operation, id responseObject, BOOL *stop) {
-                    dispatch_async(dispatch_get_main_queue(), ^{
-                        stopSearch = *stop;
-                        [self.tasks addObjectsFromArray:objects];
-                        [self.tasksTable reloadData];
-                    });
-                } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                    [self showErrorNetworkDisabled];
-                }];
+                dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+                    [[FLHTTPClient sharedClient] getTasksWithCategories:self.selectedCategories page:page++ success:^(NSArray *objects, AFHTTPRequestOperation *operation, id responseObject, BOOL *stop) {
+                        dispatch_async(dispatch_get_main_queue(), ^{
+                            stopSearch = *stop;
+                            [self.tasks addObjectsFromArray:objects];
+                            [self.tasksTable reloadData];
+                        });
+                    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                        [self showErrorNetworkDisabled];
+                    }];
+                });
+                
             }
         } else {
             cell = [tableView dequeueReusableCellWithIdentifier:emptyCellIdentifier];
@@ -116,7 +119,7 @@
         UILabel *taskCategory = (UILabel *)[cell viewWithTag:2];
         UILabel *taskShortDescription = (UILabel *)[cell viewWithTag:3];
         UILabel *priceLabel = (UILabel *)[cell viewWithTag:4];
-         UILabel *publishedLabel = (UILabel *)[cell viewWithTag:7];
+        UILabel *publishedLabel = (UILabel *)[cell viewWithTag:7];
         
         priceLabel.layer.cornerRadius = 5.0f;
         priceLabel.backgroundColor = PriceLabelBackgroundColor;
@@ -164,7 +167,7 @@
     } else if ([segue.identifier isEqualToString:@"CategoriesSegue"]) {
         FLCategoriesController *categoriesController = [segue destinationViewController];
         categoriesController.delegate = self;
-        categoriesController.selectedCategories = self.selectedCategories;
+        categoriesController.selectedCategories = self.selectedCategories.mutableCopy;
     }
 }
 

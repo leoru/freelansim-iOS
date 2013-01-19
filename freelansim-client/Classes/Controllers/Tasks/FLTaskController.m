@@ -34,6 +34,7 @@
     self.loadingView.backgroundColor = [UIColor patternBackgroundColor];
     self.view.backgroundColor = [UIColor patternBackgroundColor];
     [super viewDidLoad];
+    
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         
         [[FLHTTPClient sharedClient] loadTask:self.task withSuccess:^(FLTask *task, AFHTTPRequestOperation *operation, id responseObject) {
