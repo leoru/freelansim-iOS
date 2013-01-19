@@ -1,4 +1,1 @@
-freelansim-client
-=================
-
-iOS mobile app for freelansim.ru
+iOS mobile application for freelansim.ru
