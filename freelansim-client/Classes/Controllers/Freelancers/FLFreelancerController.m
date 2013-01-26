@@ -286,7 +286,9 @@
         case 3:
         case 4:
         case 5:
-            url = [((FLContact *)[self.freelancer.contacts objectAtIndex:buttonIndex - 4]) openURL];
+            if (buttonIndex >= [actionSheetTasks count])
+                return;
+            url = [((FLContact *)[self.freelancer.contacts objectAtIndex:buttonIndex - 3]) openURL];
             [[UIApplication sharedApplication] openURL:url];
             break;
     }
