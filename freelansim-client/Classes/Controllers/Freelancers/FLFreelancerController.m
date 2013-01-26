@@ -141,11 +141,13 @@
         
         [actions addObject:action];
     }
-    self.actionSheet = [[UIActionSheet alloc] initWithTitle:@"Выберите действие" delegate:self cancelButtonTitle:@"Отменить" destructiveButtonTitle:nil otherButtonTitles: nil];
+    self.actionSheet = [[UIActionSheet alloc] initWithTitle:@"Выберите действие" delegate:self cancelButtonTitle:nil destructiveButtonTitle:nil otherButtonTitles: nil];
     
     for (NSString *action in actions) {
         [self.actionSheet addButtonWithTitle:action];
     }
+    [self.actionSheet addButtonWithTitle:@"Cancel"];
+    self.actionSheet.cancelButtonIndex = actions.count;
     actionSheetTasks = actions;
     
 }
@@ -265,7 +267,7 @@
     NSURL *url;
     UIPasteboard *pasteboard;
     switch (buttonIndex) {
-        case 1:
+        case 0:
             //добавление в избранное
             if([self isInFavourites])
                 [self removeFromFavourites];
@@ -273,17 +275,17 @@
                 [self addToFavourites];
             [self initActionSheet];
             break;
-        case 2:
+        case 1:
             pasteboard = [UIPasteboard generalPasteboard];
             pasteboard.string = self.freelancer.link;
             break;
-        case 3:
+        case 2:
             url = [NSURL URLWithString:self.freelancer.link];
             [[UIApplication sharedApplication] openURL:url];
             break;
+        case 3:
         case 4:
         case 5:
-        case 6:
             url = [((FLContact *)[self.freelancer.contacts objectAtIndex:buttonIndex - 4]) openURL];
             [[UIApplication sharedApplication] openURL:url];
             break;
