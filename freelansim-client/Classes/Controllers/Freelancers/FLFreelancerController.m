@@ -130,11 +130,15 @@
     [actions addObject:@"Скопировать ссылку"];
     [actions addObject:@"Перейти в Safari"];
     
+    NSString *deviceType = [UIDevice currentDevice].model;
+    NSRange iPhoneRange = [deviceType rangeOfString:@"iPhone"];
+    NSRange iPadRange = [deviceType rangeOfString:@"iPad"];
+    
     for (FLContact *contact in self.freelancer.contacts) {
         NSString *action = @"";
         if ([contact.type isEqualToString:@"mail"])
             action = @"Написать письмо";
-        else if ([contact.type isEqualToString:@"phone"])
+        else if (([contact.type isEqualToString:@"phone"]) && ((iPadRange.location != NSNotFound) || (iPhoneRange.location != NSNotFound)))
             action = @"Позвонить";
         else if ([contact.type isEqualToString:@"site"])
             action = @"Перейти на сайт";
