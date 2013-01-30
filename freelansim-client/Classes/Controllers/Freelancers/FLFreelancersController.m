@@ -197,6 +197,11 @@
     }
 }
 
+-(void)searchBarCancelButtonClicked:(UISearchBar *)searchBar{
+    [searchBar setText:@""];
+    [searchBar resignFirstResponder];
+}
+
 -(void)refresh {
     self.freelancers = [NSMutableArray array];
     stopSearch = NO;

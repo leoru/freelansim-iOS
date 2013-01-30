@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="11G56" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C3012" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="4">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
     </dependencies>
@@ -225,7 +225,7 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" barStyle="blackTranslucent" placeholder="Имя" id="pQI-m2-TV1">
+                            <searchBar contentMode="redraw" barStyle="blackTranslucent" placeholder="Имя" showsCancelButton="YES" id="pQI-m2-TV1">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -505,84 +505,14 @@
         <image name="0260.png" width="35" height="35"/>
         <image name="crt_logo.png" width="290" height="88"/>
     </resources>
-    <classes>
-        <class className="FLAboutController" superclassName="FLBaseController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/FLAboutController.h"/>
-            <relationships>
-                <relationship kind="action" name="sendMail:"/>
-                <relationship kind="outlet" name="mailButton" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-        <class className="FLBaseController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/FLBaseController.h"/>
-        </class>
-        <class className="FLCategoriesController" superclassName="FLBaseController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/FLCategoriesController.h"/>
-            <relationships>
-                <relationship kind="action" name="checkCategoriesClick:"/>
-                <relationship kind="outlet" name="categoriesTable" candidateClass="UITableView"/>
-                <relationship kind="outlet" name="navBar" candidateClass="UINavigationBar"/>
-                <relationship kind="outlet" name="navItem" candidateClass="UINavigationItem"/>
-            </relationships>
-        </class>
-        <class className="FLFavouritesController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/FLFavouritesController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="favouritesTable" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="FLFreelancerController" superclassName="FLBaseController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/FLFreelancerController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="avatarView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="loader" candidateClass="UIActivityIndicatorView"/>
-                <relationship kind="outlet" name="loadingView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="locationLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="nameLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="priceLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
-                <relationship kind="outlet" name="skillsView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="specialityLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
-            </relationships>
-        </class>
-        <class className="FLFreelancersController" superclassName="FLBaseController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/FLFreelancersController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="freelancersTable" candidateClass="UITableView"/>
-                <relationship kind="outlet" name="searchBar" candidateClass="UISearchBar"/>
-            </relationships>
-        </class>
-        <class className="FLTaskController" superclassName="FLBaseController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/FLTaskController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="commentsLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="descriptionWebView" candidateClass="UIWebView"/>
-                <relationship kind="outlet" name="loadingView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="mainScrollView" candidateClass="UIScrollView"/>
-                <relationship kind="outlet" name="publishedLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="skillsView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="statView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="titleLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="viewsLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="FLTasksController" superclassName="FLBaseController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/FLTasksController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="clearView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="tasksTable" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="SXZ-wO-cMx"/>
         <segue reference="ZCp-wO-Cv2"/>
-        <segue reference="cyE-FZ-hGI"/>
+        <segue reference="Ywv-uo-V9T"/>
+        <segue reference="SXZ-wO-cMx"/>
     </inferredMetricsTieBreakers>
 </document>
