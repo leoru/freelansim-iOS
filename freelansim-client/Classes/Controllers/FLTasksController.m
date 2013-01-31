@@ -38,7 +38,9 @@
     
     self.tasks = [NSMutableArray array];
     stopSearch = NO;
+    searchQuery = @"";
     page = 1;
+    self.searchBar.delegate = self;
     self.tasksTable.delegate = self;
     self.tasksTable.dataSource = self;
     self.tasksTable.backgroundColor = [UIColor clearColor];
@@ -90,7 +92,7 @@
                 }
                 
                 dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-                    [[FLHTTPClient sharedClient] getTasksWithCategories:self.selectedCategories page:page++ success:^(NSArray *objects, AFHTTPRequestOperation *operation, id responseObject, BOOL *stop) {
+                    [[FLHTTPClient sharedClient] getTasksWithCategories:self.selectedCategories  query:searchQuery page:page++ success:^(NSArray *objects, AFHTTPRequestOperation *operation, id responseObject, BOOL *stop) {
                         dispatch_async(dispatch_get_main_queue(), ^{
                             stopSearch = *stop;
                             [self.tasks addObjectsFromArray:objects];
@@ -187,6 +189,34 @@
 
 - (void)viewDidUnload {
     [self setClearView:nil];
+    [self setSearchBar:nil];
     [super viewDidUnload];
 }
+
+-(void)search{
+    stopSearch = NO;
+    page = 1;
+    searchQuery = self.searchBar.text;
+    
+}
+
+#pragma mark - Search Bar delegate methods
+
+-(void)searchBarCancelButtonClicked:(UISearchBar *)searchBar{
+    [self.searchBar setText:@""];
+    [self.searchBar resignFirstResponder];
+}
+
+-(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
+    [self search];
+    [self.searchBar resignFirstResponder];
+}
+
+-(void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText{
+    if ([searchText isEqualToString:@""]) {
+        [self search];
+        [self.searchBar resignFirstResponder];
+    }
+}
+
 @end

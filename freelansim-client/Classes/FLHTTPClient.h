@@ -40,7 +40,7 @@ typedef void (^FLHTTPClientFailure)(AFHTTPRequestOperation *operation, NSError *
 /**
  Get tasks by page and category
  */
--(void)getTasksWithCategories:(NSArray *)categories page:(int)page success:(FLHTTPClientSuccessWithArray)success failure:(FLHTTPClientFailure)failure;
+-(void)getTasksWithCategories:(NSArray *)categories query:(NSString *)query page:(int)page success:(FLHTTPClientSuccessWithArray)success failure:(FLHTTPClientFailure)failure;
 
 
 /**

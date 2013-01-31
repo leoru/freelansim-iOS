@@ -46,7 +46,7 @@
 }
 
 
--(void)getTasksWithCategories:(NSArray *)categories page:(int)page success:(FLHTTPClientSuccessWithArray)success failure:(FLHTTPClientFailure)failure {
+-(void)getTasksWithCategories:(NSArray *)categories query:(NSString *)query page:(int)page success:(FLHTTPClientSuccessWithArray)success failure:(FLHTTPClientFailure)failure {
     
     NSString *categoriesString = @"";
     if (categories) {
@@ -54,7 +54,7 @@
             categoriesString = [categoriesString stringByAppendingFormat:@"%@,",category.subcategories];
         }
     }
-    [self getPath:@"/tasks" parameters:@{@"categories":categoriesString,@"page":@(page)} success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [self getPath:@"/tasks" parameters:@{@"q":query,@"categories":categoriesString,@"page":@(page)} success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
         NSData *html = (NSData *)responseObject;
         if (html) {
