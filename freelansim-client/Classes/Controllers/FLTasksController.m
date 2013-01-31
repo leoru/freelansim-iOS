@@ -197,7 +197,8 @@
     stopSearch = NO;
     page = 1;
     searchQuery = self.searchBar.text;
-    
+    self.tasks = [[NSMutableArray alloc] init];
+    [self.tasksTable reloadData];
 }
 
 #pragma mark - Search Bar delegate methods
