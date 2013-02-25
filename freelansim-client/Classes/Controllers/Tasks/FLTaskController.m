@@ -164,7 +164,6 @@
     self.skillsView.frame = skillViewFrame;
     self.mainScrollView.contentSize = CGSizeMake(320,scrollViewHeight + self.skillsView.frame.size.height);
 }
-
 -(BOOL) webView:(UIWebView *)inWeb shouldStartLoadWithRequest:(NSURLRequest *)inRequest navigationType:(UIWebViewNavigationType)inType {
     if ( inType == UIWebViewNavigationTypeLinkClicked ) {
         [[UIApplication sharedApplication] openURL:[inRequest URL]];
@@ -173,7 +172,6 @@
     
     return YES;
 }
-
 
 -(void)favoritesClicked{
     if([self isInFavourites]){
