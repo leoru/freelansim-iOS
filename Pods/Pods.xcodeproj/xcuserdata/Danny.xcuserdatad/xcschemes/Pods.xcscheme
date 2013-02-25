@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "6A529ADD167A47AF009A1CCB"
-               BuildableName = "freelansim.app"
-               BlueprintName = "freelansim"
-               ReferencedContainer = "container:freelansim.xcodeproj">
+               BlueprintIdentifier = "D23B40BA1AEC41D08E982E53"
+               BuildableName = "libPods.a"
+               BlueprintName = "Pods"
+               ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -28,26 +28,7 @@
       shouldUseLaunchSchemeArgsEnv = "YES"
       buildConfiguration = "Debug">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "6A529B0F167A47AF009A1CCB"
-               BuildableName = "freelansimTests.octest"
-               BlueprintName = "freelansimTests"
-               ReferencedContainer = "container:freelansim.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "6A529ADD167A47AF009A1CCB"
-            BuildableName = "freelansim.app"
-            BlueprintName = "freelansim"
-            ReferencedContainer = "container:freelansim.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
    </TestAction>
    <LaunchAction
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
@@ -58,15 +39,6 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "6A529ADD167A47AF009A1CCB"
-            BuildableName = "freelansim.app"
-            BlueprintName = "freelansim"
-            ReferencedContainer = "container:freelansim.xcodeproj">
-         </BuildableReference>
-      </BuildableProductRunnable>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -76,15 +48,6 @@
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "Release"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "6A529ADD167A47AF009A1CCB"
-            BuildableName = "freelansim.app"
-            BlueprintName = "freelansim"
-            ReferencedContainer = "container:freelansim.xcodeproj">
-         </BuildableReference>
-      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

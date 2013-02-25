@@ -117,7 +117,7 @@
         cell = [[NSBundle mainBundle] loadNibNamed:cellIdentifier owner:nil options:nil][0];
     }
     id obj = [favourites objectAtIndex:indexPath.row];
-    if([obj isKindOfClass:[FLManagedFreelancer class]]){
+    if ([obj isKindOfClass:[FLManagedFreelancer class]]) {
         FLManagedFreelancer *freelancer = (FLManagedFreelancer *)obj;
         
         // Configure the cell...
@@ -135,7 +135,8 @@
         
         UILabel *price = (UILabel *)[cell viewWithTag:5];
         price.text = freelancer.price;
-    }else if([obj isKindOfClass:[FLManagedTask class]]){
+        
+    } else if([obj isKindOfClass:[FLManagedTask class]]) {
         FLManagedTask *task = (FLManagedTask *)obj;
         UILabel *name = (UILabel *)[cell viewWithTag:2];
         name.text = task.title;
@@ -165,7 +166,7 @@
             FLManagedFreelancer *freelancer = (FLManagedFreelancer *)obj;
             [freelancer MR_deleteEntity];
             
-        }else{
+        } else {
             if([obj isKindOfClass:[FLManagedTask class]]){
                 FLManagedTask *task = (FLManagedTask *)obj;
                 [task MR_deleteEntity];

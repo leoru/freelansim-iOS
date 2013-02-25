@@ -38,7 +38,9 @@
     
     self.tasks = [NSMutableArray array];
     stopSearch = NO;
+    searchQuery = @"";
     page = 1;
+    self.searchBar.delegate = self;
     self.tasksTable.delegate = self;
     self.tasksTable.dataSource = self;
     self.tasksTable.backgroundColor = [UIColor clearColor];
@@ -89,15 +91,18 @@
                     cell = [[NSBundle mainBundle] loadNibNamed:loadingCellIdentifier owner:nil options:nil][0];
                 }
                 
-                [[FLHTTPClient sharedClient] getTasksWithCategories:self.selectedCategories page:page++ success:^(NSArray *objects, AFHTTPRequestOperation *operation, id responseObject, BOOL *stop) {
-                    dispatch_async(dispatch_get_main_queue(), ^{
-                        stopSearch = *stop;
-                        [self.tasks addObjectsFromArray:objects];
-                        [self.tasksTable reloadData];
-                    });
-                } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                    [self showErrorNetworkDisabled];
-                }];
+                dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+                    [[FLHTTPClient sharedClient] getTasksWithCategories:self.selectedCategories  query:searchQuery page:page++ success:^(NSArray *objects, AFHTTPRequestOperation *operation, id responseObject, BOOL *stop) {
+                        dispatch_async(dispatch_get_main_queue(), ^{
+                            stopSearch = *stop;
+                            [self.tasks addObjectsFromArray:objects];
+                            [self.tasksTable reloadData];
+                        });
+                    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                        [self showErrorNetworkDisabled];
+                    }];
+                });
+                
             }
         } else {
             cell = [tableView dequeueReusableCellWithIdentifier:emptyCellIdentifier];
@@ -116,7 +121,7 @@
         UILabel *taskCategory = (UILabel *)[cell viewWithTag:2];
         UILabel *taskShortDescription = (UILabel *)[cell viewWithTag:3];
         UILabel *priceLabel = (UILabel *)[cell viewWithTag:4];
-         UILabel *publishedLabel = (UILabel *)[cell viewWithTag:7];
+        UILabel *publishedLabel = (UILabel *)[cell viewWithTag:7];
         
         priceLabel.layer.cornerRadius = 5.0f;
         priceLabel.backgroundColor = PriceLabelBackgroundColor;
@@ -164,7 +169,7 @@
     } else if ([segue.identifier isEqualToString:@"CategoriesSegue"]) {
         FLCategoriesController *categoriesController = [segue destinationViewController];
         categoriesController.delegate = self;
-        categoriesController.selectedCategories = self.selectedCategories;
+        categoriesController.selectedCategories = self.selectedCategories.mutableCopy;
     }
 }
 
@@ -184,6 +189,35 @@
 
 - (void)viewDidUnload {
     [self setClearView:nil];
+    [self setSearchBar:nil];
     [super viewDidUnload];
 }
+
+-(void)search{
+    stopSearch = NO;
+    page = 1;
+    searchQuery = self.searchBar.text;
+    self.tasks = [[NSMutableArray alloc] init];
+    [self.tasksTable reloadData];
+}
+
+#pragma mark - Search Bar delegate methods
+
+-(void)searchBarCancelButtonClicked:(UISearchBar *)searchBar{
+    [self.searchBar setText:@""];
+    [self.searchBar resignFirstResponder];
+}
+
+-(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
+    [self search];
+    [self.searchBar resignFirstResponder];
+}
+
+-(void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText{
+    if ([searchText isEqualToString:@""]) {
+        [self search];
+        [self.searchBar resignFirstResponder];
+    }
+}
+
 @end

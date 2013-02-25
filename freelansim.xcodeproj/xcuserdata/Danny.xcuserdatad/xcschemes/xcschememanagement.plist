@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Pods.xcscheme</key>
+		<key>freelansim.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>1</integer>
@@ -12,27 +12,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>3D24BBE06CD24951A0B82F91</key>
+		<key>6A529ADD167A47AF009A1CCB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5B8A71C4FF044F56BDB322C6</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>ADC44280F2124FB0A2A718A8</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>B261551201BD4712B4FF13BA</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>D23B40BA1AEC41D08E982E53</key>
+		<key>6A529B0F167A47AF009A1CCB</key>
 		<dict>
 			<key>primary</key>
 			<true/>

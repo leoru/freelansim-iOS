@@ -85,10 +85,10 @@
         [tagsArray addObject:tag.contents];
     }
     task.tags = tagsArray;
-    NSArray *mentals = [[skillsBlocks[1] findChildOfClass:@"tags"] findChildrenOfClass:@"mental"];
-    for (HTMLNode *mental in mentals) {
-        [task.mental arrayByAddingObject:mental.contents];
-    }
+//    NSArray *mentals = [[skillsBlocks[1] findChildOfClass:@"tags"] findChildrenOfClass:@"mental"];
+//    for (HTMLNode *mental in mentals) {
+//        [task.mental arrayByAddingObject:mental.contents];
+//    }
     
     return task;
 }
