@@ -85,10 +85,10 @@
         [tagsArray addObject:tag.contents];
     }
     task.tags = tagsArray;
-    NSArray *mentals = [[skillsBlocks[1] findChildOfClass:@"tags"] findChildrenOfClass:@"mental"];
-    for (HTMLNode *mental in mentals) {
-        [task.mental arrayByAddingObject:mental.contents];
-    }
+//    NSArray *mentals = [[skillsBlocks[1] findChildOfClass:@"tags"] findChildrenOfClass:@"mental"];
+//    for (HTMLNode *mental in mentals) {
+//        [task.mental arrayByAddingObject:mental.contents];
+//    }
     
     return task;
 }
@@ -175,7 +175,7 @@
     
     HTMLNode *freelancersNode = [body findChildOfClass:@"freelancers shortcuts_items"];
     
-    NSArray *freelancersNodes = [freelancersNode findChildrenOfClass:@"shortcuts_item"];
+    NSArray *freelancersNodes = [freelancersNode findChildrenOfClass:@"has_hover shortcuts_item"];
     
     for (HTMLNode *freelancerNode in freelancersNodes) {
         FLFreelancer *freelancer = [[FLFreelancer alloc] init];

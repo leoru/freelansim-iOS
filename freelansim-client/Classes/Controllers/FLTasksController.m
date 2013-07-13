@@ -66,7 +66,6 @@
     static NSString *emptyCellIdentifier = @"FLEmptyCell";
     UITableViewCell *cell;
     
-    
     if (indexPath.row == self.tasks.count) {
         if (!stopSearch) {
             if(![FLInternetConnectionUtils isConnectedToInternet]){
@@ -132,7 +131,11 @@
         FLTask *task = self.tasks[indexPath.row];
         taskTitle.text = task.title;
         taskCategory.text = task.category;
+        NSLog(@"Short description: %@",task.shortDescription);
         taskShortDescription.text = task.shortDescription;
+        taskShortDescription.backgroundColor = [UIColor greenColor];
+        taskShortDescription.numberOfLines = 4;
+        [taskShortDescription sizeToFit];
         priceLabel.text = task.price;
         [priceLabel sizeToFit];
         
