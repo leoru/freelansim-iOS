@@ -11,6 +11,7 @@
 @interface FLInternetConnectionUtils : NSObject
 
 +(BOOL)isWebSiteUp;
+
 +(BOOL)isConnectedToInternet;
 
 @end

@@ -13,9 +13,6 @@
 		6A1AE747167E11FF005DE0E5 /* FLDefines.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A1AE746167E11FF005DE0E5 /* FLDefines.m */; };
 		6A1AE74C167E12B6005DE0E5 /* FLBaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A1AE74B167E12B6005DE0E5 /* FLBaseController.m */; };
 		6A1AE74F167E12D1005DE0E5 /* FLTasksController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A1AE74E167E12D1005DE0E5 /* FLTasksController.m */; };
-		6A1AE752167E1335005DE0E5 /* FLTaskCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A1AE751167E1335005DE0E5 /* FLTaskCell.xib */; };
-		6A1AE75B167E18CD005DE0E5 /* LoadingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A1AE75A167E18CD005DE0E5 /* LoadingCell.xib */; };
-		6A1AE75D167E1908005DE0E5 /* FLEmptyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A1AE75C167E1908005DE0E5 /* FLEmptyCell.xib */; };
 		6A1F1B6C16A1489E00712924 /* UIColor+FreelansimAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A1F1B6B16A1489E00712924 /* UIColor+FreelansimAdditions.m */; };
 		6A1F1B7716A151FB00712924 /* grey@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A1F1B7516A151FB00712924 /* grey@2x.png */; };
 		6A1F1B7816A151FB00712924 /* grey.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A1F1B7616A151FB00712924 /* grey.png */; };
@@ -29,7 +26,7 @@
 		6A26778F16809CCB00F178E7 /* DWTagList.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A26778E16809CCB00F178E7 /* DWTagList.m */; };
 		6A26779B1680A1AF00F178E7 /* FLCategoriesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A26779A1680A1AF00F178E7 /* FLCategoriesController.m */; };
 		6A26779E1680A32300F178E7 /* FLCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A26779D1680A32300F178E7 /* FLCategory.m */; };
-		6A2677A01680AAE800F178E7 /* CategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A26779F1680AAE800F178E7 /* CategoryCell.xib */; };
+		6A4F7FE91833FBC300215FE1 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 6A4F7FE81833FBC300215FE1 /* Podfile */; };
 		6A529AE3167A47AF009A1CCB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A529AE2167A47AF009A1CCB /* UIKit.framework */; };
 		6A529AE5167A47AF009A1CCB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A529AE4167A47AF009A1CCB /* Foundation.framework */; };
 		6A529AE7167A47AF009A1CCB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A529AE6167A47AF009A1CCB /* CoreGraphics.framework */; };
@@ -66,7 +63,6 @@
 		6A8A96F816863A7900C285BE /* FLFreelancerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A8A96F716863A7800C285BE /* FLFreelancerController.m */; };
 		6A8A97101686F36100C285BE /* FLContact.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A8A970F1686F36100C285BE /* FLContact.m */; };
 		6A8F515B1684EDF200AD0CC2 /* FLFreelancer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A8F515A1684EDF200AD0CC2 /* FLFreelancer.m */; };
-		6A8F515E168572F100AD0CC2 /* FLFreelancerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A8F515D168572F100AD0CC2 /* FLFreelancerCell.xib */; };
 		6AA0AA191697F8DE00FE28E3 /* FLContactButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AA0AA141697F8DE00FE28E3 /* FLContactButton.m */; };
 		6AA0AA1A1697F8DE00FE28E3 /* UIRender.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AA0AA161697F8DE00FE28E3 /* UIRender.m */; };
 		6AA0AA1B1697F8DE00FE28E3 /* UIStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AA0AA181697F8DE00FE28E3 /* UIStyle.m */; };
@@ -107,6 +103,23 @@
 		6AA0AA651697FF6800FE28E3 /* 0260@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6AA0AA5D1697FF6800FE28E3 /* 0260@2x.png */; };
 		6AA0AA661697FF6800FE28E3 /* 0089@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6AA0AA5E1697FF6800FE28E3 /* 0089@2x.png */; };
 		6AA0AA671697FF6800FE28E3 /* 0011@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6AA0AA5F1697FF6800FE28E3 /* 0011@2x.png */; };
+		6ABADFEC1849D735003EE481 /* FLTaskCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ABADFEB1849D735003EE481 /* FLTaskCell.m */; };
+		6ABADFEF1849D753003EE481 /* FLFreelancerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ABADFEE1849D753003EE481 /* FLFreelancerCell.m */; };
+		6ABADFF71849D7A5003EE481 /* CategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6ABADFF11849D7A5003EE481 /* CategoryCell.xib */; };
+		6ABADFF81849D7A5003EE481 /* FavouriteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6ABADFF21849D7A5003EE481 /* FavouriteCell.xib */; };
+		6ABADFF91849D7A5003EE481 /* FLEmptyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6ABADFF31849D7A5003EE481 /* FLEmptyCell.xib */; };
+		6ABADFFA1849D7A5003EE481 /* FLFreelancerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6ABADFF41849D7A5003EE481 /* FLFreelancerCell.xib */; };
+		6ABADFFB1849D7A5003EE481 /* FLTaskCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6ABADFF51849D7A5003EE481 /* FLTaskCell.xib */; };
+		6ABADFFC1849D7A5003EE481 /* LoadingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6ABADFF61849D7A5003EE481 /* LoadingCell.xib */; };
+		6ABADFFF1849DE42003EE481 /* furley_bg@2X.png in Resources */ = {isa = PBXBuildFile; fileRef = 6ABADFFD1849DE42003EE481 /* furley_bg@2X.png */; };
+		6ABAE0001849DE42003EE481 /* furley_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 6ABADFFE1849DE42003EE481 /* furley_bg.png */; };
+		6AD8DB5E1849E97F0082C2C0 /* 3.png in Resources */ = {isa = PBXBuildFile; fileRef = 6AD8DB5B1849E97F0082C2C0 /* 3.png */; };
+		6AD8DB5F1849E97F0082C2C0 /* 4.png in Resources */ = {isa = PBXBuildFile; fileRef = 6AD8DB5C1849E97F0082C2C0 /* 4.png */; };
+		6AD8DB63184A51F00082C2C0 /* icon-120.png in Resources */ = {isa = PBXBuildFile; fileRef = 6AD8DB60184A51F00082C2C0 /* icon-120.png */; };
+		6AD8DB64184A51F00082C2C0 /* crt_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 6AD8DB61184A51F00082C2C0 /* crt_logo.png */; };
+		6AD8DB65184A51F00082C2C0 /* crt_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6AD8DB62184A51F00082C2C0 /* crt_logo@2x.png */; };
+		6AD8DB68184A53CB0082C2C0 /* CategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AD8DB67184A53CB0082C2C0 /* CategoryCell.m */; };
+		6AD8DB6B184A53DE0082C2C0 /* FavouriteCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AD8DB6A184A53DE0082C2C0 /* FavouriteCell.m */; };
 		6AED8737167D9B3500EBC6CD /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AED8736167D9B3500EBC6CD /* CoreImage.framework */; };
 		6AED873A167D9B3B00EBC6CD /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AED8739167D9B3B00EBC6CD /* QuartzCore.framework */; };
 		6D1A659EDAF44F38BE9E013F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 41AF178834E54C6E9830FDCB /* libPods.a */; };
@@ -115,7 +128,6 @@
 		8B14730B169EBC3C00AD7027 /* FLManagedTag.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B14730A169EBC3C00AD7027 /* FLManagedTag.m */; };
 		8B14730E169EBE5300AD7027 /* FLFavouriteDeleteButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B14730D169EBE5300AD7027 /* FLFavouriteDeleteButton.m */; };
 		8B147311169EDA5B00AD7027 /* task.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B147310169EDA5B00AD7027 /* task.png */; };
-		8B68D639169E7DE2009FE17A /* FavouriteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B68D638169E7DE2009FE17A /* FavouriteCell.xib */; };
 		8B68D63D169E8272009FE17A /* FLFavouritesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B68D63C169E8272009FE17A /* FLFavouritesController.m */; };
 		8B9CEE9B169D85C400620749 /* DataStore.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8B9CEE99169D85C400620749 /* DataStore.xcdatamodeld */; };
 		8B9CEEA3169E688000620749 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B9CEEA2169E688000620749 /* CoreData.framework */; };
@@ -144,15 +156,10 @@
 		A46E89BD16A0245B00FD0048 /* ISRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = A46E89B516A0245B00FD0048 /* ISRefreshControl.m */; };
 		A46E89BE16A0245B00FD0048 /* ISUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = A46E89B716A0245B00FD0048 /* ISUtility.m */; };
 		A46E89BF16A0245B00FD0048 /* UITableViewController+RefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = A46E89B916A0245B00FD0048 /* UITableViewController+RefreshControl.m */; };
-		A4B15D1D16A3BAC300324F97 /* crt_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = A4B15D1B16A3BAC300324F97 /* crt_logo.png */; };
-		A4B15D1E16A3BAC300324F97 /* crt_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A4B15D1C16A3BAC300324F97 /* crt_logo@2x.png */; };
 		A4B15D2116A3BD1A00324F97 /* big-orange-button.png in Resources */ = {isa = PBXBuildFile; fileRef = A4B15D2016A3BD1A00324F97 /* big-orange-button.png */; };
 		A4B15D2516A3BD3A00324F97 /* big-orange-button-highlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = A4B15D2216A3BD3A00324F97 /* big-orange-button-highlighted.png */; };
 		A4B15D2616A3BD3A00324F97 /* big-orange-button-highlighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A4B15D2316A3BD3A00324F97 /* big-orange-button-highlighted@2x.png */; };
 		A4B15D2716A3BD3A00324F97 /* big-orange-button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A4B15D2416A3BD3A00324F97 /* big-orange-button@2x.png */; };
-		A4B15D2B16A3C1C600324F97 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A4B15D2816A3C1C600324F97 /* Default-568h@2x.png */; };
-		A4B15D2C16A3C1C600324F97 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = A4B15D2916A3C1C600324F97 /* Default.png */; };
-		A4B15D2D16A3C1C600324F97 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A4B15D2A16A3C1C600324F97 /* Default@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -179,9 +186,6 @@
 		6A1AE74B167E12B6005DE0E5 /* FLBaseController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FLBaseController.m; path = Classes/Controllers/FLBaseController.m; sourceTree = "<group>"; };
 		6A1AE74D167E12D1005DE0E5 /* FLTasksController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FLTasksController.h; path = Classes/Controllers/FLTasksController.h; sourceTree = "<group>"; };
 		6A1AE74E167E12D1005DE0E5 /* FLTasksController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FLTasksController.m; path = Classes/Controllers/FLTasksController.m; sourceTree = "<group>"; };
-		6A1AE751167E1335005DE0E5 /* FLTaskCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FLTaskCell.xib; sourceTree = "<group>"; };
-		6A1AE75A167E18CD005DE0E5 /* LoadingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoadingCell.xib; sourceTree = "<group>"; };
-		6A1AE75C167E1908005DE0E5 /* FLEmptyCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FLEmptyCell.xib; sourceTree = "<group>"; };
 		6A1F1B6A16A1489E00712924 /* UIColor+FreelansimAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+FreelansimAdditions.h"; sourceTree = "<group>"; };
 		6A1F1B6B16A1489E00712924 /* UIColor+FreelansimAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+FreelansimAdditions.m"; sourceTree = "<group>"; };
 		6A1F1B7516A151FB00712924 /* grey@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "grey@2x.png"; path = "Resources/grey@2x.png"; sourceTree = "<group>"; };
@@ -200,7 +204,7 @@
 		6A26779A1680A1AF00F178E7 /* FLCategoriesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FLCategoriesController.m; path = Classes/Controllers/FLCategoriesController.m; sourceTree = "<group>"; };
 		6A26779C1680A32300F178E7 /* FLCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FLCategory.h; path = Classes/Models/FLCategory.h; sourceTree = "<group>"; };
 		6A26779D1680A32300F178E7 /* FLCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FLCategory.m; path = Classes/Models/FLCategory.m; sourceTree = "<group>"; };
-		6A26779F1680AAE800F178E7 /* CategoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoryCell.xib; sourceTree = "<group>"; };
+		6A4F7FE81833FBC300215FE1 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		6A529ADE167A47AF009A1CCB /* freelansim.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = freelansim.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A529AE2167A47AF009A1CCB /* UIKit.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		6A529AE4167A47AF009A1CCB /* Foundation.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -246,7 +250,6 @@
 		6A8A970F1686F36100C285BE /* FLContact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FLContact.m; path = Classes/Models/FLContact.m; sourceTree = "<group>"; };
 		6A8F51591684EDF200AD0CC2 /* FLFreelancer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FLFreelancer.h; path = Classes/Models/FLFreelancer.h; sourceTree = "<group>"; };
 		6A8F515A1684EDF200AD0CC2 /* FLFreelancer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FLFreelancer.m; path = Classes/Models/FLFreelancer.m; sourceTree = "<group>"; };
-		6A8F515D168572F100AD0CC2 /* FLFreelancerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FLFreelancerCell.xib; sourceTree = "<group>"; };
 		6A8F515F1685762C00AD0CC2 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6A8F51601685762C00AD0CC2 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6AA0AA131697F8DE00FE28E3 /* FLContactButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLContactButton.h; sourceTree = "<group>"; };
@@ -292,6 +295,27 @@
 		6AA0AA5D1697FF6800FE28E3 /* 0260@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "0260@2x.png"; sourceTree = "<group>"; };
 		6AA0AA5E1697FF6800FE28E3 /* 0089@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "0089@2x.png"; sourceTree = "<group>"; };
 		6AA0AA5F1697FF6800FE28E3 /* 0011@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "0011@2x.png"; sourceTree = "<group>"; };
+		6ABADFEA1849D735003EE481 /* FLTaskCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FLTaskCell.h; path = Views/Cells/FLTaskCell.h; sourceTree = "<group>"; };
+		6ABADFEB1849D735003EE481 /* FLTaskCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FLTaskCell.m; path = Views/Cells/FLTaskCell.m; sourceTree = "<group>"; };
+		6ABADFED1849D753003EE481 /* FLFreelancerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FLFreelancerCell.h; path = Views/Cells/FLFreelancerCell.h; sourceTree = "<group>"; };
+		6ABADFEE1849D753003EE481 /* FLFreelancerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FLFreelancerCell.m; path = Views/Cells/FLFreelancerCell.m; sourceTree = "<group>"; };
+		6ABADFF11849D7A5003EE481 /* CategoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoryCell.xib; sourceTree = "<group>"; };
+		6ABADFF21849D7A5003EE481 /* FavouriteCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FavouriteCell.xib; sourceTree = "<group>"; };
+		6ABADFF31849D7A5003EE481 /* FLEmptyCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FLEmptyCell.xib; sourceTree = "<group>"; };
+		6ABADFF41849D7A5003EE481 /* FLFreelancerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FLFreelancerCell.xib; sourceTree = "<group>"; };
+		6ABADFF51849D7A5003EE481 /* FLTaskCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FLTaskCell.xib; sourceTree = "<group>"; };
+		6ABADFF61849D7A5003EE481 /* LoadingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoadingCell.xib; sourceTree = "<group>"; };
+		6ABADFFD1849DE42003EE481 /* furley_bg@2X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "furley_bg@2X.png"; path = "Resources/furley_bg@2X.png"; sourceTree = "<group>"; };
+		6ABADFFE1849DE42003EE481 /* furley_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = furley_bg.png; path = Resources/furley_bg.png; sourceTree = "<group>"; };
+		6AD8DB5B1849E97F0082C2C0 /* 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3.png; sourceTree = "<group>"; };
+		6AD8DB5C1849E97F0082C2C0 /* 4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 4.png; sourceTree = "<group>"; };
+		6AD8DB60184A51F00082C2C0 /* icon-120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-120.png"; path = "Resources/icon-120.png"; sourceTree = "<group>"; };
+		6AD8DB61184A51F00082C2C0 /* crt_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = crt_logo.png; path = Resources/crt_logo.png; sourceTree = "<group>"; };
+		6AD8DB62184A51F00082C2C0 /* crt_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "crt_logo@2x.png"; path = "Resources/crt_logo@2x.png"; sourceTree = "<group>"; };
+		6AD8DB66184A53CB0082C2C0 /* CategoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CategoryCell.h; path = Views/Cells/CategoryCell.h; sourceTree = "<group>"; };
+		6AD8DB67184A53CB0082C2C0 /* CategoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CategoryCell.m; path = Views/Cells/CategoryCell.m; sourceTree = "<group>"; };
+		6AD8DB69184A53DE0082C2C0 /* FavouriteCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FavouriteCell.h; path = Views/Cells/FavouriteCell.h; sourceTree = "<group>"; };
+		6AD8DB6A184A53DE0082C2C0 /* FavouriteCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FavouriteCell.m; path = Views/Cells/FavouriteCell.m; sourceTree = "<group>"; };
 		6AED8736167D9B3500EBC6CD /* CoreImage.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 		6AED8739167D9B3B00EBC6CD /* QuartzCore.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		8B1472FF169E967B00AD7027 /* FLManagedFreelancer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FLManagedFreelancer.h; path = Classes/Models/FLManagedFreelancer.h; sourceTree = "<group>"; };
@@ -304,7 +328,6 @@
 		8B14730D169EBE5300AD7027 /* FLFavouriteDeleteButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLFavouriteDeleteButton.m; sourceTree = "<group>"; };
 		8B14730F169EC01000AD7027 /* FLFavouritesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FLFavouritesController.h; path = Classes/Controllers/FLFavouritesController.h; sourceTree = "<group>"; };
 		8B147310169EDA5B00AD7027 /* task.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = task.png; sourceTree = "<group>"; };
-		8B68D638169E7DE2009FE17A /* FavouriteCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FavouriteCell.xib; sourceTree = "<group>"; };
 		8B68D63C169E8272009FE17A /* FLFavouritesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FLFavouritesController.m; path = Classes/Controllers/FLFavouritesController.m; sourceTree = "<group>"; };
 		8B9CEE9A169D85C400620749 /* DataStore.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataStore.xcdatamodel; sourceTree = "<group>"; };
 		8B9CEEA2169E688000620749 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -342,15 +365,10 @@
 		A46E89B716A0245B00FD0048 /* ISUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISUtility.m; sourceTree = "<group>"; };
 		A46E89B816A0245B00FD0048 /* UITableViewController+RefreshControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewController+RefreshControl.h"; sourceTree = "<group>"; };
 		A46E89B916A0245B00FD0048 /* UITableViewController+RefreshControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewController+RefreshControl.m"; sourceTree = "<group>"; };
-		A4B15D1B16A3BAC300324F97 /* crt_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = crt_logo.png; sourceTree = "<group>"; };
-		A4B15D1C16A3BAC300324F97 /* crt_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "crt_logo@2x.png"; sourceTree = "<group>"; };
 		A4B15D2016A3BD1A00324F97 /* big-orange-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "big-orange-button.png"; sourceTree = "<group>"; };
 		A4B15D2216A3BD3A00324F97 /* big-orange-button-highlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "big-orange-button-highlighted.png"; sourceTree = "<group>"; };
 		A4B15D2316A3BD3A00324F97 /* big-orange-button-highlighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "big-orange-button-highlighted@2x.png"; sourceTree = "<group>"; };
 		A4B15D2416A3BD3A00324F97 /* big-orange-button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "big-orange-button@2x.png"; sourceTree = "<group>"; };
-		A4B15D2816A3C1C600324F97 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		A4B15D2916A3C1C600324F97 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		A4B15D2A16A3C1C600324F97 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		CB0AF9F7B17F4CB7B2ECC008 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -447,12 +465,8 @@
 		6A1AE750167E131F005DE0E5 /* VIews */ = {
 			isa = PBXGroup;
 			children = (
-				6A1AE751167E1335005DE0E5 /* FLTaskCell.xib */,
-				6A1AE75A167E18CD005DE0E5 /* LoadingCell.xib */,
-				6A1AE75C167E1908005DE0E5 /* FLEmptyCell.xib */,
-				6A26779F1680AAE800F178E7 /* CategoryCell.xib */,
-				6A8F515D168572F100AD0CC2 /* FLFreelancerCell.xib */,
-				8B68D638169E7DE2009FE17A /* FavouriteCell.xib */,
+				6ABADFF01849D7A5003EE481 /* IBInterfaces */,
+				6ABADFE91849D714003EE481 /* Cells */,
 			);
 			name = VIews;
 			sourceTree = "<group>";
@@ -512,6 +526,7 @@
 		6A529AD3167A47AF009A1CCB = {
 			isa = PBXGroup;
 			children = (
+				6A4F7FE81833FBC300215FE1 /* Podfile */,
 				6A1F1B7F16A156A500712924 /* Icon@2x.png */,
 				6A1F1B7D16A156A300712924 /* Icon.png */,
 				6A529AE8167A47AF009A1CCB /* freelansim-client */,
@@ -549,11 +564,11 @@
 		6A529AE8167A47AF009A1CCB /* freelansim-client */ = {
 			isa = PBXGroup;
 			children = (
-				6A1AE750167E131F005DE0E5 /* VIews */,
-				A429B35A167F3AD400078D1E /* Resources */,
-				6A529B29167A47EC009A1CCB /* Vendor */,
-				6A1AE728167DB59B005DE0E5 /* Сlasses */,
 				6AED873F167D9F4300EBC6CD /* Application */,
+				6A1AE728167DB59B005DE0E5 /* Сlasses */,
+				6A1AE750167E131F005DE0E5 /* VIews */,
+				6A529B29167A47EC009A1CCB /* Vendor */,
+				A429B35A167F3AD400078D1E /* Resources */,
 				6A529AE9167A47AF009A1CCB /* Supporting Files */,
 			);
 			path = "freelansim-client";
@@ -562,9 +577,6 @@
 		6A529AE9167A47AF009A1CCB /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				A4B15D2816A3C1C600324F97 /* Default-568h@2x.png */,
-				A4B15D2916A3C1C600324F97 /* Default.png */,
-				A4B15D2A16A3C1C600324F97 /* Default@2x.png */,
 				6A529AEA167A47AF009A1CCB /* freelansim-Info.plist */,
 				6A529AEB167A47AF009A1CCB /* InfoPlist.strings */,
 				6A529AEE167A47AF009A1CCB /* main.m */,
@@ -598,6 +610,7 @@
 				6A529AFA167A47AF009A1CCB /* MainStoryboard.storyboard */,
 			);
 			name = StoryBoard;
+			path = ../..;
 			sourceTree = "<group>";
 		};
 		6A529B29167A47EC009A1CCB /* Vendor */ = {
@@ -707,10 +720,49 @@
 			path = Resources/buttons;
 			sourceTree = "<group>";
 		};
-		6AED873F167D9F4300EBC6CD /* Application */ = {
+		6ABADFE91849D714003EE481 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				6ABADFEA1849D735003EE481 /* FLTaskCell.h */,
+				6ABADFEB1849D735003EE481 /* FLTaskCell.m */,
+				6ABADFED1849D753003EE481 /* FLFreelancerCell.h */,
+				6ABADFEE1849D753003EE481 /* FLFreelancerCell.m */,
+				6AD8DB66184A53CB0082C2C0 /* CategoryCell.h */,
+				6AD8DB67184A53CB0082C2C0 /* CategoryCell.m */,
+				6AD8DB69184A53DE0082C2C0 /* FavouriteCell.h */,
+				6AD8DB6A184A53DE0082C2C0 /* FavouriteCell.m */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		6ABADFF01849D7A5003EE481 /* IBInterfaces */ = {
 			isa = PBXGroup;
 			children = (
 				6A529B28167A47B7009A1CCB /* StoryBoard */,
+				6ABADFF11849D7A5003EE481 /* CategoryCell.xib */,
+				6ABADFF21849D7A5003EE481 /* FavouriteCell.xib */,
+				6ABADFF31849D7A5003EE481 /* FLEmptyCell.xib */,
+				6ABADFF41849D7A5003EE481 /* FLFreelancerCell.xib */,
+				6ABADFF51849D7A5003EE481 /* FLTaskCell.xib */,
+				6ABADFF61849D7A5003EE481 /* LoadingCell.xib */,
+			);
+			name = IBInterfaces;
+			path = Views/IBInterfaces;
+			sourceTree = "<group>";
+		};
+		6AD8DB591849E97F0082C2C0 /* launch */ = {
+			isa = PBXGroup;
+			children = (
+				6AD8DB5B1849E97F0082C2C0 /* 3.png */,
+				6AD8DB5C1849E97F0082C2C0 /* 4.png */,
+			);
+			name = launch;
+			path = Resources/launch;
+			sourceTree = "<group>";
+		};
+		6AED873F167D9F4300EBC6CD /* Application */ = {
+			isa = PBXGroup;
+			children = (
 				6A529AF1167A47AF009A1CCB /* KKAppDelegate.h */,
 				6A529AF2167A47AF009A1CCB /* KKAppDelegate.m */,
 			);
@@ -770,8 +822,12 @@
 		A429B35A167F3AD400078D1E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				A4B15D1B16A3BAC300324F97 /* crt_logo.png */,
-				A4B15D1C16A3BAC300324F97 /* crt_logo@2x.png */,
+				6AD8DB60184A51F00082C2C0 /* icon-120.png */,
+				6AD8DB61184A51F00082C2C0 /* crt_logo.png */,
+				6AD8DB62184A51F00082C2C0 /* crt_logo@2x.png */,
+				6AD8DB591849E97F0082C2C0 /* launch */,
+				6ABADFFD1849DE42003EE481 /* furley_bg@2X.png */,
+				6ABADFFE1849DE42003EE481 /* furley_bg.png */,
 				6A1F1B8116A1C60100712924 /* cell-checkmark-highlighted.png */,
 				6A1F1B8216A1C60100712924 /* cell-checkmark-highlighted@2x.png */,
 				6A1F1B8316A1C60100712924 /* cell-checkmark.png */,
@@ -891,6 +947,11 @@
 				CLASSPREFIX = KK;
 				LastUpgradeCheck = 0450;
 				ORGANIZATIONNAME = "Kirill Kunst";
+				TargetAttributes = {
+					6A529ADD167A47AF009A1CCB = {
+						DevelopmentTeam = 7769S96MGR;
+					};
+				};
 			};
 			buildConfigurationList = 6A529AD8167A47AF009A1CCB /* Build configuration list for PBXProject "freelansim" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -918,25 +979,26 @@
 			files = (
 				6A529AED167A47AF009A1CCB /* InfoPlist.strings in Resources */,
 				6A529AFC167A47AF009A1CCB /* MainStoryboard.storyboard in Resources */,
-				6A1AE752167E1335005DE0E5 /* FLTaskCell.xib in Resources */,
-				6A1AE75B167E18CD005DE0E5 /* LoadingCell.xib in Resources */,
-				6A1AE75D167E1908005DE0E5 /* FLEmptyCell.xib in Resources */,
 				A429B363167F3B0C00078D1E /* 0012.png in Resources */,
 				A429B364167F3B0C00078D1E /* 0012@2x.png in Resources */,
 				A429B365167F3B0C00078D1E /* 0053.png in Resources */,
 				A429B366167F3B0C00078D1E /* 0053@2x.png in Resources */,
 				A429B367167F3B0C00078D1E /* 0220.png in Resources */,
+				6A4F7FE91833FBC300215FE1 /* Podfile in Resources */,
+				6AD8DB64184A51F00082C2C0 /* crt_logo.png in Resources */,
 				A429B368167F3B0C00078D1E /* 0220@2x.png in Resources */,
-				6A2677A01680AAE800F178E7 /* CategoryCell.xib in Resources */,
-				6A8F515E168572F100AD0CC2 /* FLFreelancerCell.xib in Resources */,
 				6AA0AA3B1697FE7D00FE28E3 /* blackButton.png in Resources */,
 				6AA0AA3C1697FE7D00FE28E3 /* blackButton@2x.png in Resources */,
 				6AA0AA3D1697FE7D00FE28E3 /* blackButtonHighlight.png in Resources */,
 				6AA0AA3E1697FE7D00FE28E3 /* blackButtonHighlight@2x.png in Resources */,
 				6AA0AA3F1697FE7D00FE28E3 /* blueButton.png in Resources */,
+				6ABADFFA1849D7A5003EE481 /* FLFreelancerCell.xib in Resources */,
 				6AA0AA401697FE7D00FE28E3 /* blueButton@2x.png in Resources */,
 				6AA0AA411697FE7D00FE28E3 /* blueButtonHighlight.png in Resources */,
 				6AA0AA421697FE7D00FE28E3 /* blueButtonHighlight@2x.png in Resources */,
+				6ABADFFC1849D7A5003EE481 /* LoadingCell.xib in Resources */,
+				6AD8DB65184A51F00082C2C0 /* crt_logo@2x.png in Resources */,
+				6ABADFF91849D7A5003EE481 /* FLEmptyCell.xib in Resources */,
 				6AA0AA431697FE7D00FE28E3 /* greenButton.png in Resources */,
 				6AA0AA441697FE7D00FE28E3 /* greenButton@2x.png in Resources */,
 				6AA0AA451697FE7D00FE28E3 /* greenButtonHighlight.png in Resources */,
@@ -950,6 +1012,7 @@
 				6AA0AA4D1697FE7D00FE28E3 /* orangeButton@2x.png in Resources */,
 				6AA0AA4E1697FE7D00FE28E3 /* orangeButtonHighlight.png in Resources */,
 				6AA0AA4F1697FE7D00FE28E3 /* orangeButtonHighlight@2x.png in Resources */,
+				6AD8DB63184A51F00082C2C0 /* icon-120.png in Resources */,
 				6AA0AA501697FE7D00FE28E3 /* tanButton.png in Resources */,
 				6AA0AA511697FE7D00FE28E3 /* tanButton@2x.png in Resources */,
 				6AA0AA521697FE7D00FE28E3 /* tanButtonHighlight.png in Resources */,
@@ -961,12 +1024,12 @@
 				6AA0AA601697FF6800FE28E3 /* 0299.png in Resources */,
 				6AA0AA611697FF6800FE28E3 /* 0260.png in Resources */,
 				6AA0AA621697FF6800FE28E3 /* 0089.png in Resources */,
+				6ABADFFB1849D7A5003EE481 /* FLTaskCell.xib in Resources */,
 				6AA0AA631697FF6800FE28E3 /* 0011.png in Resources */,
 				6AA0AA641697FF6800FE28E3 /* 0299@2x.png in Resources */,
 				6AA0AA651697FF6800FE28E3 /* 0260@2x.png in Resources */,
 				6AA0AA661697FF6800FE28E3 /* 0089@2x.png in Resources */,
 				6AA0AA671697FF6800FE28E3 /* 0011@2x.png in Resources */,
-				8B68D639169E7DE2009FE17A /* FavouriteCell.xib in Resources */,
 				8B147311169EDA5B00AD7027 /* task.png in Resources */,
 				8BA6342D16A0074100BF14F2 /* star_off.png in Resources */,
 				8BA6342E16A0074100BF14F2 /* star_off@2x.png in Resources */,
@@ -994,8 +1057,11 @@
 				6A5C5F3C16A133760032D7FD /* nav-button-mini-highlighted@2x.png in Resources */,
 				6A5C5F3D16A133760032D7FD /* nav-button-mini.png in Resources */,
 				6A5C5F3E16A133760032D7FD /* nav-button-mini@2x.png in Resources */,
+				6AD8DB5F1849E97F0082C2C0 /* 4.png in Resources */,
 				6A5C5F3F16A133760032D7FD /* nav-button.png in Resources */,
+				6ABADFFF1849DE42003EE481 /* furley_bg@2X.png in Resources */,
 				6A5C5F4016A133760032D7FD /* nav-button@2x.png in Resources */,
+				6ABADFF71849D7A5003EE481 /* CategoryCell.xib in Resources */,
 				6A1F1B7716A151FB00712924 /* grey@2x.png in Resources */,
 				6A1F1B7816A151FB00712924 /* grey.png in Resources */,
 				6A1F1B7E16A156A300712924 /* Icon.png in Resources */,
@@ -1006,15 +1072,13 @@
 				6A1F1B8816A1C60100712924 /* cell-checkmark@2x.png in Resources */,
 				8BA6345C16A3B97400BF14F2 /* DannyImage.png in Resources */,
 				8BA6345D16A3B97400BF14F2 /* KunstImage.png in Resources */,
-				A4B15D1D16A3BAC300324F97 /* crt_logo.png in Resources */,
-				A4B15D1E16A3BAC300324F97 /* crt_logo@2x.png in Resources */,
+				6ABADFF81849D7A5003EE481 /* FavouriteCell.xib in Resources */,
 				A4B15D2116A3BD1A00324F97 /* big-orange-button.png in Resources */,
 				A4B15D2516A3BD3A00324F97 /* big-orange-button-highlighted.png in Resources */,
 				A4B15D2616A3BD3A00324F97 /* big-orange-button-highlighted@2x.png in Resources */,
+				6ABAE0001849DE42003EE481 /* furley_bg.png in Resources */,
+				6AD8DB5E1849E97F0082C2C0 /* 3.png in Resources */,
 				A4B15D2716A3BD3A00324F97 /* big-orange-button@2x.png in Resources */,
-				A4B15D2B16A3C1C600324F97 /* Default-568h@2x.png in Resources */,
-				A4B15D2C16A3C1C600324F97 /* Default.png in Resources */,
-				A4B15D2D16A3C1C600324F97 /* Default@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1067,8 +1131,10 @@
 				6A529AF3167A47AF009A1CCB /* KKAppDelegate.m in Sources */,
 				6A1AE72C167DB5C8005DE0E5 /* FLHTTPClient.m in Sources */,
 				6A1AE737167DCB6A005DE0E5 /* FLTask.m in Sources */,
+				6ABADFEC1849D735003EE481 /* FLTaskCell.m in Sources */,
 				6A1AE744167DD022005DE0E5 /* FLHTMLParser.m in Sources */,
 				6A1AE747167E11FF005DE0E5 /* FLDefines.m in Sources */,
+				6AD8DB68184A53CB0082C2C0 /* CategoryCell.m in Sources */,
 				6A1AE74C167E12B6005DE0E5 /* FLBaseController.m in Sources */,
 				6A1AE74F167E12D1005DE0E5 /* FLTasksController.m in Sources */,
 				A415B449167EE914002FFC83 /* FLTaskController.m in Sources */,
@@ -1085,6 +1151,7 @@
 				6AA0AA1B1697F8DE00FE28E3 /* UIStyle.m in Sources */,
 				8B9CEE9B169D85C400620749 /* DataStore.xcdatamodeld in Sources */,
 				8B9CEEB2169E6C6100620749 /* FLValueTransformer.m in Sources */,
+				6AD8DB6B184A53DE0082C2C0 /* FavouriteCell.m in Sources */,
 				8B68D63D169E8272009FE17A /* FLFavouritesController.m in Sources */,
 				8B147301169E967B00AD7027 /* FLManagedFreelancer.m in Sources */,
 				8B147308169EBA6300AD7027 /* FLManagedTask.m in Sources */,
@@ -1093,6 +1160,7 @@
 				A46E89BC16A0245B00FD0048 /* ISGumView.m in Sources */,
 				A46E89BD16A0245B00FD0048 /* ISRefreshControl.m in Sources */,
 				A46E89BE16A0245B00FD0048 /* ISUtility.m in Sources */,
+				6ABADFEF1849D753003EE481 /* FLFreelancerCell.m in Sources */,
 				A46E89BF16A0245B00FD0048 /* UITableViewController+RefreshControl.m in Sources */,
 				8BA6343416A00FF400BF14F2 /* FLFirstFavoritesCreator.m in Sources */,
 				8BA6343C16A01CF100BF14F2 /* FLAboutController.m in Sources */,
@@ -1203,15 +1271,15 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = CB0AF9F7B17F4CB7B2ECC008 /* Pods.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: Кирилл Кунст (7J3RNQ6456)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Кирилл Кунст (7J3RNQ6456)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Creative LLC (7769S96MGR)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Creative LLC (7769S96MGR)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "freelansim-client/freelansim-Prefix.pch";
 				INFOPLIST_FILE = "freelansim-client/freelansim-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = freelansim;
-				PROVISIONING_PROFILE = "1DDA8214-3AD1-43BB-887D-EC9A901F01D2";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "1DDA8214-3AD1-43BB-887D-EC9A901F01D2";
+				PROVISIONING_PROFILE = "C8B6C3F3-48FB-4AA6-ACC1-F1BC9C0A6D5F";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "C8B6C3F3-48FB-4AA6-ACC1-F1BC9C0A6D5F";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1220,15 +1288,15 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = CB0AF9F7B17F4CB7B2ECC008 /* Pods.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Creative LLC";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Creative LLC";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Creative LLC (7769S96MGR)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Creative LLC (7769S96MGR)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "freelansim-client/freelansim-Prefix.pch";
 				INFOPLIST_FILE = "freelansim-client/freelansim-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = freelansim;
-				PROVISIONING_PROFILE = "DC0AF89B-7E83-40A1-B733-ECFCF95593C4";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "DC0AF89B-7E83-40A1-B733-ECFCF95593C4";
+				PROVISIONING_PROFILE = "C8B6C3F3-48FB-4AA6-ACC1-F1BC9C0A6D5F";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "C8B6C3F3-48FB-4AA6-ACC1-F1BC9C0A6D5F";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

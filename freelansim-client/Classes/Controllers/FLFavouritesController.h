@@ -10,7 +10,8 @@
 #import "FLManagedFreelancer.h"
 #import "FLManagedTask.h"
 
-@interface FLFavouritesController : UITableViewController{
+@interface FLFavouritesController : UITableViewController
+{
     NSMutableArray *favourites;
     FLManagedFreelancer *selectedFreelancer;
     FLManagedTask *selectedTask;

@@ -35,4 +35,5 @@
  Parse freelancer data from html
  */
 -(FLFreelancer *)parseToFreelancer:(FLFreelancer *)fl;
+
 @end

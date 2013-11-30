@@ -17,20 +17,17 @@
     [MagicalRecord setupCoreDataStackWithStoreNamed:@"DataStore.sqlite"];
     [UIRender applyStylesheet];
     [self loadPreStoringData];
-    // Override point for customization after application launch.
     return YES;
 }
 
--(void)loadPreStoringData{
+-(void)loadPreStoringData
+{
     NSUserDefaults *padFactoids = [NSUserDefaults standardUserDefaults];
     int launchCount = [padFactoids integerForKey:@"launchCount" ] + 1;
     [padFactoids setInteger:launchCount forKey:@"launchCount"];
     [padFactoids synchronize];
-    
-    NSLog(@"number of times: %i this app has been launched", launchCount);
-    
-    if ( launchCount == 1 )
-    {
+
+    if (launchCount == 1) {
         [FLFirstFavoritesCreator createFavorites:YES];
         [FLFirstFavoritesCreator createFavorites:NO];
     }
@@ -58,6 +55,5 @@
     [MagicalRecord cleanUp];
 }
 
-#pragma mark - Stylesheet
 
 @end

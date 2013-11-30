@@ -26,10 +26,9 @@
 
 - (void)viewDidLoad
 {
-    self.view.backgroundColor = [UIColor patternBackgroundColor];
-    [UIRender renderMailButton:self.mailButton];
     [super viewDidLoad];
-	
+    [self.mailButton setTitleColor:kBaseNavBarColor forState:UIControlStateNormal];
+    self.view.backgroundColor = [UIColor patternBackgroundColor];
 }
 
 - (void)didReceiveMemoryWarning

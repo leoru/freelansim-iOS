@@ -1,7 +1,7 @@
-platform :ios, '5.0'
+platform :ios, '7.0'
 
 pod 'JSONKit'
-pod 'AFNetworking'
+pod 'AFNetworking', '1.3.1'
 pod 'MWPhotoBrowser'
 pod 'EGOCache', '2.0'
 pod 'SVProgressHUD'

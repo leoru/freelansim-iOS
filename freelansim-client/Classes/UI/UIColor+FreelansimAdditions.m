@@ -10,8 +10,9 @@
 
 @implementation UIColor (FreelansimAdditions)
 
-+ (UIColor *)patternBackgroundColor {
-	return [self colorWithPatternImage:[UIImage imageNamed:@"grey.png"]];
++ (UIColor *)patternBackgroundColor
+{
+	return [self colorWithPatternImage:[UIImage imageNamed:@"furley_bg.png"]];
 }
 
 @end

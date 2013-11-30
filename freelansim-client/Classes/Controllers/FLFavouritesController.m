@@ -12,6 +12,7 @@
 #import "FLManagedTask.h"
 #import "FLFreelancerController.h"
 #import "SVProgressHUD.h"
+#import "FavouriteCell.h"
 
 @interface FLFavouritesController ()
 
@@ -37,12 +38,15 @@
     [self initUI];
     [super viewWillAppear:animated];
 }
-- (void)viewDidLoad{
+- (void)viewDidLoad
+{
     favourites = [[NSMutableArray alloc] init];
     [UIRender renderNavigationBar:self.navigationController.navigationBar];
     [super viewDidLoad];
+    [self.favouritesTable registerNib:[UINib nibWithNibName:@"FavouriteCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"FavouriteCell"];
 }
-- (void) viewDidUnload{
+- (void) viewDidUnload
+{
     favourites = nil;
     [super viewDidUnload];
 }
@@ -110,49 +114,21 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    FLValueTransformer *transformer = [[FLValueTransformer alloc] init];
     static NSString *cellIdentifier = @"FavouriteCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    if (!cell) {
-        cell = [[NSBundle mainBundle] loadNibNamed:cellIdentifier owner:nil options:nil][0];
-    }
+    FavouriteCell *cell = (FavouriteCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     id obj = [favourites objectAtIndex:indexPath.row];
     if ([obj isKindOfClass:[FLManagedFreelancer class]]) {
         FLManagedFreelancer *freelancer = (FLManagedFreelancer *)obj;
-        
-        // Configure the cell...
-        UIImageView *imageView = (UIImageView *)[cell viewWithTag:1];
-        imageView.image = (UIImage *)[transformer reverseTransformedValue:freelancer.avatar];
-        
-        UILabel *name = (UILabel *)[cell viewWithTag:2];
-        name.text = freelancer.name;
-        
-        UILabel *speciality = (UILabel *)[cell viewWithTag:3];
-        speciality.text = freelancer.speciality;
-        
-        UILabel *desc = (UILabel *)[cell viewWithTag:4];
-        desc.text = freelancer.desc;
-        
-        UILabel *price = (UILabel *)[cell viewWithTag:5];
-        price.text = freelancer.price;
-        
+        [cell setFreelancer:freelancer];
     } else if([obj isKindOfClass:[FLManagedTask class]]) {
         FLManagedTask *task = (FLManagedTask *)obj;
-        UILabel *name = (UILabel *)[cell viewWithTag:2];
-        name.text = task.title;
-        
-        UILabel *speciality = (UILabel *)[cell viewWithTag:3];
-        speciality.text = task.category;
-        
-        UILabel *desc = (UILabel *)[cell viewWithTag:4];
-        desc.text = task.shortDesc;
-        
-        UILabel *price = (UILabel *)[cell viewWithTag:5];
-        price.text = task.price;
+        [cell setTask:task];
     }
+    
     UIView *backgroundView = [[UIView alloc] initWithFrame:CGRectZero];
     backgroundView.backgroundColor = [UIColor colorWithRed:0.99f green:0.51f blue:0.33f alpha:1.00f];
     cell.selectedBackgroundView = backgroundView;
+    
     return cell;
 }
 

@@ -12,7 +12,8 @@
 #import "FLCategoriesController.h"
 #import "ISRefreshControl.h"
 
-@interface FLTasksController : FLBaseController <UITableViewDataSource, UITableViewDelegate, FLCategoriesDelegate, UISearchBarDelegate> {
+@interface FLTasksController : FLBaseController <UITableViewDataSource, UITableViewDelegate, FLCategoriesDelegate, UISearchBarDelegate>
+{
     int page;
     BOOL stopSearch;
     FLTask *selectedTask;

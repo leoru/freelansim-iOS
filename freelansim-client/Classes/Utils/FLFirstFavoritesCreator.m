@@ -14,6 +14,7 @@
 @implementation FLFirstFavoritesCreator
 
 NSString * const FLKunstFreelansimLink = @"http://freelansim.ru/freelancers/leoru";
+
 NSString * const FLDannyFreelansimLink = @"http://freelansim.ru/freelancers/Razrab";
 
 +(void)createFavorites:(BOOL) kunst{

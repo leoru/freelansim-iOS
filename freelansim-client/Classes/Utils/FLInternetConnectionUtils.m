@@ -11,13 +11,15 @@
 
 @implementation FLInternetConnectionUtils
 
-+(BOOL)isWebSiteUp{
++(BOOL)isWebSiteUp
+{
     Reachability *reachable = [Reachability reachabilityWithHostname:@"freelansim.ru"];
     NetworkStatus networkStatus = [reachable currentReachabilityStatus];
     return !(networkStatus == NotReachable);
 }
 
-+(BOOL)isConnectedToInternet{
++(BOOL)isConnectedToInternet
+{
     Reachability *reachable = [Reachability reachabilityForInternetConnection];
     NetworkStatus networkStatus = [reachable currentReachabilityStatus];
     return !(networkStatus == NotReachable);

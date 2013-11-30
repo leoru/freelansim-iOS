@@ -9,7 +9,8 @@
 #import "FLBaseController.h"
 #import "FLFreelancer.h"
 
-@interface FLFreelancerController : FLBaseController <UIWebViewDelegate, UIActionSheetDelegate>{
+@interface FLFreelancerController : FLBaseController <UIWebViewDelegate, UIActionSheetDelegate>
+{
     NSMutableArray *actionSheetTasks;
 }
 

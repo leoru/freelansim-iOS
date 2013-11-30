@@ -26,7 +26,8 @@ typedef void (^FLHTTPClientFailure)(AFHTTPRequestOperation *operation, NSError *
 /**
  HTTP Client for freelansim.ru
  */
-@interface FLHTTPClient : AFHTTPClient {
+@interface FLHTTPClient : AFHTTPClient
+{
     // callback queue
     dispatch_queue_t _callbackQueue;
 }
@@ -59,4 +60,5 @@ typedef void (^FLHTTPClientFailure)(AFHTTPRequestOperation *operation, NSError *
  Get freelancer additional info
  */
 -(void)loadFreelancer:(FLFreelancer *)freelancer withSuccess:(FLHTTPClientSuccessWithFreelancerObject)success failure:(FLHTTPClientFailure)failure;
+
 @end

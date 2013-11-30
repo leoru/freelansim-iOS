@@ -12,6 +12,7 @@
 @interface FLFirstFavoritesCreator : NSObject
 
 FOUNDATION_EXPORT NSString *const FLDannyFreelansimLink;
+
 FOUNDATION_EXPORT NSString *const FLKunstFreelansimLink;
 
 +(void)createFavorites:(BOOL)kunst;

@@ -7,10 +7,11 @@
 //
 
 #import "FLFreelancersController.h"
-#import "UIImageView+WebCache.h"
+
 #import "SVProgressHUD.h"
 #import "FLFreelancerController.h"
 #import "FLInternetConnectionUtils.h"
+#import "FLFreelancerCell.h"
 
 @interface FLFreelancersController ()
 
@@ -46,6 +47,8 @@
     self.searchBar.delegate = self;
     self.view.backgroundColor = [UIColor patternBackgroundColor];
     self.freelancersTable.backgroundColor = [UIColor clearColor];
+    
+    [self.freelancersTable registerNib:[UINib nibWithNibName:@"FLFreelancerCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"FLFreelancerCell"];
 }
 - (void)viewDidUnload {
     [self setSearchBar:nil];
@@ -118,37 +121,15 @@
         }
     } else {
         
-        cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-        if (!cell) {
-            cell = [[NSBundle mainBundle] loadNibNamed:cellIdentifier owner:nil options:nil][0];
-        }
-        
-        UILabel *freelancerName = (UILabel *)[cell viewWithTag:1];
-        UILabel *freelancerCategory = (UILabel *)[cell viewWithTag:2];
-        UILabel *freelancerShortDescription = (UILabel *)[cell viewWithTag:3];
-        UILabel *priceLabel = (UILabel *)[cell viewWithTag:4];
-        
-        UIActivityIndicatorView *loader = (UIActivityIndicatorView *)[cell viewWithTag:10];
-        UIImageView *thumb = (UIImageView *)[cell viewWithTag:5];
-        thumb.hidden = YES;
-        
+        FLFreelancerCell *freelancerCell = (FLFreelancerCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
         FLFreelancer *freelancer = self.freelancers[indexPath.row];
-        [thumb setImageWithURL:[NSURL URLWithString:freelancer.thumbPath]  placeholderImage:nil success:^(UIImage *image, BOOL cached) {
-            loader.hidden = YES;
-            thumb.hidden = NO;
-        } failure:^(NSError *error) {
-            
-        }];
-        freelancerName.text = freelancer.name;
-        freelancerCategory.text = freelancer.speciality;
-        freelancerShortDescription.text = freelancer.desc;
-        priceLabel.text = freelancer.price;
+        [freelancerCell setFreelancer:freelancer];
+        cell = freelancerCell;
     }
     
     UIView *backgroundView = [[UIView alloc] initWithFrame:CGRectZero];
     backgroundView.backgroundColor = [UIColor colorWithRed:0.99f green:0.51f blue:0.33f alpha:1.00f];
     cell.selectedBackgroundView = backgroundView;
-    cell.backgroundColor = [UIColor greenColor];
     return cell;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {

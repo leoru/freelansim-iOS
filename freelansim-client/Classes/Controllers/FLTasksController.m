@@ -10,7 +10,7 @@
 #import "FLTaskController.h"
 #import "SVProgressHUD.h"
 #import "FLInternetConnectionUtils.h"
-
+#import "FLTaskCell.h"
 
 @interface FLTasksController ()
 
@@ -46,6 +46,8 @@
     self.tasksTable.backgroundColor = [UIColor clearColor];
     self.clearView.backgroundColor = [UIColor patternBackgroundColor];
     self.view.backgroundColor = [UIColor patternBackgroundColor];
+    
+    [self.tasksTable registerNib:[UINib nibWithNibName:@"FLTaskCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"FLTaskCell"];
 }
 
 - (void)didReceiveMemoryWarning
@@ -110,47 +112,16 @@
             }
         }
     } else {
-        
-        cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-        if (!cell) {
-            cell = [[NSBundle mainBundle] loadNibNamed:cellIdentifier owner:nil options:nil][0];
-        }
-        
-        UILabel *taskTitle = (UILabel *)[cell viewWithTag:1];
-        UILabel *taskCategory = (UILabel *)[cell viewWithTag:2];
-        UILabel *taskShortDescription = (UILabel *)[cell viewWithTag:3];
-        UILabel *priceLabel = (UILabel *)[cell viewWithTag:4];
-        UILabel *publishedLabel = (UILabel *)[cell viewWithTag:7];
-        
-        priceLabel.layer.cornerRadius = 5.0f;
-        priceLabel.backgroundColor = PriceLabelBackgroundColor;
-        priceLabel.layer.borderColor = PriceLabelBorderColor;
-        priceLabel.textColor = PriceLabelTextColor;
-        
-        priceLabel.layer.borderWidth = 1.0f;
+        FLTaskCell *taskCell = (FLTaskCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
         FLTask *task = self.tasks[indexPath.row];
-        taskTitle.text = task.title;
-        taskCategory.text = task.category;
-        NSLog(@"Short description: %@",task.shortDescription);
-        taskShortDescription.text = task.shortDescription;
-        taskShortDescription.backgroundColor = [UIColor greenColor];
-        taskShortDescription.numberOfLines = 4;
-        [taskShortDescription sizeToFit];
-        priceLabel.text = task.price;
-        [priceLabel sizeToFit];
-        
-        CGRect frame = priceLabel.frame;
-        frame.size.height += 5;
-        frame.size.width += 5;
-        priceLabel.frame = frame;
-        
-        publishedLabel.text = task.published;
+        [taskCell setTask:task];
+        cell = taskCell;
     }
     
     UIView *backgroundView = [[UIView alloc] initWithFrame:CGRectZero];
-    backgroundView.backgroundColor = [UIColor colorWithRed:0.99f green:0.51f blue:0.33f alpha:1.00f];
+    backgroundView.backgroundColor = [UIColor clearColor];
     cell.selectedBackgroundView = backgroundView;
-    cell.backgroundColor = [UIColor greenColor];
+    cell.backgroundColor = [UIColor clearColor];
     return cell;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {

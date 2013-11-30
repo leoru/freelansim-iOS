@@ -10,5 +10,7 @@
 #import "FLContact.h"
 
 @interface FLContactButton : UIButton
+
 @property (nonatomic,retain) FLContact *contact;
+
 @end

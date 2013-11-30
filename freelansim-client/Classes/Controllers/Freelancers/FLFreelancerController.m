@@ -92,9 +92,7 @@
     avatarFrame.size.height = 100;
     self.avatarView.frame = avatarFrame;
     self.avatarView.contentMode = UIViewContentModeScaleAspectFit;
-    [self.avatarView setImageWithURL:[NSURL URLWithString:self.freelancer.avatarPath] success:^(UIImage *image, BOOL cached) {
-        self.loader.hidden = YES;
-    } failure:^(NSError *error) {
+    [self.avatarView setImageWithURL:[NSURL URLWithString:self.freelancer.avatarPath]  placeholderImage:nil completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType) {
         self.loader.hidden = YES;
     }];
     

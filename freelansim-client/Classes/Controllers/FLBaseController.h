@@ -11,6 +11,9 @@
 @interface FLBaseController : UIViewController
 
 -(void)showAlertWithTitle:(NSString *)title message:(NSString *)message;
+
 -(void)showErrorNetworkDisabled;
+
 -(void)showErrorServerDontRespond;
+
 @end

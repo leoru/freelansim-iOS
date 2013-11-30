@@ -33,16 +33,19 @@
     [super didReceiveMemoryWarning];
 }
 
--(void)showAlertWithTitle:(NSString *)title message:(NSString *)message {
+-(void)showAlertWithTitle:(NSString *)title message:(NSString *)message
+{
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:message delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
     [alert show];
 }
 
--(void)showErrorNetworkDisabled {
+-(void)showErrorNetworkDisabled
+{
     [self showAlertWithTitle:errorTitleNetworkDisable message:errorMessageNetworkDisable];
 }
 
--(void)showErrorServerDontRespond {
+-(void)showErrorServerDontRespond
+{
     [self showAlertWithTitle:errorTitleServerDontRespond message:errorMessageServertDontRespond];
 }
 
