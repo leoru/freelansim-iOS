@@ -128,7 +128,7 @@
     }
     
     UIView *backgroundView = [[UIView alloc] initWithFrame:CGRectZero];
-    backgroundView.backgroundColor = [UIColor colorWithRed:0.99f green:0.51f blue:0.33f alpha:1.00f];
+    backgroundView.backgroundColor = [UIColor colorWithRed:0.88f green:0.54f blue:0.42f alpha:1.00f];
     cell.selectedBackgroundView = backgroundView;
     return cell;
 }
