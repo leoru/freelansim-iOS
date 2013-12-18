@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>005AB4E0-FF0F-476F-B4DB-84B7A8952E9A</string>
+	<key>IDESourceControlProjectName</key>
+	<string>freelansim</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>D67627F6-6238-4B1B-9C66-1293E3BA1192</key>
+		<string>https://bitbucket.org/leoru/freelansim-ios.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>freelansim.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>D67627F6-6238-4B1B-9C66-1293E3BA1192</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://bitbucket.org/leoru/freelansim-ios.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>D67627F6-6238-4B1B-9C66-1293E3BA1192</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>D67627F6-6238-4B1B-9C66-1293E3BA1192</string>
+			<key>IDESourceControlWCCName</key>
+			<string>freelansim-ios</string>
+		</dict>
+	</array>
+</dict>
+</plist>

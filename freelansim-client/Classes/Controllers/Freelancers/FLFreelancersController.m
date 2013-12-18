@@ -113,9 +113,6 @@
             }
         } else {
             cell = [tableView dequeueReusableCellWithIdentifier:emptyCellIdentifier];
-            if (!cell) {
-                cell = [[NSBundle mainBundle] loadNibNamed:emptyCellIdentifier owner:nil options:nil][0];
-            }
             cell.userInteractionEnabled = NO;
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
         }
@@ -127,9 +124,7 @@
         cell = freelancerCell;
     }
     
-    UIView *backgroundView = [[UIView alloc] initWithFrame:CGRectZero];
-    backgroundView.backgroundColor = [UIColor colorWithRed:0.88f green:0.54f blue:0.42f alpha:1.00f];
-    cell.selectedBackgroundView = backgroundView;
+    
     return cell;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -182,6 +177,7 @@
     searchBar.showsCancelButton = NO;
     [searchBar setText:@""];
     [searchBar resignFirstResponder];
+    [self search];
 }
 
 -(void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar {

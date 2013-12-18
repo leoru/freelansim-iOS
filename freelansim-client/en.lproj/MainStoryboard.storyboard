@@ -23,7 +23,7 @@
         <!--Categories Controller - Разделы-->
         <scene sceneID="JoW-71-3gr">
             <objects>
-                <viewController id="UJw-tk-e7F" customClass="FLCategoriesController" sceneMemberID="viewController">
+                <viewController extendedLayoutIncludesOpaqueBars="YES" id="UJw-tk-e7F" customClass="FLCategoriesController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Rvf-AV-tkk">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -50,7 +50,6 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Разделы" id="Iv8-XM-isD"/>
-                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="categoriesTable" destination="0HH-Bd-EEz" id="eld-Tt-y7e"/>
                         <outlet property="navBar" destination="d5D-SJ-7r1" id="Tz8-C7-Nxe"/>
@@ -69,11 +68,11 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" barStyle="blackTranslucent" id="9Cz-hO-lA4">
+                            <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Поиск..." id="9Cz-hO-lA4">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" red="0.90249155405405401" green="0.57270183925407736" blue="0.40442210952573798" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="barTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
@@ -235,11 +234,11 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" barStyle="blackTranslucent" placeholder="Имя" id="pQI-m2-TV1">
+                            <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Поиск..." id="pQI-m2-TV1">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" red="0.90249155410000004" green="0.57270183929999996" blue="0.40442210950000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="barTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
@@ -329,10 +328,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="crt_logo.png" id="l6R-ac-DL2">
-                                <rect key="frame" x="15" y="83" width="290" height="88"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="gBI-Cv-8fW">
                                 <rect key="frame" x="15" y="197" width="290" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -504,7 +499,6 @@
         <image name="0089.png" width="35" height="35"/>
         <image name="0220.png" width="35" height="35"/>
         <image name="0260.png" width="35" height="35"/>
-        <image name="crt_logo.png" width="290" height="88"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
@@ -512,8 +506,8 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="cyE-FZ-hGI"/>
-        <segue reference="VT8-2P-bpd"/>
-        <segue reference="x9E-yU-h1c"/>
+        <segue reference="SXZ-wO-cMx"/>
+        <segue reference="Ywv-uo-V9T"/>
+        <segue reference="ZCp-wO-Cv2"/>
     </inferredMetricsTieBreakers>
 </document>

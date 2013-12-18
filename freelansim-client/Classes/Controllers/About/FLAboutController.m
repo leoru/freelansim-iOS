@@ -41,7 +41,7 @@
     [super viewDidUnload];
 }
 - (IBAction)sendMail:(id)sender {
-    NSURL *url = [NSURL URLWithString:crtwebMailString];
+    NSURL *url = [NSURL URLWithString:FLMailString];
     [[UIApplication sharedApplication] openURL:url];
 }
 @end

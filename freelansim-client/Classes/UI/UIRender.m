@@ -58,6 +58,8 @@
     UITabBar *tabBar = [UITabBar appearance];
     
     [tabBar setTintColor:kBaseNavBarColor];
+    
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
 }
 
 @end

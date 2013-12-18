@@ -118,10 +118,6 @@
         cell = taskCell;
     }
     
-    UIView *backgroundView = [[UIView alloc] initWithFrame:CGRectZero];
-    backgroundView.backgroundColor = [UIColor colorWithRed:0.88f green:0.54f blue:0.42f alpha:1.00f];
-    cell.selectedBackgroundView = backgroundView;
-    cell.backgroundColor = [UIColor clearColor];
     return cell;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -181,6 +177,7 @@
     [self.searchBar setText:@""];
     searchBar.showsCancelButton = NO;
     [self.searchBar resignFirstResponder];
+    [self search];
 }
 -(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
     [self search];

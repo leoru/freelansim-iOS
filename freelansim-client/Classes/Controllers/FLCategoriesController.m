@@ -58,9 +58,11 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
 }
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return categories.count;
 }
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *cellIdentifier = @"CategoryCell";
     UITableViewCell *cell;
@@ -74,7 +76,7 @@
     categoryTitle.text = category.title;
     [categoryTitle setAdjustsFontSizeToFitWidth:YES];
     UIView *backgroundView = [[UIView alloc] initWithFrame:CGRectZero];
-    backgroundView.backgroundColor = [UIColor colorWithRed:0.99f green:0.51f blue:0.33f alpha:1.00f];
+    backgroundView.backgroundColor = [UIColor colorWithRed:0.88f green:0.54f blue:0.42f alpha:1.00f];
     cell.selectedBackgroundView = backgroundView;
     
     for (FLCategory *cat in self.selectedCategories) {
@@ -85,9 +87,11 @@
     }
     return cell;
 }
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 44;
 }
+
 -(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [self.categoriesTable cellForRowAtIndexPath:indexPath];
     [self.categoriesTable deselectRowAtIndexPath:indexPath animated:YES];
@@ -114,7 +118,7 @@
 #pragma mark - Clickers
 - (IBAction)checkCategoriesClick:(id)sender {
     [self.delegate categoriesDidSelected:self.selectedCategories];
-    [self dismissModalViewControllerAnimated:YES];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

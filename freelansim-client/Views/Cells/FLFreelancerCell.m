@@ -24,6 +24,14 @@
     [super setSelected:selected animated:animated];
 }
 
+- (void)awakeFromNib
+{
+    [super awakeFromNib];
+    UIView *backgroundView = [[UIView alloc] initWithFrame:CGRectZero];
+    backgroundView.backgroundColor = [UIColor colorWithRed:0.88f green:0.54f blue:0.42f alpha:1.00f];
+    self.selectedBackgroundView = backgroundView;
+}
+
 - (void)setFreelancer:(FLFreelancer *)freelancer
 {
 
