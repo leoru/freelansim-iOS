@@ -84,7 +84,7 @@
                 cell.userInteractionEnabled = NO;
                 cell.selectionStyle = UITableViewCellSelectionStyleNone;
                 [self showErrorNetworkDisabled];
-            }else if (![FLInternetConnectionUtils isWebSiteUp]){
+            } else if (![FLInternetConnectionUtils isWebSiteUp]){
                 cell = [tableView dequeueReusableCellWithIdentifier:emptyCellIdentifier];
                 if (!cell) {
                     cell = [[NSBundle mainBundle] loadNibNamed:emptyCellIdentifier owner:nil options:nil][0];
@@ -113,6 +113,9 @@
             }
         } else {
             cell = [tableView dequeueReusableCellWithIdentifier:emptyCellIdentifier];
+            if (!cell) {
+                cell = [[NSBundle mainBundle] loadNibNamed:emptyCellIdentifier owner:nil options:nil][0];
+            }
             cell.userInteractionEnabled = NO;
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
         }
@@ -146,7 +149,7 @@
     } else if ([segue.identifier isEqualToString:@"FreelancersCategoriesSegue"]) {
         FLCategoriesController *categoriesController = [segue destinationViewController];
         categoriesController.delegate = self;
-        categoriesController.selectedCategories = self.selectedCategories;
+        categoriesController.selectedCategories = [self.selectedCategories mutableCopy];
     }
 }
 

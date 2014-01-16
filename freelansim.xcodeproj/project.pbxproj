@@ -116,8 +116,6 @@
 		6AD8DB5E1849E97F0082C2C0 /* 3.png in Resources */ = {isa = PBXBuildFile; fileRef = 6AD8DB5B1849E97F0082C2C0 /* 3.png */; };
 		6AD8DB5F1849E97F0082C2C0 /* 4.png in Resources */ = {isa = PBXBuildFile; fileRef = 6AD8DB5C1849E97F0082C2C0 /* 4.png */; };
 		6AD8DB63184A51F00082C2C0 /* icon-120.png in Resources */ = {isa = PBXBuildFile; fileRef = 6AD8DB60184A51F00082C2C0 /* icon-120.png */; };
-		6AD8DB64184A51F00082C2C0 /* crt_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 6AD8DB61184A51F00082C2C0 /* crt_logo.png */; };
-		6AD8DB65184A51F00082C2C0 /* crt_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6AD8DB62184A51F00082C2C0 /* crt_logo@2x.png */; };
 		6AD8DB68184A53CB0082C2C0 /* CategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AD8DB67184A53CB0082C2C0 /* CategoryCell.m */; };
 		6AD8DB6B184A53DE0082C2C0 /* FavouriteCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AD8DB6A184A53DE0082C2C0 /* FavouriteCell.m */; };
 		6AED8737167D9B3500EBC6CD /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AED8736167D9B3500EBC6CD /* CoreImage.framework */; };
@@ -310,8 +308,6 @@
 		6AD8DB5B1849E97F0082C2C0 /* 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3.png; sourceTree = "<group>"; };
 		6AD8DB5C1849E97F0082C2C0 /* 4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 4.png; sourceTree = "<group>"; };
 		6AD8DB60184A51F00082C2C0 /* icon-120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-120.png"; path = "Resources/icon-120.png"; sourceTree = "<group>"; };
-		6AD8DB61184A51F00082C2C0 /* crt_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = crt_logo.png; path = Resources/crt_logo.png; sourceTree = "<group>"; };
-		6AD8DB62184A51F00082C2C0 /* crt_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "crt_logo@2x.png"; path = "Resources/crt_logo@2x.png"; sourceTree = "<group>"; };
 		6AD8DB66184A53CB0082C2C0 /* CategoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CategoryCell.h; path = Views/Cells/CategoryCell.h; sourceTree = "<group>"; };
 		6AD8DB67184A53CB0082C2C0 /* CategoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CategoryCell.m; path = Views/Cells/CategoryCell.m; sourceTree = "<group>"; };
 		6AD8DB69184A53DE0082C2C0 /* FavouriteCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FavouriteCell.h; path = Views/Cells/FavouriteCell.h; sourceTree = "<group>"; };
@@ -823,8 +819,6 @@
 			isa = PBXGroup;
 			children = (
 				6AD8DB60184A51F00082C2C0 /* icon-120.png */,
-				6AD8DB61184A51F00082C2C0 /* crt_logo.png */,
-				6AD8DB62184A51F00082C2C0 /* crt_logo@2x.png */,
 				6AD8DB591849E97F0082C2C0 /* launch */,
 				6ABADFFD1849DE42003EE481 /* furley_bg@2X.png */,
 				6ABADFFE1849DE42003EE481 /* furley_bg.png */,
@@ -949,7 +943,7 @@
 				ORGANIZATIONNAME = "Kirill Kunst";
 				TargetAttributes = {
 					6A529ADD167A47AF009A1CCB = {
-						DevelopmentTeam = 7769S96MGR;
+						DevelopmentTeam = Z9BGBYPL8S;
 					};
 				};
 			};
@@ -985,7 +979,6 @@
 				A429B366167F3B0C00078D1E /* 0053@2x.png in Resources */,
 				A429B367167F3B0C00078D1E /* 0220.png in Resources */,
 				6A4F7FE91833FBC300215FE1 /* Podfile in Resources */,
-				6AD8DB64184A51F00082C2C0 /* crt_logo.png in Resources */,
 				A429B368167F3B0C00078D1E /* 0220@2x.png in Resources */,
 				6AA0AA3B1697FE7D00FE28E3 /* blackButton.png in Resources */,
 				6AA0AA3C1697FE7D00FE28E3 /* blackButton@2x.png in Resources */,
@@ -997,7 +990,6 @@
 				6AA0AA411697FE7D00FE28E3 /* blueButtonHighlight.png in Resources */,
 				6AA0AA421697FE7D00FE28E3 /* blueButtonHighlight@2x.png in Resources */,
 				6ABADFFC1849D7A5003EE481 /* LoadingCell.xib in Resources */,
-				6AD8DB65184A51F00082C2C0 /* crt_logo@2x.png in Resources */,
 				6ABADFF91849D7A5003EE481 /* FLEmptyCell.xib in Resources */,
 				6AA0AA431697FE7D00FE28E3 /* greenButton.png in Resources */,
 				6AA0AA441697FE7D00FE28E3 /* greenButton@2x.png in Resources */,
@@ -1271,7 +1263,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = CB0AF9F7B17F4CB7B2ECC008 /* Pods.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Creative LLC (7769S96MGR)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Creative LLC (7769S96MGR)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "freelansim-client/freelansim-Prefix.pch";
@@ -1288,15 +1280,15 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = CB0AF9F7B17F4CB7B2ECC008 /* Pods.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Creative LLC (7769S96MGR)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Creative LLC (7769S96MGR)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Kirill Kunst (Z9BGBYPL8S)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "freelansim-client/freelansim-Prefix.pch";
 				INFOPLIST_FILE = "freelansim-client/freelansim-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = freelansim;
-				PROVISIONING_PROFILE = "C8B6C3F3-48FB-4AA6-ACC1-F1BC9C0A6D5F";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "C8B6C3F3-48FB-4AA6-ACC1-F1BC9C0A6D5F";
+				PROVISIONING_PROFILE = "388DFE86-72EE-41A7-B23D-ACD409B9257A";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "388DFE86-72EE-41A7-B23D-ACD409B9257A";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

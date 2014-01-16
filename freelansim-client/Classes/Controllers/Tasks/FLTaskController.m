@@ -106,7 +106,9 @@
         star = @"cell-checkmark-highlighted.png";
     }
     UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:star] style:UIBarButtonItemStyleBordered target:self action:@selector(favoritesClicked)];
-    self.navigationItem.rightBarButtonItem = item;
+    UIBarButtonItem *openInBrowserItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemOrganize target:self action:@selector(actionOpenInBrowser:)];
+    
+    self.navigationItem.rightBarButtonItems = @[openInBrowserItem, item];
 }
 -(void)loadHTMLContent {
     NSString *path = [[NSBundle mainBundle] bundlePath];
@@ -152,6 +154,9 @@
     [[NSManagedObjectContext MR_defaultContext] MR_saveWithOptions:MRSaveSynchronously completion:^(BOOL success, NSError *error) {
         
     }];
+}
+-(void)actionOpenInBrowser:(id)sender{
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:self.task.link]];
 }
 
 #pragma mark - WebView Delegate
