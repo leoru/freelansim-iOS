@@ -95,7 +95,8 @@
                 if (!cell) {
                     cell = [[NSBundle mainBundle] loadNibNamed:loadingCellIdentifier owner:nil options:nil][0];
                 }
-                
+                cell.userInteractionEnabled = NO;
+                cell.selectionStyle = UITableViewCellSelectionStyleNone;
                 dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
                     [[FLHTTPClient sharedClient] getTasksWithCategories:self.selectedCategories  query:searchQuery page:page++ success:^(NSArray *objects, AFHTTPRequestOperation *operation, id responseObject, BOOL *stop) {
                         dispatch_async(dispatch_get_main_queue(), ^{
