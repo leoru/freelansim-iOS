@@ -41,12 +41,13 @@
         
         HTMLNode *taskPriceNode = [taskNode findChildOfClass:@"price"];
         NSArray *priceNodes = [taskPriceNode findChildTags:@"span"];
-        task.price = @"";
-        [priceNodes enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-            HTMLNode *node = (HTMLNode *)obj;
-            
-            task.price = [task.price stringByAppendingFormat:@" %@",node.contents];
-        }];
+        if (priceNodes.count > 0) {
+            task.price = @"Цена договорная";
+            task.isAccuratePrice = NO;
+        } else {
+            task.price = taskPriceNode.contents;
+            task.isAccuratePrice = YES;
+        }
         
         task.published = [[taskNode findChildOfClass:@"published"] contents];
         task.category = [[taskNode findChildOfClass:@"author"] contents];
@@ -75,6 +76,12 @@
     
     NSArray *infoBlocks = [[body findChildOfClass:@"more_information"] findChildrenOfClass:@"block"];
     task.htmlDescription = [infoBlocks[0] rawContents];
+    
+    HTMLNode *secondBlock = infoBlocks[1];
+    HTMLNode *filesHeaderNode = [secondBlock findChildOfClass:@"file"];
+    if (filesHeaderNode) {
+        task.filesInfo = [secondBlock rawContents];
+    }
     
     NSArray *skillsBlocks = [[body findChildOfClass:@"skills_column"] findChildrenOfClass:@"block"];
     

@@ -43,6 +43,10 @@
     self.searchBar.delegate = self;
     self.tasksTable.delegate = self;
     self.tasksTable.dataSource = self;
+    UIEdgeInsets edges;
+    edges.left = 10;
+    edges.right = 10;
+    self.tasksTable.separatorInset = edges;
     self.tasksTable.backgroundColor = [UIColor clearColor];
     self.clearView.backgroundColor = [UIColor patternBackgroundColor];
     self.view.backgroundColor = [UIColor patternBackgroundColor];

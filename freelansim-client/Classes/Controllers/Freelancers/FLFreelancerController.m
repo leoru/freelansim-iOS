@@ -209,7 +209,7 @@
 -(void)loadHTMLContent {
     NSString *path = [[NSBundle mainBundle] bundlePath];
     NSURL *baseURL = [NSURL fileURLWithPath:path];
-    NSString *html = [FLHTMLUtils formattedDescription:self.freelancer.htmlDescription];
+    NSString *html = [FLHTMLUtils formattedDescription:self.freelancer.htmlDescription filesInfo:@""];
     NSString *filtered = [[html stringByReplacingOccurrencesOfString:@" " withString:@""] stringByReplacingOccurrencesOfString:@"\n" withString:@""];
     NSLog(@"%@", filtered);
     NSRange range = [filtered rangeOfString:@"<body>(null)</body>"];

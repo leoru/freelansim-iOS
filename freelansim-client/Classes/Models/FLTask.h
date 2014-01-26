@@ -13,19 +13,21 @@
 
 @interface FLTask : NSObject
 
-@property (nonatomic,retain) NSString *title;
-@property (nonatomic,retain) NSString *published;
-@property (nonatomic,retain) NSString *price;
-@property (nonatomic,retain) NSString *category;
-@property (nonatomic,retain) NSString *shortDescription;
-@property (nonatomic,retain) NSString *link;
+@property (nonatomic,strong) NSString *title;
+@property (nonatomic,strong) NSString *published;
+@property (nonatomic,strong) NSString *price;
+@property (nonatomic, assign) BOOL isAccuratePrice;
+@property (nonatomic,strong) NSString *category;
+@property (nonatomic,strong) NSString *shortDescription;
+@property (nonatomic,strong) NSString *link;
 
 @property (nonatomic) int views;
 @property (nonatomic) int commentsCount;
-@property (nonatomic,retain) NSString *htmlDescription;
-@property (nonatomic,retain) NSArray *mental;
+@property (nonatomic,strong) NSString *htmlDescription;
+@property (nonatomic,strong) NSString *filesInfo;
+@property (nonatomic,strong) NSArray *mental;
 
-@property (nonatomic,retain) NSArray *tags;
+@property (nonatomic,strong) NSArray *tags;
 
 -(void)mapFromManagedTask:(FLManagedTask *)task;
 

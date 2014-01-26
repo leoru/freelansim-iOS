@@ -12,13 +12,14 @@
 
 +(NSString *)CSS {
     NSString *css = [NSString stringWithFormat:@"\n"
-                     "body {font-family: AppleGothic; background-color:transparent; font-size:14px;}"
+                     "body {font-family: Helvetica-Light; background-color:transparent; font-size:14px;}"
                      "\n"];
     return css;
 }
 
 
-+(NSString *)formattedDescription:(NSString *)HTML {
++ (NSString *)formattedDescription:(NSString *)HTML filesInfo:(NSString *)filesInfo {
+    filesInfo = filesInfo ? filesInfo : @"";
     NSString *htmlCode = [NSString stringWithFormat:@" \n"
                           "<html> \n"
                           "     <head> \n"
@@ -26,8 +27,9 @@
                           "     <style>%@</style></head> \n" //CSS
                           "     <body> \n"
                           "         %@   "
+                          "         %@   "
                           "     </body> \n"
-                          "</html>  \n",[self CSS], HTML];
+                          "</html>  \n",[self CSS], HTML, filesInfo];
     return htmlCode;
 }
 
@@ -36,7 +38,7 @@
                           "     <head> \n"
                           "     <title></title> \n"
                           "     <style>\n"
-                          "body {font-family: AppleGothic; color:DimGray; background-color:transparent; font-size:18px;}"
+                          "body {font-family: Helvetica-Light; color:DimGray; background-color:transparent; font-size:18px;}"
                           "\n</style></head> \n"
                           "     <body> \n <div align =\"center\"> "
                           "         Данные пользователя скрыты  "

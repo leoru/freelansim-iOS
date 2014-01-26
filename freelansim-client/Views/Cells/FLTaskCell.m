@@ -35,7 +35,12 @@
 {
     self.labelPrice.backgroundColor = [UIColor clearColor];
     self.labelPrice.layer.borderColor = PriceLabelBorderColor;
-    self.labelPrice.textColor = [UIColor colorWithRed:0.88f green:0.58f blue:0.47f alpha:1.00f];;
+    if (task.isAccuratePrice) {
+        self.labelPrice.textColor = [UIColor colorWithRed:0.4 green:0.67 blue:0.4 alpha:1];
+    } else {
+        self.labelPrice.textColor = [UIColor colorWithRed:0.88f green:0.58f blue:0.47f alpha:1.00f];
+    }
+    
     
     self.labelTitle.text = task.title;
 

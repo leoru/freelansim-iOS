@@ -42,6 +42,10 @@
     stopSearch = NO;
     page = 1;
     
+    UIEdgeInsets edges;
+    edges.left = 10;
+    edges.right = 10;
+    self.freelancersTable.separatorInset = edges;
     self.freelancersTable.delegate = self;
     self.freelancersTable.dataSource = self;
     self.searchBar.delegate = self;

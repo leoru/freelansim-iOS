@@ -105,7 +105,11 @@
     }else{
         star = @"cell-checkmark-highlighted.png";
     }
-    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:star] style:UIBarButtonItemStyleBordered target:self action:@selector(favoritesClicked)];
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    button.frame = CGRectMake(0, 0, 32, 32);
+    [button setImage:[UIImage imageNamed:star] forState:UIControlStateNormal];
+    [button addTarget:self action:@selector(favoritesClicked) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithCustomView:button];
     UIBarButtonItem *openInBrowserItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemOrganize target:self action:@selector(actionOpenInBrowser:)];
     
     self.navigationItem.rightBarButtonItems = @[openInBrowserItem, item];
@@ -114,7 +118,7 @@
     NSString *path = [[NSBundle mainBundle] bundlePath];
     NSURL *baseURL = [NSURL fileURLWithPath:path];
     
-    NSString *html = [FLHTMLUtils formattedDescription:self.task.htmlDescription];
+    NSString *html = [FLHTMLUtils formattedDescription:self.task.htmlDescription filesInfo:self.task.filesInfo];
     [self.descriptionWebView loadHTMLString:html baseURL:baseURL];
 }
 -(void)generateSkillTags {

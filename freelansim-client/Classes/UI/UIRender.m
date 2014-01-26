@@ -7,18 +7,14 @@
 //
 
 #import "UIRender.h"
+#import "UIRender.h"
 
 @implementation UIRender
 
 +(void)renderContactsButton:(UIButton *)button {
-    UIImage *buttonImage = [[UIImage imageNamed:@"orangeButton.png"]
-                            resizableImageWithCapInsets:UIEdgeInsetsMake(18, 18, 18, 18)];
-    UIImage *buttonImageHighlight = [[UIImage imageNamed:@"orangeButtonHighlight.png"]
-                                     resizableImageWithCapInsets:UIEdgeInsetsMake(18, 18, 18, 18)];
-    
-    // Set the background for any states you plan to use
-    [button setBackgroundImage:buttonImage forState:UIControlStateNormal];
-    [button setBackgroundImage:buttonImageHighlight forState:UIControlStateHighlighted];
+    [button setTitleColor:DefaultOrangeColor forState:UIControlStateNormal];
+    [button setTitleColor:[UIColor darkGrayColor] forState:UIControlStateHighlighted];
+    [button setTitleColor:[UIColor darkGrayColor] forState:UIControlStateSelected];
     
     button.titleLabel.font = [UIFont systemFontOfSize:14];
 }

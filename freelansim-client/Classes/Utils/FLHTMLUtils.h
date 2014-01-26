@@ -21,7 +21,7 @@
 /**
  Formatted description with css
  */
-+(NSString *)formattedDescription:(NSString *)HTML;
++(NSString *)formattedDescription:(NSString *)HTML filesInfo:(NSString *)filesInfo;
 
 +(NSString *)descriptionForbidden:(NSString *)HTML;
 
