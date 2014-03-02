@@ -19,7 +19,7 @@
 typedef void (^FLHTTPClientSuccess)(AFHTTPRequestOperation *operation, id responseObject);
 typedef void (^FLHTTPClientSuccessWithTaskObject)(FLTask *task, AFHTTPRequestOperation *operation, id responseObject);
 typedef void (^FLHTTPClientSuccessWithFreelancerObject)(FLFreelancer *freelancer, AFHTTPRequestOperation *operation, id responseObject);
-typedef void (^FLHTTPClientSuccessWithArray)(NSArray *objects, AFHTTPRequestOperation *operation, id responseObject, BOOL *stop);
+typedef void (^FLHTTPClientSuccessWithArray)(NSArray *objects, BOOL *stop);
 typedef void (^FLHTTPClientFailure)(AFHTTPRequestOperation *operation, NSError *error);
 
 

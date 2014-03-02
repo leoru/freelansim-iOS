@@ -27,7 +27,7 @@
 {
     [super awakeFromNib];
     UIView *backgroundView = [[UIView alloc] initWithFrame:CGRectZero];
-    backgroundView.backgroundColor = [UIColor colorWithRed:0.88f green:0.54f blue:0.42f alpha:1.00f];
+    backgroundView.backgroundColor = DefaultOrangeColor;
     self.selectedBackgroundView = backgroundView;
 }
 
@@ -38,7 +38,7 @@
     if (task.isAccuratePrice) {
         self.labelPrice.textColor = [UIColor colorWithRed:0.4 green:0.67 blue:0.4 alpha:1];
     } else {
-        self.labelPrice.textColor = [UIColor colorWithRed:0.88f green:0.58f blue:0.47f alpha:1.00f];
+        self.labelPrice.textColor = DefaultLightGreenColor;
     }
     
     

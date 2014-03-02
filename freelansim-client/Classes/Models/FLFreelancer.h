@@ -8,10 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import "FLManagedFreelancer.h"
+#import "KKFromJSONObject.h"
 
 @class FLManagedFreelancer;
 
-@interface FLFreelancer : NSObject
+@interface FLFreelancer : NSObject <KKFromJSONObject>
 
 @property (nonatomic,retain) NSString *name;
 @property (nonatomic,retain) NSString *link;

@@ -34,7 +34,7 @@
 +(void)applyStylesheet {
 	UINavigationBar *navigationBar = [UINavigationBar appearance];
     //    [navigationBar setBarTintColor:[UIColor colorWithRed:0.98f green:0.97f blue:0.96f alpha:1.00f]];
-    [navigationBar setBarTintColor:kBaseNavBarColor];
+    [navigationBar setBarTintColor:kNavBarColor];
     
     [navigationBar setTitleTextAttributes:@{NSFontAttributeName : DEFAULT_MEDIUM_FONT(17),
                                             NSForegroundColorAttributeName : [UIColor whiteColor]}];

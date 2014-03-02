@@ -98,7 +98,7 @@
                 cell.userInteractionEnabled = NO;
                 cell.selectionStyle = UITableViewCellSelectionStyleNone;
                 dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-                    [[FLHTTPClient sharedClient] getTasksWithCategories:self.selectedCategories  query:searchQuery page:page++ success:^(NSArray *objects, AFHTTPRequestOperation *operation, id responseObject, BOOL *stop) {
+                    [[FLHTTPClient sharedClient] getTasksWithCategories:self.selectedCategories  query:searchQuery page:page++ success:^(NSArray *objects, BOOL *stop) {
                         dispatch_async(dispatch_get_main_queue(), ^{
                             stopSearch = *stop;
                             [self.tasks addObjectsFromArray:objects];
@@ -126,7 +126,7 @@
     return cell;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 135;
+    return 75;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [self.tasksTable deselectRowAtIndexPath:indexPath animated:NO];

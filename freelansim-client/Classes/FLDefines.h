@@ -22,4 +22,5 @@ extern NSString * const errorMessageServertDontRespond;
 #define DEFAULT_MEDIUM_FONT(fontSize) [UIFont fontWithName:@"HelveticaNeue-Medium" size:fontSize]
 #define DEFAULT_REGULAR_FONT(fontSize) [UIFont fontWithName:@"Helvetica" size:fontSize]
 
-#define kBaseNavBarColor [UIColor colorWithRed:0.92f green:0.55f blue:0.42f alpha:1.00f]
+#define kBaseNavBarColor [UIColor colorWithRed:0.96 green:0.71 blue:0.29 alpha:1]
+#define kNavBarColor [UIColor colorWithRed:0.39 green:0.45 blue:0.52 alpha:1]

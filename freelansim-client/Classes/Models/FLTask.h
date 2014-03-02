@@ -8,10 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import "FLManagedTask.h"
+#import "KKFromJSONObject.h"
 
 @class FLManagedTask;
 
-@interface FLTask : NSObject
+@interface FLTask : NSObject <KKFromJSONObject>
 
 @property (nonatomic,strong) NSString *title;
 @property (nonatomic,strong) NSString *published;
@@ -29,6 +30,6 @@
 
 @property (nonatomic,strong) NSArray *tags;
 
--(void)mapFromManagedTask:(FLManagedTask *)task;
+- (void)mapFromManagedTask:(FLManagedTask *)task;
 
 @end

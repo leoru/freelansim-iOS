@@ -30,6 +30,7 @@
     UIView *backgroundView = [[UIView alloc] initWithFrame:CGRectZero];
     backgroundView.backgroundColor = [UIColor colorWithRed:0.88f green:0.54f blue:0.42f alpha:1.00f];
     self.selectedBackgroundView = backgroundView;
+    self.labelPrice.textColor = DefaultLightGreenColor;
 }
 
 - (void)setFreelancer:(FLFreelancer *)freelancer
@@ -43,6 +44,8 @@
     self.labelCategory.text = freelancer.speciality;
     self.labelShortDescription.text = freelancer.desc;
     self.labelPrice.text = freelancer.price;
+    
+    
 }
 
 @end

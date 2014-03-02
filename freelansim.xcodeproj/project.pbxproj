@@ -172,6 +172,7 @@
 
 /* Begin PBXFileReference section */
 		41AF178834E54C6E9830FDCB /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A16EAD918C350A400B16858 /* KKFromJSONObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = KKFromJSONObject.h; path = Classes/Models/KKFromJSONObject.h; sourceTree = "<group>"; };
 		6A1AE72A167DB5C8005DE0E5 /* FLHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FLHTTPClient.h; path = Classes/FLHTTPClient.h; sourceTree = "<group>"; };
 		6A1AE72B167DB5C8005DE0E5 /* FLHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FLHTTPClient.m; path = Classes/FLHTTPClient.m; sourceTree = "<group>"; };
 		6A1AE735167DCB6A005DE0E5 /* FLTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FLTask.h; path = Classes/Models/FLTask.h; sourceTree = "<group>"; };
@@ -423,6 +424,7 @@
 				6A8F515A1684EDF200AD0CC2 /* FLFreelancer.m */,
 				6A8A970E1686F36100C285BE /* FLContact.h */,
 				6A8A970F1686F36100C285BE /* FLContact.m */,
+				6A16EAD918C350A400B16858 /* KKFromJSONObject.h */,
 			);
 			name = Models;
 			sourceTree = "<group>";

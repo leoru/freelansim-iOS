@@ -32,14 +32,14 @@
     
     HTMLNode *body = [self body];
     
-    HTMLNode *tasksNode = [body findChildOfClass:@"tasks shortcuts_items"];
+    HTMLNode *tasksNode = [body findChildOfClass:@"content-list content-list_tasks"];
     
-    NSArray *tasksNodes = [tasksNode findChildrenOfClass:@"shortcuts_item task"];
+    NSArray *tasksNodes = [tasksNode findChildrenOfClass:@"task"];
     
     for (HTMLNode *taskNode in tasksNodes) {
         FLTask *task = [[FLTask alloc] init];
         
-        HTMLNode *taskPriceNode = [taskNode findChildOfClass:@"price"];
+        HTMLNode *taskPriceNode = [taskNode findChildOfClass:@"task__params params"];
         NSArray *priceNodes = [taskPriceNode findChildTags:@"span"];
         if (priceNodes.count > 0) {
             task.price = @"Цена договорная";
@@ -53,7 +53,7 @@
         task.category = [[taskNode findChildOfClass:@"author"] contents];
         task.shortDescription = [[taskNode findChildOfClass:@"description"] contents];
         
-        task.title = [[taskNode findChildOfClass:@"title"] getAttributeNamed:@"title"];
+        task.title = [[taskNode findChildOfClass:@"task__title"] getAttributeNamed:@"title"];
         
         NSString *relativePath = [[[taskNode findChildOfClass:@"title"] findChildTag:@"a"] getAttributeNamed:@"href"];
         
@@ -180,39 +180,41 @@
     
     HTMLNode *body = [self body];
     
-    HTMLNode *freelancersNode = [body findChildOfClass:@"freelancers shortcuts_items"];
+    HTMLNode *freelancersNode = [body findChildWithAttribute:@"id" matchingName:@"freelancers_list" allowPartial:NO];
     
-    NSArray *freelancersNodes = [freelancersNode findChildrenOfClass:@"has_hover shortcuts_item"];
+    NSArray *freelancersNodes = [freelancersNode findChildrenOfClass:@"content-list__item"];
     
     for (HTMLNode *freelancerNode in freelancersNodes) {
         FLFreelancer *freelancer = [[FLFreelancer alloc] init];
         
         // price
-        HTMLNode *freelancerPriceNode = [freelancerNode findChildOfClass:@"price"];
-        NSArray *priceNodes = [freelancerPriceNode findChildTags:@"span"];
-        freelancer.price = @"";
-        [priceNodes enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-            HTMLNode *node = (HTMLNode *)obj;
-            
-            freelancer.price = [freelancer.price stringByAppendingFormat:@" %@",node.contents];
-        }];
+        HTMLNode *freelancerPriceNode = [freelancerNode findChildOfClass:@"user__price"];
+        HTMLNode *countNode = [freelancerPriceNode findChildOfClass:@"count"];
+        
+        if (countNode) {
+            freelancer.price = [countNode contents];
+        } else {
+            freelancer.price = @"Цена договорная";
+        }
         
         //name
-        freelancer.name = [[[freelancerNode findChildOfClass:@"name"] findChildTag:@"a"]  contents];
+        freelancer.name = [[[freelancerNode findChildOfClass:@"user-data__title"] findChildTag:@"a"]  contents];
         
         // link
-        NSString *relativePath = [[[freelancerNode findChildOfClass:@"name"] findChildTag:@"a"] getAttributeNamed:@"href"];
+        NSString *relativePath = [[[freelancerNode findChildOfClass:@"user-data__title"] findChildTag:@"a"] getAttributeNamed:@"href"];
         freelancer.link = [FLServerHostString stringByAppendingString:relativePath];
         
         //speciality
-        freelancer.speciality = [[freelancerNode findChildOfClass:@"description"] contents];
-        
+        freelancer.speciality = [[freelancerNode findChildOfClass:@"user-data__spec"] contents] ;
+        freelancer.speciality = [freelancer.speciality stringByTrimmingCharactersInSet:
+                                   [NSCharacterSet newlineCharacterSet]];
         // desc
-        freelancer.desc = [[freelancerNode findChildOfClass:@"text"] contents];
+        freelancer.desc = [[freelancerNode findChildOfClass:@"user__description"] contents];
         
         // thumb
-        NSString *thumbPath = [[[[freelancerNode findChildOfClass:@"avatar"] findChildTag:@"a"] findChildTag:@"img"] getAttributeNamed:@"src"];
-        freelancer.thumbPath = [FLServerHostString stringByAppendingPathComponent:thumbPath];
+        NSString *thumbPath = [[freelancerNode findChildOfClass:@"avatario"] getAttributeNamed:@"src"];
+        thumbPath = [thumbPath stringByReplacingOccurrencesOfString:@"50" withString:@"50"];
+        freelancer.thumbPath = thumbPath;
         
         
         [freelancers addObject:freelancer];

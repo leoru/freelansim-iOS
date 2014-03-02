@@ -14,25 +14,29 @@
 @synthesize tags = _tags;
 @synthesize mental = _mental;
 
--(NSArray *)mental {
+- (NSArray *)mental
+{
     if (!_mental) {
         _mental = [NSArray array];
     }
     return _mental;
 }
 
--(NSArray *)tags {
+- (NSArray *)tags
+{
     if (!_tags) {
         _tags = [NSArray array];
     }
     return _tags;
 }
 
--(NSString *)description {
+- (NSString *)description
+{
     return [NSString stringWithFormat:@"job-title: %@ \r\n",self.title];
 }
 
--(void)mapFromManagedTask:(FLManagedTask *)task{
+- (void)mapFromManagedTask:(FLManagedTask *)task
+{
     self.title = task.title;
     self.published = task.published;
     self.price = task.price;
@@ -49,6 +53,21 @@
         [tags addObject:newTag];
     }
     self.tags = tags;
+}
+
++ (instancetype)objectFromJSON:(NSDictionary *)json
+{
+    FLTask *task = [[FLTask alloc] init];
+    task.title = json[@"title"];
+    task.category = json[@"category_name"];
+    task.price = json[@"price"];
+    task.published = json[@"published_at"];
+    task.link = json[@"url"];
+    
+    NSString *taskDesc = [NSString stringWithFormat:@"%@ / %@",json[@"category_name"], json[@"sub_category_name"]];
+    task.shortDescription = taskDesc;
+    
+    return task;
 }
 
 @end

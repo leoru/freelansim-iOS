@@ -26,7 +26,7 @@
     NSURL *baseURL = [NSURL URLWithString:FLServerHostString];
     if (self =[super initWithBaseURL:baseURL]) {
         [self registerHTTPOperationClass:[AFHTTPRequestOperation class]];
-        [self setDefaultHeader:@"Accept" value:@"text/html"];
+//        [self setDefaultHeader:@"Accept" value:@"text/html"];
         _callbackQueue = dispatch_queue_create("ru.kunst.freelansim.network-callback-queue", 0);
     }
     return self;
@@ -54,27 +54,30 @@
             categoriesString = [categoriesString stringByAppendingFormat:@"%@,",category.subcategories];
         }
     }
-    [self getPath:@"/tasks" parameters:@{@"q":query,@"categories":categoriesString,@"page":@(page)} success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    NSString *path = [[[self baseURL] absoluteString] stringByAppendingString:@"tasks.json"];
+    NSMutableURLRequest *request = [self requestWithMethod:@"GET" path:path parameters:@{@"q":query,@"categories":categoriesString,@"page":@(page)}];
+    AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+        NSArray *tasksArray = JSON;
+        NSMutableArray *tasks = [NSMutableArray array];
         
-        NSData *html = (NSData *)responseObject;
-        if (html) {
-            NSError *error;
-            FLHTMLParser *parser = [[FLHTMLParser alloc] initWithData:html error:&error];
-            NSArray *tasks = [parser parseTasks];
-
-            BOOL stop = NO;
-            if (tasks.count == 0) {
-                stop = YES;
-            }
-            
-            success(tasks,operation,responseObject, &stop);
+        for (NSDictionary *json in tasksArray) {
+            FLTask *task = [FLTask objectFromJSON:json];
+            [tasks addObject:task];
         }
         
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        BOOL stop = NO;
+        if (tasks.count == 0) {
+            stop = YES;
+        }
+        
+        success(tasks, &stop);
+    } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
         if (failure) {
-            failure(operation,error);
+            failure(nil,error);
         }
     }];
+    [operation start];
+    
 }
 
 -(void)loadTask:(FLTask *)task withSuccess:(FLHTTPClientSuccessWithTaskObject)success failure:(FLHTTPClientFailure)failure {
@@ -105,7 +108,7 @@
     }
     
     [self getPath:@"/freelancers" parameters:@{@"q":query, @"categories":categoriesString,@"page":@(page)} success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(operation.request.description);
+        NSLog(@"%@",operation.request.description);
         NSData *html = (NSData *)responseObject;
         if (html) {
             NSError *error;
@@ -117,7 +120,7 @@
                 stop = YES;
             }
             
-            success(freelancers,operation,responseObject, &stop);
+            success(freelancers,&stop);
         }
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
