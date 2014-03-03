@@ -104,11 +104,11 @@
 
 -(FLFreelancer *)parseToFreelancer:(FLFreelancer *)fl {
     FLFreelancer *freelancer = fl;
-    HTMLNode *freelancerCard = [[self body] findChildOfClass:@"freelancer_card"];
+    HTMLNode *freelancerCard = [[self body] findChildOfClass:@"user-profile__header"];
     
     // image
     NSString *imagePath = [[[freelancerCard findChildOfClass:@"avatar"] findChildTag:@"img"] getAttributeNamed:@"src"];
-    freelancer.avatarPath = [FLServerHostString stringByAppendingPathComponent:imagePath];
+    freelancer.avatarPath = imagePath;
     
     //contacts
     
