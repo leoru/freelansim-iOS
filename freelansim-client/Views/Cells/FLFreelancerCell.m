@@ -40,6 +40,9 @@
         self.loadingIndicator.hidden = YES;
         _avatar.hidden = NO;
     }];
+    
+    self.avatar.layer.cornerRadius = 25;
+    self.avatar.layer.masksToBounds = YES;
     self.labelName.text = freelancer.name;
     self.labelCategory.text = freelancer.speciality;
     self.labelShortDescription.text = freelancer.desc;

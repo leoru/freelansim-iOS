@@ -92,6 +92,8 @@
     avatarFrame.size.height = 100;
     self.avatarView.frame = avatarFrame;
     self.avatarView.contentMode = UIViewContentModeScaleAspectFit;
+    self.avatarView.layer.cornerRadius = 50;
+    self.avatarView.layer.masksToBounds = YES;
     [self.avatarView setImageWithURL:[NSURL URLWithString:self.freelancer.avatarPath]  placeholderImage:nil completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType) {
         self.loader.hidden = YES;
     }];

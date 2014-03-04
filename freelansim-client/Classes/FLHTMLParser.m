@@ -83,15 +83,20 @@
         task.filesInfo = [secondBlock rawContents];
     }
     
-    NSArray *skillsBlocks = [[body findChildOfClass:@"skills_column"] findChildrenOfClass:@"block"];
+    NSArray *skillsBlocks = [[body findChildOfClass:@"task__tags"] findChildrenOfClass:@"tags"];
     
-    NSArray *tags = [[skillsBlocks[0] findChildOfClass:@"tags"] findChildrenOfClass:@"professional"];
+    NSArray *tags = [skillsBlocks[0] findChildrenOfClass:@"tags__item"];
     
     NSMutableArray *tagsArray = [NSMutableArray array];
     for (HTMLNode *tag in tags) {
-        [tagsArray addObject:tag.contents];
+        NSArray *test = [tag findChildrenOfClass:@"tags__item_link"];
+        for (HTMLNode *item in test) {
+            [tagsArray addObject:item.contents];
+        }
     }
     task.tags = tagsArray;
+    
+    
 //    NSArray *mentals = [[skillsBlocks[1] findChildOfClass:@"tags"] findChildrenOfClass:@"mental"];
 //    for (HTMLNode *mental in mentals) {
 //        [task.mental arrayByAddingObject:mental.contents];

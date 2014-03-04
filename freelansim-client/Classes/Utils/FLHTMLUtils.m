@@ -20,6 +20,7 @@
 
 + (NSString *)formattedDescription:(NSString *)HTML filesInfo:(NSString *)filesInfo {
     filesInfo = filesInfo ? filesInfo : @"";
+    HTML = HTML ? HTML : @"";
     NSString *htmlCode = [NSString stringWithFormat:@" \n"
                           "<html> \n"
                           "     <head> \n"

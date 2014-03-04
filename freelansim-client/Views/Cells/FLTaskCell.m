@@ -35,18 +35,18 @@
 {
     self.labelPrice.backgroundColor = [UIColor clearColor];
     self.labelPrice.layer.borderColor = PriceLabelBorderColor;
+
     if (task.isAccuratePrice) {
         self.labelPrice.textColor = [UIColor colorWithRed:0.4 green:0.67 blue:0.4 alpha:1];
     } else {
         self.labelPrice.textColor = DefaultLightGreenColor;
     }
     
-    
     self.labelTitle.text = task.title;
 
     self.labelShortDescription.text = task.shortDescription;
     self.labelShortDescription.backgroundColor = [UIColor clearColor];
-    self.labelShortDescription.numberOfLines = 4;
+    self.labelShortDescription.numberOfLines = 1;
     [self.labelShortDescription sizeToFit];
     self.labelPrice.text = task.price;
     [self.labelPrice sizeToFit];

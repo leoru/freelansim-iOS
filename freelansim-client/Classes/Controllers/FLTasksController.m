@@ -82,13 +82,16 @@
                 cell.userInteractionEnabled = NO;
                 cell.selectionStyle = UITableViewCellSelectionStyleNone;
                 [self showErrorNetworkDisabled];
-            }else if (![FLInternetConnectionUtils isWebSiteUp]){
+            }else if (![FLInternetConnectionUtils isWebSiteUp]) {
                 cell = [tableView dequeueReusableCellWithIdentifier:emptyCellIdentifier];
+                
                 if (!cell) {
                     cell = [[NSBundle mainBundle] loadNibNamed:emptyCellIdentifier owner:nil options:nil][0];
                 }
+                
                 cell.userInteractionEnabled = NO;
                 cell.selectionStyle = UITableViewCellSelectionStyleNone;
+                
                 [self showErrorServerDontRespond];
             }else{
                 cell = [tableView dequeueReusableCellWithIdentifier:loadingCellIdentifier];
@@ -133,7 +136,6 @@
     selectedTask = self.tasks[indexPath.row];
     [self performSegueWithIdentifier:@"TaskSegue" sender:self];
     [SVProgressHUD showWithStatus:@"Загрузка..." maskType:SVProgressHUDMaskTypeGradient];
-    
 }
 
 #pragma mark - Prepare for segue
@@ -197,4 +199,5 @@
 -(void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar {
     searchBar.showsCancelButton = YES;
 }
+
 @end
