@@ -42,7 +42,6 @@
         self.labelPrice.textColor = DefaultLightGreenColor;
     }
     
-    
     self.labelTitle.text = task.title;
 
     self.labelShortDescription.text = task.shortDescription;
