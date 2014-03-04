@@ -33,6 +33,7 @@
 }
 - (void)viewDidLoad
 {
+    self.navItem.prompt = @"";
     self.navItem.title = @"Разделы";
     self.view.backgroundColor = [UIColor patternBackgroundColor];
     self.categoriesTable.backgroundColor = [UIColor clearColor];
