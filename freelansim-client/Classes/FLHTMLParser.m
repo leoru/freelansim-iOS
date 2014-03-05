@@ -74,10 +74,12 @@
     task.views = [[[taskStat findChildOfClass:@"views"] contents] intValue];
     task.commentsCount = [[[taskStat findChildOfClass:@"comments"] contents] intValue];
     
-    NSArray *infoBlocks = [[body findChildOfClass:@"more_information"] findChildrenOfClass:@"block"];
+    NSArray *infoBlocks = [body findChildrenOfClass:@"task__description"];
     task.htmlDescription = [infoBlocks[0] rawContents];
+    NSLog(@"text description %@", task.htmlDescription);
+
+    HTMLNode *secondBlock = infoBlocks[0];
     
-    HTMLNode *secondBlock = infoBlocks[1];
     HTMLNode *filesHeaderNode = [secondBlock findChildOfClass:@"file"];
     if (filesHeaderNode) {
         task.filesInfo = [secondBlock rawContents];
