@@ -85,7 +85,7 @@
         task.filesInfo = [secondBlock rawContents];
     }
     
-    NSArray *skillsBlocks = [[body findChildOfClass:@"task__tags"] findChildrenOfClass:@"tags"];
+    NSArray *skillsBlocks = [[body findChildOfClass:@"task__tags"] findChildrenOfClass:@"tags "];
     
     NSArray *tags = [skillsBlocks[0] findChildrenOfClass:@"tags__item"];
     
