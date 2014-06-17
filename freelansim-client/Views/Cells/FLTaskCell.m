@@ -56,7 +56,7 @@
     frame.size.width += 5;
     self.labelPrice.frame = frame;
     
-    self.labelPublished.text = task.published;
+    self.labelPublished.text = task.publishedWithFormatting;
     self.labelPublished.textColor = [UIColor lightGrayColor];
 }
 
