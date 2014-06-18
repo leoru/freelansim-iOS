@@ -26,23 +26,23 @@
     NSURL *baseURL = [NSURL URLWithString:FLServerHostString];
     if (self =[super initWithBaseURL:baseURL]) {
         [self registerHTTPOperationClass:[AFHTTPRequestOperation class]];
-//        [self setDefaultHeader:@"Accept" value:@"text/html"];
+        //        [self setDefaultHeader:@"Accept" value:@"text/html"];
         _callbackQueue = dispatch_queue_create("ru.kunst.freelansim.network-callback-queue", 0);
     }
     return self;
 }
 
 - (NSMutableURLRequest *)requestWithMethod:(NSString *)method path:(NSString *)path parameters:(NSDictionary *)parameters {
-	NSMutableURLRequest *request = [super requestWithMethod:method path:path parameters:parameters];
+    NSMutableURLRequest *request = [super requestWithMethod:method path:path parameters:parameters];
     [request setCachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData];
     [request setTimeoutInterval:90.0f];
-	return request;
+    return request;
 }
 
 -(void)enqueueHTTPRequestOperation:(AFHTTPRequestOperation *)operation {
     operation.successCallbackQueue = _callbackQueue;
-	operation.failureCallbackQueue = _callbackQueue;
-	[super enqueueHTTPRequestOperation:operation];
+    operation.failureCallbackQueue = _callbackQueue;
+    [super enqueueHTTPRequestOperation:operation];
 }
 
 
@@ -83,14 +83,17 @@
 -(void)loadTask:(FLTask *)task withSuccess:(FLHTTPClientSuccessWithTaskObject)success failure:(FLHTTPClientFailure)failure {
     
     [self getPath:task.link parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSData *html = (NSData *)responseObject;
-        if (html) {
-            NSError *error;
-            FLHTMLParser *parser = [[FLHTMLParser alloc] initWithData:html error:&error];
-            FLTask *t = [parser parseToTask:task];
-            success(t,operation,responseObject);
-        }
-        
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
+            NSData *html = (NSData *)responseObject;
+            if (html) {
+                NSError *error;
+                FLHTMLParser *parser = [[FLHTMLParser alloc] initWithData:html error:&error];
+                FLTask *t = [parser parseToTask:task];
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    success(t,operation,responseObject);
+                });
+            }
+        });
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         if (failure) {
             failure(operation,error);
@@ -133,13 +136,17 @@
 
 -(void)loadFreelancer:(FLFreelancer *)freelancer withSuccess:(FLHTTPClientSuccessWithFreelancerObject)success failure:(FLHTTPClientFailure)failure {
     [self getPath:freelancer.link parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSData *html = (NSData *)responseObject;
-        if (html) {
-            NSError *error;
-            FLHTMLParser *parser = [[FLHTMLParser alloc] initWithData:html error:&error];
-            FLFreelancer *fl = [parser parseToFreelancer:freelancer];
-            success(fl,operation,responseObject);
-        }
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
+            NSData *html = (NSData *)responseObject;
+            if (html) {
+                NSError *error;
+                FLHTMLParser *parser = [[FLHTMLParser alloc] initWithData:html error:&error];
+                FLFreelancer *fl = [parser parseToFreelancer:freelancer];
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    success(fl,operation,responseObject);
+                });
+            }
+        });
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         if (failure) {

@@ -39,22 +39,16 @@
     self.view.backgroundColor = [UIColor patternBackgroundColor];
     self.loadingView.backgroundColor = [UIColor patternBackgroundColor];
     [super viewDidLoad];
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        [[FLHTTPClient sharedClient] loadFreelancer:self.freelancer withSuccess:^(FLFreelancer *fl, AFHTTPRequestOperation *operation, id responseObject) {
-            
-            dispatch_async(dispatch_get_main_queue(), ^{
-                self.freelancer = fl;
-                [self initUI];
-                [SVProgressHUD dismiss];
-            });
-            
-        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [SVProgressHUD dismiss];
-            });
-        }];
-    });
-    [SVProgressHUD dismiss];
+    
+    [SVProgressHUD showWithMaskType:SVProgressHUDMaskTypeGradient];
+    [[FLHTTPClient sharedClient] loadFreelancer:self.freelancer withSuccess:^(FLFreelancer *fl, AFHTTPRequestOperation *operation, id responseObject) {
+        self.freelancer = fl;
+        [self initUI];
+        [SVProgressHUD dismiss];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        [SVProgressHUD dismiss];
+    }];
+    
     
     actionSheetTasks = [[NSMutableArray alloc] init];
 }
@@ -104,7 +98,7 @@
     self.locationLabel.text = self.freelancer.location;
     self.line = [[UIView alloc] initWithFrame:CGRectMake(20.0f, 160.0f, 280.0f, 1.0f)];
     self.line.backgroundColor = [UIColor colorWithRed:0.26f green:0.29f blue:0.32f alpha:1.00f];
-	[self.scrollView addSubview:self.line];
+    [self.scrollView addSubview:self.line];
     
     self.webView.scrollView.bounces = NO;
     self.webView.delegate = self;

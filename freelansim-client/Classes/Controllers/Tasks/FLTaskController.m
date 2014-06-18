@@ -35,22 +35,15 @@
     self.view.backgroundColor = [UIColor patternBackgroundColor];
     [super viewDidLoad];
     
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        
-        [[FLHTTPClient sharedClient] loadTask:self.task withSuccess:^(FLTask *task, AFHTTPRequestOperation *operation, id responseObject) {
-            
-            dispatch_async(dispatch_get_main_queue(), ^{
-                self.task = task;
-                [self initUI];
-                [SVProgressHUD dismiss];
-            });
-            
-        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [SVProgressHUD dismiss];
-            });
-        }];
-    });
+    
+    
+    [[FLHTTPClient sharedClient] loadTask:self.task withSuccess:^(FLTask *task, AFHTTPRequestOperation *operation, id responseObject) {
+        self.task = task;
+        [self initUI];
+        [SVProgressHUD dismiss];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        [SVProgressHUD dismiss];
+    }];
 }
 - (void)viewDidUnload {
     [self setTitleLabel:nil];
