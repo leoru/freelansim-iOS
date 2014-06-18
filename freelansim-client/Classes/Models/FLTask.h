@@ -17,7 +17,7 @@
 @property (nonatomic,strong) NSString *title;
 @property (nonatomic,strong) NSString *published;
 @property (nonatomic,strong) NSString *price;
-@property (nonatomic, assign) BOOL isAccuratePrice;
+@property (nonatomic,assign) BOOL isAccuratePrice;
 @property (nonatomic,strong) NSString *category;
 @property (nonatomic,strong) NSString *shortDescription;
 @property (nonatomic,strong) NSString *link;
@@ -31,5 +31,6 @@
 @property (nonatomic,strong) NSArray *tags;
 
 - (void)mapFromManagedTask:(FLManagedTask *)task;
+- (NSString *)publishedWithFormatting;
 
 @end

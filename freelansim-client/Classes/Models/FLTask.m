@@ -55,6 +55,38 @@
     self.tags = tags;
 }
 
+- (NSString *)publishedWithFormatting {
+    static NSDateFormatter *rfcFormat = nil;
+    static NSDateFormatter *displayFormat = nil;
+    
+    if (rfcFormat == nil) {
+        rfcFormat = [[NSDateFormatter alloc] init];
+        [rfcFormat setDateFormat:@"yyyy-MM-dd'T'HH:mm:ssZ"];
+    }
+    
+    if (displayFormat == nil)
+        displayFormat = [[NSDateFormatter alloc] init];
+    
+    NSDate *publishDate = [rfcFormat dateFromString:self.published];
+    
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    NSDateComponents *publishDateComponents = [calendar components:NSYearCalendarUnit|NSDayCalendarUnit fromDate:publishDate];
+    NSDateComponents *todayComponents = [calendar components:NSYearCalendarUnit|NSDayCalendarUnit fromDate:[NSDate date]];
+    
+    if (publishDateComponents.year == todayComponents.year) {
+        if (publishDateComponents.day == todayComponents.day)
+            [displayFormat setDateFormat:@"'Сегодня,' HH:mm"];
+        else if (publishDateComponents.day == todayComponents.day - 1)
+            [displayFormat setDateFormat:@"'Вчера,' HH:mm"];
+        else
+            [displayFormat setDateFormat:@"dd MMMM HH:mm"];
+    }
+    else
+        [displayFormat setDateFormat:@"dd MMMM yyyy HH:mm"];
+    
+    return [displayFormat stringFromDate:publishDate];
+}
+
 + (instancetype)objectFromJSON:(NSDictionary *)json
 {
     FLTask *task = [[FLTask alloc] init];

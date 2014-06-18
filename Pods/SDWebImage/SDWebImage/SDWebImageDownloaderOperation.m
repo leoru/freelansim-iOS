@@ -30,6 +30,7 @@
     size_t width, height;
     BOOL responseFromCached;
 }
+@synthesize executing = _executing, finished = _finished;
 
 - (id)initWithRequest:(NSURLRequest *)request options:(SDWebImageDownloaderOptions)options progress:(void (^)(NSUInteger, long long))progressBlock completed:(void (^)(UIImage *, NSData *, NSError *, BOOL))completedBlock cancelled:(void (^)())cancelBlock
 {

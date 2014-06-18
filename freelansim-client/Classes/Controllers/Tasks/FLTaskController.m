@@ -83,7 +83,7 @@
     
     self.navigationItem.title = self.task.title;
     self.titleLabel.text = self.task.title;
-    self.publishedLabel.text = self.task.published;
+    self.publishedLabel.text = self.task.publishedWithFormatting;
     self.viewsLabel.text = [NSString stringWithFormat:@"%d",self.task.views];
     self.commentsLabel.text = [NSString stringWithFormat:@"%d",self.task.commentsCount];
     
