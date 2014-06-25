@@ -10,6 +10,7 @@
 #import "FLContact.h"
 
 @implementation FLHTMLParser
+
 -(id)initWithData:(NSData *)data error:(NSError *__autoreleasing *)error {
     self = [super initWithData:data error:error];
     if (self) {
@@ -17,6 +18,7 @@
     }
     return self;
 }
+
 
 -(id)initWithString:(NSString *)string error:(NSError *__autoreleasing *)error {
     self = [super initWithString:string error:error];
@@ -65,6 +67,7 @@
     return tasks;
 }
 
+
 -(FLTask *)parseToTask:(FLTask *)t {
     
     FLTask *task = t;
@@ -108,7 +111,6 @@
 }
 
 
-
 -(FLFreelancer *)parseToFreelancer:(FLFreelancer *)fl {
     FLFreelancer *freelancer = fl;
     HTMLNode *freelancerCard = [[self body] findChildOfClass:@"user-profile__header"];
@@ -117,64 +119,69 @@
     NSString *imagePath = [[[freelancerCard findChildOfClass:@"avatar"] findChildTag:@"img"] getAttributeNamed:@"src"];
     freelancer.avatarPath = imagePath;
     
-    //contacts
+    HTMLNode *sideBar = [[self body] findChildOfClass:@"layout-block layout-block_profile"];
+    HTMLNode *contactsNode = [sideBar findChildOfClass:@"list list_contacts"];
     
-    HTMLNode *contactsNode = [freelancerCard findChildOfClass:@"contacts"];
-    NSMutableArray *contacts = [NSMutableArray array];
-
-    NSString *email;
-    HTMLNode *emailNode = [contactsNode findChildOfClass:@"mail"];
-    if (emailNode) {
-        email = [NSString stringWithFormat:@"%@@%@",[emailNode getAttributeNamed:@"data-mail-name"],[emailNode getAttributeNamed:@"data-mail-host"]];
-    }
+    // location
+    freelancer.location = [[sideBar findChildOfClass:@"user__location"] contents];
     
-    freelancer.email = email;
-    FLContact *contact;
-    if (freelancer.email) {
-        contact = [[FLContact alloc] initWithText:freelancer.email type:@"mail"];
-        [contacts addObject:contact];
-    }
-    
-    HTMLNode *phoneNode = [contactsNode findChildOfClass:@"phone"];
-    NSString *phone;
-    if (phoneNode){
-        phone = [phoneNode getAttributeNamed:@"data-phone"];
-    }
-    freelancer.phone = phone;
-    if (freelancer.phone) {
-        contact = [[FLContact alloc] initWithText:freelancer.phone type:@"phone"];
-        [contacts addObject:contact];
-    }
-    
-    HTMLNode *siteNode = [contactsNode findChildOfClass:@"site"];
+    // site
     NSString *site;
+    HTMLNode *siteNode = [contactsNode findChildOfClass:@"site"];
     if(siteNode){
         site = [siteNode getAttributeNamed:@"href"];
     }
     freelancer.site = site;
+    
+    // email
+    NSString *email;
+    HTMLNode *emailNode = [contactsNode findChildOfClass:@"link_mail"];
+    if (emailNode) {
+        email = [NSString stringWithFormat:@"%@@%@",[emailNode getAttributeNamed:@"data-mail-name"],[emailNode getAttributeNamed:@"data-mail-host"]];
+    }
+    freelancer.email = email;
+    
+    // phone
+    NSString *phone;
+    HTMLNode *phoneNode = [contactsNode findChildOfClass:@"user__phone"];
+    if (phoneNode){
+        phone = [phoneNode getAttributeNamed:@"data-phone"];
+    }
+    freelancer.phone = phone;
+
+    // contacts
+    NSMutableArray *contacts = [NSMutableArray array];
+    FLContact *contact;
+    
     if (freelancer.site) {
         contact = [[FLContact alloc] initWithText:freelancer.site type:@"site"];
         [contacts addObject:contact];
     }
     
+    if (freelancer.email) {
+        contact = [[FLContact alloc] initWithText:freelancer.email type:@"mail"];
+        [contacts addObject:contact];
+    }
+    
+    if (freelancer.phone) {
+        contact = [[FLContact alloc] initWithText:freelancer.phone type:@"phone"];
+        [contacts addObject:contact];
+    }
+    
     freelancer.contacts = contacts;
     
-    //location
-    freelancer.location = [[[freelancerCard findChildOfClass:@"short_info"] findChildOfClass:@"location"] contents];
+    // messengers
     
     // about content
-    HTMLNode *about = [freelancerCard findChildOfClass:@"about"];
-    NSArray *infoBlocks = [[about findChildOfClass:@"more_information"] findChildrenOfClass:@"block"];
-    freelancer.htmlDescription = [infoBlocks[0] rawContents];
-    if(!freelancer.htmlDescription){
-        
-    }
+    HTMLNode *profileInfo = [[self body] findChildOfClass:@"profile-blocks_info"];
+    freelancer.htmlDescription = [[profileInfo findChildOfClass:@"user-data__about"] rawContents];
+    
     // skills
-    NSArray *skillsBlocks = [[about findChildOfClass:@"skills_column"] findChildrenOfClass:@"block"];
-    NSArray *tags = [[skillsBlocks[0] findChildOfClass:@"tags"] findChildrenOfClass:@"professional"];
+    HTMLNode *tagBlock = [profileInfo findChildOfClass:@"tags "];
+    NSArray *tags = [tagBlock findChildrenOfClass:@"tags__item"];
     NSMutableArray *tagsArray = [NSMutableArray array];
     for (HTMLNode *tag in tags) {
-        [tagsArray addObject:tag.contents];
+        [tagsArray addObject:[tag findChildOfClass:@"tags__item_link"].contents];
     }
     freelancer.tags = tagsArray;
     
@@ -223,10 +230,10 @@
         thumbPath = [thumbPath stringByReplacingOccurrencesOfString:@"50" withString:@"50"];
         freelancer.thumbPath = thumbPath;
         
-        
         [freelancers addObject:freelancer];
     }
     
     return freelancers;
 }
+
 @end
