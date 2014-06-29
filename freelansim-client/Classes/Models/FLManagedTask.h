@@ -1,32 +1,34 @@
 //
 //  FLManagedTask.h
-//  freelansim-client
+//  
 //
-//  Created by Daniyar Salahutdinov on 10.01.13.
-//  Copyright (c) 2013 Kirill Kunst. All rights reserved.
+//  Created by CPU124C41 on 27/06/14.
+//
 //
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
-#import "FLTask.h"
 
-@class FLManagedTag;
-@class FLTask;
+
+@class FLTask, FLManagedTag;
+
 
 @interface FLManagedTask : NSManagedObject
 
-@property (nonatomic, retain) NSDate * date_create;
-@property (nonatomic, retain) NSString * title;
-@property (nonatomic, retain) NSString * published;
-@property (nonatomic, retain) NSString * price;
-@property (nonatomic, retain) NSString * category;
-@property (nonatomic, retain) NSString * shortDesc;
-@property (nonatomic, retain) NSString * link;
-@property (nonatomic, retain) NSNumber * views;
-@property (nonatomic, retain) NSNumber * commentsCount;
-@property (nonatomic, retain) NSString * htmlDescription;
-@property (nonatomic, retain) NSSet *tags;
+@property (nonatomic, retain) NSDate	*dateCreated;
+@property (nonatomic, retain) NSString	*title;
+@property (nonatomic, retain) NSString	*category;
+@property (nonatomic, retain) NSString	*price;
+@property (nonatomic, retain) NSString	*datePublished;
+@property (nonatomic, retain) NSString	*briefDescription;
+@property (nonatomic, retain) NSString	*htmlDescription;
+@property (nonatomic, retain) NSString	*link;
+@property (nonatomic, retain) NSNumber	*viewCount;
+@property (nonatomic, retain) NSNumber	*commentCount;
+@property (nonatomic, retain) NSSet		*tags;
+
 @end
+
 
 @interface FLManagedTask (CoreDataGeneratedAccessors)
 
@@ -36,6 +38,7 @@
 - (void)removeTags:(NSSet *)values;
 
 @end
+
 
 @interface FLManagedTask (Mapping)
 

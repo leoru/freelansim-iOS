@@ -34,6 +34,8 @@
     }
     return self;
 }
+
+
 - (void)viewDidLoad
 {
     self.view.backgroundColor = [UIColor patternBackgroundColor];
@@ -49,14 +51,17 @@
         [SVProgressHUD dismiss];
     }];
     
-    
     actionSheetTasks = [[NSMutableArray alloc] init];
 }
+
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
 - (void)viewDidUnload {
     [self setAvatarView:nil];
     [self setNameLabel:nil];
@@ -72,6 +77,7 @@
     [self setFreelancer:nil];
     [super viewDidUnload];
 }
+
 
 #pragma mark - init Content
 -(void)initUI {
@@ -111,10 +117,14 @@
     [self loadHTMLContent];
     [self generateSkillTags];
 }
+
+
 -(void)initTopBar {
     UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(showActionSheet:)];
     self.navigationItem.rightBarButtonItem = item;
 }
+
+
 -(void)initActionSheet {
     NSMutableArray *actions = [NSMutableArray array];
     if([self isInFavourites])
@@ -147,8 +157,8 @@
     [self.actionSheet addButtonWithTitle:@"Cancel"];
     self.actionSheet.cancelButtonIndex = actions.count;
     actionSheetTasks = actions;
-    
 }
+
 
 #pragma mark - Draw content
 -(void)drawContactsForm {
@@ -170,7 +180,7 @@
             btn.contact = contact;
             
             btn.frame = CGRectMake(0,(i*40) + titleLabel.frame.origin.y + titleLabel.frame.size.height + 10,200.0f,20.0f);
-            [btn setTitle:contact.text forState:UIControlStateNormal];
+            [btn setTitle:contact.value forState:UIControlStateNormal];
             [UIRender renderContactsButton:btn];
             
             [btn sizeToFit];
@@ -194,14 +204,17 @@
     }
     
     scrollViewHeight += self.contactsView.frame.size.height + 10;
-    
 }
+
+
 -(void)drawSkillsView{
     self.skillsView.backgroundColor = [UIColor clearColor];
     CGRect frame = self.skillsView.frame;
     frame.origin.y = scrollViewHeight;
     [self.skillsView setFrame:frame];
 }
+
+
 -(void)loadHTMLContent {
     NSString *path = [[NSBundle mainBundle] bundlePath];
     NSURL *baseURL = [NSURL fileURLWithPath:path];
@@ -214,6 +227,8 @@
     }
     [self.webView loadHTMLString:html baseURL:baseURL];
 }
+
+
 -(void)generateSkillTags {
     DWTagList *tagList = [[DWTagList alloc] initWithFrame:self.skillsView.frame];
     
@@ -232,19 +247,22 @@
     self.skillsView.backgroundColor = [UIColor clearColor];
 }
 
+
 #pragma mark - Favourites
 -(void)addToFavourites{
     
     NSManagedObjectContext *localContext = [NSManagedObjectContext MR_defaultContext];
     FLManagedFreelancer *freelancer = [FLManagedFreelancer MR_createInContext:localContext];
-    [freelancer mappingFromFreelancer:self.freelancer andImage:self.avatarView.image];
+    [freelancer mapWithFreelancer:self.freelancer andImage:self.avatarView.image];
     
     [localContext MR_saveWithOptions:MRSaveSynchronously completion:^(BOOL success, NSError *error) {
         
     }];
 }
+
+
 -(void)removeFromFavourites{
-    NSArray *results = [FLManagedFreelancer MR_findByAttribute:@"link" withValue:self.freelancer.link];
+    NSArray *results = [FLManagedFreelancer MR_findByAttribute:@"profile" withValue:self.freelancer.profile];
     for(FLManagedFreelancer *freelancer in results){
         [freelancer MR_deleteEntity];
     }
@@ -252,8 +270,10 @@
         
     }];
 }
+
+
 -(BOOL)isInFavourites{
-    NSArray *results = [FLManagedFreelancer MR_findByAttribute:@"link" withValue:self.freelancer.link];
+    NSArray *results = [FLManagedFreelancer MR_findByAttribute:@"profile" withValue:self.freelancer.profile];
     if([results count]>0)
         return YES;
     return NO;
@@ -275,10 +295,10 @@
             break;
         case 1:
             pasteboard = [UIPasteboard generalPasteboard];
-            pasteboard.string = self.freelancer.link;
+            pasteboard.string = self.freelancer.profile;
             break;
         case 2:
-            url = [NSURL URLWithString:self.freelancer.link];
+            url = [NSURL URLWithString:self.freelancer.profile];
             [[UIApplication sharedApplication] openURL:url];
             break;
         case 3:
@@ -291,10 +311,13 @@
             break;
     }
 }
+
+
 -(void)showActionSheet:(id)sender{
     [self initActionSheet];
     [self.actionSheet showFromTabBar:self.tabBarController.tabBar];
 }
+
 
 #pragma mark - Contact Button Click
 -(void)contactClick:(id)sender {
@@ -302,6 +325,7 @@
     NSURL *url = [btn.contact openURL];
     [[UIApplication sharedApplication] openURL:url];
 }
+
 
 #pragma mark - WebView Delegate
 -(void)webViewDidFinishLoad:(UIWebView *)webView {
@@ -323,8 +347,9 @@
     }
     scrollViewHeight += self.skillsView.frame.size.height;
     self.scrollView.contentSize = CGSizeMake(320,scrollViewHeight);
-    
 }
+
+
 -(BOOL) webView:(UIWebView *)inWeb shouldStartLoadWithRequest:(NSURLRequest *)inRequest navigationType:(UIWebViewNavigationType)inType {
     if ( inType == UIWebViewNavigationTypeLinkClicked ) {
         [[UIApplication sharedApplication] openURL:[inRequest URL]];
@@ -333,4 +358,5 @@
     
     return YES;
 }
+
 @end

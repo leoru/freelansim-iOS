@@ -11,29 +11,19 @@
 #import "FLTask.h"
 #import "FLFreelancer.h"
 
-/**
- Freelansim.ru html parser
- */
+// Freelansim.ru html parser
 @interface FLHTMLParser : HTMLParser
 
-/**
- Parse task from html
- */
--(NSArray *)parseTasks;
+// Parse list of tasks from html
+-(NSArray *)parseTaskList;
 
-/**
- Parse freelancers data from html
- */
--(NSArray *)parseFreelancers;
+// Parse list of freelancers from html
+-(NSArray *)parseFreelancerList;
 
-/**
- Parse task data from html
- */
--(FLTask *)parseToTask:(FLTask *)t;
+// Parse task data from html
+-(FLTask *)parseTask:(FLTask *)t;
 
-/**
- Parse freelancer data from html
- */
--(FLFreelancer *)parseToFreelancer:(FLFreelancer *)fl;
+// Parse freelancer data from html
+-(FLFreelancer *)parseFreelancer:(FLFreelancer *)fl;
 
 @end

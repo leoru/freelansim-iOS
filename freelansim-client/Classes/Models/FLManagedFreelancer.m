@@ -1,12 +1,16 @@
 //
 //  FLManagedFreelancer.m
-//  freelansim-client
+//  
 //
-//  Created by Daniyar Salahutdinov on 10.01.13.
-//  Copyright (c) 2013 Kirill Kunst. All rights reserved.
+//  Created by CPU124C41 on 27/06/14.
+//
 //
 
+#import "FLContact.h"
+#import "FLFreelancer.h"
 #import "FLManagedFreelancer.h"
+#import "FLManagedContact.h"
+#import "FLManagedLink.h"
 #import "FLManagedTag.h"
 #import "FLValueTransformer.h"
 
@@ -14,48 +18,56 @@
 @implementation FLManagedFreelancer
 
 @dynamic avatar;
-@dynamic avatarPath;
-@dynamic date_create;
-@dynamic desc;
-@dynamic email;
-@dynamic htmlDescription;
-@dynamic link;
-@dynamic location;
+@dynamic dateCreated;
 @dynamic name;
-@dynamic phone;
-@dynamic price;
-@dynamic site;
 @dynamic speciality;
+@dynamic price;
+@dynamic avatarPath;
 @dynamic thumbPath;
+@dynamic location;
+@dynamic briefDescription;
+@dynamic htmlDescription;
+@dynamic contacts;
+@dynamic links;
 @dynamic tags;
 
 @end
 
-@implementation FLManagedFreelancer (Map)
 
--(void)mappingFromFreelancer:(FLFreelancer *)freelancer andImage:(UIImage *)image{
+@implementation FLManagedFreelancer (Mapping)
+
+-(void)mapWithFreelancer:(FLFreelancer *)freelancer andImage:(UIImage *)image {
     NSManagedObjectContext *localContext = [NSManagedObjectContext MR_defaultContext];
     FLValueTransformer *transformer = [[FLValueTransformer alloc] init];
-    self.date_create = [NSDate date];
+
+    self.avatar = [transformer transformedValue:image];
+	self.dateCreated = [NSDate date];
     self.name = freelancer.name;
-    self.link = freelancer.link;
-    self.price = freelancer.price;
+	self.profile = freelancer.profile;
     self.speciality = freelancer.speciality;
+    self.price = freelancer.price;
     self.avatarPath = freelancer.avatarPath;
     self.thumbPath = freelancer.thumbPath;
     self.location = freelancer.location;
-    self.site = freelancer.site;
-    self.email = freelancer.email;
-    self.phone = freelancer.phone;
+    self.briefDescription = freelancer.briefDescription;
     self.htmlDescription = freelancer.htmlDescription;
-    self.desc = freelancer.desc;
-    
-    self.avatar = [transformer transformedValue:image];
-    
-    for(NSString *tag in freelancer.tags){
-        
+
+	for (FLContact *contact in freelancer.contacts) {
+        FLManagedContact *managedContact = [FLManagedContact MR_createInContext:localContext];
+		managedContact.type = contact.type;
+		managedContact.value = contact.value;
+        managedContact.freelancer = self;
+    }
+
+	for (NSString *link in freelancer.links) {
+        FLManagedLink *managedLink = [FLManagedLink MR_createInContext:localContext];
+        managedLink.value = link;
+        managedLink.freelancer = self;
+    }
+
+    for (NSString *tag in freelancer.tags) {
         FLManagedTag *managedTag = [FLManagedTag MR_createInContext:localContext];
-        managedTag.name = tag;
+        managedTag.value = tag;
         managedTag.freelancer = self;
     }
 }

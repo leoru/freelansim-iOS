@@ -76,9 +76,9 @@
     
     self.navigationItem.title = self.task.title;
     self.titleLabel.text = self.task.title;
-    self.publishedLabel.text = self.task.publishedWithFormatting;
-    self.viewsLabel.text = [NSString stringWithFormat:@"%d",self.task.views];
-    self.commentsLabel.text = [NSString stringWithFormat:@"%d",self.task.commentsCount];
+    self.publishedLabel.text = self.task.datePublishedWithFormatting;
+    self.viewsLabel.text = [NSString stringWithFormat:@"%d",self.task.viewCount];
+    self.commentsLabel.text = [NSString stringWithFormat:@"%d",self.task.commentCount];
     
     self.descriptionWebView.scrollView.bounces = NO;
     self.descriptionWebView.delegate = self;
@@ -133,7 +133,7 @@
 -(void)addToFavourites{
     NSManagedObjectContext *localContext = [NSManagedObjectContext MR_defaultContext];
     FLManagedTask *managedTask = [FLManagedTask MR_createInContext:localContext];
-    managedTask.date_create = [NSDate date];
+    managedTask.dateCreated = [NSDate date];
     [managedTask mapWithTask:self.task];
     [localContext MR_saveWithOptions:MRSaveSynchronously completion:^(BOOL success, NSError *error) {
         

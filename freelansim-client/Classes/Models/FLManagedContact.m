@@ -1,20 +1,19 @@
 //
-//  FLManagedTag.m
+//  FLManagedContact.m
 //  
 //
 //  Created by CPU124C41 on 27/06/14.
 //
 //
 
-#import "FLManagedTag.h"
+#import "FLManagedContact.h"
 #import "FLManagedFreelancer.h"
-#import "FLManagedTask.h"
 
 
-@implementation FLManagedTag
+@implementation FLManagedContact
 
+@dynamic type;
 @dynamic value;
 @dynamic freelancer;
-@dynamic task;
 
 @end

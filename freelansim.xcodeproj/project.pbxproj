@@ -121,9 +121,6 @@
 		6AED8737167D9B3500EBC6CD /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AED8736167D9B3500EBC6CD /* CoreImage.framework */; };
 		6AED873A167D9B3B00EBC6CD /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AED8739167D9B3B00EBC6CD /* QuartzCore.framework */; };
 		6D1A659EDAF44F38BE9E013F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 41AF178834E54C6E9830FDCB /* libPods.a */; };
-		8B147301169E967B00AD7027 /* FLManagedFreelancer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B147300169E967B00AD7027 /* FLManagedFreelancer.m */; };
-		8B147308169EBA6300AD7027 /* FLManagedTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B147307169EBA6300AD7027 /* FLManagedTask.m */; };
-		8B14730B169EBC3C00AD7027 /* FLManagedTag.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B14730A169EBC3C00AD7027 /* FLManagedTag.m */; };
 		8B14730E169EBE5300AD7027 /* FLFavouriteDeleteButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B14730D169EBE5300AD7027 /* FLFavouriteDeleteButton.m */; };
 		8B147311169EDA5B00AD7027 /* task.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B147310169EDA5B00AD7027 /* task.png */; };
 		8B68D63D169E8272009FE17A /* FLFavouritesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B68D63C169E8272009FE17A /* FLFavouritesController.m */; };
@@ -158,6 +155,11 @@
 		A4B15D2516A3BD3A00324F97 /* big-orange-button-highlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = A4B15D2216A3BD3A00324F97 /* big-orange-button-highlighted.png */; };
 		A4B15D2616A3BD3A00324F97 /* big-orange-button-highlighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A4B15D2316A3BD3A00324F97 /* big-orange-button-highlighted@2x.png */; };
 		A4B15D2716A3BD3A00324F97 /* big-orange-button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A4B15D2416A3BD3A00324F97 /* big-orange-button@2x.png */; };
+		A8FB8C89195D824B0022FC38 /* FLManagedFreelancer.m in Sources */ = {isa = PBXBuildFile; fileRef = A8FB8C80195D824B0022FC38 /* FLManagedFreelancer.m */; };
+		A8FB8C8A195D824B0022FC38 /* FLManagedLink.m in Sources */ = {isa = PBXBuildFile; fileRef = A8FB8C82195D824B0022FC38 /* FLManagedLink.m */; };
+		A8FB8C8B195D824B0022FC38 /* FLManagedContact.m in Sources */ = {isa = PBXBuildFile; fileRef = A8FB8C84195D824B0022FC38 /* FLManagedContact.m */; };
+		A8FB8C8C195D824B0022FC38 /* FLManagedTask.m in Sources */ = {isa = PBXBuildFile; fileRef = A8FB8C86195D824B0022FC38 /* FLManagedTask.m */; };
+		A8FB8C8D195D824B0022FC38 /* FLManagedTag.m in Sources */ = {isa = PBXBuildFile; fileRef = A8FB8C88195D824B0022FC38 /* FLManagedTag.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -315,12 +317,6 @@
 		6AD8DB6A184A53DE0082C2C0 /* FavouriteCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FavouriteCell.m; path = Views/Cells/FavouriteCell.m; sourceTree = "<group>"; };
 		6AED8736167D9B3500EBC6CD /* CoreImage.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 		6AED8739167D9B3B00EBC6CD /* QuartzCore.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		8B1472FF169E967B00AD7027 /* FLManagedFreelancer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FLManagedFreelancer.h; path = Classes/Models/FLManagedFreelancer.h; sourceTree = "<group>"; };
-		8B147300169E967B00AD7027 /* FLManagedFreelancer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FLManagedFreelancer.m; path = Classes/Models/FLManagedFreelancer.m; sourceTree = "<group>"; };
-		8B147306169EBA6300AD7027 /* FLManagedTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FLManagedTask.h; path = Classes/Models/FLManagedTask.h; sourceTree = "<group>"; };
-		8B147307169EBA6300AD7027 /* FLManagedTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FLManagedTask.m; path = Classes/Models/FLManagedTask.m; sourceTree = "<group>"; };
-		8B147309169EBC3B00AD7027 /* FLManagedTag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FLManagedTag.h; path = Classes/Models/FLManagedTag.h; sourceTree = "<group>"; };
-		8B14730A169EBC3C00AD7027 /* FLManagedTag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FLManagedTag.m; path = Classes/Models/FLManagedTag.m; sourceTree = "<group>"; };
 		8B14730C169EBE5300AD7027 /* FLFavouriteDeleteButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLFavouriteDeleteButton.h; sourceTree = "<group>"; };
 		8B14730D169EBE5300AD7027 /* FLFavouriteDeleteButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLFavouriteDeleteButton.m; sourceTree = "<group>"; };
 		8B14730F169EC01000AD7027 /* FLFavouritesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FLFavouritesController.h; path = Classes/Controllers/FLFavouritesController.h; sourceTree = "<group>"; };
@@ -366,6 +362,16 @@
 		A4B15D2216A3BD3A00324F97 /* big-orange-button-highlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "big-orange-button-highlighted.png"; sourceTree = "<group>"; };
 		A4B15D2316A3BD3A00324F97 /* big-orange-button-highlighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "big-orange-button-highlighted@2x.png"; sourceTree = "<group>"; };
 		A4B15D2416A3BD3A00324F97 /* big-orange-button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "big-orange-button@2x.png"; sourceTree = "<group>"; };
+		A8FB8C7F195D824B0022FC38 /* FLManagedFreelancer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FLManagedFreelancer.h; path = Classes/Models/FLManagedFreelancer.h; sourceTree = "<group>"; };
+		A8FB8C80195D824B0022FC38 /* FLManagedFreelancer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FLManagedFreelancer.m; path = Classes/Models/FLManagedFreelancer.m; sourceTree = "<group>"; };
+		A8FB8C81195D824B0022FC38 /* FLManagedLink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FLManagedLink.h; path = Classes/Models/FLManagedLink.h; sourceTree = "<group>"; };
+		A8FB8C82195D824B0022FC38 /* FLManagedLink.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FLManagedLink.m; path = Classes/Models/FLManagedLink.m; sourceTree = "<group>"; };
+		A8FB8C83195D824B0022FC38 /* FLManagedContact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FLManagedContact.h; path = Classes/Models/FLManagedContact.h; sourceTree = "<group>"; };
+		A8FB8C84195D824B0022FC38 /* FLManagedContact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FLManagedContact.m; path = Classes/Models/FLManagedContact.m; sourceTree = "<group>"; };
+		A8FB8C85195D824B0022FC38 /* FLManagedTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FLManagedTask.h; path = Classes/Models/FLManagedTask.h; sourceTree = "<group>"; };
+		A8FB8C86195D824B0022FC38 /* FLManagedTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FLManagedTask.m; path = Classes/Models/FLManagedTask.m; sourceTree = "<group>"; };
+		A8FB8C87195D824B0022FC38 /* FLManagedTag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FLManagedTag.h; path = Classes/Models/FLManagedTag.h; sourceTree = "<group>"; };
+		A8FB8C88195D824B0022FC38 /* FLManagedTag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FLManagedTag.m; path = Classes/Models/FLManagedTag.m; sourceTree = "<group>"; };
 		CB0AF9F7B17F4CB7B2ECC008 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -786,13 +792,17 @@
 		8B9CEE97169D845800620749 /* Data model */ = {
 			isa = PBXGroup;
 			children = (
+				A8FB8C7F195D824B0022FC38 /* FLManagedFreelancer.h */,
+				A8FB8C80195D824B0022FC38 /* FLManagedFreelancer.m */,
+				A8FB8C81195D824B0022FC38 /* FLManagedLink.h */,
+				A8FB8C82195D824B0022FC38 /* FLManagedLink.m */,
+				A8FB8C83195D824B0022FC38 /* FLManagedContact.h */,
+				A8FB8C84195D824B0022FC38 /* FLManagedContact.m */,
+				A8FB8C85195D824B0022FC38 /* FLManagedTask.h */,
+				A8FB8C86195D824B0022FC38 /* FLManagedTask.m */,
+				A8FB8C87195D824B0022FC38 /* FLManagedTag.h */,
+				A8FB8C88195D824B0022FC38 /* FLManagedTag.m */,
 				8B9CEE99169D85C400620749 /* DataStore.xcdatamodeld */,
-				8B1472FF169E967B00AD7027 /* FLManagedFreelancer.h */,
-				8B147300169E967B00AD7027 /* FLManagedFreelancer.m */,
-				8B147306169EBA6300AD7027 /* FLManagedTask.h */,
-				8B147307169EBA6300AD7027 /* FLManagedTask.m */,
-				8B147309169EBC3B00AD7027 /* FLManagedTag.h */,
-				8B14730A169EBC3C00AD7027 /* FLManagedTag.m */,
 			);
 			name = "Data model";
 			sourceTree = "<group>";
@@ -1121,6 +1131,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8FB8C8B195D824B0022FC38 /* FLManagedContact.m in Sources */,
 				6A529AEF167A47AF009A1CCB /* main.m in Sources */,
 				6A529AF3167A47AF009A1CCB /* KKAppDelegate.m in Sources */,
 				6A1AE72C167DB5C8005DE0E5 /* FLHTTPClient.m in Sources */,
@@ -1132,10 +1143,12 @@
 				6A1AE74C167E12B6005DE0E5 /* FLBaseController.m in Sources */,
 				6A1AE74F167E12D1005DE0E5 /* FLTasksController.m in Sources */,
 				A415B449167EE914002FFC83 /* FLTaskController.m in Sources */,
+				A8FB8C8C195D824B0022FC38 /* FLManagedTask.m in Sources */,
 				6A2677841680877800F178E7 /* FLHTMLUtils.m in Sources */,
 				6A26778F16809CCB00F178E7 /* DWTagList.m in Sources */,
 				6A26779B1680A1AF00F178E7 /* FLCategoriesController.m in Sources */,
 				6A26779E1680A32300F178E7 /* FLCategory.m in Sources */,
+				A8FB8C8A195D824B0022FC38 /* FLManagedLink.m in Sources */,
 				6A8F515B1684EDF200AD0CC2 /* FLFreelancer.m in Sources */,
 				6A8A96F516861B9C00C285BE /* FLFreelancersController.m in Sources */,
 				6A8A96F816863A7900C285BE /* FLFreelancerController.m in Sources */,
@@ -1145,13 +1158,12 @@
 				6AA0AA1B1697F8DE00FE28E3 /* UIStyle.m in Sources */,
 				8B9CEE9B169D85C400620749 /* DataStore.xcdatamodeld in Sources */,
 				8B9CEEB2169E6C6100620749 /* FLValueTransformer.m in Sources */,
+				A8FB8C89195D824B0022FC38 /* FLManagedFreelancer.m in Sources */,
 				6AD8DB6B184A53DE0082C2C0 /* FavouriteCell.m in Sources */,
 				8B68D63D169E8272009FE17A /* FLFavouritesController.m in Sources */,
-				8B147301169E967B00AD7027 /* FLManagedFreelancer.m in Sources */,
-				8B147308169EBA6300AD7027 /* FLManagedTask.m in Sources */,
-				8B14730B169EBC3C00AD7027 /* FLManagedTag.m in Sources */,
 				8B14730E169EBE5300AD7027 /* FLFavouriteDeleteButton.m in Sources */,
 				A46E89BC16A0245B00FD0048 /* ISGumView.m in Sources */,
+				A8FB8C8D195D824B0022FC38 /* FLManagedTag.m in Sources */,
 				A46E89BD16A0245B00FD0048 /* ISRefreshControl.m in Sources */,
 				A46E89BE16A0245B00FD0048 /* ISUtility.m in Sources */,
 				6ABADFEF1849D753003EE481 /* FLFreelancerCell.m in Sources */,
