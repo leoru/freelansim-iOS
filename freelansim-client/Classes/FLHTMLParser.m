@@ -128,29 +128,36 @@
     NSArray *sideBarBlocks = [sideBar findChildTags:@"dt"];
     for (HTMLNode *sideBlock in sideBarBlocks) {
         if ([[sideBlock contents] isEqualToString:@"Контакты"]) {
-            contactsNode = sideBlock;
+            contactsNode = [[sideBlock nextSibling] nextSibling];
         }
         else if ([[sideBlock contents] isEqualToString:@"Мессенджеры"]) {
-            messengersNode = sideBlock;
+            messengersNode = [[sideBlock nextSibling] nextSibling];
         }
         else if ([[sideBlock contents] isEqualToString:@"Статистика"]) {
-            statisticsNode = sideBlock;
+            statisticsNode = [[sideBlock nextSibling] nextSibling];
         }
         else if ([[sideBlock contents] isEqualToString:@"Активность"]) {
-            activityNode = sideBlock;
+            activityNode = [[sideBlock nextSibling] nextSibling];
         }
     }
 
     // location
     freelancer.location = [[sideBar findChildOfClass:@"user__location"] contents];
-    
+
+	// contacts
+    NSMutableArray *contacts = [NSMutableArray array];
+    FLContact *contact;
+
     // site
     NSString *site;
     HTMLNode *siteNode = [contactsNode findChildOfClass:@"site"];
     if(siteNode){
         site = [siteNode getAttributeNamed:@"href"];
     }
-    //freelancer.site = site;
+    if (site) {
+        contact = [[FLContact alloc] initWithType:@"site" value:site];
+        [contacts addObject:contact];
+    }
     
     // email
     NSString *email;
@@ -158,7 +165,10 @@
     if (emailNode) {
         email = [NSString stringWithFormat:@"%@@%@",[emailNode getAttributeNamed:@"data-mail-name"],[emailNode getAttributeNamed:@"data-mail-host"]];
     }
-    //freelancer.email = email;
+	if (email) {
+        contact = [[FLContact alloc] initWithType:@"mail" value:email];
+        [contacts addObject:contact];
+    }
     
     // phone
     NSString *phone;
@@ -166,43 +176,47 @@
     if (phoneNode){
         phone = [phoneNode getAttributeNamed:@"data-phone"];
     }
-    //freelancer.phone = phone;
-
-    // contacts
-    NSMutableArray *contacts = [NSMutableArray array];
-    FLContact *contact;
-    
-    if (site) {
-        contact = [[FLContact alloc] initWithType:@"site" value:site];
-        [contacts addObject:contact];
-    }
-    
-    if (email) {
-        contact = [[FLContact alloc] initWithType:@"mail" value:email];
-        [contacts addObject:contact];
-    }
-    
-    if (phone) {
+	if (phone) {
         contact = [[FLContact alloc] initWithType:@"phone" value:phone];
         [contacts addObject:contact];
     }
     
-    freelancer.contacts = contacts;
-    
     // messengers
+	NSArray *messengerEntries = [messengersNode findChildTags:@"li"];
+	for (HTMLNode *messengerEntry in messengerEntries) {
+		NSString *messengerType = [[messengerEntry findChildOfClass:@"data__label"] contents];
+		NSString *messengerValue = [[messengerEntry findChildOfClass:@"data__value"] contents];
+		if (messengerType && messengerValue) {
+			contact = [[FLContact alloc] initWithType:messengerType value:messengerValue];
+			[contacts addObject:contact];
+		}
+	}
+
+	freelancer.contacts = contacts;
     
     // about content
     HTMLNode *profileInfo = [[self body] findChildOfClass:@"profile-blocks_info"];
     freelancer.htmlDescription = [[profileInfo findChildOfClass:@"user-data__about"] rawContents];
+
+	// links
+	NSMutableArray *links = [NSMutableArray array];
+	HTMLNode *linksNode = [profileInfo findChildOfClass:@"user-params user-params_links"];
+	NSArray *htmlLinks = [linksNode findChildTags:@"a"];
+	for (HTMLNode *htmlLink in htmlLinks) {
+		NSString *link = [htmlLink getAttributeNamed:@"href"];
+		if (link)
+			[links addObject:link];
+	}
+	freelancer.links = links;
     
-    // skills
+    // skill tags
+    NSMutableArray *tags = [NSMutableArray array];
     HTMLNode *tagBlock = [profileInfo findChildOfClass:@"tags "];
-    NSArray *tags = [tagBlock findChildrenOfClass:@"tags__item"];
-    NSMutableArray *tagsArray = [NSMutableArray array];
-    for (HTMLNode *tag in tags) {
-        [tagsArray addObject:[tag findChildOfClass:@"tags__item_link"].contents];
+    NSArray *htmlTags = [tagBlock findChildrenOfClass:@"tags__item"];
+    for (HTMLNode *htmlTag in htmlTags) {
+        [tags addObject:[htmlTag findChildOfClass:@"tags__item_link"].contents];
     }
-    freelancer.tags = tagsArray;
+    freelancer.tags = tags;
     
     return freelancer;
 }
