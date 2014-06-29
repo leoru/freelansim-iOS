@@ -180,7 +180,7 @@
             btn.contact = contact;
             
             btn.frame = CGRectMake(0,(i*40) + titleLabel.frame.origin.y + titleLabel.frame.size.height + 10,200.0f,20.0f);
-            [btn setTitle:contact.text forState:UIControlStateNormal];
+            [btn setTitle:contact.value forState:UIControlStateNormal];
             [UIRender renderContactsButton:btn];
             
             [btn sizeToFit];
@@ -253,7 +253,7 @@
     
     NSManagedObjectContext *localContext = [NSManagedObjectContext MR_defaultContext];
     FLManagedFreelancer *freelancer = [FLManagedFreelancer MR_createInContext:localContext];
-    [freelancer mappingFromFreelancer:self.freelancer andImage:self.avatarView.image];
+    [freelancer mapWithFreelancer:self.freelancer andImage:self.avatarView.image];
     
     [localContext MR_saveWithOptions:MRSaveSynchronously completion:^(BOOL success, NSError *error) {
         
@@ -262,7 +262,7 @@
 
 
 -(void)removeFromFavourites{
-    NSArray *results = [FLManagedFreelancer MR_findByAttribute:@"link" withValue:self.freelancer.link];
+    NSArray *results = [FLManagedFreelancer MR_findByAttribute:@"profile" withValue:self.freelancer.profile];
     for(FLManagedFreelancer *freelancer in results){
         [freelancer MR_deleteEntity];
     }
@@ -273,7 +273,7 @@
 
 
 -(BOOL)isInFavourites{
-    NSArray *results = [FLManagedFreelancer MR_findByAttribute:@"link" withValue:self.freelancer.link];
+    NSArray *results = [FLManagedFreelancer MR_findByAttribute:@"profile" withValue:self.freelancer.profile];
     if([results count]>0)
         return YES;
     return NO;
@@ -295,10 +295,10 @@
             break;
         case 1:
             pasteboard = [UIPasteboard generalPasteboard];
-            pasteboard.string = self.freelancer.link;
+            pasteboard.string = self.freelancer.profile;
             break;
         case 2:
-            url = [NSURL URLWithString:self.freelancer.link];
+            url = [NSURL URLWithString:self.freelancer.profile];
             [[UIApplication sharedApplication] openURL:url];
             break;
         case 3:

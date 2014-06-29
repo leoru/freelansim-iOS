@@ -10,24 +10,25 @@
 #import "FLManagedFreelancer.h"
 #import "KKFromJSONObject.h"
 
+
 @class FLManagedFreelancer;
+
 
 @interface FLFreelancer : NSObject <KKFromJSONObject>
 
-@property (nonatomic,retain) NSString *name;
-@property (nonatomic,retain) NSString *link;
-@property (nonatomic,retain) NSString *price;
-@property (nonatomic,retain) NSString *speciality;
-@property (nonatomic,retain) NSString *avatarPath;
-@property (nonatomic,retain) NSString *thumbPath;
-@property (nonatomic,retain) NSString *location;
-@property (nonatomic,retain) NSString *site;
-@property (nonatomic,retain) NSString *email;
-@property (nonatomic,retain) NSString *phone;
-@property (nonatomic,retain) NSString *htmlDescription;
-@property (nonatomic,retain) NSString *desc;
-@property (nonatomic,retain) NSArray *tags;
-@property (nonatomic,retain) NSArray *contacts;
+@property (nonatomic, retain) NSString   *name;
+@property (nonatomic, retain) NSString   *profile;
+@property (nonatomic, retain) NSString   *speciality;
+@property (nonatomic, retain) NSString   *price;
+@property (nonatomic, retain) NSString   *avatarPath;
+@property (nonatomic, retain) NSString   *thumbPath;
+@property (nonatomic, retain) NSString   *location;
+@property (nonatomic, retain) NSString   *briefDescription;
+@property (nonatomic, retain) NSString   *htmlDescription;
+@property (nonatomic, retain) NSArray    *contacts;
+@property (nonatomic, retain) NSArray    *links;
+@property (nonatomic, retain) NSArray    *tags;
 
--(void)mappingWithManagedFreelancer:(FLManagedFreelancer *)freelancer;
+-(void)mapWithManagedFreelancer:(FLManagedFreelancer *)freelancer;
+
 @end

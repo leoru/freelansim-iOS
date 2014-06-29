@@ -29,7 +29,7 @@
 }
 
 
--(NSArray *)parseTasks {
+-(NSArray *)parseTaskList {
     NSMutableArray *tasks = [NSMutableArray array];
     
     HTMLNode *body = [self body];
@@ -51,9 +51,9 @@
             task.isAccuratePrice = YES;
         }
         
-        task.published = [[taskNode findChildOfClass:@"published"] contents];
+        task.datePublished = [[taskNode findChildOfClass:@"published"] contents];
         task.category = [[taskNode findChildOfClass:@"author"] contents];
-        task.shortDescription = [[taskNode findChildOfClass:@"description"] contents];
+        task.briefDescription = [[taskNode findChildOfClass:@"description"] contents];
         
         task.title = [[taskNode findChildOfClass:@"task__title"] getAttributeNamed:@"title"];
         
@@ -68,14 +68,14 @@
 }
 
 
--(FLTask *)parseToTask:(FLTask *)t {
+-(FLTask *)parseTask:(FLTask *)t {
     
     FLTask *task = t;
     HTMLNode *body = [self body];
     
     HTMLNode *taskStat = [body findChildOfClass:@"task_stat"];
-    task.views = [[[taskStat findChildOfClass:@"views"] contents] intValue];
-    task.commentsCount = [[[taskStat findChildOfClass:@"comments"] contents] intValue];
+    task.viewCount = [[[taskStat findChildOfClass:@"views"] contents] intValue];
+    task.commentCount = [[[taskStat findChildOfClass:@"comments"] contents] intValue];
     
     NSArray *infoBlocks = [body findChildrenOfClass:@"task__description"];
     task.htmlDescription = [infoBlocks[0] rawContents];
@@ -111,7 +111,7 @@
 }
 
 
--(FLFreelancer *)parseToFreelancer:(FLFreelancer *)fl {
+-(FLFreelancer *)parseFreelancer:(FLFreelancer *)fl {
     FLFreelancer *freelancer = fl;
     HTMLNode *freelancerCard = [[self body] findChildOfClass:@"user-profile__header"];
     
@@ -120,8 +120,27 @@
     freelancer.avatarPath = imagePath;
     
     HTMLNode *sideBar = [[self body] findChildOfClass:@"layout-block layout-block_profile"];
-    HTMLNode *contactsNode = [sideBar findChildOfClass:@"list list_contacts"];
+    HTMLNode *contactsNode;
+    HTMLNode *messengersNode;
+    HTMLNode *statisticsNode;
+    HTMLNode *activityNode;
     
+    NSArray *sideBarBlocks = [sideBar findChildTags:@"dt"];
+    for (HTMLNode *sideBlock in sideBarBlocks) {
+        if ([[sideBlock contents] isEqualToString:@"Контакты"]) {
+            contactsNode = sideBlock;
+        }
+        else if ([[sideBlock contents] isEqualToString:@"Мессенджеры"]) {
+            messengersNode = sideBlock;
+        }
+        else if ([[sideBlock contents] isEqualToString:@"Статистика"]) {
+            statisticsNode = sideBlock;
+        }
+        else if ([[sideBlock contents] isEqualToString:@"Активность"]) {
+            activityNode = sideBlock;
+        }
+    }
+
     // location
     freelancer.location = [[sideBar findChildOfClass:@"user__location"] contents];
     
@@ -131,7 +150,7 @@
     if(siteNode){
         site = [siteNode getAttributeNamed:@"href"];
     }
-    freelancer.site = site;
+    //freelancer.site = site;
     
     // email
     NSString *email;
@@ -139,7 +158,7 @@
     if (emailNode) {
         email = [NSString stringWithFormat:@"%@@%@",[emailNode getAttributeNamed:@"data-mail-name"],[emailNode getAttributeNamed:@"data-mail-host"]];
     }
-    freelancer.email = email;
+    //freelancer.email = email;
     
     // phone
     NSString *phone;
@@ -147,24 +166,24 @@
     if (phoneNode){
         phone = [phoneNode getAttributeNamed:@"data-phone"];
     }
-    freelancer.phone = phone;
+    //freelancer.phone = phone;
 
     // contacts
     NSMutableArray *contacts = [NSMutableArray array];
     FLContact *contact;
     
-    if (freelancer.site) {
-        contact = [[FLContact alloc] initWithText:freelancer.site type:@"site"];
+    if (site) {
+        contact = [[FLContact alloc] initWithType:@"site" value:site];
         [contacts addObject:contact];
     }
     
-    if (freelancer.email) {
-        contact = [[FLContact alloc] initWithText:freelancer.email type:@"mail"];
+    if (email) {
+        contact = [[FLContact alloc] initWithType:@"mail" value:email];
         [contacts addObject:contact];
     }
     
-    if (freelancer.phone) {
-        contact = [[FLContact alloc] initWithText:freelancer.phone type:@"phone"];
+    if (phone) {
+        contact = [[FLContact alloc] initWithType:@"phone" value:phone];
         [contacts addObject:contact];
     }
     
@@ -189,7 +208,7 @@
 }
 
 
--(NSArray *)parseFreelancers {
+-(NSArray *)parseFreelancerList {
     NSMutableArray *freelancers = [NSMutableArray array];
     
     HTMLNode *body = [self body];
@@ -214,16 +233,16 @@
         //name
         freelancer.name = [[[freelancerNode findChildOfClass:@"user-data__title"] findChildTag:@"a"]  contents];
         
-        // link
+        // profile
         NSString *relativePath = [[[freelancerNode findChildOfClass:@"user-data__title"] findChildTag:@"a"] getAttributeNamed:@"href"];
-        freelancer.link = [FLServerHostString stringByAppendingString:relativePath];
-        
+        freelancer.profile = [FLServerHostString stringByAppendingString:relativePath];
+
         //speciality
         freelancer.speciality = [[freelancerNode findChildOfClass:@"user-data__spec"] contents] ;
         freelancer.speciality = [freelancer.speciality stringByTrimmingCharactersInSet:
                                    [NSCharacterSet newlineCharacterSet]];
         // desc
-        freelancer.desc = [[freelancerNode findChildOfClass:@"user__description"] contents];
+        freelancer.briefDescription = [[freelancerNode findChildOfClass:@"user__description"] contents];
         
         // thumb
         NSString *thumbPath = [[freelancerNode findChildOfClass:@"avatario"] getAttributeNamed:@"src"];

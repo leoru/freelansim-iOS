@@ -9,20 +9,19 @@
 #import "FLTask.h"
 #import "FLManagedTag.h"
 
+
 @implementation FLTask
 
-@synthesize tags = _tags;
-@synthesize mental = _mental;
-
-- (NSArray *)mental
+-(NSArray *)mentals
 {
-    if (!_mental) {
-        _mental = [NSArray array];
+    if (!_mentals) {
+        _mentals = [NSArray array];
     }
-    return _mental;
+    return _mentals;
 }
 
-- (NSArray *)tags
+
+-(NSArray *)tags
 {
     if (!_tags) {
         _tags = [NSArray array];
@@ -30,32 +29,42 @@
     return _tags;
 }
 
-- (NSString *)description
+
+-(NSString *)description
 {
     return [NSString stringWithFormat:@"job-title: %@ \r\n",self.title];
 }
 
-- (void)mapFromManagedTask:(FLManagedTask *)task
+
+-(void)mapWithManagedTask:(FLManagedTask *)task
 {
-    self.title = task.title;
-    self.published = task.published;
-    self.price = task.price;
-    self.category = task.category;
-    self.shortDescription = task.shortDesc;
-    self.link = task.link;
-    self.views = task.views.intValue;
-    self.commentsCount = task.commentsCount.intValue;
-    self.htmlDescription = task.htmlDescription;
-    
-    NSMutableArray *tags = [NSMutableArray array];
-    for(FLManagedTag *tag in task.tags){
-        NSString *newTag = tag.name;
-        [tags addObject:newTag];
+	self.title = task.title;
+	self.category = task.category;
+	self.price = task.price;
+	//self.isAccuratePrice;
+	self.datePublished = task.datePublished;
+	self.briefDescription = task.briefDescription;
+	self.htmlDescription = task.htmlDescription;
+	self.link = task.link;
+	//self.filesInfo;
+	self.viewCount = task.viewCount.intValue;
+	self.commentCount = task.commentCount.intValue;
+
+//	NSMutableArray *mentals = [[NSMutableArray alloc] init];
+//	for(FLManagedMental *managedMental in task.mentals){
+//		[mentals addObject:managedMental.value];
+//	}
+//	self.mentals = mentals;
+
+    NSMutableArray *tags = [[NSMutableArray alloc] init];
+    for(FLManagedTag *managedTag in task.tags){
+        [tags addObject:managedTag.value];
     }
-    self.tags = tags;
+	self.tags = tags;
 }
 
-- (NSString *)publishedWithFormatting {
+
+- (NSString *)datePublishedWithFormatting {
     static NSDateFormatter *rfcFormat = nil;
     static NSDateFormatter *displayFormat = nil;
     
@@ -67,7 +76,7 @@
     if (displayFormat == nil)
         displayFormat = [[NSDateFormatter alloc] init];
     
-    NSDate *publishDate = [rfcFormat dateFromString:self.published];
+    NSDate *publishDate = [rfcFormat dateFromString:self.datePublished];
     
     NSCalendar *calendar = [NSCalendar currentCalendar];
     NSDateComponents *publishDateComponents = [calendar components:NSYearCalendarUnit|NSDayCalendarUnit fromDate:publishDate];
@@ -87,17 +96,18 @@
     return [displayFormat stringFromDate:publishDate];
 }
 
+
 + (instancetype)objectFromJSON:(NSDictionary *)json
 {
     FLTask *task = [[FLTask alloc] init];
     task.title = json[@"title"];
     task.category = json[@"category_name"];
     task.price = json[@"price"];
-    task.published = json[@"published_at"];
+    task.datePublished = json[@"published_at"];
     task.link = json[@"url"];
     
-    NSString *taskDesc = [NSString stringWithFormat:@"%@ / %@",json[@"category_name"], json[@"sub_category_name"]];
-    task.shortDescription = taskDesc;
+    NSString *description = [NSString stringWithFormat:@"%@ / %@",json[@"category_name"], json[@"sub_category_name"]];
+    task.briefDescription = description;
     
     return task;
 }

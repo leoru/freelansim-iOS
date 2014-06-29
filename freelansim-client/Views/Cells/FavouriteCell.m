@@ -33,7 +33,7 @@
     self.image.layer.masksToBounds = YES;
     self.labelName.text = freelancer.name;
     self.labelSecondText.text = freelancer.speciality;
-    self.labelShortDescription.text = freelancer.desc;
+    self.labelShortDescription.text = freelancer.briefDescription;
     self.labelPrice.text = freelancer.price;
 }
 
@@ -44,7 +44,7 @@
     self.image.layer.masksToBounds = NO;
     self.labelName.text = task.title;
     self.labelSecondText.text = task.category;
-    self.labelShortDescription.text = task.shortDesc;
+    self.labelShortDescription.text = task.briefDescription;
     self.labelPrice.text = task.price;
 }
 

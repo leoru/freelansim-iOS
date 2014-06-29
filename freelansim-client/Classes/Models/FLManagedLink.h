@@ -1,5 +1,5 @@
 //
-//  FLManagedTag.h
+//  FLManagedLink.h
 //  
 //
 //  Created by CPU124C41 on 27/06/14.
@@ -10,13 +10,12 @@
 #import <CoreData/CoreData.h>
 
 
-@class FLManagedFreelancer, FLManagedTask;
+@class FLManagedFreelancer;
 
 
-@interface FLManagedTag : NSManagedObject
+@interface FLManagedLink : NSManagedObject
 
 @property (nonatomic, retain) NSString				*value;
 @property (nonatomic, retain) FLManagedFreelancer	*freelancer;
-@property (nonatomic, retain) FLManagedTask			*task;
 
 @end

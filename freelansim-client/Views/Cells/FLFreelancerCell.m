@@ -45,7 +45,7 @@
     self.avatar.layer.masksToBounds = YES;
     self.labelName.text = freelancer.name;
     self.labelCategory.text = freelancer.speciality;
-    self.labelShortDescription.text = freelancer.desc;
+    self.labelShortDescription.text = freelancer.briefDescription;
     self.labelPrice.text = freelancer.price;
     
     

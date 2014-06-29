@@ -90,7 +90,7 @@
     
     NSArray *both = [freelancers arrayByAddingObjectsFromArray:tasks];
     
-    NSSortDescriptor *descriptor = [[NSSortDescriptor alloc] initWithKey:@"date_create" ascending:NO];
+    NSSortDescriptor *descriptor = [[NSSortDescriptor alloc] initWithKey:@"dateCreated" ascending:NO];
     NSArray *sortingDescriptors = [NSArray arrayWithObject:descriptor];
     favourites =[NSMutableArray arrayWithArray:[both sortedArrayUsingDescriptors:sortingDescriptors]];
     [self.favouritesTable reloadData];
@@ -186,12 +186,12 @@
     if ([segue.identifier isEqualToString:@"FreelancerSegue"]) {
         FLFreelancerController *freelancerController = [segue destinationViewController];
         FLFreelancer *freelancer = [[FLFreelancer alloc] init];
-        [freelancer mappingWithManagedFreelancer:selectedFreelancer];
+        [freelancer mapWithManagedFreelancer:selectedFreelancer];
         freelancerController.freelancer = freelancer;
     } else if ([segue.identifier isEqualToString:@"TaskSegue"]) {
         FLTaskController *taskController = [segue destinationViewController];
         FLTask *task = [[FLTask alloc] init];
-        [task mapFromManagedTask:selectedTask];
+        [task mapWithManagedTask:selectedTask];
         taskController.task = task;
     }
 }

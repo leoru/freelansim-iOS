@@ -44,7 +44,7 @@
     
     self.labelTitle.text = task.title;
 
-    self.labelShortDescription.text = task.shortDescription;
+    self.labelShortDescription.text = task.briefDescription;
     self.labelShortDescription.backgroundColor = [UIColor clearColor];
     self.labelShortDescription.numberOfLines = 1;
     [self.labelShortDescription sizeToFit];
@@ -56,7 +56,7 @@
     frame.size.width += 5;
     self.labelPrice.frame = frame;
     
-    self.labelPublished.text = task.publishedWithFormatting;
+    self.labelPublished.text = task.datePublishedWithFormatting;
     self.labelPublished.textColor = [UIColor lightGrayColor];
 }
 

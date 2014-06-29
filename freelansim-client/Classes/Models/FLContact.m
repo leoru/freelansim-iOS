@@ -8,22 +8,26 @@
 
 #import "FLContact.h"
 
+
 @implementation FLContact
 
--(id)initWithText:(NSString *)text type:(NSString *)type {
+-(id)initWithType:(NSString *)type value:(NSString *)value {
     self = [self init];
     if (self) {
-        [self setText:text];
         [self setType:type];
+        [self setValue:value];
     }
+
     return self;
 }
 
+
 -(NSURL *)openURL {
-    NSString *urlString = [[self prefix] stringByAppendingFormat:@"%@",self.text];
+    NSString *urlString = [[self prefix] stringByAppendingFormat:@"%@",self.value];
     NSURL *url = [NSURL URLWithString:[urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
     return url;
 }
+
 
 -(NSString *)prefix {
     if ([self.type isEqualToString:@"mail"]) {
@@ -33,6 +37,8 @@
     } else if ([self.type isEqualToString:@"site"]) {
         return @"";
     }
+
     return @"";
 }
+
 @end

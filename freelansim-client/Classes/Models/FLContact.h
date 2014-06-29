@@ -8,12 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
+
 @interface FLContact : NSObject
 
--(id)initWithText:(NSString *)text type:(NSString *)type;
-
 @property (nonatomic,retain) NSString *type;
-@property (nonatomic,retain) NSString *text;
+@property (nonatomic,retain) NSString *value;
 
+-(id)initWithType:(NSString *)type value:(NSString *)value;
 -(NSURL *)openURL;
+
 @end

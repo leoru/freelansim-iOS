@@ -88,7 +88,7 @@
             if (html) {
                 NSError *error;
                 FLHTMLParser *parser = [[FLHTMLParser alloc] initWithData:html error:&error];
-                FLTask *t = [parser parseToTask:task];
+                FLTask *t = [parser parseTask:task];
                 dispatch_async(dispatch_get_main_queue(), ^{
                     success(t,operation,responseObject);
                 });
@@ -116,7 +116,7 @@
         if (html) {
             NSError *error;
             FLHTMLParser *parser = [[FLHTMLParser alloc] initWithData:html error:&error];
-            NSArray *freelancers = [parser parseFreelancers];
+            NSArray *freelancers = [parser parseFreelancerList];
             
             BOOL stop = NO;
             if (freelancers.count == 0) {
@@ -135,13 +135,13 @@
 }
 
 -(void)loadFreelancer:(FLFreelancer *)freelancer withSuccess:(FLHTTPClientSuccessWithFreelancerObject)success failure:(FLHTTPClientFailure)failure {
-    [self getPath:freelancer.link parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [self getPath:freelancer.profile parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
             NSData *html = (NSData *)responseObject;
             if (html) {
                 NSError *error;
                 FLHTMLParser *parser = [[FLHTMLParser alloc] initWithData:html error:&error];
-                FLFreelancer *fl = [parser parseToFreelancer:freelancer];
+                FLFreelancer *fl = [parser parseFreelancer:freelancer];
                 dispatch_async(dispatch_get_main_queue(), ^{
                     success(fl,operation,responseObject);
                 });
