@@ -69,7 +69,7 @@
     scrollViewHeight = 159;
     
     self.statView.layer.borderWidth = 1.0f;
-    self.statView.layer.borderColor = [UIColor colorWithRed:0.18f green:0.18f blue:0.18f alpha:1.00f].CGColor;
+    self.statView.layer.borderColor = [UIColor colorWithRed:0.31 green:0.38 blue:0.45 alpha:1].CGColor;
     self.statView.backgroundColor = [UIColor clearColor];
     self.statView.layer.cornerRadius = 5.0f;
     

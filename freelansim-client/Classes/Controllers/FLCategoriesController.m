@@ -77,7 +77,7 @@
     categoryTitle.text = category.title;
     [categoryTitle setAdjustsFontSizeToFitWidth:YES];
     UIView *backgroundView = [[UIView alloc] initWithFrame:CGRectZero];
-    backgroundView.backgroundColor = [UIColor colorWithRed:0.88f green:0.54f blue:0.42f alpha:1.00f];
+    backgroundView.backgroundColor = kDefaultBlueColor;
     cell.selectedBackgroundView = backgroundView;
     
     for (FLCategory *cat in self.selectedCategories) {

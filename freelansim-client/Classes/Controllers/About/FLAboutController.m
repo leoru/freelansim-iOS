@@ -27,7 +27,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self.mailButton setTitleColor:kBaseNavBarColor forState:UIControlStateNormal];
+    [self.mailButton setTitleColor:kDefaultBlueColor forState:UIControlStateNormal];
     self.view.backgroundColor = [UIColor patternBackgroundColor];
 }
 
