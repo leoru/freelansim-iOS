@@ -16,8 +16,6 @@
 		6A1F1B6C16A1489E00712924 /* UIColor+FreelansimAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A1F1B6B16A1489E00712924 /* UIColor+FreelansimAdditions.m */; };
 		6A1F1B7716A151FB00712924 /* grey@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A1F1B7516A151FB00712924 /* grey@2x.png */; };
 		6A1F1B7816A151FB00712924 /* grey.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A1F1B7616A151FB00712924 /* grey.png */; };
-		6A1F1B7E16A156A300712924 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A1F1B7D16A156A300712924 /* Icon.png */; };
-		6A1F1B8016A156A500712924 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A1F1B7F16A156A500712924 /* Icon@2x.png */; };
 		6A2677841680877800F178E7 /* FLHTMLUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A2677831680877800F178E7 /* FLHTMLUtils.m */; };
 		6A26778F16809CCB00F178E7 /* DWTagList.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A26778E16809CCB00F178E7 /* DWTagList.m */; };
 		6A26779B1680A1AF00F178E7 /* FLCategoriesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A26779A1680A1AF00F178E7 /* FLCategoriesController.m */; };
@@ -66,7 +64,7 @@
 		6ABDC81B1894EBC50070182D /* cell-checkmark-highlighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6ABDC8171894EBC40070182D /* cell-checkmark-highlighted@2x.png */; };
 		6ABDC81C1894EBC50070182D /* cell-checkmark.png in Resources */ = {isa = PBXBuildFile; fileRef = 6ABDC8181894EBC40070182D /* cell-checkmark.png */; };
 		6ABDC81D1894EBC50070182D /* cell-checkmark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6ABDC8191894EBC50070182D /* cell-checkmark@2x.png */; };
-		6AD8DB63184A51F00082C2C0 /* icon-120.png in Resources */ = {isa = PBXBuildFile; fileRef = 6AD8DB60184A51F00082C2C0 /* icon-120.png */; };
+		6AC1F96A1961A2B000451887 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6AC1F9691961A2B000451887 /* Images.xcassets */; };
 		6AD8DB68184A53CB0082C2C0 /* CategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AD8DB67184A53CB0082C2C0 /* CategoryCell.m */; };
 		6AD8DB6B184A53DE0082C2C0 /* FavouriteCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AD8DB6A184A53DE0082C2C0 /* FavouriteCell.m */; };
 		6AED8737167D9B3500EBC6CD /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AED8736167D9B3500EBC6CD /* CoreImage.framework */; };
@@ -138,8 +136,6 @@
 		6A1F1B6B16A1489E00712924 /* UIColor+FreelansimAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+FreelansimAdditions.m"; sourceTree = "<group>"; };
 		6A1F1B7516A151FB00712924 /* grey@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "grey@2x.png"; path = "Resources/grey@2x.png"; sourceTree = "<group>"; };
 		6A1F1B7616A151FB00712924 /* grey.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = grey.png; path = Resources/grey.png; sourceTree = "<group>"; };
-		6A1F1B7D16A156A300712924 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
-		6A1F1B7F16A156A500712924 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		6A2677821680877800F178E7 /* FLHTMLUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FLHTMLUtils.h; path = Classes/Utils/FLHTMLUtils.h; sourceTree = "<group>"; };
 		6A2677831680877800F178E7 /* FLHTMLUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FLHTMLUtils.m; path = Classes/Utils/FLHTMLUtils.m; sourceTree = "<group>"; };
 		6A26778D16809CCB00F178E7 /* DWTagList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWTagList.h; sourceTree = "<group>"; };
@@ -208,7 +204,7 @@
 		6ABDC8171894EBC40070182D /* cell-checkmark-highlighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "cell-checkmark-highlighted@2x.png"; path = "Resources/cell-checkmark-highlighted@2x.png"; sourceTree = "<group>"; };
 		6ABDC8181894EBC40070182D /* cell-checkmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "cell-checkmark.png"; path = "Resources/cell-checkmark.png"; sourceTree = "<group>"; };
 		6ABDC8191894EBC50070182D /* cell-checkmark@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "cell-checkmark@2x.png"; path = "Resources/cell-checkmark@2x.png"; sourceTree = "<group>"; };
-		6AD8DB60184A51F00082C2C0 /* icon-120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-120.png"; path = "Resources/icon-120.png"; sourceTree = "<group>"; };
+		6AC1F9691961A2B000451887 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ../freelansim/Images.xcassets; sourceTree = "<group>"; };
 		6AD8DB66184A53CB0082C2C0 /* CategoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CategoryCell.h; path = Views/Cells/CategoryCell.h; sourceTree = "<group>"; };
 		6AD8DB67184A53CB0082C2C0 /* CategoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CategoryCell.m; path = Views/Cells/CategoryCell.m; sourceTree = "<group>"; };
 		6AD8DB69184A53DE0082C2C0 /* FavouriteCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FavouriteCell.h; path = Views/Cells/FavouriteCell.h; sourceTree = "<group>"; };
@@ -425,8 +421,6 @@
 			isa = PBXGroup;
 			children = (
 				6A4F7FE81833FBC300215FE1 /* Podfile */,
-				6A1F1B7F16A156A500712924 /* Icon@2x.png */,
-				6A1F1B7D16A156A300712924 /* Icon.png */,
 				6A529AE8167A47AF009A1CCB /* freelansim-client */,
 				6A529B17167A47AF009A1CCB /* freelansim-clientTests */,
 				6A529AE1167A47AF009A1CCB /* Frameworks */,
@@ -655,11 +649,11 @@
 		A429B35A167F3AD400078D1E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				6AC1F9691961A2B000451887 /* Images.xcassets */,
 				6ABDC8161894EBC40070182D /* cell-checkmark-highlighted.png */,
 				6ABDC8171894EBC40070182D /* cell-checkmark-highlighted@2x.png */,
 				6ABDC8181894EBC40070182D /* cell-checkmark.png */,
 				6ABDC8191894EBC50070182D /* cell-checkmark@2x.png */,
-				6AD8DB60184A51F00082C2C0 /* icon-120.png */,
 				6AD8DB591849E97F0082C2C0 /* launch */,
 				6ABADFFD1849DE42003EE481 /* furley_bg@2X.png */,
 				6ABADFFE1849DE42003EE481 /* furley_bg.png */,
@@ -820,7 +814,6 @@
 				6ABADFFC1849D7A5003EE481 /* LoadingCell.xib in Resources */,
 				6ABADFF91849D7A5003EE481 /* FLEmptyCell.xib in Resources */,
 				6ABDC81B1894EBC50070182D /* cell-checkmark-highlighted@2x.png in Resources */,
-				6AD8DB63184A51F00082C2C0 /* icon-120.png in Resources */,
 				6AA0AA601697FF6800FE28E3 /* 0299.png in Resources */,
 				6ABDC81D1894EBC50070182D /* cell-checkmark@2x.png in Resources */,
 				6AA0AA611697FF6800FE28E3 /* 0260.png in Resources */,
@@ -839,6 +832,7 @@
 				8BA6342F16A0074100BF14F2 /* star_on.png in Resources */,
 				8BA6343016A0074100BF14F2 /* star_on@2x.png in Resources */,
 				A46E89BA16A0245B00FD0048 /* ISRefresgControlIcon.png in Resources */,
+				6AC1F96A1961A2B000451887 /* Images.xcassets in Resources */,
 				A46E89BB16A0245B00FD0048 /* ISRefresgControlIcon@2x.png in Resources */,
 				8BA6343716A01B9300BF14F2 /* 0017.png in Resources */,
 				8BA6343816A01B9300BF14F2 /* 0017@2x.png in Resources */,
@@ -847,8 +841,6 @@
 				6ABADFF71849D7A5003EE481 /* CategoryCell.xib in Resources */,
 				6A1F1B7716A151FB00712924 /* grey@2x.png in Resources */,
 				6A1F1B7816A151FB00712924 /* grey.png in Resources */,
-				6A1F1B7E16A156A300712924 /* Icon.png in Resources */,
-				6A1F1B8016A156A500712924 /* Icon@2x.png in Resources */,
 				8BA6345C16A3B97400BF14F2 /* DannyImage.png in Resources */,
 				8BA6345D16A3B97400BF14F2 /* KunstImage.png in Resources */,
 				6ABADFF81849D7A5003EE481 /* FavouriteCell.xib in Resources */,
@@ -1047,6 +1039,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = CB0AF9F7B17F4CB7B2ECC008 /* Pods.xcconfig */;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Creative LLC (7769S96MGR)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1064,6 +1058,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = CB0AF9F7B17F4CB7B2ECC008 /* Pods.xcconfig */;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Kirill Kunst (Z9BGBYPL8S)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
