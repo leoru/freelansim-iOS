@@ -8,11 +8,31 @@
 #import "DWTagList.h"
 #import <QuartzCore/QuartzCore.h>
 
+
+@interface LowerCaseLabel : UILabel
+
+- (void)drawRect:(CGRect)rect;
+
+@end
+
+
+@implementation LowerCaseLabel
+
+- (void)drawRect:(CGRect)rect
+{
+	CGRect centeredRect = CGRectMake(rect.origin.x, (self.font.xHeight - self.font.capHeight) * 0.5, rect.size.width, rect.size.height);
+	[super drawTextInRect:centeredRect];
+}
+
+@end
+
+
 @interface DWTagList()
 
 - (void)touchedTag:(id)sender;
 
 @end
+
 
 @implementation DWTagList
 
@@ -65,7 +85,7 @@
         textSize.height += VERTICAL_PADDING*2;
         UILabel *label = nil;
         if (!gotPreviousFrame) {
-            label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, textSize.width, textSize.height)];
+            label = [[LowerCaseLabel alloc] initWithFrame:CGRectMake(0, 0, textSize.width, textSize.height)];
             totalHeight = textSize.height;
         } else {
             CGRect newRect = CGRectZero;
@@ -76,7 +96,7 @@
                 newRect.origin = CGPointMake(previousFrame.origin.x + previousFrame.size.width + LABEL_MARGIN, previousFrame.origin.y);
             }
             newRect.size = textSize;
-            label = [[UILabel alloc] initWithFrame:newRect];
+            label = [[LowerCaseLabel alloc] initWithFrame:newRect];
         }
         previousFrame = label.frame;
         gotPreviousFrame = YES;
@@ -88,7 +108,7 @@
         }
         [label setTextColor:TEXT_COLOR];
         [label setText:text];
-        [label setTextAlignment:UITextAlignmentCenter];
+        [label setTextAlignment:NSTextAlignmentCenter];
         [label setShadowColor:TEXT_SHADOW_COLOR];
         [label setShadowOffset:TEXT_SHADOW_OFFSET];
         [label.layer setMasksToBounds:YES];

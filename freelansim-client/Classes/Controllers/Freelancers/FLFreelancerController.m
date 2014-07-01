@@ -100,6 +100,8 @@
     
     self.priceLabel.text = self.freelancer.price;
     self.nameLabel.text = self.freelancer.name;
+	self.nameLabel.font = [UIFont boldSystemFontOfSize:17.0f];
+	self.nameLabel.textColor = DefaultBlueColor;
     self.specialityLabel.text = self.freelancer.speciality;
     self.locationLabel.text = self.freelancer.location;
     self.line = [[UIView alloc] initWithFrame:CGRectMake(20.0f, 160.0f, 280.0f, 1.0f)];
@@ -169,7 +171,7 @@
         self.contactsView.frame = CGRectMake(10.0f, scrollViewHeight, 300.0f, contactsHeight);
         UILabel *titleLabel = [[UILabel alloc] initWithFrame:self.contactsView.frame];
         titleLabel.backgroundColor = [UIColor clearColor];
-        titleLabel.frame = CGRectMake(0.0f,5.0f,300.0f,40.0f);
+        titleLabel.frame = CGRectMake(0.0f,5.0f,300.0f,30.0f);
         titleLabel.text = @"Контакты";
         [titleLabel sizeToFit];
         contactsHeight += titleLabel.frame.size.height;
@@ -179,16 +181,17 @@
             FLContactButton *btn = [[FLContactButton alloc] init];
             btn.contact = contact;
             
-            btn.frame = CGRectMake(0,(i*40) + titleLabel.frame.origin.y + titleLabel.frame.size.height + 10,200.0f,20.0f);
-            [btn setTitle:contact.value forState:UIControlStateNormal];
-            [UIRender renderContactsButton:btn];
+            btn.frame = CGRectMake(0, (28 * i) + titleLabel.frame.origin.y + titleLabel.frame.size.height, 200.0f, 20.0f);
+            [btn setTitle:[NSString stringWithFormat:@"%@: %@", contact.type, contact.value] forState:UIControlStateNormal];
+			[UIRender renderContactsButton:btn];
+			[btn setTitleColor:DefaultBlueColor forState:UIControlStateNormal];
             
             [btn sizeToFit];
             btn.frame = CGRectMake(btn.frame.origin.x,btn.frame.origin.y,btn.frame.size.width + 10, btn.frame.size.height);
             [self.contactsView addSubview:btn];
-            
+
             [btn addTarget:self action:@selector(contactClick:) forControlEvents:UIControlEventTouchUpInside];
-            contactsHeight += btn.frame.size.height + 10;
+            contactsHeight += btn.frame.size.height;
             i++;
         }
         [self.contactsView addSubview:titleLabel];
@@ -200,7 +203,7 @@
     } else {
         self.contactsView = [[UIView alloc] init];
         self.contactsView.backgroundColor = [UIColor clearColor];
-        self.contactsView.frame = CGRectMake(10.0f, self.line.frame.origin.y + 10, 300.0f, 0.0f);
+        self.contactsView.frame = CGRectMake(10.0f, self.line.frame.origin.y, 300.0f, 0.0f);
     }
     
     scrollViewHeight += self.contactsView.frame.size.height + 10;
