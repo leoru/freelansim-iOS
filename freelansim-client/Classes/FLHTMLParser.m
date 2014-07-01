@@ -185,6 +185,8 @@
 	NSArray *messengerEntries = [messengersNode findChildTags:@"li"];
 	for (HTMLNode *messengerEntry in messengerEntries) {
 		NSString *messengerType = [[messengerEntry findChildOfClass:@"data__label"] contents];
+		if (messengerType && [messengerType characterAtIndex:[messengerType length] - 1] == ':')
+			messengerType = [messengerType substringToIndex:[messengerType length] - 1];
 		NSString *messengerValue = [[messengerEntry findChildOfClass:@"data__value"] contents];
 		if (messengerType && messengerValue) {
 			contact = [[FLContact alloc] initWithType:messengerType value:messengerValue];
