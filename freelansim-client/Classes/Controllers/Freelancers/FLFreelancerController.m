@@ -142,14 +142,18 @@
     
     for (FLContact *contact in self.freelancer.contacts) {
         NSString *action = @"";
-        if ([contact.type isEqualToString:@"mail"])
+        if ([contact.type isEqualToString:@"mail"]) {
             action = @"Написать письмо";
-        else if (([contact.type isEqualToString:@"phone"]) && ((iPadRange.location != NSNotFound) || (iPhoneRange.location != NSNotFound)))
+			[actions addObject:action];
+		}
+        else if (([contact.type isEqualToString:@"phone"]) && ((iPadRange.location != NSNotFound) || (iPhoneRange.location != NSNotFound))) {
             action = @"Позвонить";
-        else if ([contact.type isEqualToString:@"site"])
+			[actions addObject:action];
+		}
+        else if ([contact.type isEqualToString:@"site"]) {
             action = @"Перейти на сайт";
-        
-        [actions addObject:action];
+			[actions addObject:action];
+		}
     }
     self.actionSheet = [[UIActionSheet alloc] initWithTitle:@"Выберите действие" delegate:self cancelButtonTitle:nil destructiveButtonTitle:nil otherButtonTitles: nil];
     
