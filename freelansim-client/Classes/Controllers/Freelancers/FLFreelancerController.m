@@ -13,6 +13,7 @@
 #import "FLContact.h"
 #import "FLHTMLUtils.h"
 #import "DWTagList.h"
+#import "FLLinkButton.h"
 #import "FLContactButton.h"
 #import "FLManagedFreelancer.h"
 #import "FLManagedTag.h"
@@ -167,6 +168,54 @@
 
 
 #pragma mark - Draw content
+-(void)drawLinksForm {
+    if (self.freelancer.links.count > 0) {
+        int linksHeight = 0;
+        self.linksView = [[UIView alloc] init];
+        self.linksView.backgroundColor = [UIColor clearColor];
+        self.linksView.frame = CGRectMake(10.0f, scrollViewHeight, 300.0f, linksHeight);
+        UILabel *titleLabel = [[UILabel alloc] initWithFrame:self.linksView.frame];
+        titleLabel.backgroundColor = [UIColor clearColor];
+        titleLabel.frame = CGRectMake(0.0f,5.0f,300.0f,30.0f);
+        titleLabel.text = @"Ссылки";
+        [titleLabel sizeToFit];
+        linksHeight += titleLabel.frame.size.height;
+
+        int i = 0;
+        for (NSString *link in self.freelancer.links) {
+            FLLinkButton *linkButton = [[FLLinkButton alloc] init];
+			linkButton.link = link;
+
+            linkButton.frame = CGRectMake(0, (28 * i) + titleLabel.frame.origin.y + titleLabel.frame.size.height, 240.0f, 20.0f);
+            [linkButton setTitle:link forState:UIControlStateNormal];
+			[UIRender renderContactsButton:linkButton];
+			[linkButton setTitleColor:DefaultBlueColor forState:UIControlStateNormal];
+
+            [linkButton sizeToFit];
+            linkButton.frame = CGRectMake(linkButton.frame.origin.x,linkButton.frame.origin.y,linkButton.frame.size.width + 10, linkButton.frame.size.height);
+            [self.linksView addSubview:linkButton];
+
+            [linkButton addTarget:self action:@selector(linkClick:) forControlEvents:UIControlEventTouchUpInside];
+            linksHeight += linkButton.frame.size.height;
+            i++;
+        }
+        [self.linksView addSubview:titleLabel];
+        CGRect frame = self.linksView.frame;
+        frame.size.height = linksHeight;
+        [self.linksView setFrame:frame];
+        [self.scrollView addSubview:self.linksView];
+
+    } else {
+        self.linksView = [[UIView alloc] init];
+        self.linksView.backgroundColor = [UIColor clearColor];
+        self.linksView.frame = CGRectMake(10.0f, self.line.frame.origin.y, 300.0f, 0.0f);
+    }
+
+    scrollViewHeight += self.linksView.frame.size.height + 10;
+}
+
+
+#pragma mark - Draw content
 -(void)drawContactsForm {
     if (self.freelancer.contacts.count > 0) {
         int contactsHeight = 0;
@@ -182,20 +231,20 @@
         
         int i = 0;
         for (FLContact *contact in self.freelancer.contacts) {
-            FLContactButton *btn = [[FLContactButton alloc] init];
-            btn.contact = contact;
+            FLContactButton *contactButton = [[FLContactButton alloc] init];
+            contactButton.contact = contact;
             
-            btn.frame = CGRectMake(0, (28 * i) + titleLabel.frame.origin.y + titleLabel.frame.size.height, 200.0f, 20.0f);
-            [btn setTitle:[NSString stringWithFormat:@"%@: %@", contact.type, contact.value] forState:UIControlStateNormal];
-			[UIRender renderContactsButton:btn];
-			[btn setTitleColor:DefaultBlueColor forState:UIControlStateNormal];
+            contactButton.frame = CGRectMake(0, (28 * i) + titleLabel.frame.origin.y + titleLabel.frame.size.height, 200.0f, 20.0f);
+            [contactButton setTitle:[NSString stringWithFormat:@"%@: %@", contact.type, contact.value] forState:UIControlStateNormal];
+			[UIRender renderContactsButton:contactButton];
+			[contactButton setTitleColor:DefaultBlueColor forState:UIControlStateNormal];
             
-            [btn sizeToFit];
-            btn.frame = CGRectMake(btn.frame.origin.x,btn.frame.origin.y,btn.frame.size.width + 10, btn.frame.size.height);
-            [self.contactsView addSubview:btn];
+            [contactButton sizeToFit];
+            contactButton.frame = CGRectMake(contactButton.frame.origin.x,contactButton.frame.origin.y,contactButton.frame.size.width + 10, contactButton.frame.size.height);
+            [self.contactsView addSubview:contactButton];
 
-            [btn addTarget:self action:@selector(contactClick:) forControlEvents:UIControlEventTouchUpInside];
-            contactsHeight += btn.frame.size.height;
+            [contactButton addTarget:self action:@selector(contactClick:) forControlEvents:UIControlEventTouchUpInside];
+            contactsHeight += contactButton.frame.size.height;
             i++;
         }
         [self.contactsView addSubview:titleLabel];
@@ -207,7 +256,7 @@
     } else {
         self.contactsView = [[UIView alloc] init];
         self.contactsView.backgroundColor = [UIColor clearColor];
-        self.contactsView.frame = CGRectMake(10.0f, self.line.frame.origin.y, 300.0f, 0.0f);
+        self.contactsView.frame = CGRectMake(10.0f, self.linksView.frame.origin.y, 300.0f, 0.0f);
     }
     
     scrollViewHeight += self.contactsView.frame.size.height + 10;
@@ -326,6 +375,14 @@
 }
 
 
+#pragma mark - Link Button Click
+-(void)linkClick:(id)sender {
+    FLLinkButton *linkButton = (FLLinkButton *)sender;
+    NSURL *url = [NSURL URLWithString:[linkButton.link stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+    [[UIApplication sharedApplication] openURL:url];
+}
+
+
 #pragma mark - Contact Button Click
 -(void)contactClick:(id)sender {
     FLContactButton *btn = (FLContactButton *)sender;
@@ -342,6 +399,7 @@
     frame.origin.y = scrollViewHeight;
     self.webView.frame = frame;
     scrollViewHeight += self.webView.frame.size.height + 10;
+	[self drawLinksForm];
     [self drawContactsForm];
     if (self.freelancer.tags.count > 0) {
         CGRect skillViewFrame = self.skillsView.frame;

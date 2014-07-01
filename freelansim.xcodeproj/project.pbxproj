@@ -100,6 +100,7 @@
 		A46E89BD16A0245B00FD0048 /* ISRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = A46E89B516A0245B00FD0048 /* ISRefreshControl.m */; };
 		A46E89BE16A0245B00FD0048 /* ISUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = A46E89B716A0245B00FD0048 /* ISUtility.m */; };
 		A46E89BF16A0245B00FD0048 /* UITableViewController+RefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = A46E89B916A0245B00FD0048 /* UITableViewController+RefreshControl.m */; };
+		A8EE826D19627F60000BC0D8 /* FLLinkButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A8EE826C19627F60000BC0D8 /* FLLinkButton.m */; };
 		A8FB8C89195D824B0022FC38 /* FLManagedFreelancer.m in Sources */ = {isa = PBXBuildFile; fileRef = A8FB8C80195D824B0022FC38 /* FLManagedFreelancer.m */; };
 		A8FB8C8A195D824B0022FC38 /* FLManagedLink.m in Sources */ = {isa = PBXBuildFile; fileRef = A8FB8C82195D824B0022FC38 /* FLManagedLink.m */; };
 		A8FB8C8B195D824B0022FC38 /* FLManagedContact.m in Sources */ = {isa = PBXBuildFile; fileRef = A8FB8C84195D824B0022FC38 /* FLManagedContact.m */; };
@@ -252,6 +253,8 @@
 		A46E89B716A0245B00FD0048 /* ISUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISUtility.m; sourceTree = "<group>"; };
 		A46E89B816A0245B00FD0048 /* UITableViewController+RefreshControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewController+RefreshControl.h"; sourceTree = "<group>"; };
 		A46E89B916A0245B00FD0048 /* UITableViewController+RefreshControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewController+RefreshControl.m"; sourceTree = "<group>"; };
+		A8EE826B19627F60000BC0D8 /* FLLinkButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLLinkButton.h; sourceTree = "<group>"; };
+		A8EE826C19627F60000BC0D8 /* FLLinkButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLLinkButton.m; sourceTree = "<group>"; };
 		A8FB8C7F195D824B0022FC38 /* FLManagedFreelancer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FLManagedFreelancer.h; path = Classes/Models/FLManagedFreelancer.h; sourceTree = "<group>"; };
 		A8FB8C80195D824B0022FC38 /* FLManagedFreelancer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FLManagedFreelancer.m; path = Classes/Models/FLManagedFreelancer.m; sourceTree = "<group>"; };
 		A8FB8C81195D824B0022FC38 /* FLManagedLink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FLManagedLink.h; path = Classes/Models/FLManagedLink.h; sourceTree = "<group>"; };
@@ -538,6 +541,8 @@
 				8B14730D169EBE5300AD7027 /* FLFavouriteDeleteButton.m */,
 				6A1F1B6A16A1489E00712924 /* UIColor+FreelansimAdditions.h */,
 				6A1F1B6B16A1489E00712924 /* UIColor+FreelansimAdditions.m */,
+				A8EE826B19627F60000BC0D8 /* FLLinkButton.h */,
+				A8EE826C19627F60000BC0D8 /* FLLinkButton.m */,
 			);
 			name = UI;
 			path = Classes/UI;
@@ -928,6 +933,7 @@
 				A8FB8C8D195D824B0022FC38 /* FLManagedTag.m in Sources */,
 				A46E89BD16A0245B00FD0048 /* ISRefreshControl.m in Sources */,
 				A46E89BE16A0245B00FD0048 /* ISUtility.m in Sources */,
+				A8EE826D19627F60000BC0D8 /* FLLinkButton.m in Sources */,
 				6ABADFEF1849D753003EE481 /* FLFreelancerCell.m in Sources */,
 				A46E89BF16A0245B00FD0048 /* UITableViewController+RefreshControl.m in Sources */,
 				8BA6343416A00FF400BF14F2 /* FLFirstFavoritesCreator.m in Sources */,
