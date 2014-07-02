@@ -31,7 +31,7 @@
 {
     [super viewDidLoad];
     
-    refreshControl = [[ISRefreshControl alloc] init];
+    refreshControl = [[UIRefreshControl alloc] init];
     [self.freelancersTable addSubview:refreshControl];
     [refreshControl addTarget:self
                        action:@selector(refresh)

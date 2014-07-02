@@ -94,12 +94,6 @@
 		A429B366167F3B0C00078D1E /* 0053@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A429B360167F3B0C00078D1E /* 0053@2x.png */; };
 		A429B367167F3B0C00078D1E /* 0220.png in Resources */ = {isa = PBXBuildFile; fileRef = A429B361167F3B0C00078D1E /* 0220.png */; };
 		A429B368167F3B0C00078D1E /* 0220@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A429B362167F3B0C00078D1E /* 0220@2x.png */; };
-		A46E89BA16A0245B00FD0048 /* ISRefresgControlIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = A46E89B016A0245B00FD0048 /* ISRefresgControlIcon.png */; };
-		A46E89BB16A0245B00FD0048 /* ISRefresgControlIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A46E89B116A0245B00FD0048 /* ISRefresgControlIcon@2x.png */; };
-		A46E89BC16A0245B00FD0048 /* ISGumView.m in Sources */ = {isa = PBXBuildFile; fileRef = A46E89B316A0245B00FD0048 /* ISGumView.m */; };
-		A46E89BD16A0245B00FD0048 /* ISRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = A46E89B516A0245B00FD0048 /* ISRefreshControl.m */; };
-		A46E89BE16A0245B00FD0048 /* ISUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = A46E89B716A0245B00FD0048 /* ISUtility.m */; };
-		A46E89BF16A0245B00FD0048 /* UITableViewController+RefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = A46E89B916A0245B00FD0048 /* UITableViewController+RefreshControl.m */; };
 		A8EE826D19627F60000BC0D8 /* FLLinkButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A8EE826C19627F60000BC0D8 /* FLLinkButton.m */; };
 		A8FB8C89195D824B0022FC38 /* FLManagedFreelancer.m in Sources */ = {isa = PBXBuildFile; fileRef = A8FB8C80195D824B0022FC38 /* FLManagedFreelancer.m */; };
 		A8FB8C8A195D824B0022FC38 /* FLManagedLink.m in Sources */ = {isa = PBXBuildFile; fileRef = A8FB8C82195D824B0022FC38 /* FLManagedLink.m */; };
@@ -243,16 +237,6 @@
 		A429B360167F3B0C00078D1E /* 0053@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "0053@2x.png"; sourceTree = "<group>"; };
 		A429B361167F3B0C00078D1E /* 0220.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 0220.png; sourceTree = "<group>"; };
 		A429B362167F3B0C00078D1E /* 0220@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "0220@2x.png"; sourceTree = "<group>"; };
-		A46E89B016A0245B00FD0048 /* ISRefresgControlIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ISRefresgControlIcon.png; sourceTree = "<group>"; };
-		A46E89B116A0245B00FD0048 /* ISRefresgControlIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ISRefresgControlIcon@2x.png"; sourceTree = "<group>"; };
-		A46E89B216A0245B00FD0048 /* ISGumView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISGumView.h; sourceTree = "<group>"; };
-		A46E89B316A0245B00FD0048 /* ISGumView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISGumView.m; sourceTree = "<group>"; };
-		A46E89B416A0245B00FD0048 /* ISRefreshControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISRefreshControl.h; sourceTree = "<group>"; };
-		A46E89B516A0245B00FD0048 /* ISRefreshControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISRefreshControl.m; sourceTree = "<group>"; };
-		A46E89B616A0245B00FD0048 /* ISUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISUtility.h; sourceTree = "<group>"; };
-		A46E89B716A0245B00FD0048 /* ISUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISUtility.m; sourceTree = "<group>"; };
-		A46E89B816A0245B00FD0048 /* UITableViewController+RefreshControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewController+RefreshControl.h"; sourceTree = "<group>"; };
-		A46E89B916A0245B00FD0048 /* UITableViewController+RefreshControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewController+RefreshControl.m"; sourceTree = "<group>"; };
 		A8EE826B19627F60000BC0D8 /* FLLinkButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLLinkButton.h; sourceTree = "<group>"; };
 		A8EE826C19627F60000BC0D8 /* FLLinkButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLLinkButton.m; sourceTree = "<group>"; };
 		A8FB8C7F195D824B0022FC38 /* FLManagedFreelancer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FLManagedFreelancer.h; path = Classes/Models/FLManagedFreelancer.h; sourceTree = "<group>"; };
@@ -511,7 +495,6 @@
 		6A529B29167A47EC009A1CCB /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
-				A46E89AE16A0245B00FD0048 /* ISRefreshControl */,
 				6A26778C16809CCB00F178E7 /* TagList */,
 			);
 			name = Vendor;
@@ -700,32 +683,6 @@
 			path = Resources/Icons;
 			sourceTree = "<group>";
 		};
-		A46E89AE16A0245B00FD0048 /* ISRefreshControl */ = {
-			isa = PBXGroup;
-			children = (
-				A46E89AF16A0245B00FD0048 /* Images */,
-				A46E89B216A0245B00FD0048 /* ISGumView.h */,
-				A46E89B316A0245B00FD0048 /* ISGumView.m */,
-				A46E89B416A0245B00FD0048 /* ISRefreshControl.h */,
-				A46E89B516A0245B00FD0048 /* ISRefreshControl.m */,
-				A46E89B616A0245B00FD0048 /* ISUtility.h */,
-				A46E89B716A0245B00FD0048 /* ISUtility.m */,
-				A46E89B816A0245B00FD0048 /* UITableViewController+RefreshControl.h */,
-				A46E89B916A0245B00FD0048 /* UITableViewController+RefreshControl.m */,
-			);
-			name = ISRefreshControl;
-			path = Vendor/ISRefreshControl;
-			sourceTree = "<group>";
-		};
-		A46E89AF16A0245B00FD0048 /* Images */ = {
-			isa = PBXGroup;
-			children = (
-				A46E89B016A0245B00FD0048 /* ISRefresgControlIcon.png */,
-				A46E89B116A0245B00FD0048 /* ISRefresgControlIcon@2x.png */,
-			);
-			path = Images;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -836,9 +793,7 @@
 				8BA6342E16A0074100BF14F2 /* star_off@2x.png in Resources */,
 				8BA6342F16A0074100BF14F2 /* star_on.png in Resources */,
 				8BA6343016A0074100BF14F2 /* star_on@2x.png in Resources */,
-				A46E89BA16A0245B00FD0048 /* ISRefresgControlIcon.png in Resources */,
 				6AC1F96A1961A2B000451887 /* Images.xcassets in Resources */,
-				A46E89BB16A0245B00FD0048 /* ISRefresgControlIcon@2x.png in Resources */,
 				8BA6343716A01B9300BF14F2 /* 0017.png in Resources */,
 				8BA6343816A01B9300BF14F2 /* 0017@2x.png in Resources */,
 				6ABDC81A1894EBC50070182D /* cell-checkmark-highlighted.png in Resources */,
@@ -929,13 +884,9 @@
 				6AD8DB6B184A53DE0082C2C0 /* FavouriteCell.m in Sources */,
 				8B68D63D169E8272009FE17A /* FLFavouritesController.m in Sources */,
 				8B14730E169EBE5300AD7027 /* FLFavouriteDeleteButton.m in Sources */,
-				A46E89BC16A0245B00FD0048 /* ISGumView.m in Sources */,
 				A8FB8C8D195D824B0022FC38 /* FLManagedTag.m in Sources */,
-				A46E89BD16A0245B00FD0048 /* ISRefreshControl.m in Sources */,
-				A46E89BE16A0245B00FD0048 /* ISUtility.m in Sources */,
 				A8EE826D19627F60000BC0D8 /* FLLinkButton.m in Sources */,
 				6ABADFEF1849D753003EE481 /* FLFreelancerCell.m in Sources */,
-				A46E89BF16A0245B00FD0048 /* UITableViewController+RefreshControl.m in Sources */,
 				8BA6343416A00FF400BF14F2 /* FLFirstFavoritesCreator.m in Sources */,
 				8BA6343C16A01CF100BF14F2 /* FLAboutController.m in Sources */,
 				6A1F1B6C16A1489E00712924 /* UIColor+FreelansimAdditions.m in Sources */,
