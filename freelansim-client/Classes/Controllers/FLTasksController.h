@@ -10,7 +10,6 @@
 #import "FLHTTPClient.h"
 #import "FLTask.h"
 #import "FLCategoriesController.h"
-#import "ISRefreshControl.h"
 
 @interface FLTasksController : FLBaseController <UITableViewDataSource, UITableViewDelegate, FLCategoriesDelegate, UISearchBarDelegate>
 {
@@ -18,12 +17,14 @@
     BOOL stopSearch;
     FLTask *selectedTask;
     NSString *searchQuery;
-    ISRefreshControl *refreshControl;
+    UIRefreshControl *refreshControl;
 }
+
 @property (weak, nonatomic) IBOutlet UIView *clearView;
 @property (weak, nonatomic) IBOutlet UITableView *tasksTable;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 
 @property (nonatomic,retain) NSMutableArray *tasks;
 @property (nonatomic,retain) NSArray *selectedCategories;
+
 @end

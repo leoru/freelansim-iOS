@@ -27,6 +27,7 @@
 @property (weak, nonatomic) IBOutlet UIView *skillsView;
 
 @property (nonatomic,retain) UIActionSheet *actionSheet;
+@property (nonatomic,retain) UIView *linksView;
 @property (nonatomic,retain) UIView *contactsView;
 @property (nonatomic,retain) FLFreelancer *freelancer;
 
