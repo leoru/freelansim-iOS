@@ -22,7 +22,8 @@
     return sharedClient;
 }
 
--(id)init{
+
+-(id)init {
     NSURL *baseURL = [NSURL URLWithString:FLServerHostString];
     if (self =[super initWithBaseURL:baseURL]) {
         [self registerHTTPOperationClass:[AFHTTPRequestOperation class]];
@@ -32,12 +33,14 @@
     return self;
 }
 
+
 - (NSMutableURLRequest *)requestWithMethod:(NSString *)method path:(NSString *)path parameters:(NSDictionary *)parameters {
     NSMutableURLRequest *request = [super requestWithMethod:method path:path parameters:parameters];
     [request setCachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData];
     [request setTimeoutInterval:90.0f];
     return request;
 }
+
 
 -(void)enqueueHTTPRequestOperation:(AFHTTPRequestOperation *)operation {
     operation.successCallbackQueue = _callbackQueue;
@@ -80,6 +83,7 @@
     
 }
 
+
 -(void)loadTask:(FLTask *)task withSuccess:(FLHTTPClientSuccessWithTaskObject)success failure:(FLHTTPClientFailure)failure {
     
     [self getPath:task.link parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
@@ -100,6 +104,7 @@
         }
     }];
 }
+
 
 -(void)getFreelancersWithCategories:(NSArray *)categories query:(NSString *)query page:(int)page success:(FLHTTPClientSuccessWithArray)success failure:(FLHTTPClientFailure)failure {
     
@@ -133,6 +138,7 @@
     }];
     
 }
+
 
 -(void)loadFreelancer:(FLFreelancer *)freelancer withSuccess:(FLHTTPClientSuccessWithFreelancerObject)success failure:(FLHTTPClientFailure)failure {
     [self getPath:freelancer.profile parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
