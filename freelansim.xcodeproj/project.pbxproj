@@ -39,6 +39,9 @@
 		6A8A96F816863A7900C285BE /* FLFreelancerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A8A96F716863A7800C285BE /* FLFreelancerController.m */; };
 		6A8A97101686F36100C285BE /* FLContact.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A8A970F1686F36100C285BE /* FLContact.m */; };
 		6A8F515B1684EDF200AD0CC2 /* FLFreelancer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A8F515A1684EDF200AD0CC2 /* FLFreelancer.m */; };
+		6A9CC93E1A8E549B00E646A7 /* FLBannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A9CC93D1A8E549B00E646A7 /* FLBannerViewController.m */; };
+		6A9CC9401A8E555200E646A7 /* brainstorage_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A9CC93F1A8E555200E646A7 /* brainstorage_icon@2x.png */; };
+		6A9CC9431A8E568200E646A7 /* FLRoundedButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A9CC9421A8E568200E646A7 /* FLRoundedButton.m */; };
 		6AA0AA191697F8DE00FE28E3 /* FLContactButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AA0AA141697F8DE00FE28E3 /* FLContactButton.m */; };
 		6AA0AA1A1697F8DE00FE28E3 /* UIRender.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AA0AA161697F8DE00FE28E3 /* UIRender.m */; };
 		6AA0AA1B1697F8DE00FE28E3 /* UIStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AA0AA181697F8DE00FE28E3 /* UIStyle.m */; };
@@ -169,6 +172,11 @@
 		6A8F515A1684EDF200AD0CC2 /* FLFreelancer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FLFreelancer.m; path = Classes/Models/FLFreelancer.m; sourceTree = "<group>"; };
 		6A8F515F1685762C00AD0CC2 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6A8F51601685762C00AD0CC2 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		6A9CC93C1A8E549B00E646A7 /* FLBannerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FLBannerViewController.h; path = Classes/Controllers/Banner/FLBannerViewController.h; sourceTree = "<group>"; };
+		6A9CC93D1A8E549B00E646A7 /* FLBannerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FLBannerViewController.m; path = Classes/Controllers/Banner/FLBannerViewController.m; sourceTree = "<group>"; };
+		6A9CC93F1A8E555200E646A7 /* brainstorage_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "brainstorage_icon@2x.png"; sourceTree = "<group>"; };
+		6A9CC9411A8E568200E646A7 /* FLRoundedButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLRoundedButton.h; sourceTree = "<group>"; };
+		6A9CC9421A8E568200E646A7 /* FLRoundedButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLRoundedButton.m; sourceTree = "<group>"; };
 		6AA0AA131697F8DE00FE28E3 /* FLContactButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLContactButton.h; sourceTree = "<group>"; };
 		6AA0AA141697F8DE00FE28E3 /* FLContactButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLContactButton.m; sourceTree = "<group>"; };
 		6AA0AA151697F8DE00FE28E3 /* UIRender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIRender.h; sourceTree = "<group>"; };
@@ -333,6 +341,7 @@
 		6A1AE749167E1298005DE0E5 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				6A9CC93B1A8E547100E646A7 /* Banner */,
 				8BA6343916A01CB000BF14F2 /* About */,
 				8B68D63A169E823A009FE17A /* Favourites */,
 				6A8A96F116861B6F00C285BE /* Freelancers */,
@@ -511,6 +520,15 @@
 			name = Freelancers;
 			sourceTree = "<group>";
 		};
+		6A9CC93B1A8E547100E646A7 /* Banner */ = {
+			isa = PBXGroup;
+			children = (
+				6A9CC93C1A8E549B00E646A7 /* FLBannerViewController.h */,
+				6A9CC93D1A8E549B00E646A7 /* FLBannerViewController.m */,
+			);
+			name = Banner;
+			sourceTree = "<group>";
+		};
 		6AA0AA121697F8DE00FE28E3 /* UI */ = {
 			isa = PBXGroup;
 			children = (
@@ -526,6 +544,8 @@
 				6A1F1B6B16A1489E00712924 /* UIColor+FreelansimAdditions.m */,
 				A8EE826B19627F60000BC0D8 /* FLLinkButton.h */,
 				A8EE826C19627F60000BC0D8 /* FLLinkButton.m */,
+				6A9CC9411A8E568200E646A7 /* FLRoundedButton.h */,
+				6A9CC9421A8E568200E646A7 /* FLRoundedButton.m */,
 			);
 			name = UI;
 			path = Classes/UI;
@@ -655,6 +675,7 @@
 		A429B35C167F3B0C00078D1E /* Icons */ = {
 			isa = PBXGroup;
 			children = (
+				6A9CC93F1A8E555200E646A7 /* brainstorage_icon@2x.png */,
 				8BA6345A16A3B97400BF14F2 /* DannyImage.png */,
 				8BA6345B16A3B97400BF14F2 /* KunstImage.png */,
 				8BA6343516A01B9300BF14F2 /* 0017.png */,
@@ -721,7 +742,7 @@
 			name = freelansimTests;
 			productName = "freelansim-clientTests";
 			productReference = 6A529B10167A47AF009A1CCB /* freelansimTests.octest */;
-			productType = "com.apple.product-type.bundle";
+			productType = "com.apple.product-type.bundle.ocunit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -796,6 +817,7 @@
 				6AC1F96A1961A2B000451887 /* Images.xcassets in Resources */,
 				8BA6343716A01B9300BF14F2 /* 0017.png in Resources */,
 				8BA6343816A01B9300BF14F2 /* 0017@2x.png in Resources */,
+				6A9CC9401A8E555200E646A7 /* brainstorage_icon@2x.png in Resources */,
 				6ABDC81A1894EBC50070182D /* cell-checkmark-highlighted.png in Resources */,
 				6ABADFFF1849DE42003EE481 /* furley_bg@2X.png in Resources */,
 				6ABADFF71849D7A5003EE481 /* CategoryCell.xib in Resources */,
@@ -854,6 +876,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A8FB8C8B195D824B0022FC38 /* FLManagedContact.m in Sources */,
+				6A9CC93E1A8E549B00E646A7 /* FLBannerViewController.m in Sources */,
 				6A529AEF167A47AF009A1CCB /* main.m in Sources */,
 				6A529AF3167A47AF009A1CCB /* KKAppDelegate.m in Sources */,
 				6A1AE72C167DB5C8005DE0E5 /* FLHTTPClient.m in Sources */,
@@ -871,6 +894,7 @@
 				6A26779B1680A1AF00F178E7 /* FLCategoriesController.m in Sources */,
 				6A26779E1680A32300F178E7 /* FLCategory.m in Sources */,
 				A8FB8C8A195D824B0022FC38 /* FLManagedLink.m in Sources */,
+				6A9CC9431A8E568200E646A7 /* FLRoundedButton.m in Sources */,
 				6A8F515B1684EDF200AD0CC2 /* FLFreelancer.m in Sources */,
 				6A8A96F516861B9C00C285BE /* FLFreelancersController.m in Sources */,
 				6A8A96F816863A7900C285BE /* FLFreelancerController.m in Sources */,

@@ -11,7 +11,7 @@
 #import "FLTaskCell.h"
 #import "FLInternetConnectionUtils.h"
 #import "SVProgressHUD.h"
-
+#import "FLBannerViewController.h"
 
 @interface FLTasksController ()
 @end
@@ -52,12 +52,29 @@
     self.view.backgroundColor = [UIColor patternBackgroundColor];
     
     [self.tasksTable registerNib:[UINib nibWithNibName:@"FLTaskCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"FLTaskCell"];
+    
+    [self showBanner];
 }
 
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
+}
+
+- (void)showBanner
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSNumber *bannerShownFlag = [defaults objectForKey:@"bannerShown"];
+    if (bannerShownFlag) {
+        return;
+    }
+    
+    [defaults setObject:@(YES) forKey:@"bannerShown"];
+    [defaults synchronize];
+    
+    FLBannerViewController *bannerController = [self.storyboard instantiateViewControllerWithIdentifier:@"FLBannerViewController"];
+    [self presentViewController:bannerController animated:YES completion:nil];
 }
 
 
