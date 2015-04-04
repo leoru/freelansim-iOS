@@ -15,6 +15,7 @@
 #import "FavouriteCell.h"
 
 @interface FLFavouritesController ()
+@property (weak, nonatomic) IBOutlet UIView *EmptyView;
 
 @end
 
@@ -44,6 +45,7 @@
     [UIRender renderNavigationBar:self.navigationController.navigationBar];
     [super viewDidLoad];
     [self.favouritesTable registerNib:[UINib nibWithNibName:@"FavouriteCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"FavouriteCell"];
+    
 }
 - (void) viewDidUnload
 {
@@ -56,13 +58,31 @@
 }
 
 -(void)initUI{
-    self.view.backgroundColor = [UIColor patternBackgroundColor];
+    self.view.backgroundColor = [UIColor whiteColor];
     
     if([favourites count] == 0){
         editingMode = NO;
         [self.favouritesTable setEditing:NO animated:NO];
+        [self.favouritesTable setScrollEnabled:NO];
+        if(self.EmptyView.hidden == YES)
+        {
+            self.EmptyView.hidden = NO;
+            [UIView transitionWithView:self.EmptyView
+                              duration:0.5
+                               options:UIViewAnimationOptionTransitionCrossDissolve
+                            animations:NULL
+                            completion:NULL];
+        }
+        [self.EmptyView setFrame:CGRectMake(0, 0, 320, 455)];
         self.navigationItem.rightBarButtonItem = nil;
         return;
+    }
+    else
+    {
+        [self.favouritesTable setScrollEnabled:YES];
+        [self.EmptyView setFrame:CGRectMake(0, 0, 320, 0)];
+        [self.EmptyView setHidden:YES];
+        
     }
     
     UIBarButtonItem *item;
@@ -116,18 +136,20 @@
 {
     static NSString *cellIdentifier = @"FavouriteCell";
     FavouriteCell *cell = (FavouriteCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    [cell setSelectColor];
     id obj = [favourites objectAtIndex:indexPath.row];
     if ([obj isKindOfClass:[FLManagedFreelancer class]]) {
         FLManagedFreelancer *freelancer = (FLManagedFreelancer *)obj;
         [cell setFreelancer:freelancer];
     } else if([obj isKindOfClass:[FLManagedTask class]]) {
         FLManagedTask *task = (FLManagedTask *)obj;
-        [cell setTask:task];
+        [cell setTask:task];        
     }
     
-    UIView *backgroundView = [[UIView alloc] initWithFrame:CGRectZero];
-    backgroundView.backgroundColor = kDefaultBlueColor;
-    cell.selectedBackgroundView = backgroundView;
+    
+   // UIView *backgroundView = [[UIView alloc] initWithFrame:CGRectZero];
+   // backgroundView.backgroundColor = kDefaultBlueColor;
+   // cell.selectedBackgroundView = backgroundView;
     
     return cell;
 }
@@ -160,6 +182,9 @@
     [self initUI];
 }
 
+- (NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return @"Удалить";
+}
 
 - (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath
 {

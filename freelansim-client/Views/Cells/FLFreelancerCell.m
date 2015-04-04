@@ -28,15 +28,19 @@
 {
     [super awakeFromNib];
     UIView *backgroundView = [[UIView alloc] initWithFrame:CGRectZero];
-    backgroundView.backgroundColor = kDefaultBlueColor;
+    backgroundView.backgroundColor = [UIColor colorWithRed:(245/255.f)
+                                                     green:(172/255.f)
+                                                      blue:(66/255.f)
+                                                     alpha:1];
+    //kDefaultBlueColor;
     self.selectedBackgroundView = backgroundView;
-    self.labelPrice.textColor = DefaultLightGreenColor;
+   // self.labelPrice.textColor = DefaultLightGreenColor;
 }
 
 - (void)setFreelancer:(FLFreelancer *)freelancer
 {
 
-    [self.avatar setImageWithURL:[NSURL URLWithString:freelancer.thumbPath]  placeholderImage:nil completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType) {
+    [self.avatar setImageWithURL:[NSURL URLWithString:freelancer.thumbPath]  placeholderImage:[UIImage imageNamed:@"placeholder_userpic"] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType) {
         self.loadingIndicator.hidden = YES;
         _avatar.hidden = NO;
     }];

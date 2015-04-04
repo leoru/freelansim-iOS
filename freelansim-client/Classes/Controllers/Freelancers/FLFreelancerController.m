@@ -21,6 +21,7 @@
 
 @interface FLFreelancerController ()
 {
+    __weak IBOutlet UINavigationItem *testNavi;
     int scrollViewHeight;
 }
 @end
@@ -39,9 +40,15 @@
 
 - (void)viewDidLoad
 {
-    self.view.backgroundColor = [UIColor patternBackgroundColor];
-    self.loadingView.backgroundColor = [UIColor patternBackgroundColor];
+    self.view.backgroundColor = [UIColor whiteColor];
     [super viewDidLoad];
+    
+    self.loadingView.backgroundColor = [UIColor whiteColor];
+    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"back_arrow.png"] style:UIBarButtonItemStyleDone target:self action:@selector(popBack)];
+    self.navigationItem.leftBarButtonItem = item;
+    self.navigationItem.title = @"Фрилансеры";
+    
+    
     
     [SVProgressHUD showWithMaskType:SVProgressHUDMaskTypeGradient];
     [[FLHTTPClient sharedClient] loadFreelancer:self.freelancer withSuccess:^(FLFreelancer *fl, AFHTTPRequestOperation *operation, id responseObject) {
@@ -55,6 +62,8 @@
     actionSheetTasks = [[NSMutableArray alloc] init];
 }
 
+-(void) popBack {[self.navigationController popViewControllerAnimated:YES];}
+- (IBAction)swipeAction:(id)sender {[self.navigationController popViewControllerAnimated:YES];}
 
 - (void)didReceiveMemoryWarning
 {
@@ -84,37 +93,29 @@
 -(void)initUI {
     self.loadingView.hidden = YES;
     
-    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithImage:nil style:UIBarButtonSystemItemOrganize target:self action:@selector(toBookMarks)];
-    self.navigationItem.rightBarButtonItem = item;
-    self.navigationItem.title = self.freelancer.name;
-    
     CGRect avatarFrame = self.avatarView.frame;
-    avatarFrame.size.width = 100;
-    avatarFrame.size.height = 100;
+    avatarFrame.size.width = 50;
+    avatarFrame.size.height = 50;
     self.avatarView.frame = avatarFrame;
     self.avatarView.contentMode = UIViewContentModeScaleAspectFit;
-    self.avatarView.layer.cornerRadius = 50;
+    self.avatarView.layer.cornerRadius = 25;
     self.avatarView.layer.masksToBounds = YES;
-    [self.avatarView setImageWithURL:[NSURL URLWithString:self.freelancer.avatarPath]  placeholderImage:nil completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType) {
+    [self.avatarView setImageWithURL:[NSURL URLWithString:self.freelancer.avatarPath]  placeholderImage:[UIImage imageNamed:@"placeholder_userpic"] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType) {
         self.loader.hidden = YES;
     }];
     
     self.priceLabel.text = self.freelancer.price;
     self.nameLabel.text = self.freelancer.name;
-	self.nameLabel.font = [UIFont boldSystemFontOfSize:17.0f];
-	self.nameLabel.textColor = DefaultBlueColor;
-    self.specialityLabel.text = self.freelancer.speciality;
+	self.specialityLabel.text = self.freelancer.speciality;
     self.locationLabel.text = self.freelancer.location;
-    self.line = [[UIView alloc] initWithFrame:CGRectMake(20.0f, 160.0f, 280.0f, 1.0f)];
-    self.line.backgroundColor = [UIColor colorWithRed:0.26f green:0.29f blue:0.32f alpha:1.00f];
-    [self.scrollView addSubview:self.line];
     
     self.webView.scrollView.bounces = NO;
     self.webView.delegate = self;
     self.webView.opaque = NO;
     self.webView.backgroundColor = [UIColor clearColor];
     
-    scrollViewHeight = self.line.frame.origin.y + self.line.frame.size.height + 15;
+    
+    scrollViewHeight = self.line.frame.origin.y + self.line.frame.size.height + 10;
     
     [self initTopBar];
     [self loadHTMLContent];
@@ -123,10 +124,46 @@
 
 
 -(void)initTopBar {
-    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(showActionSheet:)];
+    
+    NSString *star;
+    NSString *starPush;
+    if([self isInFavourites]){
+        star = @"add_to_favorite_filled.png";
+        starPush = @"add_to_favorite.png";
+    }else{
+        star = @"add_to_favorite.png";
+        starPush = @"add_to_favorite_filled.png";
+    }
+    
+    UIBarButtonItem *item = [[UIBarButtonItem alloc]init];
+    UIButton *button = [[UIButton alloc] init];
+    [button setFrame:CGRectMake(0, 0, 22, 22)];
+    [button setTintColor:[UIColor whiteColor]];
+    [button setBackgroundImage:[UIImage imageNamed:star] forState:UIControlStateNormal];
+    [button setBackgroundImage:[UIImage imageNamed:starPush] forState:UIControlEventTouchDown];
+    [button addTarget:self action:@selector(favoriteAction) forControlEvents:UIControlEventTouchUpInside];    [item setCustomView:button];
+    
     self.navigationItem.rightBarButtonItem = item;
+    
+        button.transform = CGAffineTransformMakeScale(0.0, 0.0);
+        [UIView animateWithDuration:0.3
+                              delay:0.0
+                            options:UIViewAnimationOptionCurveEaseOut
+                         animations:^{
+                             button.transform = CGAffineTransformIdentity;
+                         }
+                         completion:nil];
+    
 }
 
+-(void)favoriteAction {
+    if([self isInFavourites])
+        [self removeFromFavourites];
+    else
+        [self addToFavourites];
+    
+    [self initTopBar];
+}
 
 -(void)initActionSheet {
     NSMutableArray *actions = [NSMutableArray array];
@@ -164,6 +201,8 @@
     [self.actionSheet addButtonWithTitle:@"Cancel"];
     self.actionSheet.cancelButtonIndex = actions.count;
     actionSheetTasks = actions;
+    
+    
 }
 
 
@@ -173,11 +212,13 @@
         int linksHeight = 0;
         self.linksView = [[UIView alloc] init];
         self.linksView.backgroundColor = [UIColor clearColor];
-        self.linksView.frame = CGRectMake(10.0f, scrollViewHeight, 300.0f, linksHeight);
+        self.linksView.frame = CGRectMake(15.0f, scrollViewHeight, 305.0f, linksHeight);
         UILabel *titleLabel = [[UILabel alloc] initWithFrame:self.linksView.frame];
         titleLabel.backgroundColor = [UIColor clearColor];
-        titleLabel.frame = CGRectMake(0.0f,5.0f,300.0f,30.0f);
-        titleLabel.text = @"Ссылки";
+        titleLabel.frame = CGRectMake(0.0f,0.0f,300.0f,20.0f);
+        titleLabel.text = @"Ссылки:";
+        [titleLabel setFont:DEFAULT_MEDIUM_FONT(14)];
+        titleLabel.textColor = kDEFAULT_TEXT_COLOR;
         [titleLabel sizeToFit];
         linksHeight += titleLabel.frame.size.height;
 
@@ -186,32 +227,33 @@
             FLLinkButton *linkButton = [[FLLinkButton alloc] init];
 			linkButton.link = link;
 
-            linkButton.frame = CGRectMake(0, (28 * i) + titleLabel.frame.origin.y + titleLabel.frame.size.height, 240.0f, 20.0f);
+            linkButton.frame = CGRectMake(-4.f, (18 * i) + titleLabel.frame.origin.y + titleLabel.frame.size.height, 240.0f, 16.0f);
             [linkButton setTitle:link forState:UIControlStateNormal];
 			[UIRender renderContactsButton:linkButton];
 			[linkButton setTitleColor:DefaultBlueColor forState:UIControlStateNormal];
-
+            //[linkButton setBackgroundColor:[UIColor grayColor]];
             [linkButton sizeToFit];
-            linkButton.frame = CGRectMake(linkButton.frame.origin.x,linkButton.frame.origin.y,linkButton.frame.size.width + 10, linkButton.frame.size.height);
+            linkButton.frame = CGRectMake(linkButton.frame.origin.x,linkButton.frame.origin.y,linkButton.frame.size.width + 10, 16.f);
             [self.linksView addSubview:linkButton];
 
             [linkButton addTarget:self action:@selector(linkClick:) forControlEvents:UIControlEventTouchUpInside];
-            linksHeight += linkButton.frame.size.height;
+            linksHeight += linkButton.frame.size.height+2;
             i++;
         }
         [self.linksView addSubview:titleLabel];
         CGRect frame = self.linksView.frame;
+       // [self.linksView setBackgroundColor: [UIColor greenColor]];
         frame.size.height = linksHeight;
         [self.linksView setFrame:frame];
         [self.scrollView addSubview:self.linksView];
-
+        
+        scrollViewHeight += self.linksView.frame.size.height + 15;
     } else {
         self.linksView = [[UIView alloc] init];
         self.linksView.backgroundColor = [UIColor clearColor];
         self.linksView.frame = CGRectMake(10.0f, self.line.frame.origin.y, 300.0f, 0.0f);
     }
 
-    scrollViewHeight += self.linksView.frame.size.height + 10;
 }
 
 
@@ -221,11 +263,13 @@
         int contactsHeight = 0;
         self.contactsView = [[UIView alloc] init];
         self.contactsView.backgroundColor = [UIColor clearColor];
-        self.contactsView.frame = CGRectMake(10.0f, scrollViewHeight, 300.0f, contactsHeight);
+        self.contactsView.frame = CGRectMake(15.0f, scrollViewHeight, 300.0f, contactsHeight);
         UILabel *titleLabel = [[UILabel alloc] initWithFrame:self.contactsView.frame];
         titleLabel.backgroundColor = [UIColor clearColor];
-        titleLabel.frame = CGRectMake(0.0f,5.0f,300.0f,30.0f);
-        titleLabel.text = @"Контакты";
+        titleLabel.frame = CGRectMake(0.0f,0.0f,300.0f,30.0f);
+        titleLabel.text = @"Контакты:";
+        [titleLabel setFont:DEFAULT_MEDIUM_FONT(14)];
+        titleLabel.textColor = kDEFAULT_TEXT_COLOR;
         [titleLabel sizeToFit];
         contactsHeight += titleLabel.frame.size.height;
         
@@ -234,24 +278,26 @@
             FLContactButton *contactButton = [[FLContactButton alloc] init];
             contactButton.contact = contact;
             
-            contactButton.frame = CGRectMake(0, (28 * i) + titleLabel.frame.origin.y + titleLabel.frame.size.height, 200.0f, 20.0f);
+            contactButton.frame = CGRectMake(-4.f, (18 * i) + titleLabel.frame.origin.y + titleLabel.frame.size.height, 200.0f, 16.0f);
             [contactButton setTitle:[NSString stringWithFormat:@"%@: %@", contact.type, contact.value] forState:UIControlStateNormal];
 			[UIRender renderContactsButton:contactButton];
 			[contactButton setTitleColor:DefaultBlueColor forState:UIControlStateNormal];
             
             [contactButton sizeToFit];
-            contactButton.frame = CGRectMake(contactButton.frame.origin.x,contactButton.frame.origin.y,contactButton.frame.size.width + 10, contactButton.frame.size.height);
+            contactButton.frame = CGRectMake(contactButton.frame.origin.x,contactButton.frame.origin.y,contactButton.frame.size.width + 10, 16.f);
             [self.contactsView addSubview:contactButton];
 
             [contactButton addTarget:self action:@selector(contactClick:) forControlEvents:UIControlEventTouchUpInside];
-            contactsHeight += contactButton.frame.size.height;
+            contactsHeight += contactButton.frame.size.height+2;
             i++;
         }
         [self.contactsView addSubview:titleLabel];
         CGRect frame = self.contactsView.frame;
         frame.size.height = contactsHeight;
         [self.contactsView setFrame:frame];
+        //[self.contactsView setBackgroundColor:[UIColor blueColor]];
         [self.scrollView addSubview:self.contactsView];
+        scrollViewHeight += self.contactsView.frame.size.height + 15;
         
     } else {
         self.contactsView = [[UIView alloc] init];
@@ -259,7 +305,7 @@
         self.contactsView.frame = CGRectMake(10.0f, self.linksView.frame.origin.y, 300.0f, 0.0f);
     }
     
-    scrollViewHeight += self.contactsView.frame.size.height + 10;
+    
 }
 
 
@@ -282,6 +328,7 @@
         html = [FLHTMLUtils descriptionForbidden:html];
     }
     [self.webView loadHTMLString:html baseURL:baseURL];
+    NSLog(@"HTMLDATA: %@",html);
 }
 
 
@@ -393,7 +440,10 @@
 
 #pragma mark - WebView Delegate
 -(void)webViewDidFinishLoad:(UIWebView *)webView {
+    
     [self.webView sizeToFit];
+    
+    [self.webView setFrame:CGRectMake(self.webView.frame.origin.x, self.webView.frame.origin.y, 304, self.webView.frame.size.height)];
     
     CGRect frame = self.webView.frame;
     frame.origin.y = scrollViewHeight;

@@ -27,7 +27,10 @@
 {
     [super awakeFromNib];
     UIView *backgroundView = [[UIView alloc] initWithFrame:CGRectZero];
-    backgroundView.backgroundColor = kDefaultBlueColor;
+    backgroundView.backgroundColor = [UIColor colorWithRed:(245/255.f)
+                                                     green:(172/255.f)
+                                                      blue:(66/255.f)
+                                                     alpha:1];//kDefaultBlueColor;
     self.selectedBackgroundView = backgroundView;
 }
 
@@ -57,7 +60,6 @@
     self.labelPrice.frame = frame;
     
     self.labelPublished.text = task.datePublishedWithFormatting;
-    self.labelPublished.textColor = [UIColor lightGrayColor];
 }
 
 @end

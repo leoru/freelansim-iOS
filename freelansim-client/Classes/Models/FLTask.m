@@ -48,6 +48,9 @@
 	self.link = task.link;
 	//self.filesInfo;
 	self.viewCount = task.viewCount.intValue;
+    
+   
+    
 	self.commentCount = task.commentCount.intValue;
 
 //	NSMutableArray *mentals = [[NSMutableArray alloc] init];

@@ -14,6 +14,7 @@
 
 
 @interface FLFreelancersController ()
+@property (weak, nonatomic) IBOutlet UIView *EmptySearch;
 @end
 
 
@@ -49,8 +50,15 @@
     self.freelancersTable.delegate = self;
     self.freelancersTable.dataSource = self;
     self.searchBar.delegate = self;
-    self.view.backgroundColor = [UIColor patternBackgroundColor];
+    self.view.backgroundColor = [UIColor whiteColor];
     self.freelancersTable.backgroundColor = [UIColor clearColor];
+    
+    [self.searchBar setImage:[UIImage imageNamed:@"search_normal.png"] forSearchBarIcon:UISearchBarIconSearch state:UIControlStateNormal];
+    [self.searchBar setSearchFieldBackgroundImage:[UIImage imageNamed:@"searchfield.png"] forState:UIControlStateNormal];
+    [self.searchBar setImage:[UIImage imageNamed:@"search_clear"] forSearchBarIcon:UISearchBarIconClear state:UIControlStateNormal];
+    
+    [self.searchBar setBackgroundImage:[UIImage imageNamed:@"search_bg.png"]];
+
     
     [self.freelancersTable registerNib:[UINib nibWithNibName:@"FLFreelancerCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"FLFreelancerCell"];
 }
@@ -85,7 +93,6 @@
     static NSString *emptyCellIdentifier = @"FLEmptyCell";
     UITableViewCell *cell;
     
-    
     if (indexPath.row == self.freelancers.count) {
         if (!stopSearch) {
             if(![FLInternetConnectionUtils isConnectedToInternet]){
@@ -111,6 +118,18 @@
                 }
                 cell.userInteractionEnabled = NO;
                 cell.selectionStyle = UITableViewCellSelectionStyleNone;
+                
+                
+                if(self.EmptySearch.hidden==NO) {
+                    [self.EmptySearch setHidden:YES];
+                    [self.freelancersTable setScrollEnabled:YES];
+                    [UIView transitionWithView:self.EmptySearch
+                                      duration:0.2
+                                       options:UIViewAnimationOptionTransitionCrossDissolve
+                                    animations:NULL
+                                    completion:NULL];
+                }
+                
                 dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
                     [[FLHTTPClient sharedClient] getFreelancersWithCategories:self.selectedCategories query:searchQuery page:page++
 					success:^(NSArray *objects, BOOL *stop) {
@@ -119,6 +138,16 @@
                             stopSearch = stopValue;
                             [self.freelancers addObjectsFromArray:objects];
                             [self.freelancersTable reloadData];
+                            
+                            if (self.freelancers.count==0) {
+                                [self.EmptySearch setHidden:NO];
+                                [self.freelancersTable setScrollEnabled:NO];
+                                [UIView transitionWithView:self.EmptySearch
+                                                  duration:0.2
+                                                   options:UIViewAnimationOptionTransitionCrossDissolve
+                                                animations:NULL
+                                                completion:NULL];
+                            }
                         });
                     }
 					failure:^(AFHTTPRequestOperation *operation, NSError *error) {
@@ -141,6 +170,8 @@
         [freelancerCell setFreelancer:freelancer];
         cell = freelancerCell;
     }
+    
+    
 
     return cell;
 }
@@ -200,6 +231,8 @@
 
 -(void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
     searchBar.showsCancelButton = NO;
+    [self.searchBar setImage:[UIImage imageNamed:@"search_normal.png"] forSearchBarIcon:UISearchBarIconSearch state:UIControlStateNormal];
+
     [searchBar setText:@""];
     [searchBar resignFirstResponder];
     [self search];
@@ -208,6 +241,18 @@
 
 -(void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar {
     searchBar.showsCancelButton = YES;
+    UIButton *cancelButton;
+    UIView *topView = self.searchBar.subviews[0];
+    for (UIView *subView in topView.subviews) {
+        if ([subView isKindOfClass:NSClassFromString(@"UINavigationButton")]) {
+            cancelButton = (UIButton*)subView;
+        }
+    }
+    if (cancelButton) {
+        [cancelButton setTitle:@"Отменить" forState:UIControlStateNormal];
+        [[cancelButton titleLabel] setFont:DEFAULT_REGULAR_FONT(16)];
+    }
+    [self.searchBar setImage:[UIImage imageNamed:@"search_active.png"] forSearchBarIcon:UISearchBarIconSearch state:UIControlStateNormal];
 }
 
 

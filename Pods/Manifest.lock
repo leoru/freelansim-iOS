@@ -2,23 +2,25 @@ PODS:
   - AFNetworking (1.3.1)
   - DACircularProgress (2.1.0)
   - EGOCache (2.0)
-  - JSONKit (1.5pre)
-  - MagicalRecord (2.1)
+  - JSONKit (1.4)
+  - MagicalRecord (2.1):
+    - MagicalRecord/Core (= 2.1)
+  - MagicalRecord/Core (2.1)
   - MBProgressHUD (0.8)
   - MGImageUtilities (0.0.1)
   - MWPhotoBrowser (1.1.4):
     - DACircularProgress
     - MBProgressHUD
-    - MWPhotoBrowser/ARC
-    - SDWebImage (= 3.5)
+    - MWPhotoBrowser/ARC (= 1.1.4)
+    - SDWebImage (~> 3.5)
   - MWPhotoBrowser/ARC (1.1.4):
     - DACircularProgress
     - MBProgressHUD
-    - SDWebImage (= 3.5)
+    - SDWebImage (~> 3.5)
   - Objective-C-HMTL-Parser (0.0.1)
   - Reachability (3.1.1)
   - SDWebImage (3.5):
-    - SDWebImage/Core
+    - SDWebImage/Core (= 3.5)
   - SDWebImage/Core (3.5)
   - SVProgressHUD (1.0)
 
@@ -34,17 +36,17 @@ DEPENDENCIES:
   - SVProgressHUD
 
 SPEC CHECKSUMS:
-  AFNetworking: 9ec8aafb9269236a7630bd8d9838ce2ba30fa2a0
-  DACircularProgress: 8c8f20c8dffdd647fbf570ddecbc2b1b59da5888
-  EGOCache: c7116e8a6692eecb542f001a9c71f9b71ae9644b
-  JSONKit: 409734ab3407fce90ef7eaa95d7168f38d9a6601
-  MagicalRecord: 64e7184c240087a45e9588a722eaf05b0ad837f7
-  MBProgressHUD: 2bbc6f470111daf7f3eaa4eb12b8cbf01c4c0622
-  MGImageUtilities: ab3580f2161b10f8a41331baea87aaafbd688950
-  MWPhotoBrowser: bcc8bffb52c7ae6e8550d98336c65b8de969aeb3
-  Objective-C-HMTL-Parser: 4fca85e186a829cfe8db8e316e9688571ea4dfed
-  Reachability: 2be6bc2fd2bd31d97f5db33e75e4b29c79e95883
-  SDWebImage: f1a72472f8a2d54445f1fedafe2090593d9caf7f
-  SVProgressHUD: 5e10939a296debf5fe5a5895eda9539b8b2114f1
+  AFNetworking: 5db28423ed062e2b15b97c731f06cfb6668e607a
+  DACircularProgress: 4dfac2cc9efe2e352cabe32a2b243fd9768a3b6c
+  EGOCache: 71abd9a8cbf0c357309f25761f2ba06818b10661
+  JSONKit: 2111ac2b11f7ea0d07bb1d9d09e650918336a134
+  MagicalRecord: 5db5b3b3d70e62b0c310c57f1294be61fbc7d548
+  MBProgressHUD: c356980b0cd097f19acec959b49dca5eb8ec31be
+  MGImageUtilities: 2dd1872bfb5d241f894bfb78286b05bb74005ef6
+  MWPhotoBrowser: 654360fa2d37f9a7731ccb3685bbaf75c4884a99
+  Objective-C-HMTL-Parser: f81bfc686fa447486477b7a2ef0cdca36d516b48
+  Reachability: 8e9635e3cb4f98e7f825e51147f677ecc694d0e7
+  SDWebImage: c9bc95975144c7dfa93b9df2d1d9d6d4dbe44715
+  SVProgressHUD: 5034c6e22b8c2ca3e09402e48d41ed0340aa1c50
 
-COCOAPODS: 0.27.1
+COCOAPODS: 0.36.0

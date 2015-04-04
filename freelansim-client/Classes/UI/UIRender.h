@@ -21,4 +21,7 @@
 
 +(void)applyStylesheet;
 
++(void)renderTabBarController:(UITabBarController *)tabBarController;
+
+
 @end

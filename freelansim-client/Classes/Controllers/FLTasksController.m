@@ -14,6 +14,7 @@
 #import "FLBannerViewController.h"
 
 @interface FLTasksController ()
+@property (weak, nonatomic) IBOutlet UIView *EmptySearch;
 @end
 
 
@@ -35,7 +36,6 @@
     refreshControl = [[UIRefreshControl alloc] init];
     [refreshControl addTarget:self action:@selector(refresh) forControlEvents:UIControlEventValueChanged];
     [self.tasksTable addSubview:refreshControl];
-
     self.tasks = [NSMutableArray array];
     stopSearch = NO;
     searchQuery = @"";
@@ -48,14 +48,19 @@
     edges.right = 10;
     self.tasksTable.separatorInset = edges;
     self.tasksTable.backgroundColor = [UIColor clearColor];
-    self.clearView.backgroundColor = [UIColor patternBackgroundColor];
-    self.view.backgroundColor = [UIColor patternBackgroundColor];
+    self.clearView.backgroundColor = [UIColor whiteColor];
+    self.view.backgroundColor = [UIColor whiteColor];
+    
+    [self.searchBar setImage:[UIImage imageNamed:@"search_normal.png"] forSearchBarIcon:UISearchBarIconSearch state:UIControlStateNormal];
+    [self.searchBar setSearchFieldBackgroundImage:[UIImage imageNamed:@"searchfield.png"] forState:UIControlStateNormal];
+    [self.searchBar setImage:[UIImage imageNamed:@"search_clear"] forSearchBarIcon:UISearchBarIconClear state:UIControlStateNormal];
+    
+    [self.searchBar setBackgroundImage:[UIImage imageNamed:@"search_bg.png"]];
     
     [self.tasksTable registerNib:[UINib nibWithNibName:@"FLTaskCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"FLTaskCell"];
     
     [self showBanner];
 }
-
 
 - (void)didReceiveMemoryWarning
 {
@@ -123,6 +128,17 @@
                 }
                 cell.userInteractionEnabled = NO;
                 cell.selectionStyle = UITableViewCellSelectionStyleNone;
+                
+                if(self.EmptySearch.hidden==NO) {
+                    [self.EmptySearch setHidden:YES];
+                    [self.tasksTable setScrollEnabled:YES];
+                    [UIView transitionWithView:self.EmptySearch
+                                      duration:0.2
+                                       options:UIViewAnimationOptionTransitionCrossDissolve
+                                    animations:NULL
+                                    completion:NULL];
+                }
+                
                 dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
                     [[FLHTTPClient sharedClient] getTasksWithCategories:self.selectedCategories query:searchQuery page:page++
 					success:^(NSArray *objects, BOOL *stop) {
@@ -131,8 +147,21 @@
 							stopSearch = stopValue;
                             [self.tasks addObjectsFromArray:objects];
                             [self.tasksTable reloadData];
+                            
+                            if (self.tasks.count==0) {
+                                [self.EmptySearch setHidden:NO];
+                                [self.tasksTable setScrollEnabled:NO];
+                                [UIView transitionWithView:self.EmptySearch
+                                                  duration:0.2
+                                                   options:UIViewAnimationOptionTransitionCrossDissolve
+                                                animations:NULL
+                                                completion:NULL];
+
+                            }
                         });
                     }
+                     
+                     
 					failure:^(AFHTTPRequestOperation *operation, NSError *error) {
                         [self showErrorNetworkDisabled];
                     }];
@@ -220,6 +249,7 @@
 -(void)searchBarCancelButtonClicked:(UISearchBar *)searchBar{
     [self.searchBar setText:@""];
     searchBar.showsCancelButton = NO;
+    [self.searchBar setImage:[UIImage imageNamed:@"search_normal.png"] forSearchBarIcon:UISearchBarIconSearch state:UIControlStateNormal];
     [self.searchBar resignFirstResponder];
     [self search];
 }
@@ -241,6 +271,18 @@
 
 -(void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar {
     searchBar.showsCancelButton = YES;
+    UIButton *cancelButton;
+    UIView *topView = self.searchBar.subviews[0];
+    for (UIView *subView in topView.subviews) {
+        if ([subView isKindOfClass:NSClassFromString(@"UINavigationButton")]) {
+            cancelButton = (UIButton*)subView;
+        }
+    }
+    if (cancelButton) {
+        [cancelButton setTitle:@"Отменить" forState:UIControlStateNormal];
+        [[cancelButton titleLabel] setFont:DEFAULT_REGULAR_FONT(16)];        
+    }
+    [self.searchBar setImage:[UIImage imageNamed:@"search_active.png"] forSearchBarIcon:UISearchBarIconSearch state:UIControlStateNormal];
 }
 
 @end

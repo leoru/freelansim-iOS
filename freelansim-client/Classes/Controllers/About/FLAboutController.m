@@ -27,8 +27,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self.mailButton setTitleColor:kDefaultBlueColor forState:UIControlStateNormal];
-    self.view.backgroundColor = [UIColor patternBackgroundColor];
+   // [self.mailButton setTitleColor:kDefaultBlueColor forState:UIControlStateNormal];
+    self.view.backgroundColor = [UIColor whiteColor];
 }
 
 - (void)didReceiveMemoryWarning
