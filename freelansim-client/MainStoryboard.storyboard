@@ -582,7 +582,7 @@
                                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" animating="YES" style="whiteLarge" id="Vi4-Fy-VF2">
                                         <rect key="frame" x="15" y="19" width="37" height="37"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="color" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="color" red="0.96078431369999995" green="0.67450980390000004" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
                                     </activityIndicatorView>
                                     <view contentMode="scaleToFill" id="H6d-hN-dR6">
                                         <rect key="frame" x="12" y="87" width="300" height="1"/>
@@ -695,8 +695,8 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="cyE-FZ-hGI"/>
-        <segue reference="x9E-yU-h1c"/>
+        <segue reference="ZCp-wO-Cv2"/>
         <segue reference="SXZ-wO-cMx"/>
+        <segue reference="cyE-FZ-hGI"/>
     </inferredMetricsTieBreakers>
 </document>

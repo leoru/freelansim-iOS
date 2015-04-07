@@ -119,16 +119,25 @@
     
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     button.frame = CGRectMake(0, 0, 22, 22);
+    
     [button setTintColor:[UIColor whiteColor]];
     [button setImage:[UIImage imageNamed:star] forState:UIControlStateNormal];
     [button setImage:[UIImage imageNamed:starPush] forState:UIControlEventTouchDown];
     [button addTarget:self action:@selector(favoritesClicked) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithCustomView:button];
     
+    
     UIButton *button2 = [UIButton buttonWithType:UIButtonTypeCustom];
     button2.frame = CGRectMake(0, 0, 22, 22);
     [button2 setTintColor:[UIColor whiteColor]];
+
     [button2 setImage:[UIImage imageNamed:@"share.png"] forState:UIControlStateNormal];
+    [button2 setImage:[UIImage imageNamed:@"share.png"] forState:UIControlEventTouchDown];
+    [button2 addTarget:self action:@selector(clickAnimationNormal:) forControlEvents:UIControlEventTouchUpInside];
+    [button2 addTarget:self action:@selector(clickAnimationNormal:) forControlEvents:UIControlEventTouchUpOutside];
+    [button2 addTarget:self action:@selector(clickAnimationPush:) forControlEvents:UIControlEventTouchDown];
+    
+    
     [button2 addTarget:self action:@selector(actionOpenInBrowser:) forControlEvents:UIControlEventTouchUpInside];
      UIBarButtonItem *openInBrowserItem = [[UIBarButtonItem alloc] initWithCustomView:button2];
     
@@ -145,8 +154,19 @@
                          completion:nil];
     }
     
+    
     self.navigationItem.rightBarButtonItems = @[item,openInBrowserItem];
 }
+
+-(void)clickAnimationNormal:(UIButton*)sender{
+    [UIView animateWithDuration:0.02 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{sender.transform = CGAffineTransformMakeScale(1, 1);} completion:nil];
+    
+}
+
+-(void)clickAnimationPush:(UIButton*)sender{
+    [UIView animateWithDuration:0.02 delay:0 options:UIViewAnimationOptionCurveEaseIn animations:^{sender.transform = CGAffineTransformMakeScale(0.9, 0.9);} completion:nil];
+}
+
 -(void)loadHTMLContent {
     NSString *path = [[NSBundle mainBundle] bundlePath];
     NSURL *baseURL = [NSURL fileURLWithPath:path];
@@ -201,6 +221,9 @@
 #pragma mark - WebView Delegate
 -(void)webViewDidFinishLoad:(UIWebView *)webView {
     [self.descriptionWebView sizeToFit];
+    
+       [self.descriptionWebView setFrame:CGRectMake(self.descriptionWebView.frame.origin.x, self.descriptionWebView.frame.origin.y, 304, self.descriptionWebView.frame.size.height)];
+    
     scrollViewHeight += self.descriptionWebView.frame.size.height + 20;
     
     CGRect skillViewFrame = self.skillsView.frame;

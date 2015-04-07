@@ -18,11 +18,11 @@
 @property (weak, nonatomic) IBOutlet UILabel *labelShortDescription;
 @property (weak, nonatomic) IBOutlet UILabel *labelTime;
 @property (weak, nonatomic) IBOutlet UILabel *labelPrice;
+@property (weak, nonatomic) IBOutlet UIView *animationBody;
 
 - (void)setFreelancer:(FLManagedFreelancer *)freelancer;
 
 - (void)setTask:(FLManagedTask *)task;
 
-- (void)setSelectColor;
 
 @end

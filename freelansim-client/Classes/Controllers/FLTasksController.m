@@ -192,6 +192,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [self.tasksTable deselectRowAtIndexPath:indexPath animated:NO];
+    
     selectedTask = self.tasks[indexPath.row];
     [self performSegueWithIdentifier:@"TaskSegue" sender:self];
     [SVProgressHUD showWithStatus:@"Загрузка..." maskType:SVProgressHUDMaskTypeGradient];

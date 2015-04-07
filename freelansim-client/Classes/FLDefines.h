@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 // Server host string
 extern NSString * const FLServerHostString;
@@ -27,3 +28,9 @@ extern NSString * const errorMessageServertDontRespond;
 #define kNavBarColor [UIColor colorWithRed:0.35 green:0.41 blue:0.48 alpha:1]
 #define kDefaultBlueColor [UIColor colorWithRed:0.36 green:0.7 blue:0.93 alpha:1]
 #define kDEFAULT_TEXT_COLOR [UIColor colorWithRed:(93/255.f) green:(101/255.f) blue:(119/255.f) alpha:1];
+
+@interface FLDefines : NSObject
+
++(UIImage *)radialGradientImage:(CGSize)size startColor:(CGFloat [4])startColor endcolor:(CGFloat [4])endColor centre:(CGPoint)centre radius:(float)radius;
+
+@end

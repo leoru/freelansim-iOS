@@ -136,7 +136,6 @@
 {
     static NSString *cellIdentifier = @"FavouriteCell";
     FavouriteCell *cell = (FavouriteCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    [cell setSelectColor];
     id obj = [favourites objectAtIndex:indexPath.row];
     if ([obj isKindOfClass:[FLManagedFreelancer class]]) {
         FLManagedFreelancer *freelancer = (FLManagedFreelancer *)obj;

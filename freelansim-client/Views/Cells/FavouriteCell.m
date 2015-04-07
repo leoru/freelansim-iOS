@@ -8,9 +8,14 @@
 
 #import "FavouriteCell.h"
 #import "FLValueTransformer.h"
+#import "FLDefines.h"
 
 
 @implementation FavouriteCell
+{
+    BOOL * animationcomplete;
+    BOOL * isSelected;
+}
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -26,15 +31,45 @@
     [super setSelected:selected animated:animated];
 }
 
-- (void)setSelectColor
+- (void)awakeFromNib
 {
-    UIView *backgroundView = [[UIView alloc] initWithFrame:CGRectZero];
-    backgroundView.backgroundColor = [UIColor colorWithRed:(245/255.f)
-                                                     green:(172/255.f)
-                                                      blue:(66/255.f)
-                                                     alpha:1];
-    self.selectedBackgroundView = backgroundView;
+    [super awakeFromNib];
+    animationcomplete = YES;
+    isSelected = NO;
+    CGFloat start[4] ={(232/255.f),(237/255.f),(242/255.f), 1.0};
+    CGFloat end[4] ={1,1,1,1};
+    
+    UIImage * im = [FLDefines radialGradientImage:self.animationBody.frame.size startColor:start endcolor:end  centre:CGPointMake(0.3,0.4) radius:0.7];
+    UIImageView * imageview = [[UIImageView alloc] initWithImage:im];
+    
+    [self.animationBody addSubview:imageview];
+    
 }
+
+- (void)setHighlighted:(BOOL)highlighted animated:(BOOL)animated
+{
+    isSelected = highlighted;
+    if (highlighted) {
+        animationcomplete=NO;
+        [UIView animateWithDuration:0.3
+                              delay:0
+                            options:UIViewAnimationOptionCurveEaseIn
+                         animations:^{
+                             self.animationBody.transform = CGAffineTransformMakeScale(65, 65);
+                         }
+                         completion:^(BOOL b){
+                             if (!isSelected){
+                                 self.animationBody.transform = CGAffineTransformMakeScale(0, 0);
+                             }
+                                animationcomplete=YES;                         }];
+    } else {
+        if (animationcomplete) {
+            self.animationBody.transform = CGAffineTransformMakeScale(0, 0);
+        }
+        
+    }
+}
+
 
 - (void)setFreelancer:(FLManagedFreelancer *)freelancer
 {
