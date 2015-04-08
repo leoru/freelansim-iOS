@@ -16,6 +16,7 @@
 
 @interface FLFavouritesController ()
 @property (weak, nonatomic) IBOutlet UIView *EmptyView;
+@property (weak, nonatomic) IBOutlet UIView *EmptyViewContent;
 
 @end
 
@@ -73,14 +74,22 @@
                             animations:NULL
                             completion:NULL];
         }
-        [self.EmptyView setFrame:CGRectMake(0, 0, 320, 455)];
+        
+        if(self.EmptyView.frame.size.width!=320.0f){
+          [self.EmptyViewContent setFrame:CGRectMake(55, 200
+                                                     , 270, 149)];
+        }
+       
+        
+        [self.EmptyView setFrame:CGRectMake(0, 0, 0, 600)];
+
         self.navigationItem.rightBarButtonItem = nil;
         return;
     }
     else
     {
         [self.favouritesTable setScrollEnabled:YES];
-        [self.EmptyView setFrame:CGRectMake(0, 0, 320, 0)];
+        [self.EmptyView setFrame:CGRectMake(0, 0, 0, 0)];
         [self.EmptyView setHidden:YES];
         
     }

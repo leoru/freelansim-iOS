@@ -46,8 +46,14 @@
     
 }
 
+-(void)setEditing:(BOOL)editing animated:(BOOL)animated{
+    [super setEditing:editing animated:animated];
+    self.animationBody.transform = CGAffineTransformMakeScale(0, 0);
+}
+
 - (void)setHighlighted:(BOOL)highlighted animated:(BOOL)animated
 {
+
     isSelected = highlighted;
     if (highlighted) {
         animationcomplete=NO;

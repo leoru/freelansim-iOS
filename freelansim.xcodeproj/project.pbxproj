@@ -37,6 +37,7 @@
 		469D392B1AD254700045F627 /* freelansim_loader@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 469D39281AD254700045F627 /* freelansim_loader@3x.png */; };
 		469D392C1AD254700045F627 /* freelansim_loader.png in Resources */ = {isa = PBXBuildFile; fileRef = 469D39291AD254700045F627 /* freelansim_loader.png */; };
 		469D392D1AD254700045F627 /* freelansim_loader@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 469D392A1AD254700045F627 /* freelansim_loader@2x.png */; };
+		469F3DBD1AD576E400393629 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 469F3DBC1AD576E400393629 /* LaunchScreen.xib */; };
 		46A074741ACE62730025A22B /* mail.png in Resources */ = {isa = PBXBuildFile; fileRef = 46A074711ACE62730025A22B /* mail.png */; };
 		46A074751ACE62730025A22B /* mail@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 46A074721ACE62730025A22B /* mail@2x.png */; };
 		46A074761ACE62730025A22B /* mail@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 46A074731ACE62730025A22B /* mail@3x.png */; };
@@ -224,6 +225,7 @@
 		469D39281AD254700045F627 /* freelansim_loader@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "freelansim_loader@3x.png"; sourceTree = "<group>"; };
 		469D39291AD254700045F627 /* freelansim_loader.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = freelansim_loader.png; sourceTree = "<group>"; };
 		469D392A1AD254700045F627 /* freelansim_loader@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "freelansim_loader@2x.png"; sourceTree = "<group>"; };
+		469F3DBC1AD576E400393629 /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		46A074711ACE62730025A22B /* mail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mail.png; sourceTree = "<group>"; };
 		46A074721ACE62730025A22B /* mail@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mail@2x.png"; sourceTree = "<group>"; };
 		46A074731ACE62730025A22B /* mail@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mail@3x.png"; sourceTree = "<group>"; };
@@ -878,6 +880,7 @@
 				6ABADFF41849D7A5003EE481 /* FLFreelancerCell.xib */,
 				6ABADFF51849D7A5003EE481 /* FLTaskCell.xib */,
 				6ABADFF61849D7A5003EE481 /* LoadingCell.xib */,
+				469F3DBC1AD576E400393629 /* LaunchScreen.xib */,
 			);
 			name = IBInterfaces;
 			path = Views/IBInterfaces;
@@ -1156,6 +1159,7 @@
 				46E6F6031ACDB6C000D230EB /* freelancers@3x.png in Resources */,
 				46A074931ACE86BE0025A22B /* search_bg.png in Resources */,
 				6AA0AA621697FF6800FE28E3 /* 0089.png in Resources */,
+				469F3DBD1AD576E400393629 /* LaunchScreen.xib in Resources */,
 				6ABADFFB1849D7A5003EE481 /* FLTaskCell.xib in Resources */,
 				46FAC3D61ACF9C6300461298 /* navbar_bg.png in Resources */,
 				6AA0AA631697FF6800FE28E3 /* 0011.png in Resources */,
