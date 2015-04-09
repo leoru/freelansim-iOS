@@ -9,6 +9,7 @@
 #import "FavouriteCell.h"
 #import "FLValueTransformer.h"
 #import "FLDefines.h"
+#import "FLTask.h"
 
 
 @implementation FavouriteCell
@@ -104,6 +105,8 @@
     self.labelPrice.text = task.price;
     
     //new position
+    self.labelTime.text =  [FLTask dateFormattingFromString:task.datePublished];
+    
     self.labelName.frame = CGRectMake(15, 8, 280, self.labelName.frame.size.height);
     self.labelSecondText.frame = CGRectMake(15, 34, 280, self.labelSecondText.frame.size.height);
     self.labelPrice.frame = CGRectMake(15, 58, 280, self.labelPrice.frame.size.height);

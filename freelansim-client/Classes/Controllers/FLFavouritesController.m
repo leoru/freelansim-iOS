@@ -68,18 +68,19 @@
         if(self.EmptyView.hidden == YES)
         {
             self.EmptyView.hidden = NO;
-            [UIView transitionWithView:self.EmptyView
-                              duration:0.5
-                               options:UIViewAnimationOptionTransitionCrossDissolve
-                            animations:NULL
-                            completion:NULL];
+            self.EmptyView.alpha = 0;
+            [UIView animateKeyframesWithDuration:1
+                                           delay:0
+                                         options:UIViewAnimationOptionCurveEaseIn
+                                      animations:^{
+                                        self.EmptyView.alpha=1;
+                                      } completion:nil];
         }
         
-        if(self.EmptyView.frame.size.width!=320.0f){
-          [self.EmptyViewContent setFrame:CGRectMake(55, 200
-                                                     , 270, 149)];
-        }
-       
+        float x = (self.EmptyView.frame.size.width - 270)/2.f;
+        float y = x+100+(x-25);
+        
+        [self.EmptyViewContent setFrame:CGRectMake(x, y, 270, 149)];
         
         [self.EmptyView setFrame:CGRectMake(0, 0, 0, 600)];
 

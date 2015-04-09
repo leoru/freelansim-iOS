@@ -68,6 +68,10 @@
 
 
 - (NSString *)datePublishedWithFormatting {
+    return [FLTask dateFormattingFromString:self.datePublished];
+}
+
++(NSString *)dateFormattingFromString:(NSString *)dateString{
     static NSDateFormatter *rfcFormat = nil;
     static NSDateFormatter *displayFormat = nil;
     
@@ -79,7 +83,7 @@
     if (displayFormat == nil)
         displayFormat = [[NSDateFormatter alloc] init];
     
-    NSDate *publishDate = [rfcFormat dateFromString:self.datePublished];
+    NSDate *publishDate = [rfcFormat dateFromString:dateString];
     
     NSCalendar *calendar = [NSCalendar currentCalendar];
     NSDateComponents *publishDateComponents = [calendar components:NSYearCalendarUnit|NSDayCalendarUnit fromDate:publishDate];
@@ -98,7 +102,6 @@
     
     return [displayFormat stringFromDate:publishDate];
 }
-
 
 + (instancetype)objectFromJSON:(NSDictionary *)json
 {

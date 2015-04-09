@@ -212,7 +212,10 @@
         int linksHeight = 0;
         self.linksView = [[UIView alloc] init];
         self.linksView.backgroundColor = [UIColor clearColor];
-        self.linksView.frame = CGRectMake(15.0f, scrollViewHeight, 305.0f, linksHeight);
+        [self.linksView setClipsToBounds:YES];
+        
+        
+        self.linksView.frame = CGRectMake(15.0f, scrollViewHeight, self.loadingView.frame.size.width-30, linksHeight);
         UILabel *titleLabel = [[UILabel alloc] initWithFrame:self.linksView.frame];
         titleLabel.backgroundColor = [UIColor clearColor];
         titleLabel.frame = CGRectMake(0.0f,0.0f,300.0f,20.0f);
@@ -220,6 +223,7 @@
         [titleLabel setFont:DEFAULT_MEDIUM_FONT(14)];
         titleLabel.textColor = kDEFAULT_TEXT_COLOR;
         [titleLabel sizeToFit];
+        
         linksHeight += titleLabel.frame.size.height;
 
         int i = 0;
@@ -443,7 +447,9 @@
     
     [self.webView sizeToFit];
     
-    [self.webView setFrame:CGRectMake(self.webView.frame.origin.x, self.webView.frame.origin.y, 304, self.webView.frame.size.height)];
+    float width = self.loadingView.frame.size.width;
+    
+    [self.webView setFrame:CGRectMake(self.webView.frame.origin.x, self.webView.frame.origin.y, width-16, self.webView.frame.size.height)];
     
     CGRect frame = self.webView.frame;
     frame.origin.y = scrollViewHeight;
@@ -461,7 +467,7 @@
         [self.skillsView removeFromSuperview];
     }
     scrollViewHeight += self.skillsView.frame.size.height;
-    self.scrollView.contentSize = CGSizeMake(320,scrollViewHeight);
+    self.scrollView.contentSize = CGSizeMake(width,scrollViewHeight);
 }
 
 

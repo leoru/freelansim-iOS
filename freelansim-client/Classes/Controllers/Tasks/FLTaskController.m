@@ -126,7 +126,6 @@
     [button addTarget:self action:@selector(favoritesClicked) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithCustomView:button];
     
-    
     UIButton *button2 = [UIButton buttonWithType:UIButtonTypeCustom];
     button2.frame = CGRectMake(0, 0, 22, 22);
     [button2 setTintColor:[UIColor whiteColor]];
@@ -138,8 +137,12 @@
     [button2 addTarget:self action:@selector(clickAnimationPush:) forControlEvents:UIControlEventTouchDown];
     
     
+    UIView *backButtonView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 42, 22)];
+    
+    [backButtonView addSubview:button2];
+    
     [button2 addTarget:self action:@selector(actionOpenInBrowser:) forControlEvents:UIControlEventTouchUpInside];
-     UIBarButtonItem *openInBrowserItem = [[UIBarButtonItem alloc] initWithCustomView:button2];
+     UIBarButtonItem *openInBrowserItem = [[UIBarButtonItem alloc] initWithCustomView:backButtonView];
     
     if(self.navigationItem.rightBarButtonItems.count!=0){
         button.transform = CGAffineTransformMakeScale(0.0, 0.0);
@@ -150,6 +153,29 @@
                          animations:^{
                              button.transform = CGAffineTransformIdentity;
                          
+                         }
+                         completion:nil];
+    }
+    else{
+        button2.transform = CGAffineTransformMakeScale(0.0, 0.0);
+        
+        [UIView animateWithDuration:0.3
+                              delay:0.1
+                            options:UIViewAnimationOptionCurveEaseOut
+                         animations:^{
+                             button2.transform = CGAffineTransformIdentity;
+                             
+                         }
+                         completion:nil];
+        
+        button.transform = CGAffineTransformMakeScale(0.0, 0.0);
+        
+        [UIView animateWithDuration:0.3
+                              delay:0.0
+                            options:UIViewAnimationOptionCurveEaseOut
+                         animations:^{
+                             button.transform = CGAffineTransformIdentity;
+                             
                          }
                          completion:nil];
     }
@@ -221,8 +247,9 @@
 #pragma mark - WebView Delegate
 -(void)webViewDidFinishLoad:(UIWebView *)webView {
     [self.descriptionWebView sizeToFit];
-    
-       [self.descriptionWebView setFrame:CGRectMake(self.descriptionWebView.frame.origin.x, self.descriptionWebView.frame.origin.y, 304, self.descriptionWebView.frame.size.height)];
+    float width = self.loadingView.frame.size.width;
+   
+       [self.descriptionWebView setFrame:CGRectMake(self.descriptionWebView.frame.origin.x, self.descriptionWebView.frame.origin.y, width-16, self.descriptionWebView.frame.size.height)];
     
     scrollViewHeight += self.descriptionWebView.frame.size.height + 20;
     
@@ -230,7 +257,7 @@
     skillViewFrame.origin.y = self.descriptionWebView.frame.origin.y + self.descriptionWebView.frame.size.height + 10;
     
     self.skillsView.frame = skillViewFrame;
-    self.mainScrollView.contentSize = CGSizeMake(320,scrollViewHeight + self.skillsView.frame.size.height);
+    self.mainScrollView.contentSize = CGSizeMake(width,scrollViewHeight + self.skillsView.frame.size.height);
 }
 -(BOOL) webView:(UIWebView *)inWeb shouldStartLoadWithRequest:(NSURLRequest *)inRequest navigationType:(UIWebViewNavigationType)inType {
     if ( inType == UIWebViewNavigationTypeLinkClicked ) {
