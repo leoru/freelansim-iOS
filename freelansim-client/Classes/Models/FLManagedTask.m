@@ -46,7 +46,7 @@
     
     NSLog(@"TASKCOUNT!!! = %d",task.viewCount);
     
-    for(NSString *tag in task.tags){
+    for(NSString *tag in task.tags) {
         FLManagedTag *managedTag = [FLManagedTag MR_createInContext:localContext];
         managedTag.value = tag;
         managedTag.task = self;

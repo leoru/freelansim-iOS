@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MINLoadingCell : UITableViewCell
+@interface FLLoadingCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UIImageView *loadingImage;
 

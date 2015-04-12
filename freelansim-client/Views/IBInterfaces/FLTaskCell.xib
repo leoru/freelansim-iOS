@@ -19,8 +19,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <view contentMode="scaleToFill" id="RZX-iK-NwY">
+                        <rect key="frame" x="15" y="73" width="305" height="1"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <color key="backgroundColor" red="0.84313725490000002" green="0.87450980389999999" blue="0.88235294119999996" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="left" text="SEO оптимизация (мини)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3">
-                        <rect key="frame" x="15" y="2" width="260" height="35"/>
+                        <rect key="frame" x="15" y="3" width="260" height="28"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="15"/>
                         <color key="textColor" red="0.36470588240000001" green="0.39607843139999999" blue="0.46666666670000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -28,7 +33,7 @@
                         <size key="shadowOffset" width="0.0" height="0.0"/>
                     </label>
                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="3" contentMode="left" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7">
-                        <rect key="frame" x="15" y="31" width="260" height="24"/>
+                        <rect key="frame" x="15" y="27" width="260" height="24"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="13"/>
                         <color key="textColor" red="0.4431372549" green="0.51764705879999995" blue="0.54117647059999996" alpha="1" colorSpace="calibratedRGB"/>
@@ -36,14 +41,14 @@
                         <size key="shadowOffset" width="0.0" height="1"/>
                     </label>
                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="4" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8">
-                        <rect key="frame" x="15" y="53" width="260" height="21"/>
+                        <rect key="frame" x="15" y="49" width="260" height="21"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="13"/>
                         <color key="textColor" red="0.32156862749999998" green="0.65098039220000004" blue="0.67843137249999996" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </label>
                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="7" contentMode="left" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" id="9">
-                        <rect key="frame" x="155" y="53" width="120" height="21"/>
+                        <rect key="frame" x="155" y="49" width="120" height="21"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
                         <color key="textColor" red="0.6470588235294118" green="0.70588235294117641" blue="0.72549019607843135" alpha="1" colorSpace="calibratedRGB"/>

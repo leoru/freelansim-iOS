@@ -6,9 +6,9 @@
 //  Copyright (c) 2015 Kirill Kunst. All rights reserved.
 //
 
-#import "MINLoadingCell.h"
+#import "FLLoadingCell.h"
 
-@implementation MINLoadingCell
+@implementation FLLoadingCell
 
 @synthesize loadingImage;
 

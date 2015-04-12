@@ -8,7 +8,7 @@
 
 #import "FLFreelancerCell.h"
 #import "UIImageView+WebCache.h"
-#import "FLDefines.h"
+#import "UIImage+RadialGradient.h"
 
 @implementation FLFreelancerCell{
     BOOL animationcomplete;
@@ -38,7 +38,7 @@
     
     CGFloat end[4] ={1,1,1,1};
     
-    UIImage * im = [FLDefines radialGradientImage:self.animationBody.frame.size startColor:start endcolor:end  centre:CGPointMake(0.4,0.4) radius:0.7];
+    UIImage * im = [UIImage radialGradientImage:self.animationBody.frame.size startColor:start endcolor:end  centre:CGPointMake(0.4,0.4) radius:0.7];
     UIImageView * imageview = [[UIImageView alloc] initWithImage:im];
     
     [self.animationBody addSubview:imageview];
@@ -56,8 +56,8 @@
                          animations:^{
                              self.animationBody.transform = CGAffineTransformMakeScale(75, 75);
                          }
-                         completion:^(BOOL b){
-                             if (!isSelected){
+                         completion:^(BOOL b) {
+                             if (!isSelected) {
                                  self.animationBody.transform = CGAffineTransformMakeScale(0, 0);
                              }
                              animationcomplete=YES;                         }];

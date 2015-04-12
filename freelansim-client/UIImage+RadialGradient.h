@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RTImageCategorie : UIImage
-
+@interface UIImage (RadialGradient)
++(UIImage *)radialGradientImage:(CGSize)size startColor:(CGFloat [4])startColor endcolor:(CGFloat [4])endColor centre:(CGPoint)centre radius:(float)radius;
 @end

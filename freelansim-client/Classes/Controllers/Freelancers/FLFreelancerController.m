@@ -134,7 +134,7 @@
     
     NSString *star;
     NSString *starPush;
-    if([self isInFavourites]){
+    if([self isInFavourites]) {
         star = @"add_to_favorite_filled.png";
         starPush = @"add_to_favorite.png";
     }else{
@@ -335,7 +335,7 @@
     NSString *filtered = [[html stringByReplacingOccurrencesOfString:@" " withString:@""] stringByReplacingOccurrencesOfString:@"\n" withString:@""];
     NSLog(@"%@", filtered);
     NSRange range = [filtered rangeOfString:@"<body>(null)</body>"];
-    if(range.length > 0){
+    if(range.length > 0) {
         html = [FLHTMLUtils descriptionForbidden:html];
     }
     [self.webView loadHTMLString:html baseURL:baseURL];
