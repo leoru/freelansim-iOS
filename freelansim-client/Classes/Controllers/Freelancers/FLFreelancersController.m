@@ -10,7 +10,6 @@
 #import "FLFreelancerController.h"
 #import "FLFreelancerCell.h"
 #import "FLInternetConnectionUtils.h"
-#import "SVProgressHUD.h"
 
 
 @interface FLFreelancersController ()
@@ -56,9 +55,12 @@
     [self.searchBar setImage:[UIImage imageNamed:@"search_normal.png"] forSearchBarIcon:UISearchBarIconSearch state:UIControlStateNormal];
     [self.searchBar setSearchFieldBackgroundImage:[UIImage imageNamed:@"searchfield.png"] forState:UIControlStateNormal];
     [self.searchBar setImage:[UIImage imageNamed:@"search_clear"] forSearchBarIcon:UISearchBarIconClear state:UIControlStateNormal];
-    
     [self.searchBar setBackgroundImage:[UIImage imageNamed:@"search_bg.png"]];
-
+    [self.searchBar setFrame:CGRectMake(0, 0, self.searchBar.frame.size.width, 50)];
+    UITextField *txtSearchField = [self.searchBar valueForKey:@"_searchField"];
+    txtSearchField.font = DEFAULT_REGULAR_FONT(14);
+    txtSearchField.textColor=kDEFAULT_TEXT_COLOR;
+    [txtSearchField setBorderStyle:UITextBorderStyleRoundedRect];
     
     [self.freelancersTable registerNib:[UINib nibWithNibName:@"FLFreelancerCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"FLFreelancerCell"];
 }
@@ -186,7 +188,6 @@
     [self.freelancersTable deselectRowAtIndexPath:indexPath animated:NO];
     selectedFreelancer = self.freelancers[indexPath.row];
     [self performSegueWithIdentifier:@"FreelancerSegue" sender:self];
-    [SVProgressHUD showWithStatus:@"Загрузка..." maskType:SVProgressHUDMaskTypeGradient];
     
 }
 

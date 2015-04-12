@@ -9,7 +9,6 @@
 #import "FLFreelancerController.h"
 #import "UIImageView+WebCache.h"
 #import "FLHTTPClient.h"
-#import "SVProgressHUD.h"
 #import "FLContact.h"
 #import "FLHTMLUtils.h"
 #import "DWTagList.h"
@@ -22,6 +21,7 @@
 @interface FLFreelancerController ()
 {
     __weak IBOutlet UINavigationItem *testNavi;
+    __weak IBOutlet UIImageView *loadingImageIndicator;
     int scrollViewHeight;
 }
 @end
@@ -43,6 +43,13 @@
     self.view.backgroundColor = [UIColor whiteColor];
     [super viewDidLoad];
     
+    CABasicAnimation *fullRotation = [CABasicAnimation animationWithKeyPath:@"transform.rotation"];
+    fullRotation.fromValue = [NSNumber numberWithFloat:0];
+    fullRotation.toValue = [NSNumber numberWithFloat:((360*M_PI)/180)];
+    fullRotation.duration = 0.5;
+    fullRotation.repeatCount = HUGE_VAL;
+    [loadingImageIndicator.layer addAnimation:fullRotation forKey:@"360"];
+    
     self.loadingView.backgroundColor = [UIColor whiteColor];
     UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"back_arrow.png"] style:UIBarButtonItemStyleDone target:self action:@selector(popBack)];
     self.navigationItem.leftBarButtonItem = item;
@@ -50,13 +57,13 @@
     
     
     
-    [SVProgressHUD showWithMaskType:SVProgressHUDMaskTypeGradient];
+   // [SVProgressHUD showWithMaskType:SVProgressHUDMaskTypeGradient];
     [[FLHTTPClient sharedClient] loadFreelancer:self.freelancer withSuccess:^(FLFreelancer *fl, AFHTTPRequestOperation *operation, id responseObject) {
         self.freelancer = fl;
         [self initUI];
-        [SVProgressHUD dismiss];
+       // [SVProgressHUD dismiss];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        [SVProgressHUD dismiss];
+      //  [SVProgressHUD dismiss];
     }];
     
     actionSheetTasks = [[NSMutableArray alloc] init];

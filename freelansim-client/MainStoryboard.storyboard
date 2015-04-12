@@ -247,7 +247,13 @@
                             </scrollView>
                             <view contentMode="scaleToFill" id="PWw-gA-7Bi">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="freelansim_loader.png" id="k1p-rN-119">
+                                        <rect key="frame" x="144" y="268" width="32" height="32"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
@@ -257,6 +263,7 @@
                     <connections>
                         <outlet property="commentsLabel" destination="2Y4-Do-am6" id="nu2-kd-PsH"/>
                         <outlet property="descriptionWebView" destination="CMa-K5-voO" id="c87-sc-PqQ"/>
+                        <outlet property="loadingImageIndicator" destination="k1p-rN-119" id="KTU-Rq-x11"/>
                         <outlet property="loadingView" destination="PWw-gA-7Bi" id="NPx-U5-1Yd"/>
                         <outlet property="mainScrollView" destination="NFU-VC-AiD" id="xyl-mP-grx"/>
                         <outlet property="publishedLabel" destination="wih-t4-SN7" id="f2l-yi-cZN"/>
@@ -422,7 +429,7 @@
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="favorites_empty.png" id="gSq-eo-tCh">
-                                            <rect key="frame" x="105" y="30.0000013512058" width="60" height="60"/>
+                                            <rect key="frame" x="105" y="29.999998720322111" width="60" height="60"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Вы ничего не добавляли ;-)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Yul-0O-nQ2">
@@ -631,6 +638,12 @@
                             <view contentMode="scaleToFill" id="v1b-Ls-3u3">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="freelansim_loader.png" id="JwU-U0-5Mh">
+                                        <rect key="frame" x="144" y="268" width="32" height="32"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
                             </view>
@@ -644,6 +657,7 @@
                         <outlet property="avatarView" destination="bCn-ny-MZr" id="Yp0-ii-Lqe"/>
                         <outlet property="line" destination="H6d-hN-dR6" id="JHx-Jv-hEO"/>
                         <outlet property="loader" destination="Vi4-Fy-VF2" id="M50-JX-ksA"/>
+                        <outlet property="loadingImageIndicator" destination="JwU-U0-5Mh" id="4T1-23-0QX"/>
                         <outlet property="loadingView" destination="v1b-Ls-3u3" id="cBI-Dn-NJK"/>
                         <outlet property="locationLabel" destination="UOh-VG-6eJ" id="gtS-tv-eLh"/>
                         <outlet property="nameLabel" destination="pUz-e4-fMF" id="KT5-ZL-JOa"/>
@@ -691,6 +705,7 @@
         <image name="checkmark.png" width="14" height="14"/>
         <image name="date.png" width="16" height="16"/>
         <image name="favorites_empty.png" width="60" height="60"/>
+        <image name="freelansim_loader.png" width="32" height="32"/>
         <image name="mail.png" width="60" height="60"/>
         <image name="responses.png" width="16" height="16"/>
         <image name="search_no_results.png" width="60" height="60"/>
@@ -703,7 +718,7 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="ZCp-wO-Cv2"/>
-        <segue reference="cyE-FZ-hGI"/>
+        <segue reference="Ywv-uo-V9T"/>
         <segue reference="SXZ-wO-cMx"/>
     </inferredMetricsTieBreakers>
 </document>

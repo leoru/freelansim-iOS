@@ -10,7 +10,6 @@
 #import "FLTaskController.h"
 #import "FLTaskCell.h"
 #import "FLInternetConnectionUtils.h"
-#import "SVProgressHUD.h"
 #import "FLBannerViewController.h"
 
 @interface FLTasksController ()
@@ -54,8 +53,12 @@
     [self.searchBar setImage:[UIImage imageNamed:@"search_normal.png"] forSearchBarIcon:UISearchBarIconSearch state:UIControlStateNormal];
     [self.searchBar setSearchFieldBackgroundImage:[UIImage imageNamed:@"searchfield.png"] forState:UIControlStateNormal];
     [self.searchBar setImage:[UIImage imageNamed:@"search_clear"] forSearchBarIcon:UISearchBarIconClear state:UIControlStateNormal];
-    
     [self.searchBar setBackgroundImage:[UIImage imageNamed:@"search_bg.png"]];
+    [self.searchBar setFrame:CGRectMake(0, 0, self.searchBar.frame.size.width, 50)];
+    UITextField *txtSearchField = [self.searchBar valueForKey:@"_searchField"];
+    txtSearchField.font = DEFAULT_REGULAR_FONT(14);
+    txtSearchField.textColor=kDEFAULT_TEXT_COLOR;
+    [txtSearchField setBorderStyle:UITextBorderStyleRoundedRect];
     
     [self.tasksTable registerNib:[UINib nibWithNibName:@"FLTaskCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"FLTaskCell"];
     
@@ -195,7 +198,6 @@
     
     selectedTask = self.tasks[indexPath.row];
     [self performSegueWithIdentifier:@"TaskSegue" sender:self];
-    [SVProgressHUD showWithStatus:@"Загрузка..." maskType:SVProgressHUDMaskTypeGradient];
 }
 
 
