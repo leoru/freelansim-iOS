@@ -43,7 +43,9 @@
 	self.link = task.link;
 	self.viewCount = [NSNumber numberWithInt:task.viewCount];
 	self.commentCount = [NSNumber numberWithInt:task.commentCount];
-
+    
+    NSLog(@"TASKCOUNT!!! = %d",task.viewCount);
+    
     for(NSString *tag in task.tags){
         FLManagedTag *managedTag = [FLManagedTag MR_createInContext:localContext];
         managedTag.value = tag;

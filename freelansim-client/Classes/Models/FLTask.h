@@ -32,5 +32,5 @@
 
 -(void)mapWithManagedTask:(FLManagedTask *)task;
 -(NSString *)datePublishedWithFormatting;
-
++(NSString *)dateFormattingFromString:(NSString *)dateString;
 @end

@@ -73,13 +73,32 @@
     FLTask *task = t;
     HTMLNode *body = [self body];
     
-    HTMLNode *taskStat = [body findChildOfClass:@"task_stat"];
-    task.viewCount = [[[taskStat findChildOfClass:@"views"] contents] intValue];
-    task.commentCount = [[[taskStat findChildOfClass:@"comments"] contents] intValue];
     
+    NSArray *infoBlocksA = [body findChildrenOfClass:@"layout-block_bordered"];
+    HTMLNode *taskStat1 = [infoBlocksA[2] findChildOfClass:@"user-params"];
+    
+    HTMLNode *taskStat2 = [taskStat1 findChildOfClass:@"user-params__value"];
+    HTMLNode *taskStat3 = [taskStat2 findChildOfClass:@"list"];
+    NSArray *list = [taskStat3 findChildrenOfClass:@"list__item data data_statistics"];
+    
+    HTMLNode *commentCount = [list[0] findChildOfClass:@"data__value"];
+    HTMLNode *viewsCount = [list[1] findChildOfClass:@"data__value"];
+    
+    NSString * str0 =[[commentCount children][0] rawContents ];
+    NSString * comments = [str0 stringByReplacingOccurrencesOfString:@"\n" withString:@""];
+    NSString * str1 =[[viewsCount children][0] rawContents ];
+    NSString * views = [str1 stringByReplacingOccurrencesOfString:@"\n" withString:@""];
+    
+    task.commentCount = comments.intValue;
+    task.viewCount =views.intValue;
+
     NSArray *infoBlocks = [body findChildrenOfClass:@"task__description"];
     task.htmlDescription = [infoBlocks[0] rawContents];
     NSLog(@"text description %@", task.htmlDescription);
+    
+    
+   
+
 
     HTMLNode *secondBlock = infoBlocks[0];
     

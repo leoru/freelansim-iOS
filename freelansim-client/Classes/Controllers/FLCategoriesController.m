@@ -8,6 +8,7 @@
 
 #import "FLCategoriesController.h"
 #import "FLCategory.h"
+#import "CategoryCell.h"
 
 @interface FLCategoriesController ()
 
@@ -35,9 +36,9 @@
 {
     self.navItem.prompt = @"";
     self.navItem.title = @"Разделы";
-    self.view.backgroundColor = [UIColor patternBackgroundColor];
+    self.view.backgroundColor = [UIColor whiteColor];
     self.categoriesTable.backgroundColor = [UIColor clearColor];
-    self.navBar.tintColor = [UIColor colorWithRed:0.97f green:0.67f blue:0.44f alpha:1.00f];
+   // self.navBar.tintColor = [UIColor colorWithRed:0.97f green:0.67f blue:0.44f alpha:1.00f];
     categories = [FLCategory categories];
     
     self.categoriesTable.delegate = self;
@@ -65,25 +66,25 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *cellIdentifier = @"CategoryCell";
-    UITableViewCell *cell;
+    static NSString *cellIdentifier = @"customCategory";
+    CategoryCell *cell;
     cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (!cell) {
         cell = [[NSBundle mainBundle] loadNibNamed:cellIdentifier owner:nil options:nil][0];
     }
-    UILabel *categoryTitle = (UILabel *)[cell viewWithTag:1];
+    //UILabel *categoryTitle = (UILabel *)[cell viewWithTag:1];
     
     FLCategory *category = categories[indexPath.row];
-    categoryTitle.text = category.title;
-    [categoryTitle setAdjustsFontSizeToFitWidth:YES];
-    UIView *backgroundView = [[UIView alloc] initWithFrame:CGRectZero];
-    backgroundView.backgroundColor = kDefaultBlueColor;
-    cell.selectedBackgroundView = backgroundView;
+    cell.customCategoryTitle.text =category.title;
+   // categoryTitle.text = category.title;
+   // [categoryTitle setAdjustsFontSizeToFitWidth:YES];
+   //  UIView *backgroundView = [[UIView alloc] initWithFrame:CGRectZero];
+   //  backgroundView.backgroundColor = [UIColor whiteColor];
+  //  cell.selectedBackgroundView = backgroundView;   
     
     for (FLCategory *cat in self.selectedCategories) {
         if ([cat.title isEqualToString:category.title]) {
             [self.categoriesTable selectRowAtIndexPath:indexPath animated:YES scrollPosition:UITableViewRowAnimationNone];
-            cell.accessoryType = UITableViewCellAccessoryCheckmark;
         }
     }
     return cell;
@@ -94,9 +95,8 @@
 }
 
 -(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [self.categoriesTable cellForRowAtIndexPath:indexPath];
+  //  CategoryCell *cell = (CategoryCell *)[self.categoriesTable cellForRowAtIndexPath:indexPath];
     [self.categoriesTable deselectRowAtIndexPath:indexPath animated:YES];
-    cell.accessoryType = UITableViewCellAccessoryNone;
     FLCategory *category = categories[indexPath.row];
     
     for (FLCategory *cat in [self.selectedCategories copy]) {
@@ -106,9 +106,8 @@
     }
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [self.categoriesTable cellForRowAtIndexPath:indexPath];
+  //  CategoryCell *cell = (CategoryCell *)[self.categoriesTable cellForRowAtIndexPath:indexPath];
     [self.categoriesTable selectRowAtIndexPath:indexPath animated:YES scrollPosition:UITableViewScrollPositionNone];
-    cell.accessoryType = UITableViewCellAccessoryCheckmark;
     FLCategory *category = categories[indexPath.row];
     
     [self.selectedCategories addObject:category];

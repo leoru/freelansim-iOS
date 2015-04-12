@@ -403,7 +403,7 @@ NSString * rawContentsOfNode(xmlNode * node)
 	xmlBufferFree(buffer);
 	
 	return string;
-} 
+}
 
 -(NSString*)rawContents {
 	return rawContentsOfNode(_node);

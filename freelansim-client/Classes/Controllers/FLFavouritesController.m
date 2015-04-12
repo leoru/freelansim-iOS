@@ -11,10 +11,11 @@
 #import "FLTaskController.h"
 #import "FLManagedTask.h"
 #import "FLFreelancerController.h"
-#import "SVProgressHUD.h"
 #import "FavouriteCell.h"
 
 @interface FLFavouritesController ()
+@property (weak, nonatomic) IBOutlet UIView *EmptyView;
+@property (weak, nonatomic) IBOutlet UIView *EmptyViewContent;
 
 @end
 
@@ -44,6 +45,7 @@
     [UIRender renderNavigationBar:self.navigationController.navigationBar];
     [super viewDidLoad];
     [self.favouritesTable registerNib:[UINib nibWithNibName:@"FavouriteCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"FavouriteCell"];
+    
 }
 - (void) viewDidUnload
 {
@@ -56,13 +58,40 @@
 }
 
 -(void)initUI{
-    self.view.backgroundColor = [UIColor patternBackgroundColor];
+    self.view.backgroundColor = [UIColor whiteColor];
     
     if([favourites count] == 0){
         editingMode = NO;
         [self.favouritesTable setEditing:NO animated:NO];
+        [self.favouritesTable setScrollEnabled:NO];
+        if(self.EmptyView.hidden == YES)
+        {
+            self.EmptyView.hidden = NO;
+            self.EmptyView.alpha = 0;
+            [UIView animateKeyframesWithDuration:1
+                                           delay:0
+                                         options:UIViewAnimationOptionCurveEaseIn
+                                      animations:^{
+                                        self.EmptyView.alpha=1;
+                                      } completion:nil];
+        }
+        
+        float x = (self.EmptyView.frame.size.width - 270)/2.f;
+        float y = x+100+(x-25);
+        
+        [self.EmptyViewContent setFrame:CGRectMake(x, y, 270, 149)];
+        
+        [self.EmptyView setFrame:CGRectMake(0, 0, 0, 600)];
+
         self.navigationItem.rightBarButtonItem = nil;
         return;
+    }
+    else
+    {
+        [self.favouritesTable setScrollEnabled:YES];
+        [self.EmptyView setFrame:CGRectMake(0, 0, 0, 0)];
+        [self.EmptyView setHidden:YES];
+        
     }
     
     UIBarButtonItem *item;
@@ -122,12 +151,13 @@
         [cell setFreelancer:freelancer];
     } else if([obj isKindOfClass:[FLManagedTask class]]) {
         FLManagedTask *task = (FLManagedTask *)obj;
-        [cell setTask:task];
+        [cell setTask:task];        
     }
     
-    UIView *backgroundView = [[UIView alloc] initWithFrame:CGRectZero];
-    backgroundView.backgroundColor = kDefaultBlueColor;
-    cell.selectedBackgroundView = backgroundView;
+    
+   // UIView *backgroundView = [[UIView alloc] initWithFrame:CGRectZero];
+   // backgroundView.backgroundColor = kDefaultBlueColor;
+   // cell.selectedBackgroundView = backgroundView;
     
     return cell;
 }
@@ -160,6 +190,9 @@
     [self initUI];
 }
 
+- (NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return @"Удалить";
+}
 
 - (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -178,7 +211,6 @@
         selectedTask = (FLManagedTask *)obj;
         [self performSegueWithIdentifier:@"TaskSegue" sender:self];
     }
-    [SVProgressHUD showWithStatus:@"Загрузка..." maskType:SVProgressHUDMaskTypeGradient];
 }
 
 #pragma mark - Prepare for segue

@@ -33,13 +33,15 @@
 
 +(void)applyStylesheet {
 	UINavigationBar *navigationBar = [UINavigationBar appearance];
-    //    [navigationBar setBarTintColor:[UIColor colorWithRed:0.98f green:0.97f blue:0.96f alpha:1.00f]];
-    [navigationBar setBarTintColor:kNavBarColor];
+    [navigationBar setBackgroundImage:[UIImage imageNamed:@"navbar_bg.png"] forBarMetrics:UIBarMetricsDefault];
+    [navigationBar setShadowImage:[UIImage imageNamed:@"keyline.png"]];
+    [navigationBar setTranslucent:NO];
+    
     
     [navigationBar setTitleTextAttributes:@{NSFontAttributeName : DEFAULT_MEDIUM_FONT(17),
                                             NSForegroundColorAttributeName : [UIColor whiteColor]}];
     
-    NSDictionary *barButtonTitleTextAttributes = @{NSFontAttributeName : DEFAULT_MEDIUM_FONT(13.0f),
+    NSDictionary *barButtonTitleTextAttributes = @{NSFontAttributeName : DEFAULT_REGULAR_FONT(15.0f),
                                                    NSForegroundColorAttributeName : [UIColor whiteColor]};
     
     UIBarButtonItem *barButton = [UIBarButtonItem appearanceWhenContainedIn:[UINavigationBar class], nil];
@@ -51,11 +53,56 @@
     [navigationBar setBackIndicatorTransitionMaskImage:[UIImage imageNamed:@"back_button_arrow"]];
     [navigationBar setTintColor:[UIColor whiteColor]];
     
-    UITabBar *tabBar = [UITabBar appearance];
-    
-    [tabBar setTintColor:[UIColor colorWithRed:0.36 green:0.7 blue:0.93 alpha:1]];
-    
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
 }
+
++(void)renderTabBarController:(UITabBarController *)tabBarController{
+    
+    UITabBar *tabBar = tabBarController.tabBar;
+    UITabBarItem *offers = [tabBar.items objectAtIndex:0];
+    UITabBarItem *freelance = [tabBar.items objectAtIndex:1];
+    UITabBarItem *favor = [tabBar.items objectAtIndex:2];
+    UITabBarItem *about = [tabBar.items objectAtIndex:3];
+    
+    UIOffset offset = UIOffsetMake(0,-4);
+    NSDictionary *attrebutes = @{NSFontAttributeName : DEFAULT_REGULAR_FONT(11.0f)};
+    
+    [offers setImage:[[UIImage imageNamed:@"offers.png" ] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+    [offers setSelectedImage:[UIImage imageNamed:@"offers_active.png"]];
+    [offers setTitlePositionAdjustment:offset];
+    [offers setTitleTextAttributes:attrebutes forState:UIControlStateNormal];
+    
+    [freelance setImage:[[UIImage imageNamed:@"freelancers.png"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+    [freelance setSelectedImage:[UIImage imageNamed:@"freelancers_active.png"]];
+    [freelance setTitlePositionAdjustment:offset];
+    [freelance setTitleTextAttributes:attrebutes forState:UIControlStateNormal];
+    
+    [favor setImage:[[UIImage imageNamed:@"favorites.png"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+    [favor setSelectedImage:[UIImage imageNamed:@"favorites_active.png"]];
+    [favor setTitlePositionAdjustment:offset];
+    [favor setTitleTextAttributes:attrebutes forState:UIControlStateNormal];
+    
+    [about setImage:[[UIImage imageNamed:@"about.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+    [about setSelectedImage:[UIImage imageNamed:@"about_active.png"]];
+    [about setTitlePositionAdjustment:offset];
+    [about setTitleTextAttributes:attrebutes forState:UIControlStateNormal];
+    
+    
+    [tabBar setBackgroundImage:[UIImage imageNamed:@"tabbar.png"]];
+    [tabBar setShadowImage:[UIImage imageNamed:@"tab_line.png"]];
+    
+    [tabBar setTintColor:[UIColor greenColor]];
+    [tabBar setTranslucent:NO];
+    
+    [[UITabBarItem appearance] setTitleTextAttributes:@{ NSForegroundColorAttributeName : [UIColor colorWithRed:148/255.f green:160/255.f blue:162/255.f alpha:1] }
+                                             forState:UIControlStateNormal];
+    [[UITabBarItem appearance] setTitleTextAttributes:@{ NSForegroundColorAttributeName : [UIColor colorWithRed:0.95f green:0.67f blue:0.26f alpha:1] }
+                                             forState:UIControlStateSelected];
+    
+    [tabBar setSelectedImageTintColor:[UIColor colorWithRed:0.95f green:0.67f blue:0.26f alpha:1]];
+    
+    
+}
+
 
 @end

@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface CategoryCell : UITableViewCell
-
+@property (weak, nonatomic) IBOutlet UILabel *customCategoryTitle;
+@property (weak, nonatomic) IBOutlet UIImageView *customCategoryCheckmark;
 @end

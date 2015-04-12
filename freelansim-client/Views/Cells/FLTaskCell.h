@@ -15,6 +15,7 @@
 ;
 @property (weak, nonatomic) IBOutlet UILabel *labelPrice;
 @property (weak, nonatomic) IBOutlet UILabel *labelPublished;
+@property (weak, nonatomic) IBOutlet UIView *animationBody;
 
 - (void)setTask:(FLTask *)task;
 

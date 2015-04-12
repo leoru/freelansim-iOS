@@ -17,6 +17,8 @@
     [MagicalRecord setupCoreDataStackWithStoreNamed:@"DataStore.sqlite"];
     [UIRender applyStylesheet];
     [self loadPreStoringData];
+    [UIRender renderTabBarController:(UITabBarController *)self.window.rootViewController];
+    
     return YES;
 }
 

@@ -15,17 +15,17 @@
 
 @end
 
-#define CORNER_RADIUS 5.0f
+#define CORNER_RADIUS 2.0f
 #define LABEL_MARGIN 5.0f
 #define BOTTOM_MARGIN 7.0f
-#define FONT_SIZE 15.0f
+#define FONT_SIZE 14.0f
 #define HORIZONTAL_PADDING 7.0f
 #define VERTICAL_PADDING 3.0f
-#define BACKGROUND_COLOR [UIColor colorWithRed:0.88f green:0.58f blue:0.47f alpha:1.00f]
-#define TEXT_COLOR [UIColor whiteColor]
+#define BACKGROUND_COLOR [UIColor whiteColor]
+#define TEXT_COLOR [UIColor colorWithRed:(93/255.f) green:(101/255.f) blue:(119/255.f) alpha:1]
 #define TEXT_SHADOW_COLOR [UIColor whiteColor]
 #define TEXT_SHADOW_OFFSET CGSizeMake(0.0f, 0.0f)
-#define BORDER_COLOR [UIColor colorWithRed:0.88f green:0.58f blue:0.47f alpha:1.00f].CGColor
+#define BORDER_COLOR [UIColor colorWithRed:(215/255.f) green:(223/255.f) blue:(225/255.f) alpha:1].CGColor
 #define BORDER_WIDTH 1.0f
 
 @interface DWTagList : UIView

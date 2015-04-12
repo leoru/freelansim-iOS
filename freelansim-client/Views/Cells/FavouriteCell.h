@@ -16,10 +16,13 @@
 @property (weak, nonatomic) IBOutlet UILabel *labelName;
 @property (weak, nonatomic) IBOutlet UILabel *labelSecondText;
 @property (weak, nonatomic) IBOutlet UILabel *labelShortDescription;
+@property (weak, nonatomic) IBOutlet UILabel *labelTime;
 @property (weak, nonatomic) IBOutlet UILabel *labelPrice;
+@property (weak, nonatomic) IBOutlet UIView *animationBody;
 
 - (void)setFreelancer:(FLManagedFreelancer *)freelancer;
 
 - (void)setTask:(FLManagedTask *)task;
+
 
 @end
