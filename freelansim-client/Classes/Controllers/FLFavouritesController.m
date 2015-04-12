@@ -11,7 +11,6 @@
 #import "FLTaskController.h"
 #import "FLManagedTask.h"
 #import "FLFreelancerController.h"
-#import "SVProgressHUD.h"
 #import "FavouriteCell.h"
 
 @interface FLFavouritesController ()
@@ -212,7 +211,6 @@
         selectedTask = (FLManagedTask *)obj;
         [self performSegueWithIdentifier:@"TaskSegue" sender:self];
     }
-    [SVProgressHUD showWithStatus:@"Загрузка..." maskType:SVProgressHUDMaskTypeGradient];
 }
 
 #pragma mark - Prepare for segue

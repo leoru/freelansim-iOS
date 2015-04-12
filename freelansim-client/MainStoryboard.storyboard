@@ -429,7 +429,7 @@
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="favorites_empty.png" id="gSq-eo-tCh">
-                                            <rect key="frame" x="105" y="29.999998720322111" width="60" height="60"/>
+                                            <rect key="frame" x="105" y="29.99999963975915" width="60" height="60"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Вы ничего не добавляли ;-)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Yul-0O-nQ2">
@@ -717,8 +717,8 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="ZCp-wO-Cv2"/>
         <segue reference="Ywv-uo-V9T"/>
-        <segue reference="SXZ-wO-cMx"/>
+        <segue reference="VT8-2P-bpd"/>
+        <segue reference="x9E-yU-h1c"/>
     </inferredMetricsTieBreakers>
 </document>
