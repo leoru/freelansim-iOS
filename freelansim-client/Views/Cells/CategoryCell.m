@@ -23,7 +23,7 @@
 {
     [super setSelected:selected animated:animated];
     
-    if (selected==YES){
+    if (selected == YES) {
         [self.customCategoryCheckmark setHidden:NO];
         self.customCategoryTitle.textColor =[UIColor colorWithRed:(82/255.f)
                                                             green:(166/255.f)

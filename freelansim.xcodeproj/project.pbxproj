@@ -28,7 +28,7 @@
 		469AE95B1ACF077900B3CBE8 /* views.png in Resources */ = {isa = PBXBuildFile; fileRef = 469AE9521ACF077900B3CBE8 /* views.png */; };
 		469AE95C1ACF077900B3CBE8 /* views@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 469AE9531ACF077900B3CBE8 /* views@2x.png */; };
 		469AE95D1ACF077900B3CBE8 /* views@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 469AE9541ACF077900B3CBE8 /* views@3x.png */; };
-		469AEB9A1AD26089005B1A62 /* MINLoadingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 469AEB991AD26089005B1A62 /* MINLoadingCell.m */; };
+		469AEB9A1AD26089005B1A62 /* FLLoadingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 469AEB991AD26089005B1A62 /* FLLoadingCell.m */; };
 		469D00191AD69F5E00AFC3F4 /* splash.png in Resources */ = {isa = PBXBuildFile; fileRef = 469D00181AD69F5E00AFC3F4 /* splash.png */; };
 		469D0DB11AD00A7700A880FC /* share.png in Resources */ = {isa = PBXBuildFile; fileRef = 469D0DAE1AD00A7700A880FC /* share.png */; };
 		469D0DB21AD00A7700A880FC /* share@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 469D0DAF1AD00A7700A880FC /* share@2x.png */; };
@@ -38,6 +38,7 @@
 		469D392B1AD254700045F627 /* freelansim_loader@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 469D39281AD254700045F627 /* freelansim_loader@3x.png */; };
 		469D392C1AD254700045F627 /* freelansim_loader.png in Resources */ = {isa = PBXBuildFile; fileRef = 469D39291AD254700045F627 /* freelansim_loader.png */; };
 		469D392D1AD254700045F627 /* freelansim_loader@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 469D392A1AD254700045F627 /* freelansim_loader@2x.png */; };
+		469DB5D21ADA8ABA00C1C5F5 /* UIImage+RadialGradient.m in Sources */ = {isa = PBXBuildFile; fileRef = 469DB5D11ADA8ABA00C1C5F5 /* UIImage+RadialGradient.m */; };
 		469F3DBD1AD576E400393629 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 469F3DBC1AD576E400393629 /* LaunchScreen.xib */; };
 		46A074741ACE62730025A22B /* mail.png in Resources */ = {isa = PBXBuildFile; fileRef = 46A074711ACE62730025A22B /* mail.png */; };
 		46A074751ACE62730025A22B /* mail@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 46A074721ACE62730025A22B /* mail@2x.png */; };
@@ -216,8 +217,8 @@
 		469AE9521ACF077900B3CBE8 /* views.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = views.png; sourceTree = "<group>"; };
 		469AE9531ACF077900B3CBE8 /* views@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "views@2x.png"; sourceTree = "<group>"; };
 		469AE9541ACF077900B3CBE8 /* views@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "views@3x.png"; sourceTree = "<group>"; };
-		469AEB981AD26089005B1A62 /* MINLoadingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MINLoadingCell.h; sourceTree = "<group>"; };
-		469AEB991AD26089005B1A62 /* MINLoadingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MINLoadingCell.m; sourceTree = "<group>"; };
+		469AEB981AD26089005B1A62 /* FLLoadingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLLoadingCell.h; sourceTree = "<group>"; };
+		469AEB991AD26089005B1A62 /* FLLoadingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLLoadingCell.m; sourceTree = "<group>"; };
 		469D00181AD69F5E00AFC3F4 /* splash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = splash.png; sourceTree = "<group>"; };
 		469D0DAE1AD00A7700A880FC /* share.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = share.png; sourceTree = "<group>"; };
 		469D0DAF1AD00A7700A880FC /* share@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "share@2x.png"; sourceTree = "<group>"; };
@@ -227,6 +228,8 @@
 		469D39281AD254700045F627 /* freelansim_loader@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "freelansim_loader@3x.png"; sourceTree = "<group>"; };
 		469D39291AD254700045F627 /* freelansim_loader.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = freelansim_loader.png; sourceTree = "<group>"; };
 		469D392A1AD254700045F627 /* freelansim_loader@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "freelansim_loader@2x.png"; sourceTree = "<group>"; };
+		469DB5D01ADA8ABA00C1C5F5 /* UIImage+RadialGradient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+RadialGradient.h"; path = "../../UIImage+RadialGradient.h"; sourceTree = "<group>"; };
+		469DB5D11ADA8ABA00C1C5F5 /* UIImage+RadialGradient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+RadialGradient.m"; path = "../../UIImage+RadialGradient.m"; sourceTree = "<group>"; };
 		469F3DBC1AD576E400393629 /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		46A074711ACE62730025A22B /* mail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mail.png; sourceTree = "<group>"; };
 		46A074721ACE62730025A22B /* mail@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mail@2x.png"; sourceTree = "<group>"; };
@@ -836,6 +839,8 @@
 		6AA0AA121697F8DE00FE28E3 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				469DB5D01ADA8ABA00C1C5F5 /* UIImage+RadialGradient.h */,
+				469DB5D11ADA8ABA00C1C5F5 /* UIImage+RadialGradient.m */,
 				6AA0AA131697F8DE00FE28E3 /* FLContactButton.h */,
 				6AA0AA141697F8DE00FE28E3 /* FLContactButton.m */,
 				6AA0AA151697F8DE00FE28E3 /* UIRender.h */,
@@ -861,8 +866,8 @@
 				6ABADFEA1849D735003EE481 /* FLTaskCell.h */,
 				6ABADFEB1849D735003EE481 /* FLTaskCell.m */,
 				6ABADFED1849D753003EE481 /* FLFreelancerCell.h */,
-				469AEB981AD26089005B1A62 /* MINLoadingCell.h */,
-				469AEB991AD26089005B1A62 /* MINLoadingCell.m */,
+				469AEB981AD26089005B1A62 /* FLLoadingCell.h */,
+				469AEB991AD26089005B1A62 /* FLLoadingCell.m */,
 				6ABADFEE1849D753003EE481 /* FLFreelancerCell.m */,
 				6AD8DB66184A53CB0082C2C0 /* CategoryCell.h */,
 				6AD8DB67184A53CB0082C2C0 /* CategoryCell.m */,
@@ -1262,7 +1267,7 @@
 				6A1AE72C167DB5C8005DE0E5 /* FLHTTPClient.m in Sources */,
 				6A1AE737167DCB6A005DE0E5 /* FLTask.m in Sources */,
 				6ABADFEC1849D735003EE481 /* FLTaskCell.m in Sources */,
-				469AEB9A1AD26089005B1A62 /* MINLoadingCell.m in Sources */,
+				469AEB9A1AD26089005B1A62 /* FLLoadingCell.m in Sources */,
 				6A1AE744167DD022005DE0E5 /* FLHTMLParser.m in Sources */,
 				6A1AE747167E11FF005DE0E5 /* FLDefines.m in Sources */,
 				6AD8DB68184A53CB0082C2C0 /* CategoryCell.m in Sources */,
@@ -1290,6 +1295,7 @@
 				8B68D63D169E8272009FE17A /* FLFavouritesController.m in Sources */,
 				8B14730E169EBE5300AD7027 /* FLFavouriteDeleteButton.m in Sources */,
 				A8FB8C8D195D824B0022FC38 /* FLManagedTag.m in Sources */,
+				469DB5D21ADA8ABA00C1C5F5 /* UIImage+RadialGradient.m in Sources */,
 				A8EE826D19627F60000BC0D8 /* FLLinkButton.m in Sources */,
 				6ABADFEF1849D753003EE481 /* FLFreelancerCell.m in Sources */,
 				8BA6343416A00FF400BF14F2 /* FLFirstFavoritesCreator.m in Sources */,

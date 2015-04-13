@@ -97,7 +97,7 @@
     
     if (indexPath.row == self.freelancers.count) {
         if (!stopSearch) {
-            if(![FLInternetConnectionUtils isConnectedToInternet]){
+            if(![FLInternetConnectionUtils isConnectedToInternet]) {
                 cell = [tableView dequeueReusableCellWithIdentifier:emptyCellIdentifier];
                 if (!cell) {
                     cell = [[NSBundle mainBundle] loadNibNamed:emptyCellIdentifier owner:nil options:nil][0];

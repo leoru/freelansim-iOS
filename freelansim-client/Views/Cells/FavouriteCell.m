@@ -8,7 +8,7 @@
 
 #import "FavouriteCell.h"
 #import "FLValueTransformer.h"
-#import "FLDefines.h"
+#import "UIImage+RadialGradient.h"
 #import "FLTask.h"
 
 
@@ -37,11 +37,11 @@
     [super awakeFromNib];
     animationcomplete = YES;
     isSelected = NO;
-    CGFloat start[4] ={(232/255.f),(237/255.f),(242/255.f), 1.0};
-    CGFloat end[4] ={1,1,1,1};
+    CGFloat start[4] = {(232/255.f),(237/255.f),(242/255.f), 1.0};
+    CGFloat end[4] = {1,1,1,1};
     
-    UIImage * im = [FLDefines radialGradientImage:self.animationBody.frame.size startColor:start endcolor:end  centre:CGPointMake(0.3,0.4) radius:0.7];
-    UIImageView * imageview = [[UIImageView alloc] initWithImage:im];
+    UIImage * im = [UIImage radialGradientImage:self.animationBody.frame.size startColor:start endcolor:end  centre:CGPointMake(0.3,0.4) radius:0.7];
+    UIImageView *imageview = [[UIImageView alloc] initWithImage:im];
     
     [self.animationBody addSubview:imageview];
     
@@ -57,18 +57,18 @@
 
     isSelected = highlighted;
     if (highlighted) {
-        animationcomplete=NO;
+        animationcomplete = NO;
         [UIView animateWithDuration:0.3
                               delay:0
                             options:UIViewAnimationOptionCurveEaseIn
                          animations:^{
                              self.animationBody.transform = CGAffineTransformMakeScale(65, 65);
                          }
-                         completion:^(BOOL b){
-                             if (!isSelected){
+                         completion:^(BOOL b) {
+                             if (!isSelected) {
                                  self.animationBody.transform = CGAffineTransformMakeScale(0, 0);
                              }
-                                animationcomplete=YES;                         }];
+                                animationcomplete = YES;}];
     } else {
         if (animationcomplete) {
             self.animationBody.transform = CGAffineTransformMakeScale(0, 0);

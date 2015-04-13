@@ -31,7 +31,7 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated{
-    if(editingMode){
+    if(editingMode) {
         [self.favouritesTable setEditing:NO animated:NO];
         editingMode = NO;
     }

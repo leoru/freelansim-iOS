@@ -7,7 +7,7 @@
 //
 
 #import "FLTaskCell.h"
-#import "FLDefines.h"
+#import "UIImage+RadialGradient.h"
 
 @implementation FLTaskCell{
     BOOL animationcomplete;
@@ -35,7 +35,7 @@
     CGFloat start[4] ={(232/255.f),(237/255.f),(242/255.f), 1.0};
     CGFloat end[4] ={1,1,1,1};
     
-    UIImage * im = [FLDefines radialGradientImage:self.animationBody.frame.size startColor:start endcolor:end  centre:CGPointMake(0.4,0.4) radius:0.7];
+    UIImage * im = [UIImage radialGradientImage:self.animationBody.frame.size startColor:start endcolor:end  centre:CGPointMake(0.4,0.4) radius:0.7];
     UIImageView * imageview = [[UIImageView alloc] initWithImage:im];
     
     [self.animationBody addSubview:imageview];

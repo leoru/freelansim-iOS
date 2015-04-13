@@ -170,7 +170,7 @@
     // site
     NSString *site;
     HTMLNode *siteNode = [contactsNode findChildOfClass:@"site"];
-    if(siteNode){
+    if(siteNode) {
         site = [siteNode getAttributeNamed:@"href"];
     }
     if (site) {

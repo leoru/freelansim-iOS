@@ -58,7 +58,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fG6-jQ-AR4">
-                                                    <rect key="frame" x="44" y="13" width="581" height="21"/>
+                                                    <rect key="frame" x="44" y="13" width="901" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                                     <color key="tintColor" red="0.36470588240000001" green="0.39607843139999999" blue="0.46666666670000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
@@ -66,7 +66,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" id="gvg-De-3u7">
-                                                    <rect key="frame" x="44" y="40" width="596" height="1"/>
+                                                    <rect key="frame" x="44" y="40" width="916" height="1"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
                                                     <color key="backgroundColor" red="0.79433973648190348" green="0.79315585596400584" blue="0.81383529974489799" alpha="1" colorSpace="calibratedRGB"/>
                                                 </view>
@@ -105,7 +105,7 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="v2X-HV-zfV">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="v2X-HV-zfV">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -359,7 +359,7 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="mnL-0t-txz">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="mnL-0t-txz">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -373,7 +373,7 @@
                                 </searchBar>
                             </tableView>
                             <view hidden="YES" autoresizesSubviews="NO" contentMode="scaleToFill" id="ME7-SB-5rq">
-                                <rect key="frame" x="-29" y="44" width="380" height="460"/>
+                                <rect key="frame" x="-30" y="44" width="380" height="460"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="search_no_results.png" id="X6b-R2-Sfd">
@@ -417,7 +417,7 @@
         <scene sceneID="k7x-up-LGU">
             <objects>
                 <tableViewController title="Избранное" id="09X-e2-HdT" customClass="FLFavouritesController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="rbd-th-f7B">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="rbd-th-f7B">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -594,7 +594,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" animating="YES" style="whiteLarge" id="Vi4-Fy-VF2">
-                                        <rect key="frame" x="15" y="19" width="37" height="37"/>
+                                        <rect key="frame" x="18" y="17" width="37" height="37"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="color" red="0.96078431369999995" green="0.67450980390000004" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
                                     </activityIndicatorView>
@@ -717,8 +717,8 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="Ywv-uo-V9T"/>
-        <segue reference="VT8-2P-bpd"/>
+        <segue reference="cyE-FZ-hGI"/>
+        <segue reference="SXZ-wO-cMx"/>
         <segue reference="x9E-yU-h1c"/>
     </inferredMetricsTieBreakers>
 </document>
