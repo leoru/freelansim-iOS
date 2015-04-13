@@ -9,11 +9,16 @@
 #import "KKAppDelegate.h"
 #import "UIRender.h"
 #import "FLFirstFavoritesCreator.h"
+#import <Fabric/Fabric.h>
+#import <Crashlytics/Crashlytics.h>
+
 
 @implementation KKAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [Fabric with:@[CrashlyticsKit]];
+
     [MagicalRecord setupCoreDataStackWithStoreNamed:@"DataStore.sqlite"];
     [UIRender applyStylesheet];
     [self loadPreStoringData];

@@ -124,6 +124,12 @@
 		6A529AED167A47AF009A1CCB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6A529AEB167A47AF009A1CCB /* InfoPlist.strings */; };
 		6A529AEF167A47AF009A1CCB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A529AEE167A47AF009A1CCB /* main.m */; };
 		6A529AF3167A47AF009A1CCB /* KKAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A529AF2167A47AF009A1CCB /* KKAppDelegate.m */; };
+		6A842C511ADBA7A9006BF988 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A842C4B1ADBA7A9006BF988 /* Crashlytics.framework */; };
+		6A842C521ADBA7A9006BF988 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A842C4C1ADBA7A9006BF988 /* Fabric.framework */; };
+		6A842C531ADBA7A9006BF988 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A842C4D1ADBA7A9006BF988 /* Security.framework */; };
+		6A842C541ADBA7A9006BF988 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A842C4E1ADBA7A9006BF988 /* SystemConfiguration.framework */; };
+		6A842C551ADBA7A9006BF988 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A842C4F1ADBA7A9006BF988 /* libc++.dylib */; };
+		6A842C561ADBA7A9006BF988 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A842C501ADBA7A9006BF988 /* libz.dylib */; };
 		6A8A96F516861B9C00C285BE /* FLFreelancersController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A8A96F416861B9C00C285BE /* FLFreelancersController.m */; };
 		6A8A96F816863A7900C285BE /* FLFreelancerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A8A96F716863A7800C285BE /* FLFreelancerController.m */; };
 		6A8A97101686F36100C285BE /* FLContact.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A8A970F1686F36100C285BE /* FLContact.m */; };
@@ -320,7 +326,7 @@
 		6A26779A1680A1AF00F178E7 /* FLCategoriesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FLCategoriesController.m; path = Classes/Controllers/FLCategoriesController.m; sourceTree = "<group>"; };
 		6A26779C1680A32300F178E7 /* FLCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FLCategory.h; path = Classes/Models/FLCategory.h; sourceTree = "<group>"; };
 		6A26779D1680A32300F178E7 /* FLCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FLCategory.m; path = Classes/Models/FLCategory.m; sourceTree = "<group>"; };
-		6A4F7FE81833FBC300215FE1 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		6A4F7FE81833FBC300215FE1 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		6A529ADE167A47AF009A1CCB /* freelansim.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = freelansim.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A529AE2167A47AF009A1CCB /* UIKit.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		6A529AE4167A47AF009A1CCB /* Foundation.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -336,6 +342,12 @@
 		6A529B1B167A47AF009A1CCB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6A529B1D167A47AF009A1CCB /* freelansim_clientTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = freelansim_clientTests.h; sourceTree = "<group>"; };
 		6A529B1E167A47AF009A1CCB /* freelansim_clientTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = freelansim_clientTests.m; sourceTree = "<group>"; };
+		6A842C4B1ADBA7A9006BF988 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
+		6A842C4C1ADBA7A9006BF988 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
+		6A842C4D1ADBA7A9006BF988 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		6A842C4E1ADBA7A9006BF988 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		6A842C4F1ADBA7A9006BF988 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
+		6A842C501ADBA7A9006BF988 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		6A8A96F316861B9C00C285BE /* FLFreelancersController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FLFreelancersController.h; path = Classes/Controllers/Freelancers/FLFreelancersController.h; sourceTree = "<group>"; };
 		6A8A96F416861B9C00C285BE /* FLFreelancersController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FLFreelancersController.m; path = Classes/Controllers/Freelancers/FLFreelancersController.m; sourceTree = "<group>"; };
 		6A8A96F616863A7800C285BE /* FLFreelancerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FLFreelancerController.h; path = Classes/Controllers/Freelancers/FLFreelancerController.h; sourceTree = "<group>"; };
@@ -442,10 +454,16 @@
 			files = (
 				8B9CEEA3169E688000620749 /* CoreData.framework in Frameworks */,
 				6AED873A167D9B3B00EBC6CD /* QuartzCore.framework in Frameworks */,
+				6A842C511ADBA7A9006BF988 /* Crashlytics.framework in Frameworks */,
 				6AED8737167D9B3500EBC6CD /* CoreImage.framework in Frameworks */,
+				6A842C561ADBA7A9006BF988 /* libz.dylib in Frameworks */,
 				6A529AE3167A47AF009A1CCB /* UIKit.framework in Frameworks */,
+				6A842C521ADBA7A9006BF988 /* Fabric.framework in Frameworks */,
+				6A842C541ADBA7A9006BF988 /* SystemConfiguration.framework in Frameworks */,
+				6A842C531ADBA7A9006BF988 /* Security.framework in Frameworks */,
 				6A529AE5167A47AF009A1CCB /* Foundation.framework in Frameworks */,
 				6A529AE7167A47AF009A1CCB /* CoreGraphics.framework in Frameworks */,
+				6A842C551ADBA7A9006BF988 /* libc++.dylib in Frameworks */,
 				6D1A659EDAF44F38BE9E013F /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -724,6 +742,12 @@
 		6A529AD3167A47AF009A1CCB = {
 			isa = PBXGroup;
 			children = (
+				6A842C4B1ADBA7A9006BF988 /* Crashlytics.framework */,
+				6A842C4C1ADBA7A9006BF988 /* Fabric.framework */,
+				6A842C4D1ADBA7A9006BF988 /* Security.framework */,
+				6A842C4E1ADBA7A9006BF988 /* SystemConfiguration.framework */,
+				6A842C4F1ADBA7A9006BF988 /* libc++.dylib */,
+				6A842C501ADBA7A9006BF988 /* libz.dylib */,
 				6A4F7FE81833FBC300215FE1 /* Podfile */,
 				6A529AE8167A47AF009A1CCB /* freelansim-client */,
 				6A529B17167A47AF009A1CCB /* freelansim-clientTests */,
@@ -1048,6 +1072,7 @@
 				6A529ADB167A47AF009A1CCB /* Frameworks */,
 				6A529ADC167A47AF009A1CCB /* Resources */,
 				C8EC646E1AD54B0492D3FE6E /* Copy Pods Resources */,
+				6A842C4A1ADBA78A006BF988 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -1239,6 +1264,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		6A842C4A1ADBA78A006BF988 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run 8404308fa4c83289df10c9dd7e694808ab6f62b5 ace6747f9d0637c291441c9a24fa27ab5d165aea674d20d05b0c80c83be323ec";
+		};
 		C8EC646E1AD54B0492D3FE6E /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1385,15 +1423,19 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Creative LLC (7769S96MGR)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Kirill Kunst (9E4JVQJ72G)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Kirill Kunst (9E4JVQJ72G)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "freelansim-client/freelansim-Prefix.pch";
 				INFOPLIST_FILE = "freelansim-client/freelansim-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = freelansim;
-				PROVISIONING_PROFILE = "C8B6C3F3-48FB-4AA6-ACC1-F1BC9C0A6D5F";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "C8B6C3F3-48FB-4AA6-ACC1-F1BC9C0A6D5F";
+				PROVISIONING_PROFILE = "dcfc01ba-e100-4dcb-8dad-4d7525a7a14a";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "dcfc01ba-e100-4dcb-8dad-4d7525a7a14a";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1406,6 +1448,10 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Kirill Kunst (Z9BGBYPL8S)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Kirill Kunst (Z9BGBYPL8S)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "freelansim-client/freelansim-Prefix.pch";
 				INFOPLIST_FILE = "freelansim-client/freelansim-Info.plist";
