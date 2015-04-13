@@ -88,6 +88,7 @@
     self.labelName.text = freelancer.name;
     self.labelSecondText.text = freelancer.speciality;
     self.labelPrice.text = freelancer.price;
+     self.labelTime.text =  @"";
     
     //new position
     self.labelName.frame = CGRectMake(74, 8, 230, self.labelName.frame.size.height);
@@ -103,10 +104,9 @@
     self.labelName.text = task.title;
     self.labelSecondText.text = task.briefDescription;
     self.labelPrice.text = task.price;
+     self.labelTime.text =  [FLTask dateFormattingFromString:task.datePublished];
     
     //new position
-    self.labelTime.text =  [FLTask dateFormattingFromString:task.datePublished];
-    
     self.labelName.frame = CGRectMake(15, 8, 280, self.labelName.frame.size.height);
     self.labelSecondText.frame = CGRectMake(15, 34, 280, self.labelSecondText.frame.size.height);
     self.labelPrice.frame = CGRectMake(15, 58, 280, self.labelPrice.frame.size.height);

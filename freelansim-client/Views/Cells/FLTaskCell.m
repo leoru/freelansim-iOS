@@ -53,8 +53,8 @@
                          animations:^{
                              self.animationBody.transform = CGAffineTransformMakeScale(65, 65);
                          }
-                         completion:^(BOOL b){
-                             if (!isSelected){
+                         completion:^(BOOL b) {
+                             if (!isSelected) {
                                  self.animationBody.transform = CGAffineTransformMakeScale(0, 0);
                              }
                              animationcomplete=YES;                         }];

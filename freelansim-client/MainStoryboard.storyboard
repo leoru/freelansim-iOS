@@ -58,7 +58,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fG6-jQ-AR4">
-                                                    <rect key="frame" x="44" y="13" width="901" height="21"/>
+                                                    <rect key="frame" x="44" y="13" width="1221" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                                     <color key="tintColor" red="0.36470588240000001" green="0.39607843139999999" blue="0.46666666670000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
@@ -66,7 +66,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" id="gvg-De-3u7">
-                                                    <rect key="frame" x="44" y="40" width="916" height="1"/>
+                                                    <rect key="frame" x="44" y="40" width="1236" height="1"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
                                                     <color key="backgroundColor" red="0.79433973648190348" green="0.79315585596400584" blue="0.81383529974489799" alpha="1" colorSpace="calibratedRGB"/>
                                                 </view>
@@ -429,7 +429,7 @@
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="favorites_empty.png" id="gSq-eo-tCh">
-                                            <rect key="frame" x="105" y="29.99999963975915" width="60" height="60"/>
+                                            <rect key="frame" x="105" y="30.000003681990197" width="60" height="60"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Вы ничего не добавляли ;-)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Yul-0O-nQ2">
