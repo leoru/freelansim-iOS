@@ -38,7 +38,13 @@
     UIImage * im = [UIImage radialGradientImage:self.animationBody.frame.size startColor:start endcolor:end  centre:CGPointMake(0.4,0.4) radius:0.7];
     UIImageView * imageview = [[UIImageView alloc] initWithImage:im];
     
+    
     [self.animationBody addSubview:imageview];
+}
+
+-(void)addSubview:(UIView *)view
+{
+    [super addSubview:view];
     
 }
 
@@ -69,6 +75,8 @@
 
 - (void)setTask:(FLTask *)task
 {
+    
+    self.labelTitle.numberOfLines = 1;
     self.labelPrice.backgroundColor = [UIColor clearColor];
     self.labelPrice.layer.borderColor = PriceLabelBorderColor;
 
@@ -85,14 +93,32 @@
     self.labelShortDescription.numberOfLines = 1;
     [self.labelShortDescription sizeToFit];
     self.labelPrice.text = task.price;
-    [self.labelPrice sizeToFit];
-    
-    CGRect frame = self.labelPrice.frame;
-    frame.size.height += 5;
-    frame.size.width += 5;
-    self.labelPrice.frame = frame;
-    
+ 
     self.labelPublished.text = task.datePublishedWithFormatting;
+    
+    float defWidth = self.labelTitle.frame.size.width;
+    [self.labelTitle sizeToFit];
+    self.titleWidth = self.labelTitle.frame.size.width;
+    
+    
+    
+    if (defWidth<self.labelTitle.frame.size.width) {
+        
+        self.labelTitle.numberOfLines = 2;
+        [self.labelTitle setLineBreakMode:NSLineBreakByWordWrapping];
+        self.labelTitle.frame = CGRectMake(self.labelTitle.frame.origin.x,
+                                         self.labelTitle.frame.origin.y,
+                                         defWidth,
+                                         38);
+            }
+    else {
+        self.labelTitle.frame = CGRectMake(self.labelTitle.frame.origin.x,
+                                           self.labelTitle.frame.origin.y,
+                                           defWidth,
+                                           18);
+    }
+
+    
 }
 
 @end

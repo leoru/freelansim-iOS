@@ -64,6 +64,8 @@
     
     [self.tasksTable registerNib:[UINib nibWithNibName:@"FLTaskCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"FLTaskCell"];
     
+    self.prototypeCell = (FLTaskCell *)[self.tasksTable dequeueReusableCellWithIdentifier:@"FLTaskCell"];
+    
     [self showBanner];
 }
 
@@ -191,6 +193,17 @@
 
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if(self.tasks.count>indexPath.row)
+    {
+        FLTask *task = self.tasks[indexPath.row];
+        [self.prototypeCell setTask:task];
+
+        if (self.prototypeCell.titleWidth>self.view.frame.size.width-23) {
+            return 95;
+        }
+    
+    }
+    
     return 75;
 }
 

@@ -78,6 +78,7 @@
     
     FLCategory *category = categories[indexPath.row];
     cell.customCategoryTitle.text =category.title;
+    
    // categoryTitle.text = category.title;
    // [categoryTitle setAdjustsFontSizeToFitWidth:YES];
    //  UIView *backgroundView = [[UIView alloc] initWithFrame:CGRectZero];
