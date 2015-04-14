@@ -42,12 +42,6 @@
     [self.animationBody addSubview:imageview];
 }
 
--(void)addSubview:(UIView *)view
-{
-    [super addSubview:view];
-    
-}
-
 - (void)setHighlighted:(BOOL)highlighted animated:(BOOL)animated
 {
     isSelected = highlighted;
@@ -63,7 +57,7 @@
                              if (!isSelected) {
                                  self.animationBody.transform = CGAffineTransformMakeScale(0, 0);
                              }
-                             animationcomplete=YES;                         }];
+                             animationcomplete=YES;}];
     } else {
         if (animationcomplete) {
             self.animationBody.transform = CGAffineTransformMakeScale(0, 0);
