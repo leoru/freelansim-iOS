@@ -45,6 +45,7 @@
     
     [self.animationBody addSubview:imageview];
     
+    
 }
 
 -(void)setEditing:(BOOL)editing animated:(BOOL)animated{
@@ -91,7 +92,7 @@
      self.labelTime.text =  @"";
     
     //new position
-    self.labelName.frame = CGRectMake(74, 8, 230, self.labelName.frame.size.height);
+    self.labelName.frame = CGRectMake(74, 11, 230, self.labelName.frame.size.height);
     self.labelSecondText.frame = CGRectMake(74, 34, 230, self.labelSecondText.frame.size.height);
     self.labelPrice.frame = CGRectMake(74, 58, 230, self.labelPrice.frame.size.height);
 }
@@ -107,7 +108,7 @@
      self.labelTime.text =  [FLTask dateFormattingFromString:task.datePublished];
     
     //new position
-    self.labelName.frame = CGRectMake(15, 8, 280, self.labelName.frame.size.height);
+    self.labelName.frame = CGRectMake(15, 11, 280, self.labelName.frame.size.height);
     self.labelSecondText.frame = CGRectMake(15, 34, 280, self.labelSecondText.frame.size.height);
     self.labelPrice.frame = CGRectMake(15, 58, 280, self.labelPrice.frame.size.height);
     

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="13F1066" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="13F1077" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="4">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
@@ -34,7 +34,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" id="d5D-SJ-7r1">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="74"/>
+                                <rect key="frame" x="0.0" y="-9" width="320" height="74"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Title" prompt=" " id="HnL-v8-pVj">
@@ -46,8 +46,8 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsMultipleSelection="YES" rowHeight="35" sectionHeaderHeight="1" sectionFooterHeight="1" id="0HH-Bd-EEz">
-                                <rect key="frame" x="0.0" y="74" width="320" height="494"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsMultipleSelection="YES" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="0HH-Bd-EEz">
+                                <rect key="frame" x="0.0" y="65" width="320" height="503"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -57,23 +57,23 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OHG-IK-o7h" id="Lfd-ZV-jU3">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <view contentMode="scaleToFill" id="gvg-De-3u7">
+                                                    <rect key="frame" x="44" y="43" width="320" height="1"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" red="0.79433973648190348" green="0.79315585596400584" blue="0.81383529974489799" alpha="1" colorSpace="calibratedRGB"/>
+                                                </view>
+                                                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkmark.png" id="cfZ-5d-GJT">
+                                                    <rect key="frame" x="17" y="15" width="14" height="14"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fG6-jQ-AR4">
-                                                    <rect key="frame" x="44" y="13" width="1221" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                                    <rect key="frame" x="44" y="12" width="250" height="20"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="tintColor" red="0.36470588240000001" green="0.39607843139999999" blue="0.46666666670000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                                     <color key="textColor" red="0.36470588240000001" green="0.39607843139999999" blue="0.46666666670000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <view contentMode="scaleToFill" id="gvg-De-3u7">
-                                                    <rect key="frame" x="44" y="40" width="1236" height="1"/>
-                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
-                                                    <color key="backgroundColor" red="0.79433973648190348" green="0.79315585596400584" blue="0.81383529974489799" alpha="1" colorSpace="calibratedRGB"/>
-                                                </view>
-                                                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkmark.png" id="cfZ-5d-GJT">
-                                                    <rect key="frame" x="16" y="17" width="14" height="14"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
@@ -89,6 +89,7 @@
                     <navigationItem key="navigationItem" title="Разделы" id="Iv8-XM-isD"/>
                     <connections>
                         <outlet property="categoriesTable" destination="0HH-Bd-EEz" id="eld-Tt-y7e"/>
+                        <outlet property="doneButton" destination="W2M-Hr-Ap3" id="BYt-SE-QOY"/>
                         <outlet property="navBar" destination="d5D-SJ-7r1" id="Tz8-C7-Nxe"/>
                         <outlet property="navItem" destination="HnL-v8-pVj" id="xsw-US-mJz"/>
                     </connections>
@@ -152,6 +153,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="EmptySearch" destination="xVV-QU-xrA" id="swE-Ie-HD2"/>
+                        <outlet property="categoriesButton" destination="cuL-aW-5mn" id="Ixr-ft-kG4"/>
                         <outlet property="searchBar" destination="9Cz-hO-lA4" id="Y4J-ZI-c3W"/>
                         <outlet property="tasksTable" destination="v2X-HV-zfV" id="Vsv-0p-Fxq"/>
                         <segue destination="h9P-yI-dpN" kind="push" identifier="TaskSegue" id="SXZ-wO-cMx"/>
@@ -404,6 +406,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="EmptySearch" destination="ME7-SB-5rq" id="tro-Nc-skB"/>
+                        <outlet property="categoriesButton" destination="pKe-ey-Klj" id="g61-sC-qsq"/>
                         <outlet property="freelancersTable" destination="mnL-0t-txz" id="uCJ-wN-ibb"/>
                         <outlet property="searchBar" destination="pQI-m2-TV1" id="3UM-hQ-Vbv"/>
                         <segue destination="pq4-1j-j9f" kind="push" identifier="FreelancerSegue" id="ZCp-wO-Cv2"/>
@@ -429,7 +432,7 @@
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="favorites_empty.png" id="gSq-eo-tCh">
-                                            <rect key="frame" x="105" y="30.000003681990197" width="60" height="60"/>
+                                            <rect key="frame" x="105" y="29.999999933911482" width="60" height="60"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Вы ничего не добавляли ;-)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Yul-0O-nQ2">
@@ -569,47 +572,42 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="bCn-ny-MZr">
-                                        <rect key="frame" x="12" y="11" width="50" height="50"/>
+                                        <rect key="frame" x="12" y="13" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="pUz-e4-fMF">
-                                        <rect key="frame" x="73" y="6" width="241" height="21"/>
+                                        <rect key="frame" x="73" y="10" width="241" height="21"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
                                         <color key="textColor" red="0.36470588240000001" green="0.39607843139999999" blue="0.46666666670000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="uwJ-lQ-UTa">
-                                        <rect key="frame" x="73" y="25" width="242" height="22"/>
+                                        <rect key="frame" x="73" y="32" width="242" height="22"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                         <color key="textColor" red="0.4431372549" green="0.51764705879999995" blue="0.54117647059999996" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="wpt-r8-8wx">
-                                        <rect key="frame" x="73" y="45" width="241" height="21"/>
+                                        <rect key="frame" x="73" y="54" width="241" height="21"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                         <color key="textColor" red="0.32156862749999998" green="0.65098039220000004" blue="0.67843137249999996" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" animating="YES" style="whiteLarge" id="Vi4-Fy-VF2">
-                                        <rect key="frame" x="18" y="17" width="37" height="37"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="color" red="0.96078431369999995" green="0.67450980390000004" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
-                                    </activityIndicatorView>
                                     <view contentMode="scaleToFill" id="H6d-hN-dR6">
-                                        <rect key="frame" x="12" y="87" width="292" height="1"/>
+                                        <rect key="frame" x="12" y="92" width="292" height="1"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.84313725490196079" green="0.87450980392156863" blue="0.88235294117647056" alpha="1" colorSpace="calibratedRGB"/>
                                     </view>
                                     <webView opaque="NO" contentMode="scaleToFill" id="LuB-gZ-39Q">
-                                        <rect key="frame" x="8" y="96" width="296" height="20"/>
+                                        <rect key="frame" x="8" y="101" width="296" height="20"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     </webView>
                                     <view contentMode="scaleToFill" id="GIQ-xe-lPr">
-                                        <rect key="frame" x="8" y="118" width="296" height="78"/>
+                                        <rect key="frame" x="8" y="123" width="296" height="78"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Профессиональные навыки:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ioC-SR-8Ye">
@@ -622,13 +620,11 @@
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                     </view>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="UOh-VG-6eJ">
-                                        <rect key="frame" x="12" y="62" width="292" height="26"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
-                                        <color key="textColor" red="0.36470588240000001" green="0.39607843139999999" blue="0.46666666670000001" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" animating="YES" style="whiteLarge" id="Vi4-Fy-VF2">
+                                        <rect key="frame" x="19" y="19" width="37" height="37"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="color" red="0.96078431369999995" green="0.67450980390000004" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
+                                    </activityIndicatorView>
                                 </subviews>
                                 <gestureRecognizers/>
                                 <connections>
@@ -659,7 +655,6 @@
                         <outlet property="loader" destination="Vi4-Fy-VF2" id="M50-JX-ksA"/>
                         <outlet property="loadingImageIndicator" destination="JwU-U0-5Mh" id="4T1-23-0QX"/>
                         <outlet property="loadingView" destination="v1b-Ls-3u3" id="cBI-Dn-NJK"/>
-                        <outlet property="locationLabel" destination="UOh-VG-6eJ" id="gtS-tv-eLh"/>
                         <outlet property="nameLabel" destination="pUz-e4-fMF" id="KT5-ZL-JOa"/>
                         <outlet property="priceLabel" destination="wpt-r8-8wx" id="Zuz-Qz-o76"/>
                         <outlet property="scrollView" destination="i1v-xB-GOW" id="New-KI-htt"/>
@@ -717,8 +712,8 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="cyE-FZ-hGI"/>
-        <segue reference="SXZ-wO-cMx"/>
+        <segue reference="Ywv-uo-V9T"/>
+        <segue reference="VT8-2P-bpd"/>
         <segue reference="x9E-yU-h1c"/>
     </inferredMetricsTieBreakers>
 </document>

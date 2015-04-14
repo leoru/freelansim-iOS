@@ -36,17 +36,17 @@ DEPENDENCIES:
   - SVProgressHUD
 
 SPEC CHECKSUMS:
-  AFNetworking: 5db28423ed062e2b15b97c731f06cfb6668e607a
-  DACircularProgress: 4dfac2cc9efe2e352cabe32a2b243fd9768a3b6c
-  EGOCache: 71abd9a8cbf0c357309f25761f2ba06818b10661
-  JSONKit: 2111ac2b11f7ea0d07bb1d9d09e650918336a134
-  MagicalRecord: 5db5b3b3d70e62b0c310c57f1294be61fbc7d548
-  MBProgressHUD: c356980b0cd097f19acec959b49dca5eb8ec31be
-  MGImageUtilities: 2dd1872bfb5d241f894bfb78286b05bb74005ef6
-  MWPhotoBrowser: 654360fa2d37f9a7731ccb3685bbaf75c4884a99
-  Objective-C-HMTL-Parser: f81bfc686fa447486477b7a2ef0cdca36d516b48
-  Reachability: 8e9635e3cb4f98e7f825e51147f677ecc694d0e7
-  SDWebImage: c9bc95975144c7dfa93b9df2d1d9d6d4dbe44715
-  SVProgressHUD: 5034c6e22b8c2ca3e09402e48d41ed0340aa1c50
+  AFNetworking: f0d89caedb504adcb43e7d90e57f42e703adf415
+  DACircularProgress: b239f36abdacd5b7721373dc6d27b5636874469c
+  EGOCache: 0d5f93e1e7981c5b3ecd126d6d8ee697c1b66423
+  JSONKit: 5b69e804ea54d99293eed0fd2ce596c5703fefb0
+  MagicalRecord: f03ffa9c9b90eeb8d4f1b37bedcba8b7226d7a55
+  MBProgressHUD: 8688c331cb64702283be37ab8d7d329cdd25f251
+  MGImageUtilities: 73c885bf04fd7b21b11fbd132606e05200b12bf7
+  MWPhotoBrowser: 51afbd3039768465a2af5ef7cb9148d1d50fa72c
+  Objective-C-HMTL-Parser: cc468311d0ae434646c56aae3b62426977f19ca0
+  Reachability: dd9aa4fb6667b9f787690a74f53cb7634ce99893
+  SDWebImage: 9cb47504ed17de4357295f28186a1a490a4b397d
+  SVProgressHUD: 46088807596a795cbcb4affd92cf3f13b6ab3dda
 
-COCOAPODS: 0.36.0
+COCOAPODS: 0.36.3

@@ -38,6 +38,8 @@
     self.navItem.title = @"Разделы";
     self.view.backgroundColor = [UIColor whiteColor];
     self.categoriesTable.backgroundColor = [UIColor clearColor];
+    [self.doneButton setTitleTextAttributes:@{NSFontAttributeName : DEFAULT_REGULAR_FONT(16.0f)} forState:UIControlStateNormal];
+    
    // self.navBar.tintColor = [UIColor colorWithRed:0.97f green:0.67f blue:0.44f alpha:1.00f];
     categories = [FLCategory categories];
     

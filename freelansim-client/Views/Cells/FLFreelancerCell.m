@@ -31,8 +31,8 @@
 - (void)awakeFromNib
 {
     [super awakeFromNib];
-    animationcomplete=YES;
-    isSelected=NO;
+    animationcomplete = YES;
+    isSelected = NO;
     
     CGFloat start[4] ={(232/255.f),(237/255.f),(242/255.f), 1.0};
     

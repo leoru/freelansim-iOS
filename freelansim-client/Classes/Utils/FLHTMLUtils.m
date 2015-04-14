@@ -12,7 +12,7 @@
 
 +(NSString *)CSS {
     NSString *css = [NSString stringWithFormat:@"\n"
-                     "body {font-family: Helvetica Neue; background-color:transparent;  font-size:13px; color: #5D6577;}"
+                     "body {font-family: Helvetica Neue; background-color:transparent;  font-size:14px; color: #5D6577;}"
                      "\n"];
     return css;
 }
