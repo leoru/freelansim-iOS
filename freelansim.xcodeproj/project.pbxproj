@@ -1458,7 +1458,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = freelansim;
 				PROVISIONING_PROFILE = "f94f2c59-687e-4588-a604-8702341d07f4";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "98969329-1d69-49a1-bebf-eb6811b51add";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "ade9302f-163e-442d-bf16-050c361a03dd";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
