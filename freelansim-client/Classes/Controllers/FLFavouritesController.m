@@ -45,6 +45,7 @@
     [UIRender renderNavigationBar:self.navigationController.navigationBar];
     [super viewDidLoad];
     [self.favouritesTable registerNib:[UINib nibWithNibName:@"FavouriteCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"FavouriteCell"];
+    self.prototypeCell = (FavouriteCell *)[self.favouritesTable dequeueReusableCellWithIdentifier:@"FavouriteCell"];
     
 }
 - (void) viewDidUnload
@@ -133,6 +134,14 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    id obj = [favourites objectAtIndex:indexPath.row];
+    if([obj isKindOfClass:[FLManagedTask class]]) {
+        FLManagedTask *task = (FLManagedTask *)obj;
+        [self.prototypeCell setTask:task];
+        if (self.view.frame.size.width-30<self.prototypeCell.titleWidth){
+            return 105;
+        }
+    }
     return 90;
 }
 

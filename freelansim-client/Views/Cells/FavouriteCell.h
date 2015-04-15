@@ -20,6 +20,13 @@
 @property (weak, nonatomic) IBOutlet UILabel *labelPrice;
 @property (weak, nonatomic) IBOutlet UIView *animationBody;
 
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *labelNameLeftConstrain;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *labelSecondTextLeftConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *labelPriceLeftConstraint;
+
+@property (nonatomic) float titleWidth;
+
+
 - (void)setFreelancer:(FLManagedFreelancer *)freelancer;
 
 - (void)setTask:(FLManagedTask *)task;

@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "FLManagedFreelancer.h"
 #import "FLManagedTask.h"
+#import "FavouriteCell.h"
 
 @interface FLFavouritesController : UITableViewController
 {
@@ -19,5 +20,6 @@
 }
 
 @property (weak, nonatomic) IBOutlet UITableView *favouritesTable;
+@property (strong) FavouriteCell *prototypeCell;
 
 @end
