@@ -742,12 +742,6 @@
 		6A529AD3167A47AF009A1CCB = {
 			isa = PBXGroup;
 			children = (
-				6A842C4B1ADBA7A9006BF988 /* Crashlytics.framework */,
-				6A842C4C1ADBA7A9006BF988 /* Fabric.framework */,
-				6A842C4D1ADBA7A9006BF988 /* Security.framework */,
-				6A842C4E1ADBA7A9006BF988 /* SystemConfiguration.framework */,
-				6A842C4F1ADBA7A9006BF988 /* libc++.dylib */,
-				6A842C501ADBA7A9006BF988 /* libz.dylib */,
 				6A4F7FE81833FBC300215FE1 /* Podfile */,
 				6A529AE8167A47AF009A1CCB /* freelansim-client */,
 				6A529B17167A47AF009A1CCB /* freelansim-clientTests */,
@@ -768,6 +762,12 @@
 		6A529AE1167A47AF009A1CCB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6A842C4B1ADBA7A9006BF988 /* Crashlytics.framework */,
+				6A842C4C1ADBA7A9006BF988 /* Fabric.framework */,
+				6A842C4D1ADBA7A9006BF988 /* Security.framework */,
+				6A842C4E1ADBA7A9006BF988 /* SystemConfiguration.framework */,
+				6A842C4F1ADBA7A9006BF988 /* libc++.dylib */,
+				6A842C501ADBA7A9006BF988 /* libz.dylib */,
 				8B9CEEA2169E688000620749 /* CoreData.framework */,
 				6AED8739167D9B3B00EBC6CD /* QuartzCore.framework */,
 				6AED8736167D9B3500EBC6CD /* CoreImage.framework */,

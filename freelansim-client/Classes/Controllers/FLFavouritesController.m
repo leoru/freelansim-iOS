@@ -77,13 +77,13 @@
                                       } completion:nil];
         }
         
+        [self.EmptyView setFrame:CGRectMake(0, 0, self.view.frame.size.width, 600)];
+        
         float x = (self.EmptyView.frame.size.width - 270)/2.f;
         float y = x+100+(x-25);
         
         [self.EmptyViewContent setFrame:CGRectMake(x, y, 270, 149)];
         
-        [self.EmptyView setFrame:CGRectMake(0, 0, 0, 600)];
-
         self.navigationItem.rightBarButtonItem = nil;
         return;
     }

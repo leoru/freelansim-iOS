@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface UIImage (RadialGradient)
+
 +(UIImage *)radialGradientImage:(CGSize)size startColor:(CGFloat [4])startColor endcolor:(CGFloat [4])endColor centre:(CGPoint)centre radius:(float)radius;
+
 @end
