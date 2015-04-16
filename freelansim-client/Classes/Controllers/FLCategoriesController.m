@@ -36,6 +36,10 @@
 {
     self.navItem.prompt = @"";
     self.navItem.title = @"Разделы";
+    
+    UIImageView *imgView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"keyline.png"]];
+    [self.navBar addSubview:imgView];
+    imgView.frame = CGRectMake(0, self.navBar.frame.size.height - 1, self.view.bounds.size.width, 1);
     self.view.backgroundColor = [UIColor whiteColor];
     self.categoriesTable.backgroundColor = [UIColor clearColor];
     [self.doneButton setTitleTextAttributes:@{NSFontAttributeName : DEFAULT_REGULAR_FONT(16.0f)} forState:UIControlStateNormal];
