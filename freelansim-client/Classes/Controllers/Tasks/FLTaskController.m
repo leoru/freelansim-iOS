@@ -245,8 +245,16 @@
         
     }];
 }
+
 -(void)actionOpenInBrowser:(id)sender{
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:self.task.link]];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Открыть в Safari?" message:@"" delegate:self cancelButtonTitle:@"Нет" otherButtonTitles:@"Да", nil];
+    [alert show];
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if (buttonIndex == 1){
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:self.task.link]];
+    }
 }
 
 #pragma mark - WebView Delegate
