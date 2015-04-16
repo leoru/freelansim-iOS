@@ -50,6 +50,8 @@
     self.clearView.backgroundColor = [UIColor whiteColor];
     self.view.backgroundColor = [UIColor whiteColor];
     
+    [self.categoriesButton setTitleTextAttributes:@{NSFontAttributeName : DEFAULT_REGULAR_FONT(16.0f)} forState:UIControlStateNormal];
+    
     [self.searchBar setImage:[UIImage imageNamed:@"search_normal.png"] forSearchBarIcon:UISearchBarIconSearch state:UIControlStateNormal];
     [self.searchBar setSearchFieldBackgroundImage:[UIImage imageNamed:@"searchfield.png"] forState:UIControlStateNormal];
     [self.searchBar setImage:[UIImage imageNamed:@"search_clear"] forSearchBarIcon:UISearchBarIconClear state:UIControlStateNormal];
@@ -61,6 +63,8 @@
     [txtSearchField setBorderStyle:UITextBorderStyleRoundedRect];
     
     [self.tasksTable registerNib:[UINib nibWithNibName:@"FLTaskCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"FLTaskCell"];
+    
+    self.prototypeCell = (FLTaskCell *)[self.tasksTable dequeueReusableCellWithIdentifier:@"FLTaskCell"];
     
     [self showBanner];
 }
@@ -189,6 +193,17 @@
 
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if(self.tasks.count>indexPath.row)
+    {
+        FLTask *task = self.tasks[indexPath.row];
+        [self.prototypeCell setTask:task];
+
+        if (self.prototypeCell.titleWidth>self.view.frame.size.width-23) {
+            return 95;
+        }
+    
+    }
+    
     return 75;
 }
 

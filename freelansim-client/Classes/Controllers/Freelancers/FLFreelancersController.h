@@ -24,5 +24,6 @@
 @property (weak, nonatomic) IBOutlet UITableView *freelancersTable;
 @property (nonatomic,retain) NSMutableArray *freelancers;
 @property (nonatomic,retain) NSArray *selectedCategories;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *categoriesButton;
 
 @end

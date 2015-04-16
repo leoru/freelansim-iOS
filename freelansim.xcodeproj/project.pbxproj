@@ -366,7 +366,7 @@
 		6AA0AA131697F8DE00FE28E3 /* FLContactButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLContactButton.h; sourceTree = "<group>"; };
 		6AA0AA141697F8DE00FE28E3 /* FLContactButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLContactButton.m; sourceTree = "<group>"; };
 		6AA0AA151697F8DE00FE28E3 /* UIRender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIRender.h; sourceTree = "<group>"; };
-		6AA0AA161697F8DE00FE28E3 /* UIRender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIRender.m; sourceTree = "<group>"; };
+		6AA0AA161697F8DE00FE28E3 /* UIRender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIRender.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		6AA0AA171697F8DE00FE28E3 /* UIStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIStyle.h; sourceTree = "<group>"; };
 		6AA0AA181697F8DE00FE28E3 /* UIStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIStyle.m; sourceTree = "<group>"; };
 		6AA0AA581697FF6800FE28E3 /* 0299.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 0299.png; sourceTree = "<group>"; };
@@ -1432,7 +1432,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "freelansim-client/freelansim-Prefix.pch";
 				INFOPLIST_FILE = "freelansim-client/freelansim-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				PRODUCT_NAME = freelansim;
 				PROVISIONING_PROFILE = "dcfc01ba-e100-4dcb-8dad-4d7525a7a14a";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "dcfc01ba-e100-4dcb-8dad-4d7525a7a14a";
@@ -1455,7 +1455,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "freelansim-client/freelansim-Prefix.pch";
 				INFOPLIST_FILE = "freelansim-client/freelansim-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				PRODUCT_NAME = freelansim;
 				PROVISIONING_PROFILE = "f94f2c59-687e-4588-a604-8702341d07f4";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "ade9302f-163e-442d-bf16-050c361a03dd";

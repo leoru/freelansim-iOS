@@ -10,6 +10,7 @@
 #import "FLHTTPClient.h"
 #import "FLTask.h"
 #import "FLCategoriesController.h"
+#import "FLTaskCell.h"
 
 @interface FLTasksController : FLBaseController <UITableViewDataSource, UITableViewDelegate, FLCategoriesDelegate, UISearchBarDelegate>
 {
@@ -23,8 +24,11 @@
 @property (weak, nonatomic) IBOutlet UIView *clearView;
 @property (weak, nonatomic) IBOutlet UITableView *tasksTable;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *categoriesButton;
 
 @property (nonatomic,retain) NSMutableArray *tasks;
 @property (nonatomic,retain) NSArray *selectedCategories;
+
+@property (strong) FLTaskCell *prototypeCell;
 
 @end

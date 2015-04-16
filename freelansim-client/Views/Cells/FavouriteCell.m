@@ -45,6 +45,7 @@
     
     [self.animationBody addSubview:imageview];
     
+    
 }
 
 -(void)setEditing:(BOOL)editing animated:(BOOL)animated{
@@ -80,6 +81,7 @@
 
 - (void)setFreelancer:(FLManagedFreelancer *)freelancer
 {
+    
     FLValueTransformer *transformer = [[FLValueTransformer alloc] init];
     self.image.image = (UIImage *)[transformer reverseTransformedValue:freelancer.avatar];
     if (self.image.image==nil) [self.image setImage:[UIImage imageNamed:@"placeholder_userpic"]];    
@@ -90,14 +92,22 @@
     self.labelPrice.text = freelancer.price;
      self.labelTime.text =  @"";
     
+    
+    
     //new position
-    self.labelName.frame = CGRectMake(74, 8, 230, self.labelName.frame.size.height);
-    self.labelSecondText.frame = CGRectMake(74, 34, 230, self.labelSecondText.frame.size.height);
-    self.labelPrice.frame = CGRectMake(74, 58, 230, self.labelPrice.frame.size.height);
+    self.labelNameLeftConstrain.constant=73;
+    self.labelSecondTextLeftConstraint.constant=73;
+    self.labelPriceLeftConstraint.constant=73;
+    self.labelName.numberOfLines = 1;
+    self.labelName.frame = CGRectMake(self.labelName.frame.origin.x,
+                                      self.labelName.frame.origin.y,
+                                      self.labelName.frame.size.width,
+                                      17);
 }
 
 - (void)setTask:(FLManagedTask *)task
 {
+    self.labelName.numberOfLines = 1;
     self.image.image = nil;
     self.image.layer.cornerRadius = 0;
     self.image.layer.masksToBounds = NO;
@@ -107,9 +117,32 @@
      self.labelTime.text =  [FLTask dateFormattingFromString:task.datePublished];
     
     //new position
-    self.labelName.frame = CGRectMake(15, 8, 280, self.labelName.frame.size.height);
-    self.labelSecondText.frame = CGRectMake(15, 34, 280, self.labelSecondText.frame.size.height);
-    self.labelPrice.frame = CGRectMake(15, 58, 280, self.labelPrice.frame.size.height);
+    self.labelNameLeftConstrain.constant=15;
+    self.labelSecondTextLeftConstraint.constant=15;
+    self.labelPriceLeftConstraint.constant=15;
+    
+    float defWidth = self.labelName.frame.size.width;
+    [self.labelName sizeToFit];
+    self.titleWidth = self.labelName.frame.size.width;
+    
+    
+    
+    if (defWidth<self.labelName.frame.size.width) {
+        
+        self.labelName.numberOfLines = 2;
+        [self.labelName setLineBreakMode:NSLineBreakByWordWrapping];
+        self.labelName.frame = CGRectMake(self.labelName.frame.origin.x,
+                                           self.labelName.frame.origin.y,
+                                           defWidth,
+                                           37);
+    }
+    else {
+        self.labelName.frame = CGRectMake(self.labelName.frame.origin.x,
+                                           self.labelName.frame.origin.y,
+                                           defWidth,
+                                           17);
+    }
+
     
 }
 

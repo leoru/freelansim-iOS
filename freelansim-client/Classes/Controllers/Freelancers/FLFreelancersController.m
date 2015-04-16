@@ -50,7 +50,9 @@
     self.freelancersTable.dataSource = self;
     self.searchBar.delegate = self;
     self.view.backgroundColor = [UIColor whiteColor];
-    self.freelancersTable.backgroundColor = [UIColor clearColor];
+    self.freelancersTable.backgroundColor = [UIColor clearColor];    
+    
+    [self.categoriesButton setTitleTextAttributes:@{NSFontAttributeName : DEFAULT_REGULAR_FONT(16.0f)} forState:UIControlStateNormal];
     
     [self.searchBar setImage:[UIImage imageNamed:@"search_normal.png"] forSearchBarIcon:UISearchBarIconSearch state:UIControlStateNormal];
     [self.searchBar setSearchFieldBackgroundImage:[UIImage imageNamed:@"searchfield.png"] forState:UIControlStateNormal];
@@ -171,11 +173,7 @@
         FLFreelancer *freelancer = self.freelancers[indexPath.row];
         [freelancerCell setFreelancer:freelancer];
         cell = freelancerCell;
-    }
-    
-    
-
-    return cell;
+    }    return cell;
 }
 
 
@@ -221,7 +219,6 @@
     [self.searchBar resignFirstResponder];
 }
 
-
 -(void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
     if ([searchText isEqualToString:@""]) {
         [self search];
@@ -251,8 +248,10 @@
     }
     if (cancelButton) {
         [cancelButton setTitle:@"Отменить" forState:UIControlStateNormal];
+        
         [[cancelButton titleLabel] setFont:DEFAULT_REGULAR_FONT(16)];
     }
+    
     [self.searchBar setImage:[UIImage imageNamed:@"search_active.png"] forSearchBarIcon:UISearchBarIconSearch state:UIControlStateNormal];
 }
 
