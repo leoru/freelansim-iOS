@@ -1,28 +1,25 @@
 PODS:
   - AFNetworking (1.3.1)
-  - DACircularProgress (2.1.0)
+  - DACircularProgress (2.3.1)
   - EGOCache (2.0)
   - JSONKit (1.4)
   - MagicalRecord (2.1):
     - MagicalRecord/Core (= 2.1)
   - MagicalRecord/Core (2.1)
-  - MBProgressHUD (0.8)
+  - MBProgressHUD (0.9.1)
   - MGImageUtilities (0.0.1)
-  - MWPhotoBrowser (1.1.4):
+  - MWPhotoBrowser (1.4.1):
     - DACircularProgress
-    - MBProgressHUD
-    - MWPhotoBrowser/ARC (= 1.1.4)
-    - SDWebImage (~> 3.5)
-  - MWPhotoBrowser/ARC (1.1.4):
-    - DACircularProgress
-    - MBProgressHUD
-    - SDWebImage (~> 3.5)
+    - MBProgressHUD (~> 0.8)
+    - PSTCollectionView (~> 1.2)
+    - SDWebImage (~> 3.7)
   - Objective-C-HMTL-Parser (0.0.1)
-  - Reachability (3.1.1)
-  - SDWebImage (3.5):
-    - SDWebImage/Core (= 3.5)
-  - SDWebImage/Core (3.5)
-  - SVProgressHUD (1.0)
+  - PSTCollectionView (1.2.3)
+  - Reachability (3.2)
+  - SDWebImage (3.7.2):
+    - SDWebImage/Core (= 3.7.2)
+  - SDWebImage/Core (3.7.2)
+  - SVProgressHUD (1.1.3)
 
 DEPENDENCIES:
   - AFNetworking (= 1.3.1)
@@ -37,16 +34,17 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   AFNetworking: f0d89caedb504adcb43e7d90e57f42e703adf415
-  DACircularProgress: b239f36abdacd5b7721373dc6d27b5636874469c
+  DACircularProgress: 4dd437c0fc3da5161cb289e07ac449493d41db71
   EGOCache: 0d5f93e1e7981c5b3ecd126d6d8ee697c1b66423
   JSONKit: 5b69e804ea54d99293eed0fd2ce596c5703fefb0
   MagicalRecord: f03ffa9c9b90eeb8d4f1b37bedcba8b7226d7a55
-  MBProgressHUD: 8688c331cb64702283be37ab8d7d329cdd25f251
+  MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
   MGImageUtilities: 73c885bf04fd7b21b11fbd132606e05200b12bf7
-  MWPhotoBrowser: 51afbd3039768465a2af5ef7cb9148d1d50fa72c
+  MWPhotoBrowser: 2531e682860d62b8a7ba8659de02eb9040e431e5
   Objective-C-HMTL-Parser: cc468311d0ae434646c56aae3b62426977f19ca0
-  Reachability: dd9aa4fb6667b9f787690a74f53cb7634ce99893
-  SDWebImage: 9cb47504ed17de4357295f28186a1a490a4b397d
-  SVProgressHUD: 46088807596a795cbcb4affd92cf3f13b6ab3dda
+  PSTCollectionView: 6749df92885353521f55279a7ce2b293762e2be4
+  Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
+  SDWebImage: 71b7cdc1d1721d6a82ed62889030225f2c249e29
+  SVProgressHUD: 748080e4f36e603f6c02aec292664239df5279c1
 
-COCOAPODS: 0.36.3
+COCOAPODS: 0.37.1

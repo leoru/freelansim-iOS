@@ -107,7 +107,15 @@
     self.avatarView.contentMode = UIViewContentModeScaleAspectFit;
     self.avatarView.layer.cornerRadius = 25;
     self.avatarView.layer.masksToBounds = YES;
-    [self.avatarView setImageWithURL:[NSURL URLWithString:self.freelancer.avatarPath]  placeholderImage:[UIImage imageNamed:@"placeholder_userpic"] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType) {
+    
+    NSURL *url = [NSURL URLWithString:self.freelancer.avatarPath];
+    if (url.host == nil){
+        self.freelancer.avatarPath = [@"http://freelansim.ru"
+                                stringByAppendingString:self.freelancer.avatarPath ];
+        url = [NSURL URLWithString:self.freelancer.avatarPath];
+    }
+    
+    [self.avatarView sd_setImageWithURL:url  placeholderImage:[UIImage imageNamed:@"placeholder_userpic"] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
         self.loader.hidden = YES;
     }];
     

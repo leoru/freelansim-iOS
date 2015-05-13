@@ -31,7 +31,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    refreshControl = [[UIRefreshControl alloc] init];
+    refreshControl = [[FLRefreshControl alloc] init];
     [self.freelancersTable addSubview:refreshControl];
     [refreshControl addTarget:self
                        action:@selector(refresh)
@@ -65,8 +65,13 @@
     [txtSearchField setBorderStyle:UITextBorderStyleRoundedRect];
     
     [self.freelancersTable registerNib:[UINib nibWithNibName:@"FLFreelancerCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"FLFreelancerCell"];
+    
+    [refreshControl Setup:self.freelancersTable.frame.size.width/2.0];
 }
 
+-(void) scrollViewDidScroll:(UIScrollView *)scrollView{
+    [refreshControl Pull];
+}
 
 - (void)viewDidUnload {
     [self setSearchBar:nil];

@@ -32,7 +32,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    refreshControl = [[UIRefreshControl alloc] init];
+    refreshControl = [[FLRefreshControl alloc] init];
     [refreshControl addTarget:self action:@selector(refresh) forControlEvents:UIControlEventValueChanged];
     [self.tasksTable addSubview:refreshControl];
     self.tasks = [NSMutableArray array];
@@ -67,6 +67,12 @@
     self.prototypeCell = (FLTaskCell *)[self.tasksTable dequeueReusableCellWithIdentifier:@"FLTaskCell"];
     
     [self showBanner];
+    
+    [refreshControl Setup:self.tasksTable.frame.size.width/2.0+30];
+}
+
+-(void) scrollViewDidScroll:(UIScrollView *)scrollView{
+    [refreshControl Pull];
 }
 
 - (void)didReceiveMemoryWarning

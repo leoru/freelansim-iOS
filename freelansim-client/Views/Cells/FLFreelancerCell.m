@@ -73,11 +73,22 @@
 - (void)setFreelancer:(FLFreelancer *)freelancer
 {
 
-    [self.avatar setImageWithURL:[NSURL URLWithString:freelancer.thumbPath]  placeholderImage:[UIImage imageNamed:@"placeholder_userpic"] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType) {
-        self.loadingIndicator.hidden = YES;
-        _avatar.hidden = NO;
-    }];
     
+    NSURL *url =[NSURL URLWithString:freelancer.thumbPath];
+   
+    if (url.host == nil){
+        freelancer.thumbPath = [@"http://freelansim.ru"
+                                stringByAppendingString:freelancer.thumbPath ];
+        url =[NSURL URLWithString:freelancer.thumbPath];
+    }
+    
+    [self.avatar sd_setImageWithURL:url
+                   placeholderImage:[UIImage imageNamed:@"placeholder_userpic"]
+                          completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+                              self.loadingIndicator.hidden = YES;
+                              self.avatar.hidden = NO;
+                          }];
+    self.avatar.hidden = NO;
     self.avatar.layer.cornerRadius = 25;
     self.avatar.layer.masksToBounds = YES;
     self.labelName.text = freelancer.name;

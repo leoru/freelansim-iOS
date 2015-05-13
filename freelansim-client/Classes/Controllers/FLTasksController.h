@@ -11,6 +11,7 @@
 #import "FLTask.h"
 #import "FLCategoriesController.h"
 #import "FLTaskCell.h"
+#import "FLRefreshControl.h"
 
 @interface FLTasksController : FLBaseController <UITableViewDataSource, UITableViewDelegate, FLCategoriesDelegate, UISearchBarDelegate>
 {
@@ -18,7 +19,7 @@
     BOOL stopSearch;
     FLTask *selectedTask;
     NSString *searchQuery;
-    UIRefreshControl *refreshControl;
+    FLRefreshControl *refreshControl;
 }
 
 @property (weak, nonatomic) IBOutlet UIView *clearView;

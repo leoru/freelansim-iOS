@@ -10,6 +10,7 @@
 #import "FLFreelancer.h"
 #import "FLHTTPClient.h"
 #import "FLCategoriesController.h"
+#import "FLRefreshControl.h"
 
 @interface FLFreelancersController : FLBaseController <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, FLCategoriesDelegate>
 {
@@ -17,7 +18,7 @@
     BOOL stopSearch;
     FLFreelancer *selectedFreelancer;
     NSString *searchQuery;
-    UIRefreshControl *refreshControl;
+    FLRefreshControl *refreshControl;
 }
 
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;

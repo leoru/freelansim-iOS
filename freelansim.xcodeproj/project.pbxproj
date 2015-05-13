@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4605221D1B03A13300B4FDCF /* FLRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 4605221C1B03A13300B4FDCF /* FLRefreshControl.m */; };
 		46770DC21ACD60A500B7A7D8 /* offers_active.png in Resources */ = {isa = PBXBuildFile; fileRef = 46770DBC1ACD60A500B7A7D8 /* offers_active.png */; };
 		46770DC31ACD60A500B7A7D8 /* offers_active@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 46770DBD1ACD60A500B7A7D8 /* offers_active@2x.png */; };
 		46770DC41ACD60A500B7A7D8 /* offers_active@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 46770DBE1ACD60A500B7A7D8 /* offers_active@3x.png */; };
@@ -202,6 +203,8 @@
 
 /* Begin PBXFileReference section */
 		41AF178834E54C6E9830FDCB /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		4605221B1B03A13300B4FDCF /* FLRefreshControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLRefreshControl.h; sourceTree = "<group>"; };
+		4605221C1B03A13300B4FDCF /* FLRefreshControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLRefreshControl.m; sourceTree = "<group>"; };
 		46770DBC1ACD60A500B7A7D8 /* offers_active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = offers_active.png; sourceTree = "<group>"; };
 		46770DBD1ACD60A500B7A7D8 /* offers_active@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "offers_active@2x.png"; sourceTree = "<group>"; };
 		46770DBE1ACD60A500B7A7D8 /* offers_active@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "offers_active@3x.png"; sourceTree = "<group>"; };
@@ -879,6 +882,8 @@
 				A8EE826C19627F60000BC0D8 /* FLLinkButton.m */,
 				6A9CC9411A8E568200E646A7 /* FLRoundedButton.h */,
 				6A9CC9421A8E568200E646A7 /* FLRoundedButton.m */,
+				4605221B1B03A13300B4FDCF /* FLRefreshControl.h */,
+				4605221C1B03A13300B4FDCF /* FLRefreshControl.m */,
 			);
 			name = UI;
 			path = Classes/UI;
@@ -1340,6 +1345,7 @@
 				8BA6343C16A01CF100BF14F2 /* FLAboutController.m in Sources */,
 				6A1F1B6C16A1489E00712924 /* UIColor+FreelansimAdditions.m in Sources */,
 				8BA6347916A3D68B00BF14F2 /* FLInternetConnectionUtils.m in Sources */,
+				4605221D1B03A13300B4FDCF /* FLRefreshControl.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
