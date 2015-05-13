@@ -1432,7 +1432,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "freelansim-client/freelansim-Prefix.pch";
 				INFOPLIST_FILE = "freelansim-client/freelansim-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				PRODUCT_NAME = freelansim;
 				PROVISIONING_PROFILE = "dcfc01ba-e100-4dcb-8dad-4d7525a7a14a";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "dcfc01ba-e100-4dcb-8dad-4d7525a7a14a";
@@ -1455,7 +1455,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "freelansim-client/freelansim-Prefix.pch";
 				INFOPLIST_FILE = "freelansim-client/freelansim-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				PRODUCT_NAME = freelansim;
 				PROVISIONING_PROFILE = "f94f2c59-687e-4588-a604-8702341d07f4";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "ade9302f-163e-442d-bf16-050c361a03dd";
