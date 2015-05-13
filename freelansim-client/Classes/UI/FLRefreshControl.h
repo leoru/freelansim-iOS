@@ -16,5 +16,5 @@
 @property (strong) UIView *refreshLoadingView;
 
 - (void)Pull;
--(void) Setup:(float)center;
+-(void) Setup;
 @end

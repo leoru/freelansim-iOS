@@ -66,7 +66,7 @@
     
     [self.freelancersTable registerNib:[UINib nibWithNibName:@"FLFreelancerCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"FLFreelancerCell"];
     
-    [refreshControl Setup:self.freelancersTable.frame.size.width/2.0];
+    [refreshControl Setup];
 }
 
 -(void) scrollViewDidScroll:(UIScrollView *)scrollView{

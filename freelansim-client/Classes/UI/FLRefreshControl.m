@@ -10,12 +10,13 @@
 
 @implementation FLRefreshControl
 
--(void) Setup: (float)center{
+-(void) Setup{
     self.refreshLoadingView = [[UIView alloc] initWithFrame:self.bounds];
     self.refreshLoadingView.backgroundColor = [UIColor clearColor];
   
     self.loadIndicator = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"freelansim_loader.png"]];
-       self.loadIndicator.center = CGPointMake(center, 30);
+     CGRect screenRect = [[UIScreen mainScreen] bounds];
+    self.loadIndicator.center = CGPointMake(screenRect.size.width/2.0, 30);
     [self.refreshLoadingView addSubview:self.loadIndicator];
     
     self.refreshLoadingView.clipsToBounds = YES;

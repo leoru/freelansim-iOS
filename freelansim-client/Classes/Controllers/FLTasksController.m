@@ -67,8 +67,8 @@
     self.prototypeCell = (FLTaskCell *)[self.tasksTable dequeueReusableCellWithIdentifier:@"FLTaskCell"];
     
     [self showBanner];
-    
-    [refreshControl Setup:self.tasksTable.frame.size.width/2.0+30];
+   
+    [refreshControl Setup];
 }
 
 -(void) scrollViewDidScroll:(UIScrollView *)scrollView{
